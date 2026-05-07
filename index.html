@@ -37,23 +37,6 @@
     </script>
 
     <style>
-        /* Mobile menu smooth expansion */
-        #mobile-menu {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transform: translateY(-10px);
-            visibility: hidden;
-        }
-
-        #mobile-menu.open {
-            max-height: 600px;
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
-        }
-
         /* Glassmorphism effect for the navbar background to make it modern */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
@@ -174,7 +157,7 @@
 
                 <!-- Language Switcher -->
                 <button onclick="toggleLanguage()"
-                    class="hidden md:flex items-center gap-1 text-[12px] font-bold text-black/80 hover:bg-black/5 px-2.5 py-1.5 rounded-lg transition-colors border border-transparent hover:border-black/10">
+                    class="flex items-center gap-1 text-[10px] md:text-[12px] font-bold text-black/80 hover:bg-black/5 px-2 py-1 md:px-2.5 md:py-1.5 rounded-lg transition-colors border border-black/5 md:border-transparent hover:border-black/10 shadow-sm md:shadow-none">
                     <i class="fa-solid fa-globe text-black/40 me-0.5"></i>
                     <span id="lang-ar" class="uppercase text-black/40 transition-colors">AR</span>
                     <span class="text-black/20 font-normal">|</span>
@@ -186,96 +169,128 @@
                         data-i18n="contactBtn">Contact</span></a>
 
                 <a href="#"
-                    class="bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] flex items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap">
+                    class="hidden xl:flex bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap">
                     <span data-i18n="admissionBtn">Admission</span>
                     <i id="btn-icon"
                         class="fa-solid fa-rocket text-white/90 group-hover:text-black transition-colors text-[12px]"></i>
                 </a>
 
                 <button id="mobile-menu-btn"
-                    class="xl:hidden flex items-center justify-center h-10 w-10 md:h-11 md:w-11 rounded-xl bg-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 border border-black/10">
-                    <i class="fa-solid fa-bars text-lg"></i>
+                    class="xl:hidden flex items-center justify-center h-9 w-9 md:h-11 md:w-11 rounded-xl bg-black/[0.03] border border-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-all active:scale-95 shadow-sm">
+                    <div class="flex flex-col gap-1 items-end">
+                        <span class="w-5 h-0.5 bg-current rounded-full"></span>
+                        <span class="w-3 h-0.5 bg-current rounded-full"></span>
+                        <span class="w-5 h-0.5 bg-current rounded-full"></span>
+                    </div>
                 </button>
             </div>
 
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu"
-                class="absolute top-full start-0 end-0 mt-3 bg-white rounded-2xl shadow-xl border border-black/10 xl:hidden z-50">
-                <div class="p-3 sm:p-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
-                    <!-- Mobile Links -->
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-house"></i>
-                        </div>
-                        <span data-i18n="home">Home</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </div>
-                        <span data-i18n="about">About School</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-book-open"></i>
-                        </div>
-                        <span data-i18n="academics">Academics</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-user-plus"></i>
-                        </div>
-                        <span data-i18n="admissions">Admissions</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-                        <span data-i18n="studentLife">Student Life</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-calendar-days"></i>
-                        </div>
-                        <span data-i18n="news">News & Events</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-images"></i>
-                        </div>
-                        <span data-i18n="gallery">Gallery</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <span data-i18n="contact">Contact Us</span>
-                    </a>
-
-                    <div class="border-t border-black/10 my-2"></div>
-
-                    <!-- Mobile Language Switcher -->
-                    <div class="flex items-center justify-between p-3 md:hidden">
-                        <span class="font-bold text-black/80 text-[14px]" data-i18n="selectLang">Select Language</span>
-                        <div class="flex items-center gap-2 bg-black/5 p-1 rounded-lg">
-                            <button onclick="setLanguage('ar')" id="mob-lang-ar"
-                                class="px-4 py-1.5 text-xs font-bold rounded-md transition-colors text-black/60 hover:text-black">AR</button>
-                            <button onclick="setLanguage('en')" id="mob-lang-en"
-                                class="px-4 py-1.5 text-xs font-bold rounded-md bg-white shadow-sm text-primary transition-colors">EN</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </nav>
     </header>
+
+    <!-- Mobile Menu Overlay (Full Page) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-[100] xl:hidden transition-all duration-500 transform translate-x-full opacity-0 invisible">
+
+        <!-- Menu Header -->
+        <div class="flex items-center justify-between p-6 border-b border-black/5">
+            <div class="flex items-center gap-3">
+                <img src="./Asstes/school logo.jpeg" alt="Logo" class="h-10 w-auto rounded-lg">
+                <div class="flex flex-col">
+                    <span class="text-primary font-black text-sm tracking-tight" data-i18n="schoolNameMain">IBRI PRIVATE
+                        SCHOOL</span>
+                    <span class="text-black/40 text-[10px] font-bold" data-i18n="schoolNameSub">EST. 1990</span>
+                </div>
+            </div>
+            <button id="close-menu"
+                class="w-11 h-11 rounded-xl bg-black/5 flex items-center justify-center text-black/80">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col h-[calc(100vh-80px)] overflow-y-auto p-6">
+            <nav class="flex flex-col gap-2 mb-8">
+                <a href="index.html"
+                    class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-house w-6 text-center text-black/20"></i>
+                    <span data-i18n="home">Home</span>
+                </a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-building-columns w-6 text-center text-black/20"></i>
+                    <span data-i18n="about">About School</span>
+                </a>
+
+                <!-- Explore Submenu (Interactive) -->
+                <div class="flex flex-col gap-1">
+                    <button id="mobile-explore-toggle"
+                        class="flex items-center justify-between p-4 rounded-2xl text-black/80 font-bold bg-black/[0.02] hover:bg-black/[0.05] transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-layer-group w-6 text-center text-primary"></i>
+                            <span data-i18n="explore">Explore</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-black/20 transition-transform duration-300"
+                            id="explore-chevron"></i>
+                    </button>
+                    <div id="mobile-explore-menu"
+                        class="grid grid-cols-2 gap-2 ps-2 pe-2 mt-0 max-h-0 opacity-0 invisible overflow-hidden transition-all duration-500 ease-in-out">
+                        <a href="academics.html"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-primary/5 border border-primary/10 group/item hover:bg-primary/10 transition-colors">
+                            <i
+                                class="fa-solid fa-book-open text-primary group-hover/item:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold" data-i18n="academics">Academics</span>
+                        </a>
+                        <a href="#"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i
+                                class="fa-solid fa-users text-secondary group-hover/item:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold" data-i18n="studentLife">Student Life</span>
+                        </a>
+                        <a href="#"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i
+                                class="fa-solid fa-calendar-days text-black/30 group-hover/item:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold" data-i18n="news">Events</span>
+                        </a>
+                        <a href="#"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i
+                                class="fa-solid fa-images text-black/30 group-hover/item:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold" data-i18n="gallery">Gallery</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-user-plus w-6 text-center text-black/20"></i>
+                    <span data-i18n="admissions">Admissions</span>
+                </a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-envelope w-6 text-center text-black/20"></i>
+                    <span data-i18n="contact">Contact Us</span>
+                </a>
+            </nav>
+
+            <!-- Language & Actions -->
+            <div class="mt-auto pt-8 border-t border-black/5 space-y-6">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-black text-black/30 uppercase tracking-widest"
+                        data-i18n="selectLang">Select Language</span>
+                    <div class="flex bg-black/5 p-1 rounded-xl">
+                        <button onclick="setLanguage('en')" id="mob-lang-en"
+                            class="px-4 py-2 rounded-lg text-xs font-black transition-all">EN</button>
+                        <button onclick="setLanguage('ar')" id="mob-lang-ar"
+                            class="px-4 py-2 rounded-lg text-xs font-black transition-all">AR</button>
+                    </div>
+                </div>
+
+                <a href="#"
+                    class="flex items-center justify-center gap-3 w-full bg-primary text-white py-4 rounded-2xl font-black shadow-lg shadow-primary/20">
+                    <span data-i18n="admissionBtn">Admission </span>
+                    <i class="fa-solid fa-rocket"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="relative h-screen min-h-[565px] w-full overflow-hidden flex items-center -mt-[88px] sm:-mt-[104px]">
@@ -320,8 +335,8 @@
     <section class="py-8 px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto bg-white overflow-hidden w-full">
         <div class="grid lg:grid-cols-2 md:gap-16 gap-4 lg:gap-24 items-center">
 
-            <!-- left side -->
-            <div class="relative group w-full max-w-[600px] mx-auto lg:mx-0">
+            <!-- left side (Chart) -->
+            <div class="relative group w-full max-w-[600px] mx-auto lg:mx-0 order-2 lg:order-1">
                 <div
                     class="absolute -top-12 -left-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10 group-hover:bg-primary/10 transition-colors">
                 </div>
@@ -402,7 +417,7 @@
             </div>
 
             <!-- Right: Clean Professional Statistics Content -->
-            <div class="w-full lg:pl-12">
+            <div class="w-full lg:pl-12 order-1 lg:order-2">
                 <div class="mb-10 text-center md:text-start">
                     <span
                         class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-4"
@@ -418,7 +433,7 @@
                 </div>
 
                 <!-- Refined Stat Grid -->
-                <div class="grid grid-cols-3 sm:grid-cols-3 gap-x-12 gap-y-8 text-center md:text-start">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8 text-center md:text-start">
                     <div class="flex flex-col gap-0.5 group">
                         <span
                             class="text-3xl font-bold text-black group-hover:text-primary transition-colors duration-300 tracking-tighter"><span
@@ -538,7 +553,7 @@
             </div>
 
             <!--circle) -->
-            <div class="relative flex justify-center items-center py-10 lg:py-0">
+            <div class="relative flex justify-center items-center py-2 lg:py-0">
                 <!-- Large Outer Circle (Mission) -->
                 <div
                     class="relative w-[300px] h-[300px] sm:w-[460px] sm:h-[460px] rounded-full bg-primary border border-primary/20 flex flex-col items-center pt-8 sm:pt-14 transition-transform duration-700 hover:scale-[1.02]">
@@ -568,7 +583,7 @@
     </section>
 
     <!-- Principal's Message Section -->
-    <section class="py-20 px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto bg-white overflow-hidden w-full">
+    <section class="py-10 md:py-20 px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto bg-white overflow-hidden w-full">
         <div
             class="relative grid lg:grid-cols-2 items-stretch rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
 
@@ -589,7 +604,7 @@
 
             <!-- Message Content -->
             <div
-                class="bg-[#003057] text-white p-10 lg:p-20 lg:pt-24 relative rounded-tl-[60px] lg:rounded-tl-[100px] lg:-ms-20 z-10">
+                class="bg-[#003057] text-white p-6 md:p-10 lg:p-20 lg:pt-24 relative rounded-tl-[40px] md:rounded-tl-[60px] lg:rounded-tl-[100px] lg:-ms-20 z-10">
                 <div class="max-w-xl">
                     <span
                         class="inline-block px-4 py-1.5 bg-white/10 text-secondary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6"
@@ -645,10 +660,10 @@
     </section>
 
     <!-- Why Choose Our School Section (Horizontal Slider) -->
-    <section class="py-24 bg-gray-50/50 overflow-hidden w-full" id="why-choose">
+    <section class="py-8 md:py-10 bg-gray-50/50 overflow-hidden w-full" id="why-choose">
         <div class="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
             <!-- Header with Navigation -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-8">
                 <div class="max-w-2xl">
                     <span
                         class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-4"
@@ -677,11 +692,11 @@
 
             <!-- Horizontal Scrollable Container -->
             <div id="why-slider-container"
-                class="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-12 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth">
+                class="flex gap-0 md:gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-12 scroll-smooth">
 
                 <!-- Feature 1: Smart Classrooms -->
                 <div
-                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    class="min-w-full md:min-w-[320px] snap-center group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
                     <img src="./Asstes/lab.png" alt="Smart Classrooms"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
@@ -716,7 +731,7 @@
 
                 <!-- Feature 2: Qualified Teachers -->
                 <div
-                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    class="min-w-full md:min-w-[320px] snap-center group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
                     <img src="./Asstes/principal_ar.png" alt="Qualified Teachers"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
@@ -751,7 +766,7 @@
 
                 <!-- Feature 3: Islamic Values -->
                 <div
-                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    class="min-w-full md:min-w-[320px] snap-center group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
                     <img src="./Asstes/library.png" alt="Islamic Values"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
@@ -786,7 +801,7 @@
 
                 <!-- Feature 4: STEM Education -->
                 <div
-                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    class="min-w-full md:min-w-[320px] snap-center group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
                     <img src="./Asstes/lab.png" alt="STEM Education"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
@@ -821,7 +836,7 @@
 
                 <!-- Feature 5: Sports Facilities -->
                 <div
-                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    class="min-w-full md:min-w-[320px] snap-center group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
                     <img src="./Asstes/sports.png" alt="Sports Facilities"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
@@ -856,7 +871,7 @@
 
                 <!-- Feature 6: Safe Environment -->
                 <div
-                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    class="min-w-full md:min-w-[320px] snap-center group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
                     <img src="./Asstes/principal_ar.png" alt="Safe Environment"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
@@ -892,15 +907,14 @@
             </div>
         </div>
         <!-- Our Facilities Section (Unified Dashboard Card) -->
-        <section class="py-24 bg-gray-50/50 overflow-hidden w-full" id="facilities">
+        <section class=" bg-gray-50/50 overflow-hidden w-full" id="facilities">
             <div class="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
 
-                <div
-                    class="bg-white rounded-[60px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.06)] border border-black/[0.03] overflow-hidden p-6 md:p-12">
+                <div class="bg-white rounded-[60px]  border border-black/[0.03] overflow-hidden p-6 md:p-12">
 
                     <!-- Hub Header -->
                     <div
-                        class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8 border-b border-black/[0.03] pb-10">
+                        class="flex flex md:flex-row md:items-end justify-between mb-12 gap-8 md:border-b border-black/[0.03] md:pb-10 pb-2">
                         <div class="max-w-xl">
                             <span
                                 class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-4"
@@ -1018,368 +1032,812 @@
         </section>
     </section>
 
+    <!-- Student & Parent Reviews Section -->
+    <section
+        class="py-8 md:py-10 px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto bg-[#f8fafc] overflow-hidden w-full relative z-20 border-y border-black/[0.03] opacity-0 translate-y-10 transition-all duration-1000"
+        id="reviews">
+        <div class="mb-8 md:mb-12">
+            <span
+                class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-4"
+                data-i18n="reviewsTag">TESTIMONIALS</span>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight tracking-tight"
+                data-i18n="reviewsHeading">
+                What Our <span class="text-primary">Community Says.</span>
+            </h2>
+        </div>
+
+        <!-- Ratings Header Breakdown -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 md:mb-12 mb-4 items-center bg-gray-50/50 p-6 md:p-8 rounded-[30px] border border-black/[0.03]">
+            <!-- Progress Bars -->
+            <div class="space-y-2">
+                <div class="flex items-center gap-4">
+                    <span class="text-xs font-bold text-slate-400 w-4">5</span>
+                    <i class="fa-solid fa-star text-[10px] text-yellow-400"></i>
+                    <div class="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-yellow-400 rounded-full w-[90%]"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-400 w-8">90%</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs font-bold text-slate-400 w-4">4</span>
+                    <i class="fa-solid fa-star text-[10px] text-yellow-400"></i>
+                    <div class="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-yellow-400 rounded-full w-[60%]"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-400 w-8">60%</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs font-bold text-slate-400 w-4">3</span>
+                    <i class="fa-solid fa-star text-[10px] text-yellow-400"></i>
+                    <div class="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-yellow-400 rounded-full w-[40%]"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-400 w-8">40%</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs font-bold text-slate-400 w-4">2</span>
+                    <i class="fa-solid fa-star text-[10px] text-yellow-400"></i>
+                    <div class="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-yellow-400 rounded-full w-[30%]"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-400 w-8">30%</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs font-bold text-slate-400 w-4">1</span>
+                    <i class="fa-solid fa-star text-[10px] text-yellow-400"></i>
+                    <div class="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-yellow-400 rounded-full w-[10%]"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-400 w-8">10%</span>
+                </div>
+            </div>
+
+            <!-- Scores Wrapper for Mobile Row -->
+            <div class="grid grid-cols-2 md:contents gap-4 md:gap-0">
+                <!-- Overall Score 1 -->
+                <div class="text-center md:border-x border-black/5 px-4 md:px-8">
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-2">4.0</h3>
+                    <div class="flex justify-center gap-1 mb-2 text-yellow-400">
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                        <i class="fa-regular fa-star text-[10px] md:text-sm"></i>
+                    </div>
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest" data-i18n="ratingCount">
+                        46
+                        Ratings</p>
+                </div>
+
+                <!-- Overall Score 2 -->
+                <div class="text-center px-4 md:px-8">
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-2">4.8</h3>
+                    <div class="flex justify-center gap-1 mb-2 text-yellow-400">
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                        <i class="fa-solid fa-star text-[10px] md:text-sm"></i>
+                    </div>
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest" data-i18n="lastMonth">
+                        Last
+                        Month</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Review 1 -->
+            <div
+                class="bg-white p-8 rounded-[30px] shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-black/[0.02] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-500">
+                <div
+                    class="w-16 h-16 rounded-full overflow-hidden mb-4 border-4 border-gray-50 shadow-sm group-hover:border-primary/20 transition-colors">
+                    <img src="https://i.pravatar.cc/150?u=1" alt="Reviewer" class="w-full h-full object-cover">
+                </div>
+                <div class="flex gap-1 mb-4 text-yellow-400 text-[10px]">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-slate-500 font-medium leading-relaxed mb-6 text-[13px] italic" data-i18n="review1Text">
+                    "Ibri Private School provides an exceptional environment for my children. The teachers are dedicated
+                    and the facilities are truly world-class."
+                </p>
+                <h4 class="text-[11px] font-black text-slate-900 uppercase tracking-widest" data-i18n="review1Name">
+                    Sarah
+                    Al-Busaidi</h4>
+            </div>
+
+            <!-- Review 2 -->
+            <div
+                class="bg-white p-8 rounded-[30px] shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-black/[0.02] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-500">
+                <div
+                    class="w-16 h-16 rounded-full overflow-hidden mb-4 border-4 border-gray-50 shadow-sm group-hover:border-secondary/20 transition-colors">
+                    <img src="https://i.pravatar.cc/150?u=2" alt="Reviewer" class="w-full h-full object-cover">
+                </div>
+                <div class="flex gap-1 mb-4 text-yellow-400 text-[10px]">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-slate-500 font-medium leading-relaxed mb-6 text-[13px] italic" data-i18n="review2Text">
+                    "The integration of Islamic values with a modern curriculum is what makes this school unique. Highly
+                    recommended for parents in Ibri."
+                </p>
+                <h4 class="text-[11px] font-black text-slate-900 uppercase tracking-widest" data-i18n="review2Name">
+                    Ahmed
+                    Al-Jabri</h4>
+            </div>
+
+            <!-- Review 3 -->
+            <div
+                class="bg-white p-8 rounded-[30px] shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-black/[0.02] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-500">
+                <div
+                    class="w-16 h-16 rounded-full overflow-hidden mb-4 border-4 border-gray-50 shadow-sm group-hover:border-primary/20 transition-colors">
+                    <img src="https://i.pravatar.cc/150?u=3" alt="Reviewer" class="w-full h-full object-cover">
+                </div>
+                <div class="flex gap-1 mb-4 text-yellow-400 text-[10px]">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="text-slate-500 font-medium leading-relaxed mb-6 text-[13px] italic" data-i18n="review3Text">
+                    "My son's progress in STEM subjects has been remarkable since joining. The lab facilities are better
+                    than most schools in the region."
+                </p>
+                <h4 class="text-[11px] font-black text-slate-900 uppercase tracking-widest" data-i18n="review3Name">
+                    Laila
+                    Al-Hinai</h4>
+            </div>
+        </div>
+        <!-- CTA Section -->
+        <section class="py-10 md:py-20 px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
+            <div
+                class="relative rounded-[30px] md:rounded-[40px] overflow-hidden bg-[#003057] p-6 md:p-12 lg:p-20 text-center">
+                <!-- Decorative Circles -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-white/10 text-secondary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6"
+                        data-i18n="ctaTag">JOIN OUR COMMUNITY</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tight"
+                        data-i18n="ctaHeading">
+                        Ready to Start Your Child's <br /> <span class="text-secondary text-primary">Success
+                            Journey?</span>
+                    </h2>
+                    <p class="text-white/70 text-lg mb-10 font-medium" data-i18n="ctaDesc">
+                        Enroll your child today at Ibri Private School and give them the foundation they deserve.
+                        Admissions for the new academic year are now open.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#"
+                            class="bg-primary hover:bg-secondary text-white hover:text-black px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-primary/30 flex items-center gap-3 group">
+                            <span data-i18n="applyNow">Apply Now</span>
+                            <i
+                                class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3">
+                            <span data-i18n="contactUs">Contact Us</span>
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class=" pt-8 pb-4 md:pt-20 md:pb-2 px-3 sm:px-6 lg:px-8 border-t border-black/[0.05]">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 md:mb-20">
+                    <!-- Column 1: Brand -->
+                    <div class="space-y-6">
+                        <a href="#" class="flex items-center gap-3 group">
+                            <div
+                                class="h-12 w-12 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shadow-sm">
+                                <img src="./Asstes/school logo.jpeg" alt="School Logo"
+                                    class="h-full w-full object-contain rounded-lg">
+                            </div>
+                            <div>
+                                <h3 class="text-base font-black text-black leading-tight tracking-tight"
+                                    data-i18n="schoolNameMain">Ibri Private School</h3>
+                                <p class="text-[10px] font-bold text-black/40 mt-[1px]" data-i18n="schoolNameSub">مدرسة
+                                    عبري الخاصة</p>
+                            </div>
+                        </a>
+                        <p class="text-slate-500 text-sm leading-relaxed font-medium pr-8" data-i18n="footerAbout">
+                            Empowering students with knowledge, character, and skills to excel in an ever-changing
+                            global world through high-quality education.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <i class="fa-brands fa-facebook-f text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <i class="fa-brands fa-instagram text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <i class="fa-brands fa-twitter text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <i class="fa-brands fa-youtube text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Quick Links -->
+                    <div>
+                        <h4
+                            class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                            <span data-i18n="quickLinks">Quick Links</span>
+                        </h4>
+                        <ul class="space-y-4">
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="home"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Home</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="about"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>About
+                                    School</a></li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="admissions"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Admissions</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="academics"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Academics</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="news"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>News
+                                    & Events</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Academics -->
+                    <div>
+                        <h4
+                            class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                            <span data-i18n="academics">Programs</span>
+                        </h4>
+                        <ul class="space-y-4">
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Kindergarten</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Primary
+                                    Education</a></li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Secondary
+                                    School</a></li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Extra-Curricular</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>STEM
+                                    Program</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Contact -->
+                    <div>
+                        <h4
+                            class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                            <span data-i18n="contactInfo">Contact Info</span>
+                        </h4>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <p class="text-slate-500 text-sm font-bold leading-relaxed" data-i18n="footerAddress">
+                                    Ibri, Ad Dhahirah Governorate, Sultanate of Oman
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <p class="text-slate-500 text-sm font-bold leading-relaxed" dir="ltr">
+                                    +968 2568 0000
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <p class="text-slate-500 text-sm font-bold leading-relaxed">
+                                    info@ibri-school.com
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div
+                    class="pt-8 border-t border-black/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]" data-i18n="copyright">
+                        © 2024 Ibri Private School. All rights reserved.
+                    </p>
+                    <div class="flex gap-8 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
+                        <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>
 
 
-
-    <script>
-        // Mobile Menu Logic
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const icon = mobileMenuBtn.querySelector('i');
-
-        mobileMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('open');
-            if (mobileMenu.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('open')) {
-                mobileMenu.classList.remove('open');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Translation Dictionary
-        const translations = {
-            en: {
-                schoolNameMain: "Ibri Private School",
-                schoolNameSub: "مدرسة عبري الخاصة",
-                home: "Home",
-                about: "About School",
-                admissions: "Admissions",
-                explore: "Explore",
-                academics: "Academics",
-                studentLife: "Student Life",
-                news: "News & Events",
-                gallery: "Gallery",
-                contact: "Contact Us",
-                contactBtn: "Contact",
-                admissionBtn: "Admission",
-                selectLang: "Select Language",
-                heroTag: "Welcome to Excellence",
-                heroHeading: "Building Future Leaders Through Quality Education",
-                heroMission: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world.",
-                applyNow: "Apply Now",
-                exploreSchool: "Explore School",
-                statYears: "Years Exp.",
-                statStudents: "Students",
-                statsTag: "Our Impact",
-                statsHeading: "Academic Excellence In Every Detail.",
-                statsDesc: "We take pride in our growth and the diverse community we've built over the years, fostering excellence and global citizenship through a dedicated educational approach.",
-                statTeachers: "Teachers",
-                statExperience: "Years Exp.",
-                statNationalities: "Nationalities",
-                statSuccess: "Success Rate",
-                statActivities: "Activities",
-                statStudentsShort: "STUDENTS",
-                statSuccessShort: "SUCCESS",
-                statTeachersShort: "TEACHERS",
-                statExpShort: "YEARS",
-                statActivitiesShort: "CLUBS",
-                statNatShort: "NATIONS",
-                messageTag: "Leadership Message",
-                principalHeading: "Message from the Principal",
-                principalMsg1: "At Ibri Private School, we are committed to nurturing the potential of every child through a balanced approach to academic excellence and character development.",
-                principalMsg2: "Our goal is to create a community of lifelong learners who are equipped with the skills and values necessary to thrive in an ever-changing global environment.",
-                principalName: "Dr. Fatima Al-Balushi",
-                principalTitle: "School Principal / Director",
-                statExpLong: "Years of Educational Leadership",
-                statSatisfaction: "Student & Parent Satisfaction",
-                statExp: "Years of Excellence",
-                whyChooseTag: "EXCELLENCE AT IBRI",
-                whyChooseHeading: "Why Choose Our School?",
-                whyChooseDesc: "We provide an environment where every student can excel through modern facilities and dedicated mentorship.",
-                featSmart: "Smart Classrooms",
-                featSmartDesc: "Equipped with cutting-edge interactive technology and high-speed digital resources for modern learning.",
-                featTeachers: "Qualified Teachers",
-                featTeachersDesc: "A diverse team of international educators committed to delivering academic excellence and student success.",
-                featValues: "Islamic Values",
-                featValuesDesc: "Integrating core Islamic principles and Omani cultural heritage into our daily educational journey.",
-                featStem: "STEM Education",
-                featStemDesc: "Focusing on Science, Technology, Engineering, and Math to prepare students for the careers of tomorrow.",
-                featSports: "Sports Facilities",
-                featSportsDesc: "World-class athletic facilities including indoor courts and multi-purpose fields for physical development.",
-                featSafe: "Safe Environment",
-                featSafeDesc: "A secure, gated campus with 24/7 monitoring and a nurturing atmosphere for student wellbeing.",
-                campusTag: "Campus Excellence",
-                campusHeading: "World-Class Facilities",
-                campusDesc: "Our campus is designed to foster creativity, physical health, and academic excellence through state-of-the-art facilities.",
-                featured: "FEATURED",
-                labTitle: "STEM Innovation Lab",
-                labDesc: "Equipped with high-tech research tools and interactive learning stations.",
-                labPrice: "ADVANCED",
-                labStat1: "EQUIPPED",
-                labStat2: "30 CAPACITY",
-                labStat3: "SAFE",
-                sportsTagSmall: "PROFESSIONAL",
-                sportsTitle: "Olympic Complex",
-                sportsDesc: "Multi-purpose athletic arena with professional-grade courts and safety gear.",
-                sportsStatus: "INDOOR",
-                sportsStat1: "PROFESSIONAL",
-                sportsStat2: "CERTIFIED",
-                sportsStat3: "HEALTHY",
-                libraryTagSmall: "SMART HUB",
-                libraryTitle: "Digital Hub",
-                libraryDesc: "A futuristic learning space with vast digital archives and quiet reading zones.",
-                libraryStatus: "24/7",
-                libraryStat1: "DIGITAL",
-                libraryStat2: "HI-SPEED",
-                libraryStat3: "ASSISTED",
-                facilitiesTag: "CAMPUS INFRASTRUCTURE",
-                facilitiesHeading: "World-Class Facilities",
-                facScience: "Science Labs",
-                facScienceDesc: "Advanced research environments for physics, chemistry, and biology.",
-                facComputer: "Computer Labs",
-                facComputerDesc: "High-speed digital hubs with modern workstations.",
-                facLibrary: "Central Library",
-                facMosque: "Prayer Area",
-                facMosqueDesc: "Mosque",
-                facSports: "Sports Complex",
-                facTransport: "Safe Transport",
-                facCafeteria: "Healthy Cafeteria"
-            },
-            ar: {
-                schoolNameMain: "مدرسة عبري الخاصة",
-                schoolNameSub: "Ibri Private School",
-                home: "الرئيسية",
-                about: "عن المدرسة",
-                admissions: "القبول والتسجيل",
-                explore: "استكشف",
-                academics: "الشؤون الأكاديمية",
-                studentLife: "الحياة الطلابية",
-                news: "الأخبار والفعاليات",
-                gallery: "معرض الصور",
-                contact: "اتصل بنا",
-                contactBtn: "تواصل معنا",
-                admissionBtn: "سجل الآن",
-                selectLang: "اختر اللغة",
-                heroTag: "مرحباً بكم في التميز",
-                heroHeading: "بناء قادة المستقبل من خلال تعليم متميز",
-                heroMission: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم عالمي دائم التغير.",
-                applyNow: "سجل الآن",
-                exploreSchool: "استكشف المدرسة",
-                statYears: "سنوات الخبرة",
-                statStudents: "طلاب",
-                statsTag: "تأثيرنا",
-                statsHeading: "التميز الأكاديمي في كل تفصيل.",
-                statsDesc: "نحن فخورون بنمونا والمجتمع المتنوع الذي بنيناه على مر السنين، مما يعزز التميز والمواطنة العالمية من خلال نهج تعليمي مخصص.",
-                statTeachers: "معلمون",
-                statExperience: "سنوات الخبرة",
-                statNationalities: "جنسيات",
-                statSuccess: "نسبة النجاح",
-                statActivities: "الأنشطة",
-                statStudentsShort: "طلاب",
-                statSuccessShort: "نجاح",
-                statTeachersShort: "معلمون",
-                statExpShort: "سنوات",
-                statActivitiesShort: "أنشطة",
-                statNatShort: "جنسيات",
-                messageTag: "رسالة القيادة",
-                principalHeading: "رسالة من المديرة",
-                principalMsg1: "في مدرسة عبري الخاصة، نحن ملتزمون بتنمية إمكانات كل طفل من خلال نهج متوازن بين التميز الأكاديمي وتطوير الشخصية.",
-                principalMsg2: "هدفنا هو خلق مجتمع من المتعلمين مدى الحياة المجهزين بالمهارات والقيم اللازمة للازدهار في بيئة عالمية دائمة التغير.",
-                principalName: "د. فاطمة البلوشي",
-                principalTitle: "مديرة المدرسة / الإدارة",
-                statExpLong: "سنوات من القيادة التعليمية",
-                statSatisfaction: "رضا الطلاب وأولياء الأمور",
-                statExp: "سنوات من التميز",
-                whyChooseTag: "التميز في عبري",
-                whyChooseHeading: "لماذا تختار مدرستنا؟",
-                whyChooseDesc: "نحن نوفر بيئة يمكن لكل طالب فيها التفوق من خلال مرافق حديثة وتوجيه مخصص.",
-                featSmart: "فصول دراسية ذكية",
-                featSmartDesc: "مجهزة بأحدث التقنيات التفاعلية والموارد الرقمية عالية السرعة للتعلم الحديث.",
-                featTeachers: "معلمون مؤهلون",
-                featTeachersDesc: "فريق متنوع من المعلمين الدوليين الملتزمين بتحقيق التميز الأكاديمي ونجاح الطلاب.",
-                featValues: "قيم إسلامية",
-                featValuesDesc: "دمج المبادئ الإسلامية الأساسية والتراث الثقافي العماني في رحلتنا التعليمية اليومية.",
-                featStem: "تعليم STEM",
-                featStemDesc: "التركيز على العلوم والتكنولوجيا والهندسة والرياضيات لإعداد الطلاب لمهن المستقبل.",
-                featSports: "مرافق رياضية",
-                featSportsDesc: "مرافق رياضية عالمية المستوى تشمل ملاعب داخلية وساحات متعددة الأغراض للتطوير البدني.",
-                featSafe: "بيئة آمنة",
-                featSafeDesc: "حرم جامعي آمن ومسور مع مراقبة على مدار الساعة طوال أيام الأسبوع وجو رعاية لرفاهية الطلاب.",
-                campusTag: "تميز الحرم المدرسي",
-                campusHeading: "مرافق عالمية المستوى",
-                campusDesc: "تم تصميم حرمنا المدرسي لتعزيز الإبداع والصحة البدنية والتميز الأكاديمي من خلال مرافق حديثة.",
-                featured: "مميز",
-                labTitle: "مختبر STEM للابتكار",
-                labDesc: "مجهز بأدوات بحث عالية التقنية ومحطات تعلم تفاعلية.",
-                labPrice: "متقدم",
-                labStat1: "مجهز",
-                labStat2: "30 سعة",
-                labStat3: "آمن",
-                sportsTagSmall: "احترافي",
-                sportsTitle: "المجمع الأولمبي",
-                sportsDesc: "ساحة رياضية متعددة الأغراض مع ملاعب احترافية وأدوات سلامة.",
-                sportsStatus: "داخلي",
-                sportsStat1: "احترافي",
-                sportsStat2: "معتمد",
-                sportsStat3: "صحي",
-                libraryTagSmall: "مركز ذكي",
-                libraryTitle: "المركز الرقمي",
-                libraryDesc: "مساحة تعلم مستقبلية مع أرشيفات رقمية واسعة ومناطق قراءة هادئة.",
-                libraryStatus: "24/7",
-                libraryStat1: "رقمي",
-                libraryStat2: "سرعة عالية",
-                libraryStat3: "مساعد",
-                facilitiesTag: "البنية التحتية للحرم المدرسي",
-                facilitiesHeading: "مرافق عالمية المستوى",
-                facScience: "مختبرات العلوم",
-                facScienceDesc: "بيئات بحثية متقدمة للفيزياء والكيمياء والأحياء.",
-                facComputer: "مختبرات الكمبيوتر",
-                facComputerDesc: "محاور رقمية عالية السرعة مع محطات عمل حديثة.",
-                facLibrary: "المكتبة المركزية",
-                facMosque: "منطقة الصلاة",
-                facMosqueDesc: "المسجد",
-                facSports: "المجمع الرياضي",
-                facTransport: "نقل آمن",
-                facCafeteria: "كافتيريا صحية"
-            }
-        };
-
-        // RTL & LTR Toggle Logic
-        function toggleLanguage() {
-            const currentDir = document.documentElement.getAttribute('dir');
-            setLanguage(currentDir === 'rtl' ? 'en' : 'ar');
-        }
-
-        function setLanguage(lang) {
-            const htmlTag = document.documentElement;
-            const btnIcon = document.getElementById('btn-icon');
-
-            if (lang === 'ar') {
-                htmlTag.setAttribute('dir', 'rtl');
-                htmlTag.setAttribute('lang', 'ar');
-
-                // Desktop Toggle
-                document.getElementById('lang-ar').classList.replace('text-black/40', 'text-primary');
-                document.getElementById('lang-en').classList.replace('text-primary', 'text-black/40');
-
-                // Mobile Toggle
-                document.getElementById('mob-lang-ar').classList.add('bg-white', 'shadow-sm', 'text-primary');
-                document.getElementById('mob-lang-ar').classList.remove('text-black/60');
-                document.getElementById('mob-lang-en').classList.remove('bg-white', 'shadow-sm', 'text-primary');
-                document.getElementById('mob-lang-en').classList.add('text-black/60');
-
-                // Adjust specific elements for RTL
-                btnIcon.style.transform = 'scaleX(-1)';
-            } else {
-                htmlTag.setAttribute('dir', 'ltr');
-                htmlTag.setAttribute('lang', 'en');
-
-                // Desktop Toggle
-                document.getElementById('lang-en').classList.replace('text-black/40', 'text-primary');
-                document.getElementById('lang-ar').classList.replace('text-primary', 'text-black/40');
-
-                // Mobile Toggle
-                document.getElementById('mob-lang-en').classList.add('bg-white', 'shadow-sm', 'text-primary');
-                document.getElementById('mob-lang-en').classList.remove('text-black/60');
-                document.getElementById('mob-lang-ar').classList.remove('bg-white', 'shadow-sm', 'text-primary');
-                document.getElementById('mob-lang-ar').classList.add('text-black/60');
-
-                // Adjust specific elements for LTR
-                btnIcon.style.transform = 'scaleX(1)';
-            }
-
-            // Apply Translations to all elements
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.textContent = translations[lang][key];
+            // Translation Dictionary
+            const translations = {
+                en: {
+                    schoolNameMain: "Ibri Private School",
+                    schoolNameSub: "مدرسة عبري الخاصة",
+                    home: "Home",
+                    about: "About School",
+                    admissions: "Admissions",
+                    explore: "Explore",
+                    academics: "Academics",
+                    studentLife: "Student Life",
+                    news: "News & Events",
+                    gallery: "Gallery",
+                    contact: "Contact Us",
+                    contactBtn: "Contact",
+                    admissionBtn: "Admission",
+                    selectLang: "Select Language",
+                    heroTag: "Welcome to Excellence",
+                    heroHeading: "Building Future Leaders Through Quality Education",
+                    heroMission: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world.",
+                    applyNow: "Apply Now",
+                    exploreSchool: "Explore School",
+                    statYears: "Years Exp.",
+                    statStudents: "Students",
+                    statsTag: "Our Impact",
+                    statsHeading: "Academic Excellence In Every Detail.",
+                    statsDesc: "We take pride in our growth and the diverse community we've built over the years, fostering excellence and global citizenship through a dedicated educational approach.",
+                    statTeachers: "Teachers",
+                    statExperience: "Years Exp.",
+                    statNationalities: "Nationalities",
+                    statSuccess: "Success Rate",
+                    statActivities: "Activities",
+                    statStudentsShort: "STUDENTS",
+                    statSuccessShort: "SUCCESS",
+                    statTeachersShort: "TEACHERS",
+                    statExpShort: "YEARS",
+                    statActivitiesShort: "CLUBS",
+                    statNatShort: "NATIONS",
+                    messageTag: "Leadership Message",
+                    principalHeading: "Message from the Principal",
+                    principalMsg1: "At Ibri Private School, we are committed to nurturing the potential of every child through a balanced approach to academic excellence and character development.",
+                    principalMsg2: "Our goal is to create a community of lifelong learners who are equipped with the skills and values necessary to thrive in an ever-changing global environment.",
+                    principalName: "Dr. Fatima Al-Balushi",
+                    principalTitle: "School Principal / Director",
+                    statExpLong: "Years of Educational Leadership",
+                    statSatisfaction: "Student & Parent Satisfaction",
+                    ctaTag: "JOIN OUR COMMUNITY",
+                    ctaHeading: "Ready to Start Your Child's Success Journey?",
+                    ctaDesc: "Enroll your child today at Ibri Private School and give them the foundation they deserve. Admissions for the new academic year are now open.",
+                    contactUs: "Contact Us",
+                    footerAbout: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world through high-quality education.",
+                    quickLinks: "Quick Links",
+                    contactInfo: "Contact Info",
+                    footerAddress: "Ibri, Ad Dhahirah Governorate, Sultanate of Oman",
+                    copyright: "© 2024 Ibri Private School. All rights reserved.",
+                    statExp: "Years of Excellence",
+                    whyChooseTag: "EXCELLENCE AT IBRI",
+                    whyChooseHeading: "Why Choose Our School?",
+                    whyChooseDesc: "We provide an environment where every student can excel through modern facilities and dedicated mentorship.",
+                    featSmart: "Smart Classrooms",
+                    featSmartDesc: "Equipped with cutting-edge interactive technology and high-speed digital resources for modern learning.",
+                    featTeachers: "Qualified Teachers",
+                    featTeachersDesc: "A diverse team of international educators committed to delivering academic excellence and student success.",
+                    featValues: "Islamic Values",
+                    featValuesDesc: "Integrating core Islamic principles and Omani cultural heritage into our daily educational journey.",
+                    featStem: "STEM Education",
+                    featStemDesc: "Focusing on Science, Technology, Engineering, and Math to prepare students for the careers of tomorrow.",
+                    featSports: "Sports Facilities",
+                    featSportsDesc: "World-class athletic facilities including indoor courts and multi-purpose fields for physical development.",
+                    featSafe: "Safe Environment",
+                    featSafeDesc: "A secure, gated campus with 24/7 monitoring and a nurturing atmosphere for student wellbeing.",
+                    campusTag: "Campus Excellence",
+                    campusHeading: "World-Class Facilities",
+                    campusDesc: "Our campus is designed to foster creativity, physical health, and academic excellence through state-of-the-art facilities.",
+                    featured: "FEATURED",
+                    labTitle: "STEM Innovation Lab",
+                    labDesc: "Equipped with high-tech research tools and interactive learning stations.",
+                    labPrice: "ADVANCED",
+                    labStat1: "EQUIPPED",
+                    labStat2: "30 CAPACITY",
+                    labStat3: "SAFE",
+                    sportsTagSmall: "PROFESSIONAL",
+                    sportsTitle: "Olympic Complex",
+                    sportsDesc: "Multi-purpose athletic arena with professional-grade courts and safety gear.",
+                    sportsStatus: "INDOOR",
+                    sportsStat1: "PROFESSIONAL",
+                    sportsStat2: "CERTIFIED",
+                    sportsStat3: "HEALTHY",
+                    libraryTagSmall: "SMART HUB",
+                    libraryTitle: "Digital Hub",
+                    libraryDesc: "A futuristic learning space with vast digital archives and quiet reading zones.",
+                    libraryStatus: "24/7",
+                    libraryStat1: "DIGITAL",
+                    libraryStat2: "HI-SPEED",
+                    libraryStat3: "ASSISTED",
+                    facilitiesTag: "CAMPUS INFRASTRUCTURE",
+                    facilitiesHeading: "World-Class Facilities",
+                    facScience: "Science Labs",
+                    facScienceDesc: "Advanced research environments for physics, chemistry, and biology.",
+                    facComputer: "Computer Labs",
+                    facComputerDesc: "High-speed digital hubs with modern workstations.",
+                    facLibrary: "Central Library",
+                    facMosque: "Prayer Area",
+                    facMosqueDesc: "Mosque",
+                    facSports: "Sports Complex",
+                    facTransport: "Safe Transport",
+                    facCafeteria: "Healthy Cafeteria",
+                    reviewsTag: "COMMUNITY FEEDBACK",
+                    reviewsHeading: "What Our Community Says.",
+                    ratingCount: "46 Ratings",
+                    lastMonth: "Last Month",
+                    review1Text: "Ibri Private School provides an exceptional environment for my children. The teachers are dedicated and the facilities are truly world-class.",
+                    review1Name: "Sarah Al-Busaidi",
+                    review2Text: "The integration of Islamic values with a modern curriculum is what makes this school unique. Highly recommended for parents in Ibri.",
+                    review2Name: "Ahmed Al-Jabri",
+                    review3Text: "My son's progress in STEM subjects has been remarkable since joining. The lab facilities are better than most schools in the region.",
+                    review3Name: "Laila Al-Hinai",
+                    review4Text: "Excellent school with a focus on holistic development. The extracurricular activities are diverse and engaging for all age groups.",
+                    review4Name: "Mohammed Al-Balushi",
+                    review5Text: "The school management is very responsive and cares about parent feedback. We feel our children are in very safe hands.",
+                    review5Name: "Fatma Al-Maamari",
+                    review6Text: "Academic excellence combined with character building. My daughter has grown so much in her confidence and knowledge here.",
+                    review6Name: "Salim Al-Farsi"
+                },
+                ar: {
+                    schoolNameMain: "مدرسة عبري الخاصة",
+                    schoolNameSub: "Ibri Private School",
+                    home: "الرئيسية",
+                    about: "عن المدرسة",
+                    admissions: "القبول والتسجيل",
+                    explore: "استكشف",
+                    academics: "الشؤون الأكاديمية",
+                    studentLife: "الحياة الطلابية",
+                    news: "الأخبار والفعاليات",
+                    gallery: "معرض الصور",
+                    contact: "اتصل بنا",
+                    contactBtn: "تواصل معنا",
+                    admissionBtn: "سجل الآن",
+                    selectLang: "اختر اللغة",
+                    heroTag: "مرحباً بكم في التميز",
+                    heroHeading: "بناء قادة المستقبل من خلال تعليم متميز",
+                    heroMission: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم عالمي دائم التغير.",
+                    applyNow: "سجل الآن",
+                    exploreSchool: "استكشف المدرسة",
+                    statYears: "سنوات الخبرة",
+                    statStudents: "طلاب",
+                    statsTag: "تأثيرنا",
+                    statsHeading: "التميز الأكاديمي في كل تفصيل.",
+                    statsDesc: "نحن فخورون بنمونا والمجتمع المتنوع الذي بنيناه على مر السنين، مما يعزز التميز والمواطنة العالمية من خلال نهج تعليمي مخصص.",
+                    statTeachers: "معلمون",
+                    statExperience: "سنوات الخبرة",
+                    statNationalities: "جنسيات",
+                    statSuccess: "نسبة النجاح",
+                    statActivities: "الأنشطة",
+                    statStudentsShort: "طلاب",
+                    statSuccessShort: "نجاح",
+                    statTeachersShort: "معلمون",
+                    statExpShort: "سنوات",
+                    statActivitiesShort: "أنشطة",
+                    statNatShort: "جنسيات",
+                    messageTag: "رسالة القيادة",
+                    principalHeading: "رسالة من المديرة",
+                    principalMsg1: "في مدرسة عبري الخاصة، نحن ملتزمون بتنمية إمكانات كل طفل من خلال نهج متوازن بين التميز الأكاديمي وتطوير الشخصية.",
+                    principalMsg2: "هدفنا هو خلق مجتمع من المتعلمين مدى الحياة المجهزين بالمهارات والقيم اللازمة للازدهار في بيئة عالمية دائمة التغير.",
+                    principalName: "د. فاطمة البلوشي",
+                    principalTitle: "مديرة المدرسة / الإدارة",
+                    statExpLong: "سنوات من القيادة التعليمية",
+                    statSatisfaction: "رضا الطلاب وأولياء الأمور",
+                    statExp: "سنوات من التميز",
+                    whyChooseTag: "التميز في عبري",
+                    whyChooseHeading: "لماذا تختار مدرستنا؟",
+                    whyChooseDesc: "نحن نوفر بيئة يمكن لكل طالب فيها التفوق من خلال مرافق حديثة وتوجيه مخصص.",
+                    featSmart: "فصول دراسية ذكية",
+                    featSmartDesc: "مجهزة بأحدث التقنيات التفاعلية والموارد الرقمية عالية السرعة للتعلم الحديث.",
+                    featTeachers: "معلمون مؤهلون",
+                    featTeachersDesc: "فريق متنوع من المعلمين الدوليين الملتزمين بتحقيق التميز الأكاديمي ونجاح الطلاب.",
+                    featValues: "قيم إسلامية",
+                    featValuesDesc: "دمج المبادئ الإسلامية الأساسية والتراث الثقافي العماني في رحلتنا التعليمية اليومية.",
+                    featStem: "تعليم STEM",
+                    featStemDesc: "التركيز على العلوم والتكنولوجيا والهندسة والرياضيات لإعداد الطلاب لمهن المستقبل.",
+                    featSports: "مرافق رياضية",
+                    featSportsDesc: "مرافق رياضية عالمية المستوى تشمل ملاعب داخلية وساحات متعددة الأغراض للتطوير البدني.",
+                    featSafe: "بيئة آمنة",
+                    featSafeDesc: "حرم جامعي آمن ومسور مع مراقبة على مدار الساعة طوال أيام الأسبوع وجو رعاية لرفاهية الطلاب.",
+                    campusTag: "تميز الحرم المدرسي",
+                    campusHeading: "مرافق عالمية المستوى",
+                    campusDesc: "تم تصميم حرمنا المدرسي لتعزيز الإبداع والصحة البدنية والتميز الأكاديمي من خلال مرافق حديثة.",
+                    featured: "مميز",
+                    labTitle: "مختبر STEM للابتكار",
+                    labDesc: "مجهز بأدوات بحث عالية التقنية ومحطات تعلم تفاعلية.",
+                    labPrice: "متقدم",
+                    labStat1: "مجهز",
+                    labStat2: "30 سعة",
+                    labStat3: "آمن",
+                    sportsTagSmall: "احترافي",
+                    sportsTitle: "المجمع الأولمبي",
+                    sportsDesc: "ساحة رياضية متعددة الأغراض مع ملاعب احترافية وأدوات سلامة.",
+                    sportsStatus: "داخلي",
+                    sportsStat1: "احترافي",
+                    sportsStat2: "معتمد",
+                    sportsStat3: "صحي",
+                    libraryTagSmall: "مركز ذكي",
+                    libraryTitle: "المركز الرقمي",
+                    libraryDesc: "مساحة تعلم مستقبلية مع أرشيفات رقمية واسعة ومناطق قراءة هادئة.",
+                    libraryStatus: "24/7",
+                    libraryStat1: "رقمي",
+                    libraryStat2: "سرعة عالية",
+                    libraryStat3: "مساعد",
+                    facilitiesTag: "البنية التحتية للحرم المدرسي",
+                    facilitiesHeading: "مرافق عالمية المستوى",
+                    facScience: "مختبرات العلوم",
+                    facScienceDesc: "بيئات بحثية متقدمة للفيزياء والكيمياء والأحياء.",
+                    facComputer: "مختبرات الكمبيوتر",
+                    facComputerDesc: "محاور رقمية عالية السرعة مع محطات عمل حديثة.",
+                    facLibrary: "المكتبة المركزية",
+                    facMosque: "منطقة الصلاة",
+                    facMosqueDesc: "المسجد",
+                    facSports: "المجمع الرياضي",
+                    facTransport: "نقل آمن",
+                    facCafeteria: "كافتيريا صحية",
+                    ctaTag: "انضم إلى مجتمعنا",
+                    ctaHeading: "هل أنت مستعد لبدء رحلة نجاح طفلك؟",
+                    ctaDesc: "سجل طفلك اليوم في مدرسة عبري الخاصة وامنحه الأساس الذي يستحقه. باب التسجيل للعام الدراسي الجديد مفتوح الآن.",
+                    contactUs: "اتصل بنا",
+                    footerAbout: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم دائم التغير من خلال تعليم عالي الجودة.",
+                    quickLinks: "روابط سريعة",
+                    contactInfo: "معلومات الاتصال",
+                    footerAddress: "عبري، محافظة الظاهرة، سلطنة عمان",
+                    copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة.",
+                    reviewsTag: "آراء المجتمع",
+                    reviewsHeading: "ماذا يقول مجتمعنا.",
+                    ratingCount: "46 تقييم",
+                    lastMonth: "الشهر الماضي",
+                    review1Text: "توفر مدرسة عبري الخاصة بيئة استثنائية لأطفالي. المعلمون مخلصون والمرافق عالمية المستوى حقاً.",
+                    review1Name: "سارة البوسعيدية",
+                    review2Text: "إن دمج القيم الإسلامية مع المنهج الحديث هو ما يجعل هذه المدرسة فريدة من نوعها. موصى بها بشدة لأولياء الأمور في عبري.",
+                    review2Name: "أحمد الجابري",
+                    review3Text: "كان تقدم ابني في مواد العلوم والتكنولوجيا والهندسة والرياضيات ملحوظاً منذ انضمامه. مرافق المختبرات أفضل من معظم المدارس في المنطقة.",
+                    review3Name: "ليلى الهنائية",
+                    review4Text: "مدرسة ممتازة تركز على التنمية الشاملة. الأنشطة اللامنهجية متنوعة وممتعة لجميع الفئات العمرية.",
+                    review4Name: "محمد البلوشي",
+                    review5Text: "إدارة المدرسة تستجيب بشكل كبير وتهتم بملاحظات أولياء الأمور. نشعر أن أطفالنا في أيدٍ أمينة جداً.",
+                    review5Name: "فاطمة المعمرية",
+                    review6Text: "التميز الأكاديمي المقترن ببناء الشخصية. لقد نمت ابنتي كثيراً في ثقتها ومعرفتها هنا.",
+                    review6Name: "سالم الفارسي"
                 }
-            });
-        }
+            };
 
-        // Professional Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.remove('pt-3', 'sm:pt-5');
-                header.classList.add('pt-2');
-            } else {
-                header.classList.add('pt-3', 'sm:pt-5');
-                header.classList.remove('pt-2');
+            // RTL & LTR Toggle Logic
+            function toggleLanguage() {
+                const currentDir = document.documentElement.getAttribute('dir');
+                setLanguage(currentDir === 'rtl' ? 'en' : 'ar');
             }
-        });
 
-        // Statistics Bar & Number Animation
-        const statsSection = document.getElementById('stats-visual');
-        const statBars = document.querySelectorAll('.stat-bar-fill');
-        const countElements = document.querySelectorAll('.count-up');
+            function setLanguage(lang) {
+                const htmlTag = document.documentElement;
+                const btnIcon = document.getElementById('btn-icon');
 
-        function animateNumbers() {
-            countElements.forEach(el => {
-                const target = parseInt(el.getAttribute('data-target'));
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
+                if (lang === 'ar') {
+                    htmlTag.setAttribute('dir', 'rtl');
+                    htmlTag.setAttribute('lang', 'ar');
 
-                const update = () => {
-                    current += increment;
-                    if (current < target) {
-                        el.innerText = Math.floor(current);
-                        requestAnimationFrame(update);
-                    } else {
-                        el.innerText = target;
+                    // Desktop Toggle
+                    document.getElementById('lang-ar').classList.replace('text-black/40', 'text-primary');
+                    document.getElementById('lang-en').classList.replace('text-primary', 'text-black/40');
+
+                    // Mobile Toggle
+                    document.getElementById('mob-lang-ar').classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    document.getElementById('mob-lang-ar').classList.remove('text-black/60');
+                    document.getElementById('mob-lang-en').classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    document.getElementById('mob-lang-en').classList.add('text-black/60');
+
+                    // Adjust specific elements for RTL
+                    btnIcon.style.transform = 'scaleX(-1)';
+                } else {
+                    htmlTag.setAttribute('dir', 'ltr');
+                    htmlTag.setAttribute('lang', 'en');
+
+                    // Desktop Toggle
+                    document.getElementById('lang-en').classList.replace('text-black/40', 'text-primary');
+                    document.getElementById('lang-ar').classList.replace('text-primary', 'text-black/40');
+
+                    // Mobile Toggle
+                    document.getElementById('mob-lang-en').classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    document.getElementById('mob-lang-en').classList.remove('text-black/60');
+                    document.getElementById('mob-lang-ar').classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    document.getElementById('mob-lang-ar').classList.add('text-black/60');
+
+                    // Adjust specific elements for LTR
+                    btnIcon.style.transform = 'scaleX(1)';
+                }
+
+                // Apply Translations to all elements
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        el.textContent = translations[lang][key];
                     }
-                };
-                update();
-            });
-        }
+                });
+            }
 
-        const observerOptions = {
-            root: null,
-            threshold: 0.3
-        };
-
-        const statsObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Animate Bars
-                    statBars.forEach(bar => {
-                        const height = bar.getAttribute('data-height');
-                        bar.style.height = height;
-                    });
-                    // Animate Numbers
-                    animateNumbers();
-                    observer.unobserve(entry.target);
+            // Professional Scroll Effect
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 50) {
+                    header.classList.remove('pt-3', 'sm:pt-5');
+                    header.classList.add('pt-2');
+                } else {
+                    header.classList.add('pt-3', 'sm:pt-5');
+                    header.classList.remove('pt-2');
                 }
             });
-        }, observerOptions);
 
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
+            // Statistics Bar & Number Animation
+            const statsSection = document.getElementById('stats-visual');
+            const statBars = document.querySelectorAll('.stat-bar-fill');
+            const countElements = document.querySelectorAll('.count-up');
 
-        // Slider Navigation Logic
-        const sliderContainer = document.getElementById('why-slider-container');
-        const prevBtn = document.getElementById('slider-prev');
-        const nextBtn = document.getElementById('slider-next');
+            function animateNumbers() {
+                countElements.forEach(el => {
+                    const target = parseInt(el.getAttribute('data-target'));
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
 
-        if (sliderContainer && prevBtn && nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                const scrollAmount = window.innerWidth < 768 ? 296 : 352; // card width + gap (280+16 or 320+32)
-                sliderContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            });
+                    const update = () => {
+                        current += increment;
+                        if (current < target) {
+                            el.innerText = Math.floor(current);
+                            requestAnimationFrame(update);
+                        } else {
+                            el.innerText = target;
+                        }
+                    };
+                    update();
+                });
+            }
 
-            prevBtn.addEventListener('click', () => {
-                const scrollAmount = window.innerWidth < 768 ? 296 : 352;
-                sliderContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            });
+            const observerOptions = {
+                root: null,
+                threshold: 0.3
+            };
 
-            // Adjust scroll for RTL if needed
-            // Native scrollBy handles RTL automatically if dir="rtl" is set on html
-        }
-    </script>
+            const statsObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate Bars
+                        statBars.forEach(bar => {
+                            const height = bar.getAttribute('data-height');
+                            bar.style.height = height;
+                        });
+                        // Animate Numbers
+                        animateNumbers();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+
+            // Slider Navigation Logic
+            const sliderContainer = document.getElementById('why-slider-container');
+            const prevBtn = document.getElementById('slider-prev');
+            const nextBtn = document.getElementById('slider-next');
+
+            if (sliderContainer && prevBtn && nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    const scrollAmount = window.innerWidth < 768 ? sliderContainer.offsetWidth : 352;
+                    sliderContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    const scrollAmount = window.innerWidth < 768 ? sliderContainer.offsetWidth : 352;
+                    sliderContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+            }
+
+            // Reviews Section Fade-in Logic
+            const reviewsSection = document.getElementById('reviews');
+            if (reviewsSection) {
+                const reviewsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            reviewsSection.classList.remove('opacity-0', 'translate-y-10');
+                            reviewsSection.classList.add('opacity-100', 'translate-y-0');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                reviewsObserver.observe(reviewsSection);
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
+                const openMenu = () => {
+                    mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+                    mobileMenu.classList.add('translate-x-0', 'opacity-100', 'visible');
+                    document.body.style.overflow = 'hidden';
+                };
+
+                const closeMenu = () => {
+                    mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
+                    mobileMenu.classList.remove('translate-x-0', 'opacity-100', 'visible');
+                    document.body.style.overflow = '';
+                };
+
+                mobileMenuBtn.addEventListener('click', openMenu);
+                closeMenuBtn.addEventListener('click', closeMenu);
+
+                // Explore Toggle
+                const exploreToggle = document.getElementById('mobile-explore-toggle');
+                const exploreMenu = document.getElementById('mobile-explore-menu');
+                const exploreChevron = document.getElementById('explore-chevron');
+
+                if (exploreToggle && exploreMenu) {
+                    exploreToggle.addEventListener('click', () => {
+                        const isOpen = !exploreMenu.classList.contains('max-h-0');
+                        if (isOpen) {
+                            exploreMenu.classList.add('max-h-0', 'opacity-0', 'invisible');
+                            exploreMenu.classList.remove('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
+                            exploreChevron.classList.remove('rotate-180');
+                        } else {
+                            exploreMenu.classList.remove('max-h-0', 'opacity-0', 'invisible');
+                            exploreMenu.classList.add('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
+                            exploreChevron.classList.add('rotate-180');
+                        }
+                    });
+                }
+
+                // Close menu when clicking a link (except toggle)
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
+        </script>
 </body>
 
 </html>
