@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Header</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Cairo for excellent Arabic and English support) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#3fa394',
+                        },
+                        secondary: {
+                            DEFAULT: '#ffd505',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Mobile menu smooth expansion */
+        #mobile-menu {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(-10px);
+            visibility: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 600px;
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        /* Glassmorphism effect for the navbar background */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        /* MODERN CARD DESIGN - Premium & Advanced */
+        .academic-card-modern {
+            background: white;
+            border-radius: 28px;
+            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .academic-card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(63,163,148,0.03) 0%, rgba(255,213,5,0.03) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .academic-card-modern:hover::before {
+            opacity: 1;
+        }
+        
+        .academic-card-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
+            border-color: rgba(63,163,148,0.2);
+        }
+        
+        .card-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(63,163,148,0.1) 0%, rgba(255,213,5,0.1) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+        
+        .academic-card-modern:hover .card-icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #3fa394 0%, #ffd505 100%);
+        }
+        
+        .academic-card-modern:hover .card-icon-wrapper i {
+            color: white !important;
+        }
+        
+        /* Progress bar - clean teal color only */
+        .progress-bar-clean {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill-clean {
+            height: 100%;
+            background: #3fa394;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1.8s cubic-bezier(0.22, 0.97, 0.36, 1);
+        }
+        
+        /* Stat cards */
+        .stat-card-modern {
+            background: white;
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-card-modern:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.1);
+            border-color: rgba(63,163,148,0.3);
+        }
+        
+        /* Section reveal animation */
+        [data-aos] {
+            transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* Facility item */
+        .facility-item {
+            transition: all 0.3s ease;
+        }
+        
+        .facility-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .facility-item:hover .facility-icon {
+            background: #3fa394;
+            color: white;
+        }
+        
+        .facility-icon {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-white min-h-screen text-black">
+
+    <!-- YOUR EXACT NAVBAR (unchanged) -->
+    <header class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
+        <nav class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+                <div class="h-9 w-9 md:h-11 md:w-11 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shrink-0 shadow-sm">
+                    <img src="./Asstes/school logo.jpeg" alt="School Logo" class="h-full w-full object-contain rounded-lg">
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h1 data-i18n="schoolNameMain" class="text-[13px] md:text-[15px] font-extrabold leading-tight text-black tracking-tight group-hover:text-primary transition-colors">Ibri Private School</h1>
+                    <h2 data-i18n="schoolNameSub" class="text-[11px] md:text-[12px] font-bold leading-tight text-black/60 group-hover:text-secondary transition-colors mt-[1px]">مدرسة عبري الخاصة</h2>
+                </div>
+            </a>
+
+            <ul class="hidden xl:flex flex-1 justify-center items-center gap-5 2xl:gap-10">
+                <li><a href="index.html" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="home">Home</span></a></li>
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="about">About School</span></a></li>
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-user-plus text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="admissions">Admissions</span></a></li>
+                <li class="relative group py-2">
+                    <button class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors focus:outline-none"><i class="fa-solid fa-layer-group text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="explore">Explore</span><i class="fa-solid fa-chevron-down ms-1.5 text-[9px] text-black/40 group-hover:text-primary transition-transform duration-300 group-hover:rotate-180"></i></button>
+                    <div class="absolute start-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-3 group-hover:translate-y-0 z-50">
+                        <div class="p-2 flex flex-col gap-1">
+                            <a href="academics.html" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
+                                <i class="fa-solid fa-book-open w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="academics">Academics</span></a>
+                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="studentLife">Student Life</span></a>
+                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-calendar-days w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="news">News & Events</span></a>
+                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-images w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="gallery">Gallery</span></a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-envelope text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="contact">Contact Us</span></a></li>
+            </ul>
+
+            <div class="flex items-center gap-3 md:gap-5 shrink-0 justify-end">
+                <button onclick="toggleLanguage()" class="hidden md:flex items-center gap-1 text-[12px] font-bold text-black/80 hover:bg-black/5 px-2.5 py-1.5 rounded-lg transition-colors border border-transparent hover:border-black/10">
+                    <i class="fa-solid fa-globe text-black/40 me-0.5"></i>
+                    <span id="lang-ar" class="uppercase text-black/40 transition-colors">AR</span>
+                    <span class="text-black/20 font-normal">|</span>
+                    <span id="lang-en" class="uppercase text-primary transition-colors">EN</span>
+                </button>
+                <a href="#" class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span data-i18n="contactBtn">Contact</span></a>
+                <a href="#" class="bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] flex items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap"><span data-i18n="admissionBtn">Admission</span><i id="btn-icon" class="fa-solid fa-rocket text-white/90 group-hover:text-black transition-colors text-[12px]"></i></a>
+                <button id="mobile-menu-btn" class="xl:hidden flex items-center justify-center h-10 w-10 md:h-11 md:w-11 rounded-xl bg-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 border border-black/10"><i class="fa-solid fa-bars text-lg"></i></button>
+            </div>
+
+            <div id="mobile-menu" class="absolute top-full start-0 end-0 mt-3 bg-white rounded-2xl shadow-xl border border-black/10 xl:hidden z-50">
+                <div class="p-3 sm:p-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors"><div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40"><i class="fa-solid fa-house"></i></div><span data-i18n="home">Home</span></a>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors"><div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40"><i class="fa-solid fa-building-columns"></i></div><span data-i18n="about">About School</span></a>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors"><div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40"><i class="fa-solid fa-book-open"></i></div><span data-i18n="academics">Academics</span></a>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors"><div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40"><i class="fa-solid fa-user-plus"></i></div><span data-i18n="admissions">Admissions</span></a>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors"><div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40"><i class="fa-solid fa-users"></i></div><span data-i18n="studentLife">Student Life</span></a>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors"><div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40"><i class="fa-solid fa-calendar-days"></i></div><span data-i18n="news">News & Events</span></a>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors"><div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40"><i class="fa-solid fa-images"></i></div><span data-i18n="gallery">Gallery</span></a>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors"><div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40"><i class="fa-solid fa-envelope"></i></div><span data-i18n="contact">Contact Us</span></a>
+                    <div class="border-t border-black/10 my-2"></div>
+                    <div class="flex items-center justify-between p-3 md:hidden"><span class="font-bold text-black/80 text-[14px]" data-i18n="selectLang">Select Language</span><div class="flex items-center gap-2 bg-black/5 p-1 rounded-lg"><button onclick="setLanguage('ar')" id="mob-lang-ar" class="px-4 py-1.5 text-xs font-bold rounded-md transition-colors text-black/60 hover:text-black">AR</button><button onclick="setLanguage('en')" id="mob-lang-en" class="px-4 py-1.5 text-xs font-bold rounded-md bg-white shadow-sm text-primary transition-colors">EN</button></div></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========== ACADEMICS PAGE CONTENT ========== -->
+    <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-12">
+
+        <!-- YOUR EXACT HERO SECTION - UNCHANGED -->
+        <section class="text-center mb-16 md:mb-24" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 bg-secondary/20 border  border-secondary/30 px-4 py-2 rounded-full mb-6">
+                <i class="fa-solid fa-graduation-cap text-primary text-sm"></i>
+                <span class="text-primary font-semibold text-sm uppercase tracking-wide" data-i18n="academicsTag">Academic Excellence</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-black mb-6 leading-tight">
+                Shape Your Future<br>
+                <span class="text-primary">With World-Class Education</span>
+            </h1>
+            <p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto" data-i18n="academicsHeroText">
+                Ibri Private School offers a rigorous, innovative curriculum that prepares students for global success while honoring local values.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center mt-8">
+                <a href="#" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-semibold transition-all transform hover:scale-105 inline-flex items-center gap-2 shadow-md"><i class="fa-solid fa-download"></i> <span data-i18n="brochureBtn">Download Brochure</span></a>
+                <a href="#" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-full font-semibold transition-all inline-flex items-center gap-2"><i class="fa-solid fa-calendar-check"></i> <span data-i18n="tourBtn">Virtual Tour</span></a>
+            </div>
+        </section>
+
+        <!-- MODERN STATS SECTION -->
+<section class="grid grid-cols-4 gap-3 md:gap-6 mb-10 md:mb-20">
+
+    <!-- CARD -->
+    <div
+        class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2"
+        data-aos="zoom-in"
+        data-aos-delay="0">
+
+        <!-- Glow -->
+        <div
+            class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500">
+        </div>
+
+        <!-- Icon -->
+        <div
+            class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+
+            <i
+                class="fa-solid fa-chalkboard-user text-lg md:text-3xl text-primary group-hover:text-white transition duration-500"></i>
+        </div>
+
+        <!-- Number -->
+        <h3
+            class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
+
+            <span class="counter text-primary" data-target="52">0</span>
+
+            <span class="text-secondary text-sm md:text-2xl">+</span>
+        </h3>
+
+        <!-- Text -->
+        <p
+            class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight"
+            data-i18n="statFaculty">
+            Expert Faculty
+        </p>
+    </div>
+
+    <!-- CARD -->
+    <div
+        class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2"
+        data-aos="zoom-in"
+        data-aos-delay="100">
+
+        <div
+            class="absolute top-0 right-0 w-20 h-20 bg-secondary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500">
+        </div>
+
+        <div
+            class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
+
+            <i
+                class="fa-solid fa-user-graduate text-lg md:text-3xl text-black group-hover:text-black transition duration-500"></i>
+        </div>
+
+        <h3
+            class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
+
+            <span class="counter text-primary" data-target="1250">0</span>
+
+            <span class="text-secondary text-sm md:text-2xl">+</span>
+        </h3>
+
+        <p
+            class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight"
+            data-i18n="statStudents">
+            Students
+        </p>
+    </div>
+
+    <!-- CARD -->
+    <div
+        class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2"
+        data-aos="zoom-in"
+        data-aos-delay="200">
+
+        <div
+            class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500">
+        </div>
+
+        <div
+            class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+
+            <i
+                class="fa-solid fa-award text-lg md:text-3xl text-primary group-hover:text-white transition duration-500"></i>
+        </div>
+
+        <h3
+            class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
+
+            <span class="counter text-primary" data-target="98">0</span>
+
+            <span class="text-secondary text-sm md:text-2xl">%</span>
+        </h3>
+
+        <p
+            class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight"
+            data-i18n="statGraduation">
+            Graduation
+        </p>
+    </div>
+
+    <!-- CARD -->
+    <div
+        class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2"
+        data-aos="zoom-in"
+        data-aos-delay="300">
+
+        <div
+            class="absolute top-0 right-0 w-20 h-20 bg-secondary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500">
+        </div>
+
+        <div
+            class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
+
+            <i
+                class="fa-solid fa-globe text-lg md:text-3xl text-black group-hover:text-black transition duration-500"></i>
+        </div>
+
+        <h3
+            class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
+
+            <span class="counter text-primary" data-target="18">0</span>
+
+            <span class="text-secondary text-sm md:text-2xl">+</span>
+        </h3>
+
+        <p
+            class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight"
+            data-i18n="statNationalities">
+            Nations
+        </p>
+    </div>
+
+</section>
+
+        <!-- PREMIUM SCHOOL PROGRAM CARDS - MATCHING NAVBAR COLORS -->
+<section class=" bg-gradient-to-b from-white to-primary/5">
+
+    <!-- Heading -->
+    <div class="text-center mb-14" data-aos="fade-up">
+        <span
+            class="inline-flex items-center gap-2 bg-secondary/20 text-black text-sm font-bold px-5 py-2 rounded-full mb-5 border border-secondary/30">
+            <i class="fa-solid fa-graduation-cap text-primary"></i>
+            Academic Excellence
+        </span>
+
+        <h2 class="text-3xl md:text-5xl font-black text-black mb-4">
+            Our Academic <span class="text-primary">Programs</span>
+        </h2>
+
+        <p class="text-black/60 max-w-2xl mx-auto leading-relaxed">
+            Discover world-class learning pathways designed to inspire creativity,
+            innovation, leadership, and lifelong success.
+        </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div
+            class="group bg-white rounded-[32px] overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+
+            <!-- Top Image -->
+            <div class="relative h-56 overflow-hidden">
+
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+
+                <!-- Floating Badge -->
+                <div
+                    class="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[12px] font-bold text-primary shadow-lg">
+                    STEM Program
+                </div>
+
+                <!-- Bookmark -->
+                <button
+                    class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
+                    <i class="fa-regular fa-bookmark"></i>
+                </button>
+            </div>
+
+            <!-- Content -->
+            <div class="relative px-6 pb-6">
+
+                <!-- Floating Icon -->
+                <div class="-mt-10 mb-5 relative z-10">
+                    <div
+                        class="w-20 h-20 rounded-3xl border-[5px] border-white bg-white shadow-xl flex items-center justify-center group-hover:rotate-6 transition duration-500">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+
+                            <i
+                                class="fa-solid fa-microchip text-2xl text-primary group-hover:text-white transition duration-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h3
+                    class="text-2xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors duration-300">
+                    STEM Innovation
+                </h3>
+
+                <!-- Description -->
+                <p class="text-black/55 text-sm leading-relaxed mb-6">
+                    Advanced robotics, AI learning, science labs, coding workshops,
+                    and engineering pathways for future innovators.
+                </p>
+
+                <!-- Features -->
+                <div class="flex flex-wrap gap-2 mb-6">
+
+                    <span
+                        class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full border border-primary/10">
+                        Robotics
+                    </span>
+
+                    <span
+                        class="bg-secondary/20 text-black text-xs font-bold px-3 py-1.5 rounded-full border border-secondary/20">
+                        AI Labs
+                    </span>
+
+                    <span
+                        class="bg-black/5 text-black/70 text-xs font-bold px-3 py-1.5 rounded-full">
+                        Engineering
+                    </span>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-3 mb-6">
+
+                    <div class="text-center border-r border-black/10">
+                        <h4 class="font-black text-black text-lg">4.9</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Rating</p>
+                    </div>
+
+                    <div class="text-center border-r border-black/10">
+                        <h4 class="font-black text-black text-lg">12+</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Labs</p>
+                    </div>
+
+                    <div class="text-center">
+                        <h4 class="font-black text-primary text-lg">7-12</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Grades</p>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <a href="#"
+                    class="h-12 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg group/btn">
+
+                    Explore Program
+
+                    <i
+                        class="fa-solid fa-arrow-right text-sm group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+            class="group bg-white rounded-[32px] overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+
+            <div class="relative h-56 overflow-hidden">
+
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+
+                <div
+                    class="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[12px] font-bold text-primary shadow-lg">
+                    Language Program
+                </div>
+
+                <button
+                    class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
+                    <i class="fa-regular fa-bookmark"></i>
+                </button>
+            </div>
+
+            <div class="relative px-6 pb-6">
+
+                <div class="-mt-10 mb-5 relative z-10">
+                    <div
+                        class="w-20 h-20 rounded-3xl border-[5px] border-white bg-white shadow-xl flex items-center justify-center">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
+
+                            <i
+                                class="fa-solid fa-language text-2xl text-black group-hover:text-black transition duration-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <h3
+                    class="text-2xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors duration-300">
+                    Bilingual Excellence
+                </h3>
+
+                <p class="text-black/55 text-sm leading-relaxed mb-6">
+                    Arabic and English immersion programs focused on global communication,
+                    literature, and cultural understanding.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span
+                        class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full">English</span>
+
+                    <span
+                        class="bg-secondary/20 text-black text-xs font-bold px-3 py-1.5 rounded-full">Arabic</span>
+
+                    <span
+                        class="bg-black/5 text-black/70 text-xs font-bold px-3 py-1.5 rounded-full">Culture</span>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 mb-6">
+
+                    <div class="text-center border-r border-black/10">
+                        <h4 class="font-black text-black text-lg">4.8</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Rating</p>
+                    </div>
+
+                    <div class="text-center border-r border-black/10">
+                        <h4 class="font-black text-black text-lg">20+</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Activities</p>
+                    </div>
+
+                    <div class="text-center">
+                        <h4 class="font-black text-primary text-lg">1-12</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Grades</p>
+                    </div>
+                </div>
+
+                <a href="#"
+                    class="h-12 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg">
+
+                    Explore Program
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+            class="group bg-white rounded-[32px] overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+
+            <div class="relative h-56 overflow-hidden">
+
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+
+                <div
+                    class="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[12px] font-bold text-primary shadow-lg">
+                    Leadership Program
+                </div>
+
+                <button
+                    class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
+                    <i class="fa-regular fa-bookmark"></i>
+                </button>
+            </div>
+
+            <div class="relative px-6 pb-6">
+
+                <div class="-mt-10 mb-5 relative z-10">
+                    <div
+                        class="w-20 h-20 rounded-3xl border-[5px] border-white bg-white shadow-xl flex items-center justify-center">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+
+                            <i
+                                class="fa-solid fa-chart-line text-2xl text-primary group-hover:text-white transition duration-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <h3
+                    class="text-2xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors duration-300">
+                    Business & Leadership
+                </h3>
+
+                <p class="text-black/55 text-sm leading-relaxed mb-6">
+                    Entrepreneurship, economics, investment simulations, and leadership
+                    development for future global leaders.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span
+                        class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full">Business</span>
+
+                    <span
+                        class="bg-secondary/20 text-black text-xs font-bold px-3 py-1.5 rounded-full">Leadership</span>
+
+                    <span
+                        class="bg-black/5 text-black/70 text-xs font-bold px-3 py-1.5 rounded-full">Economics</span>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 mb-6">
+
+                    <div class="text-center border-r border-black/10">
+                        <h4 class="font-black text-black text-lg">5.0</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Rating</p>
+                    </div>
+
+                    <div class="text-center border-r border-black/10">
+                        <h4 class="font-black text-black text-lg">15+</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Projects</p>
+                    </div>
+
+                    <div class="text-center">
+                        <h4 class="font-black text-primary text-lg">9-12</h4>
+                        <p class="text-[11px] text-black/40 font-semibold">Grades</p>
+                    </div>
+                </div>
+
+                <a href="#"
+                    class="h-12 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg">
+
+                    Explore Program
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        <!-- MODERN FACILITIES SECTION -->
+<section
+    class="relative mb-20 md:mb-28 rounded-[36px] p-6 md:p-12 overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/10 border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.06)]"
+    data-aos="fade-up">
+
+    <!-- Background Glow -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-secondary/20 rounded-full blur-3xl"></div>
+
+    <!-- Heading -->
+    <div class="relative z-10 text-center mb-12">
+
+        <div
+            class="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/20 px-5 py-2 rounded-full shadow-sm mb-5">
+
+            <i class="fa-solid fa-building text-primary text-sm"></i>
+
+            <span class="text-primary font-bold text-sm uppercase tracking-wide">
+                Premium Campus
+            </span>
+        </div>
+
+        <h2 class="text-3xl md:text-5xl font-black text-black mb-4 leading-tight">
+            State-of-the-Art
+            <span class="text-primary relative inline-block">
+                Facilities
+            </span>
+        </h2>
+
+        <p class="text-black/60 max-w-2xl mx-auto leading-relaxed text-xs sm:text-sm md:text-base">
+            Modern learning environments designed to inspire innovation,
+            creativity, collaboration, and student success.
+        </p>
+    </div>
+
+    <!-- Facilities Grid (ALL 4 IN ONE LINE) -->
+    <div class="relative z-10 grid grid-cols-4 gap-2 md:gap-6">
+
+        <!-- ITEM 1 -->
+        <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-3 md:p-7 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+
+            <div class="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:bg-primary transition-all duration-500">
+                <i class="fa-solid fa-microscope text-sm md:text-2xl text-primary group-hover:text-white"></i>
+            </div>
+
+            <h3 class="font-black text-black text-[10px] sm:text-xs md:text-lg mb-1">
+                Science Labs
+            </h3>
+
+            <p class="text-[9px] sm:text-[10px] md:text-sm text-black/50 font-medium">
+                6 labs
+            </p>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-3 md:p-7 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(255,213,5,0.20)] transition-all duration-500 hover:-translate-y-2">
+
+            <div class="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:bg-secondary transition-all duration-500">
+                <i class="fa-solid fa-laptop-code text-sm md:text-2xl text-black"></i>
+            </div>
+
+            <h3 class="font-black text-black text-[10px] sm:text-xs md:text-lg mb-1">
+                Smart Classes
+            </h3>
+
+            <p class="text-[9px] sm:text-[10px] md:text-sm text-black/50 font-medium">
+                Interactive
+            </p>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-3 md:p-7 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+
+            <div class="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:bg-primary transition-all duration-500">
+                <i class="fa-solid fa-book-open text-sm md:text-2xl text-primary group-hover:text-white"></i>
+            </div>
+
+            <h3 class="font-black text-black text-[10px] sm:text-xs md:text-lg mb-1">
+                Library
+            </h3>
+
+            <p class="text-[9px] sm:text-[10px] md:text-sm text-black/50 font-medium">
+                10k+
+            </p>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-3 md:p-7 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(255,213,5,0.20)] transition-all duration-500 hover:-translate-y-2">
+
+            <div class="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:bg-secondary transition-all duration-500">
+                <i class="fa-solid fa-futbol text-sm md:text-2xl text-black"></i>
+            </div>
+
+            <h3 class="font-black text-black text-[10px] sm:text-xs md:text-lg mb-1">
+                Sports
+            </h3>
+
+            <p class="text-[9px] sm:text-[10px] md:text-sm text-black/50 font-medium">
+                Indoor
+            </p>
+        </div>
+
+    </div>
+</section>
+
+        <!-- Academic Achievements with Clean Progress Bars -->
+        <section class="mb-20 md:mb-28" data-aos="fade-up">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-secondary/20 px-4 py-2 rounded-full mb-6">
+                        <i class="fa-solid fa-trophy text-secondary-dark text-sm"></i>
+                        <span class="text-secondary-dark font-semibold text-sm" data-i18n="achievementBadge">Our Pride</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-black mb-4">Academic <span class="text-primary">Achievements</span></h2>
+                    <p class="text-gray-600 mb-6" data-i18n="achievementDesc">We take pride in our students' outstanding accomplishments in academics, competitions, and university placements.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 p-3 bg-primary/5 rounded-xl">
+                            <i class="fa-solid fa-medal text-primary text-xl mt-1"></i>
+                            <div><h4 class="font-bold" data-i18n="achievement1">95% Distinction Rate</h4><p class="text-sm text-gray-500" data-i18n="achievement1Desc">in national standardized assessments</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-secondary/5 rounded-xl">
+                            <i class="fa-solid fa-award text-secondary-dark text-xl mt-1"></i>
+                            <div><h4 class="font-bold" data-i18n="achievement2">Regional Science Fair Winners</h4><p class="text-sm text-gray-500" data-i18n="achievement2Desc">3 consecutive years of gold medals</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-primary/5 rounded-xl">
+                            <i class="fa-solid fa-university text-primary text-xl mt-1"></i>
+                            <div><h4 class="font-bold" data-i18n="achievement3">Top University Acceptances</h4><p class="text-sm text-gray-500" data-i18n="achievement3Desc">Oxford, MIT, NYU Abu Dhabi, and more</p></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Clean Progress Bars - Only teal color -->
+                <div class="bg-gray-50 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center" data-i18n="progressTitle">Performance Metrics</h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="font-semibold" data-i18n="mathScore">Mathematics Excellence</span><span class="text-primary font-bold">92%</span></div>
+                            <div class="progress-bar-clean"><div class="progress-fill-clean" data-width="92"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="font-semibold" data-i18n="scienceScore">Science Achievement</span><span class="text-primary font-bold">89%</span></div>
+                            <div class="progress-bar-clean"><div class="progress-fill-clean" data-width="89"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="font-semibold" data-i18n="langScore">Language Arts</span><span class="text-primary font-bold">94%</span></div>
+                            <div class="progress-bar-clean"><div class="progress-fill-clean" data-width="94"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="font-semibold" data-i18n="uniScore">University Placement</span><span class="text-primary font-bold">97%</span></div>
+                            <div class="progress-bar-clean"><div class="progress-fill-clean" data-width="97"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="ctaTitle">Ready to Begin Your Journey?</h2>
+            <p class="text-white/80 max-w-2xl mx-auto mb-6" data-i18n="ctaText">Join our community of learners and discover your full potential at Ibri Private School.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#" class="bg-secondary text-black hover:bg-secondary-light px-6 py-3 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center gap-2"><i class="fa-solid fa-calendar-check"></i> <span data-i18n="ctaButton1">Schedule a Tour</span></a>
+                <a href="#" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-6 py-3 rounded-full font-bold transition-all inline-flex items-center gap-2"><i class="fa-solid fa-file-alt"></i> <span data-i18n="ctaButton2">Apply Now</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/5 mt-16 py-8 text-center text-gray-500 border-t">
+        <p>© 2025 Ibri Private School — Excellence in Education</p>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-quad'
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const rect = counter.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100 && !counter.classList.contains('animated')) {
+                    counter.classList.add('animated');
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 50;
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            let val = Math.ceil(current);
+                            if (counter.innerHTML.includes('%')) {
+                                counter.innerHTML = val + '<span class="text-xl">%</span>';
+                            } else {
+                                counter.innerText = val;
+                            }
+                            setTimeout(updateCounter, 20);
+                        } else {
+                            if (counter.innerHTML.includes('%')) {
+                                counter.innerHTML = target + '<span class="text-xl">%</span>';
+                            } else {
+                                counter.innerText = target;
+                            }
+                        }
+                    };
+                    updateCounter();
+                }
+            });
+        };
+
+        // Progress Bar Animation - Clean teal only
+        const progressBars = document.querySelectorAll('.progress-fill-clean');
+        const animateProgress = () => {
+            progressBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100 && bar.style.width === '0%' || bar.style.width === '') {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width + '%';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', () => {
+            animateCounters();
+            animateProgress();
+        });
+        window.addEventListener('load', () => {
+            animateCounters();
+            animateProgress();
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const icon = mobileMenuBtn.querySelector('i');
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('open');
+            if (mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('open')) {
+                mobileMenu.classList.remove('open');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Complete Translations with Arabic support
+        const translations = {
+            en: {
+                schoolNameMain: "Ibri Private School",
+                schoolNameSub: "مدرسة عبري الخاصة",
+                home: "Home",
+                about: "About School",
+                admissions: "Admissions",
+                explore: "Explore",
+                academics: "Academics",
+                studentLife: "Student Life",
+                news: "News & Events",
+                gallery: "Gallery",
+                contact: "Contact Us",
+                contactBtn: "Contact",
+                admissionBtn: "Admission",
+                selectLang: "Select Language",
+                academicsTag: "Academic Excellence",
+                academicsHeroText: "Ibri Private School offers a rigorous, innovative curriculum that prepares students for global success while honoring local values.",
+                brochureBtn: "Download Brochure",
+                tourBtn: "Virtual Tour",
+                statFaculty: "Expert Faculty",
+                statStudents: "Active Students",
+                statGraduation: "Graduation Rate",
+                statNationalities: "Nationalities",
+                programsSubtitle: "Discover diverse pathways designed to nurture curiosity and critical thinking",
+                program1Title: "STEM Innovation",
+                program1Desc: "Cutting-edge science, technology, engineering, and math with advanced robotics lab and research opportunities.",
+                grades1: "Grades 7-12",
+                program2Title: "Bilingual Excellence",
+                program2Desc: "Full Arabic & English immersion with literature, poetry, cultural studies, and international exchange programs.",
+                grades2: "Grades 1-12",
+                program3Title: "Business & Leadership",
+                program3Desc: "Entrepreneurship, economics, investment simulations, and leadership skills for future global leaders.",
+                grades3: "Grades 9-12",
+                program4Title: "Creative Arts",
+                program4Desc: "Visual arts, music production, drama theater, creative writing workshops, and annual exhibitions.",
+                grades4: "All Grades",
+                program5Title: "Computer Science",
+                program5Desc: "Coding, AI fundamentals, game development, cybersecurity, and professional certification tracks.",
+                grades5: "Grades 6-12",
+                program6Title: "Health & Wellness",
+                program6Desc: "Sports science, nutrition, mental wellness, competitive athletics, and Olympic-standard facilities.",
+                grades6: "All Grades",
+                facilitiesSubtitle: "Modern learning environments designed to inspire and empower students",
+                facility1: "Science Labs",
+                facility1Desc: "6 specialized labs",
+                facility2: "Smart Classrooms",
+                facility2Desc: "Interactive learning",
+                facility3: "Digital Library",
+                facility3Desc: "10,000+ resources",
+                facility4: "Sports Complex",
+                facility4Desc: "Indoor & outdoor",
+                achievementBadge: "Our Pride",
+                achievementDesc: "We take pride in our students' outstanding accomplishments in academics, competitions, and university placements.",
+                achievement1: "95% Distinction Rate",
+                achievement1Desc: "in national standardized assessments",
+                achievement2: "Regional Science Fair Winners",
+                achievement2Desc: "3 consecutive years of gold medals",
+                achievement3: "Top University Acceptances",
+                achievement3Desc: "Oxford, MIT, NYU Abu Dhabi, and more",
+                progressTitle: "Performance Metrics",
+                mathScore: "Mathematics Excellence",
+                scienceScore: "Science Achievement",
+                langScore: "Language Arts",
+                uniScore: "University Placement",
+                ctaTitle: "Ready to Begin Your Journey?",
+                ctaText: "Join our community of learners and discover your full potential at Ibri Private School.",
+                ctaButton1: "Schedule a Tour",
+                ctaButton2: "Apply Now"
+            },
+            ar: {
+                schoolNameMain: "مدرسة عبري الخاصة",
+                schoolNameSub: "Ibri Private School",
+                home: "الرئيسية",
+                about: "عن المدرسة",
+                admissions: "القبول",
+                explore: "استكشف",
+                academics: "الأكاديميا",
+                studentLife: "الحياة الطلابية",
+                news: "الأخبار",
+                gallery: "المعرض",
+                contact: "اتصل بنا",
+                contactBtn: "تواصل",
+                admissionBtn: "سجل الآن",
+                selectLang: "اختر اللغة",
+                academicsTag: "التميز الأكاديمي",
+                academicsHeroText: "تقدم مدرسة عبري الخاصة منهجاً دراسياً مبتكراً يعد الطلاب للنجاح العالمي مع الحفاظ على القيم المحلية.",
+                brochureBtn: "تحميل البروشور",
+                tourBtn: "جولة افتراضية",
+                statFaculty: "هيئة تدريس",
+                statStudents: "طلاب نشطاء",
+                statGraduation: "نسبة التخرج",
+                statNationalities: "جنسيات",
+                programsSubtitle: "اكتشف مسارات تعليمية متنوعة مصممة لتنمية الفضول والتفكير النقدي",
+                program1Title: "ابتكار STEM",
+                program1Desc: "العلوم والتكنولوجيا والهندسة والرياضيات مع مختبر روبوتات متقدم وفرص بحثية.",
+                grades1: "الصفوف 7-12",
+                program2Title: "التميز في ثنائية اللغة",
+                program2Desc: "اندماج كامل باللغتين العربية والإنجليزية مع الأدب والشعر والدراسات الثقافية وبرامج التبادل الدولي.",
+                grades2: "الصفوف 1-12",
+                program3Title: "الأعمال والقيادة",
+                program3Desc: "ريادة الأعمال والاقتصاد ومحاكاة الاستثمار ومهارات القيادة لقادة العالم في المستقبل.",
+                grades3: "الصفوف 9-12",
+                program4Title: "الفنون الإبداعية",
+                program4Desc: "الفنون البصرية وإنتاج الموسيقى والمسرح وورش الكتابة الإبداعية والمعارض السنوية.",
+                grades4: "جميع الصفوف",
+                program5Title: "علوم الحاسوب",
+                program5Desc: "البرمجة وأساسيات الذكاء الاصطناعي وتطوير الألعاب والأمن السيبراني وشهادات احترافية.",
+                grades5: "الصفوف 6-12",
+                program6Title: "الصحة والعافية",
+                program6Desc: "علوم الرياضة والتغذية والصحة النفسية والرياضات التنافسية ومرافق ذات مستوى أولمبي.",
+                grades6: "جميع الصفوف",
+                facilitiesSubtitle: "بيئات تعليمية حديثة مصممة لإلهام وتمكين الطلاب",
+                facility1: "المختبرات العلمية",
+                facility1Desc: "6 مختبرات متخصصة",
+                facility2: "الفصول الذكية",
+                facility2Desc: "تعلم تفاعلي",
+                facility3: "المكتبة الرقمية",
+                facility3Desc: "أكثر من 10,000 مصدر",
+                facility4: "المجمع الرياضي",
+                facility4Desc: "داخلي وخارجي",
+                achievementBadge: "فخرنا",
+                achievementDesc: "نفتخر بإنجازات طلابنا المتميزة في الأكاديميا والمسابقات والالتحاق بالجامعات.",
+                achievement1: "95% نسبة التميز",
+                achievement1Desc: "في التقييمات الوطنية الموحدة",
+                achievement2: "أبطال المعرض العلمي الإقليمي",
+                achievement2Desc: "3 سنوات متتالية من الميداليات الذهبية",
+                achievement3: "قبولات في أفضل الجامعات",
+                achievement3Desc: "أكسفورد، معهد ماساتشوستس للتكنولوجيا، نيويورك أبوظبي والمزيد",
+                progressTitle: "مقاييس الأداء",
+                mathScore: "التميز في الرياضيات",
+                scienceScore: "الإنجاز العلمي",
+                langScore: "اللغات",
+                uniScore: "الالتحاق بالجامعات",
+                ctaTitle: "مستعد لبدء رحلتك؟",
+                ctaText: "انضم إلى مجتمع المتعلمين واكتشف إمكاناتك الكاملة في مدرسة عبري الخاصة.",
+                ctaButton1: "جدولة جولة",
+                ctaButton2: "قدم الآن"
+            }
+        };
+
+        function setLanguage(lang) {
+            const htmlTag = document.documentElement;
+            const btnIcon = document.getElementById('btn-icon');
+
+            if (lang === 'ar') {
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+                const langAr = document.getElementById('lang-ar');
+                const langEn = document.getElementById('lang-en');
+                if (langAr && langEn) {
+                    langAr.classList.replace('text-black/40', 'text-primary');
+                    langEn.classList.replace('text-primary', 'text-black/40');
+                }
+                const mobLangAr = document.getElementById('mob-lang-ar');
+                const mobLangEn = document.getElementById('mob-lang-en');
+                if (mobLangAr && mobLangEn) {
+                    mobLangAr.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangAr.classList.remove('text-black/60');
+                    mobLangEn.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangEn.classList.add('text-black/60');
+                }
+                if (btnIcon) btnIcon.style.transform = 'scaleX(-1)';
+            } else {
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'en');
+                const langEn = document.getElementById('lang-en');
+                const langAr = document.getElementById('lang-ar');
+                if (langEn && langAr) {
+                    langEn.classList.replace('text-black/40', 'text-primary');
+                    langAr.classList.replace('text-primary', 'text-black/40');
+                }
+                const mobLangEn = document.getElementById('mob-lang-en');
+                const mobLangAr = document.getElementById('mob-lang-ar');
+                if (mobLangEn && mobLangAr) {
+                    mobLangEn.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangEn.classList.remove('text-black/60');
+                    mobLangAr.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangAr.classList.add('text-black/60');
+                }
+                if (btnIcon) btnIcon.style.transform = 'scaleX(1)';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        function toggleLanguage() {
+            const currentDir = document.documentElement.getAttribute('dir');
+            setLanguage(currentDir === 'rtl' ? 'en' : 'ar');
+        }
+
+        setLanguage('en');
+    </script>
+</body>
+
+</html>
