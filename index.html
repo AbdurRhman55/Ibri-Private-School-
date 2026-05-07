@@ -59,12 +59,22 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
         }
+
+        /* Hide scrollbar for slider */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 
 <body class="bg-white min-h-screen text-black">
 
-    <header
+    <header id="main-header"
         class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
 
         <nav
@@ -133,7 +143,8 @@
                             </a>
                             <a href="#"
                                 class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
-                                <i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i> <span data-i18n="studentLife">Student Life</span>
+                                <i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i> <span
+                                    data-i18n="studentLife">Student Life</span>
                             </a>
                             <a href="#"
                                 class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
@@ -171,7 +182,8 @@
                 </button>
 
                 <a href="#"
-                    class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span data-i18n="contactBtn">Contact</span></a>
+                    class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span
+                        data-i18n="contactBtn">Contact</span></a>
 
                 <a href="#"
                     class="bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] flex items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap">
@@ -265,6 +277,748 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[565px] w-full overflow-hidden flex items-center -mt-[88px] sm:-mt-[104px]">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="./Asstes/school image.jpeg" alt="School Building" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full relative z-10 pt-24">
+            <div class="max-w-3xl">
+
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6"
+                    data-i18n="heroHeading">
+                    Building Future Leaders Through Quality Education
+                </h1>
+
+                <p class="text-lg md:text-xl text-white/80 font-medium mb-10 max-w-2xl leading-relaxed"
+                    data-i18n="heroMission">
+                    Empowering students with knowledge, character, and skills to excel in an ever-changing global world.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#"
+                        class="bg-primary hover:bg-secondary text-white hover:text-black px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-primary/30 flex items-center gap-3 group">
+                        <span data-i18n="applyNow">Apply Now</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+
+                    <a href="#"
+                        class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3">
+                        <span data-i18n="exploreSchool">Explore School</span>
+                        <i class="fa-solid fa-circle-play"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section (Compact Professional) -->
+    <section class="py-8 px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto bg-white overflow-hidden w-full">
+        <div class="grid lg:grid-cols-2 md:gap-16 gap-4 lg:gap-24 items-center">
+
+            <!-- left side -->
+            <div class="relative group w-full max-w-[600px] mx-auto lg:mx-0">
+                <div
+                    class="absolute -top-12 -left-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10 group-hover:bg-primary/10 transition-colors">
+                </div>
+                <div
+                    class="absolute -bottom-12 -right-12 w-48 h-48 bg-secondary/5 rounded-full blur-3xl -z-10 group-hover:bg-secondary/10 transition-colors">
+                </div>
+
+                <div class="flex gap-4 items-end">
+                    <div
+                        class="flex flex-col justify-between h-[280px] md:h-[400px] pb-6 md:pb-10 text-[10px] font-bold text-black/20 text-right w-6 shrink-0">
+                        <span>100</span>
+                        <span>75</span>
+                        <span>50</span>
+                        <span>25</span>
+                        <span>0</span>
+                    </div>
+
+                    <div id="stats-visual"
+                        class="flex-1 flex justify-between items-end h-[280px] md:h-[400px] bg-black/[0.01] rounded-[30px] p-4 md:p-8 border border-black/[0.03] backdrop-blur-sm relative overflow-hidden">
+                        <!-- Precise Grid Lines -->
+                        <div class="absolute inset-x-0 top-0 h-[1px] bg-black/[0.04]"></div>
+                        <div class="absolute inset-x-0 top-1/4 h-[1px] bg-black/[0.04]"></div>
+                        <div class="absolute inset-x-0 top-2/4 h-[1px] bg-black/[0.04]"></div>
+                        <div class="absolute inset-x-0 top-3/4 h-[1px] bg-black/[0.04]"></div>
+                        <div class="absolute inset-x-0 bottom-[35px] h-[1px] bg-black/[0.08]"></div>
+
+                        <!-- Bars (Taller, Staggered & Gradient) -->
+                        <div class="flex flex-col items-center gap-4 h-full justify-end group/bar relative z-10 w-full">
+                            <div class="w-4 sm:w-5 h-full bg-black/[0.03] rounded-t-lg relative overflow-hidden">
+                                <div class="stat-bar-fill absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-primary to-primary/80 rounded-t-lg transition-all duration-[1500ms] ease-out shadow-lg shadow-primary/20"
+                                    data-height="95%"></div>
+                            </div>
+                            <span class="text-[8px] font-black text-black/30 tracking-tighter uppercase"
+                                data-i18n="statStudentsShort">STUDENTS</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-4 h-full justify-end group/bar relative z-10 w-full">
+                            <div class="w-4 sm:w-5 h-full bg-black/[0.03] rounded-t-lg relative overflow-hidden">
+                                <div class="stat-bar-fill absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-secondary to-secondary/80 rounded-t-lg transition-all duration-[1500ms] delay-100 ease-out shadow-lg shadow-secondary/20"
+                                    data-height="90%"></div>
+                            </div>
+                            <span class="text-[8px] font-black text-black/30 tracking-tighter uppercase"
+                                data-i18n="statSuccessShort">SUCCESS</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-4 h-full justify-end group/bar relative z-10 w-full">
+                            <div class="w-4 sm:w-5 h-full bg-black/[0.03] rounded-t-lg relative overflow-hidden">
+                                <div class="stat-bar-fill absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-black/80 to-black/60 rounded-t-lg transition-all duration-[1500ms] delay-200 ease-out"
+                                    data-height="70%"></div>
+                            </div>
+                            <span class="text-[8px] font-black text-black/30 tracking-tighter uppercase"
+                                data-i18n="statTeachersShort">TEACHERS</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-4 h-full justify-end group/bar relative z-10 w-full">
+                            <div class="w-4 sm:w-5 h-full bg-black/[0.03] rounded-t-lg relative overflow-hidden">
+                                <div class="stat-bar-fill absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-primary/60 to-primary/40 rounded-t-lg transition-all duration-[1500ms] delay-300 ease-out"
+                                    data-height="55%"></div>
+                            </div>
+                            <span class="text-[8px] font-black text-black/30 tracking-tighter uppercase"
+                                data-i18n="statExpShort">YEARS</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-4 h-full justify-end group/bar relative z-10 w-full">
+                            <div class="w-4 sm:w-5 h-full bg-black/[0.03] rounded-t-lg relative overflow-hidden">
+                                <div class="stat-bar-fill absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-secondary/60 to-secondary/40 rounded-t-lg transition-all duration-[1500ms] delay-400 ease-out"
+                                    data-height="45%"></div>
+                            </div>
+                            <span class="text-[8px] font-black text-black/30 tracking-tighter uppercase"
+                                data-i18n="statActivitiesShort">CLUBS</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-4 h-full justify-end group/bar relative z-10 w-full">
+                            <div class="w-4 sm:w-5 h-full bg-black/[0.03] rounded-t-lg relative overflow-hidden">
+                                <div class="stat-bar-fill absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-black/20 to-black/10 rounded-t-lg transition-all duration-[1500ms] delay-500 ease-out"
+                                    data-height="30%"></div>
+                            </div>
+                            <span class="text-[8px] font-black text-black/30 tracking-tighter uppercase"
+                                data-i18n="statNatShort">NATIONS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Clean Professional Statistics Content -->
+            <div class="w-full lg:pl-12">
+                <div class="mb-10 text-center md:text-start">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-4"
+                        data-i18n="statsTag">OUR IMPACT</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-black leading-[1.1] mb-4 tracking-tight"
+                        data-i18n="statsHeading">
+                        Academic Excellence <br /> <span class="text-primary">In Every Detail.</span>
+                    </h2>
+                    <p class="text-black/50 font-medium leading-relaxed max-w-xl text-base" data-i18n="statsDesc">
+                        We take pride in our growth and the diverse community we've built over the years, fostering
+                        excellence and global citizenship.
+                    </p>
+                </div>
+
+                <!-- Refined Stat Grid -->
+                <div class="grid grid-cols-3 sm:grid-cols-3 gap-x-12 gap-y-8 text-center md:text-start">
+                    <div class="flex flex-col gap-0.5 group">
+                        <span
+                            class="text-3xl font-bold text-black group-hover:text-primary transition-colors duration-300 tracking-tighter"><span
+                                class="count-up" data-target="1200">0</span><span
+                                class="text-primary text-xl ml-0.5">+</span></span>
+                        <span class="text-[8px] font-black text-black/20 uppercase tracking-[0.2em]"
+                            data-i18n="statStudents">Students</span>
+                    </div>
+                    <!-- Stat Item -->
+                    <div class="flex flex-col gap-0.5 group">
+                        <span
+                            class="text-3xl font-bold text-black group-hover:text-secondary transition-colors duration-300 tracking-tighter"><span
+                                class="count-up" data-target="98">0</span><span
+                                class="text-secondary text-xl ml-0.5">%</span></span>
+                        <span class="text-[8px] font-black text-black/20 uppercase tracking-[0.2em]"
+                            data-i18n="statSuccess">Success Rate</span>
+                    </div>
+                    <!-- Stat Item -->
+                    <div class="flex flex-col gap-0.5 group">
+                        <span
+                            class="text-3xl font-bold text-black group-hover:text-black/60 transition-colors duration-300 tracking-tighter"><span
+                                class="count-up" data-target="85">0</span></span>
+                        <span class="text-[8px] font-black text-black/20 uppercase tracking-[0.2em]"
+                            data-i18n="statTeachers">Teachers</span>
+                    </div>
+                    <!-- Stat Item -->
+                    <div class="flex flex-col gap-0.5 group">
+                        <span
+                            class="text-3xl font-bold text-black group-hover:text-black/60 transition-colors duration-300 tracking-tighter"><span
+                                class="count-up" data-target="20">0</span></span>
+                        <span class="text-[8px] font-black text-black/20 uppercase tracking-[0.2em]"
+                            data-i18n="statExperience">Years Exp.</span>
+                    </div>
+                    <!-- Stat Item -->
+                    <div class="flex flex-col gap-0.5 group">
+                        <span
+                            class="text-3xl font-bold text-black group-hover:text-primary/60 transition-colors duration-300 tracking-tighter"><span
+                                class="count-up" data-target="30">0</span><span
+                                class="text-primary text-xl ml-0.5">+</span></span>
+                        <span class="text-[8px] font-black text-black/20 uppercase tracking-[0.2em]"
+                            data-i18n="statActivities">Activities</span>
+                    </div>
+                    <!-- Stat Item -->
+                    <div class="flex flex-col gap-0.5 group">
+                        <span
+                            class="text-3xl font-bold text-black group-hover:text-black/60 transition-colors duration-300 tracking-tighter"><span
+                                class="count-up" data-target="15">0</span></span>
+                        <span class="text-[8px] font-black text-black/20 uppercase tracking-[0.2em]"
+                            data-i18n="statNationalities">Nationalities</span>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Vision, Mission & Values Section (Compact) -->
+    <section class="py-12 px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto bg-gray-50/50 overflow-hidden w-full">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+            <!-- Content Block (Left on Large, Top on Small) -->
+            <div class="w-full">
+                <div class="mb-8">
+                    <h2 class="text-3xl md:text-4xl font-black text-black leading-[1.1] mb-4 tracking-tight"
+                        data-i18n="vvmHeading">
+                        Guiding Our Path <br /> <span class="text-primary">Towards Excellence.</span>
+                    </h2>
+                    <p class="text-black/50 font-medium leading-relaxed max-w-xl text-base" data-i18n="vvmSubheading">
+                        Rooted in tradition and looking towards the future, our core principles define every educational
+                        journey at Ibri School.
+                    </p>
+                </div>
+
+                <!-- Mission, Vision, Values -->
+                <div class="space-y-6">
+                    <!-- Mission -->
+                    <div class="group">
+                        <h4
+                            class="text-primary font-black text-[10px] tracking-[0.3em] uppercase mb-1 flex items-center gap-2">
+                            <span class="w-4 h-[1px] bg-primary"></span>
+                            <span data-i18n="missionTitle">Our Mission</span>
+                        </h4>
+                        <p class="text-black/60 leading-relaxed text-sm font-medium group-hover:text-black transition-colors"
+                            data-i18n="missionDesc">
+                            To provide a nurturing environment that empowers students to reach their full potential
+                            through high-quality education and character development.
+                        </p>
+                        <div class="mt-4 h-[1px] w-full bg-black/[0.05]"></div>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="group">
+                        <h4
+                            class="text-secondary font-black text-[10px] tracking-[0.3em] uppercase mb-1 flex items-center gap-2">
+                            <span class="w-4 h-[1px] bg-secondary"></span>
+                            <span data-i18n="visionTitle">Our Vision</span>
+                        </h4>
+                        <p class="text-black/60 leading-relaxed text-sm font-medium group-hover:text-black transition-colors"
+                            data-i18n="visionDesc">
+                            To be a pioneering educational institution that cultivates future leaders equipped with
+                            knowledge, values, and global perspectives.
+                        </p>
+                        <div class="mt-4 h-[1px] w-full bg-black/[0.05]"></div>
+                    </div>
+
+                    <!-- Values -->
+                    <div class="group">
+                        <h4
+                            class="text-black/60 font-black text-[10px] tracking-[0.3em] uppercase mb-1 flex items-center gap-2">
+                            <span class="w-4 h-[1px] bg-black"></span>
+                            <span data-i18n="valuesTitle">Our Values</span>
+                        </h4>
+                        <p class="text-black/60 leading-relaxed text-sm font-medium group-hover:text-black transition-colors"
+                            data-i18n="valuesDesc">
+                            Excellence in education, integrity in character, respect for all, and a commitment to
+                            lifelong learning and innovation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--circle) -->
+            <div class="relative flex justify-center items-center py-10 lg:py-0">
+                <!-- Large Outer Circle (Mission) -->
+                <div
+                    class="relative w-[300px] h-[300px] sm:w-[460px] sm:h-[460px] rounded-full bg-primary border border-primary/20 flex flex-col items-center pt-8 sm:pt-14 transition-transform duration-700 hover:scale-[1.02]">
+                    <i class="fa-solid fa-bullseye text-2xl sm:text-3xl text-white mb-2 sm:mb-3"></i>
+                    <h3 class="text-white font-black text-[10px] sm:text-xs tracking-widest uppercase"
+                        data-i18n="missionTitle">Our Mission</h3>
+
+                    <!-- Middle Circle (Vision) -->
+                    <div
+                        class="absolute bottom-0 w-[210px] h-[210px] sm:w-[320px] sm:h-[320px] rounded-full bg-secondary border border-secondary/20 flex flex-col items-center pt-8 sm:pt-14 shadow-2xl transition-transform duration-700 hover:scale-[1.05]">
+                        <i class="fa-solid fa-eye text-xl sm:text-2xl text-white mb-2 sm:mb-3"></i>
+                        <h3 class="text-white font-black text-[10px] sm:text-xs tracking-widest uppercase"
+                            data-i18n="visionTitle">Our Vision</h3>
+
+                        <!-- Inner Circle (Values) -->
+                        <div
+                            class="absolute bottom-0 w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] rounded-full bg-white border border-black/5 flex flex-col items-center justify-center shadow-xl transition-transform duration-700 hover:scale-[1.1]">
+                            <i class="fa-solid fa-gem text-lg sm:text-xl text-black/60 mb-2"></i>
+                            <h3 class="text-black font-black text-[8px] sm:text-[10px] tracking-widest uppercase"
+                                data-i18n="valuesTitle">Our Values</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Principal's Message Section -->
+    <section class="py-20 px-3 sm:px-6 lg:px-8 max-w-[1600px] mx-auto bg-white overflow-hidden w-full">
+        <div
+            class="relative grid lg:grid-cols-2 items-stretch rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+
+            <!-- Principal Image -->
+            <div class="relative min-h-[450px] lg:h-auto">
+                <img src="./Asstes/principal_ar.png" alt="Principal Dr. Fatima Al-Balushi"
+                    class="absolute inset-0 w-full h-full object-cover object-top">
+
+                <!-- Bottom Stat Overlay (Mobile) -->
+                <div class="absolute bottom-6 left-6 right-6 flex flex-col gap-3 lg:hidden">
+                    <div class="bg-primary text-white px-5 py-3 rounded-2xl flex items-center gap-3 shadow-lg">
+                        <span class="text-2xl font-black">20+</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider leading-tight"
+                            data-i18n="statExp">Years of <br /> Excellence</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Content -->
+            <div
+                class="bg-[#003057] text-white p-10 lg:p-20 lg:pt-24 relative rounded-tl-[60px] lg:rounded-tl-[100px] lg:-ms-20 z-10">
+                <div class="max-w-xl">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-white/10 text-secondary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6"
+                        data-i18n="messageTag">Leadership Message</span>
+
+                    <h2 class="text-3xl lg:text-5xl font-black mb-8 leading-[1.1] tracking-tight"
+                        data-i18n="principalHeading">
+                        Message from <br /> <span class="text-secondary">the Principal</span>
+                    </h2>
+
+                    <div class="space-y-6 text-white/70 font-medium leading-relaxed text-base lg:text-lg">
+                        <p data-i18n="principalMsg1">
+                            At Ibri Private School, we are committed to nurturing the potential of every child through a
+                            balanced approach to academic excellence and character development.
+                        </p>
+                        <p data-i18n="principalMsg2">
+                            Our goal is to create a community of lifelong learners who are equipped with the skills and
+                            values necessary to thrive in an ever-changing global environment.
+                        </p>
+                    </div>
+
+                    <!-- Principal Signature Area -->
+                    <div class="mt-12 pt-8 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="text-xl font-black text-white" data-i18n="principalName">Dr. Fatima Al-Balushi
+                            </h4>
+                            <p class="text-secondary font-bold text-sm" data-i18n="principalTitle">School Principal /
+                                Director</p>
+                        </div>
+                        <div class="hidden sm:block">
+                            <i class="fa-solid fa-quote-right text-4xl text-white/10"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Overlay (Desktop Only) -->
+            <div class="hidden lg:flex absolute bottom-8 left-4 gap-4 z-20">
+                <div
+                    class="bg-primary/90 backdrop-blur-md text-white px-5 py-3 rounded-2xl flex items-center gap-4 shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-white/10">
+                    <span class="text-2xl font-black">20+</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest leading-tight"
+                        data-i18n="statExpLong">Years of Educational <br /> Leadership</span>
+                </div>
+                <div
+                    class="bg-secondary text-[#003057] px-5 py-3 rounded-2xl flex items-center gap-4 shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-black/5">
+                    <span class="text-2xl font-black">98%</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest leading-tight"
+                        data-i18n="statSatisfaction">Student & Parent <br /> Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our School Section (Horizontal Slider) -->
+    <section class="py-24 bg-gray-50/50 overflow-hidden w-full" id="why-choose">
+        <div class="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
+            <!-- Header with Navigation -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-4"
+                        data-i18n="whyChooseTag">EXCELLENCE AT IBRI</span>
+                    <h2 class="text-4xl md:text-6xl font-black text-black leading-[1.1] tracking-tight"
+                        data-i18n="whyChooseHeading">
+                        Why Choose <br /> <span class="text-primary">Our School?</span>
+                    </h2>
+                    <p class="mt-6 text-black/50 font-medium text-lg leading-relaxed" data-i18n="whyChooseDesc">
+                        We provide an environment where every student can excel through modern facilities and dedicated
+                        mentorship.
+                    </p>
+                </div>
+                <!-- Nav Buttons -->
+                <div class="flex gap-4">
+                    <button id="slider-prev"
+                        class="w-14 h-14 rounded-2xl border border-black/5 bg-white flex items-center justify-center text-black/40 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm group">
+                        <i class="fa-solid fa-chevron-left group-hover:-translate-x-0.5 transition-transform"></i>
+                    </button>
+                    <button id="slider-next"
+                        class="w-14 h-14 rounded-2xl border border-black/5 bg-white flex items-center justify-center text-black/40 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm group">
+                        <i class="fa-solid fa-chevron-right group-hover:translate-x-0.5 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Horizontal Scrollable Container -->
+            <div id="why-slider-container"
+                class="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-12 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth">
+
+                <!-- Feature 1: Smart Classrooms -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    <img src="./Asstes/lab.png" alt="Smart Classrooms"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 left-4 px-3 py-1.5 bg-black/30 backdrop-blur-md rounded-full text-white text-[9px] font-black uppercase tracking-widest border border-white/10">
+                        TECHNOLOGY</div>
+
+                    <div
+                        class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/95 via-black/40 to-transparent">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <div class="w-1 h-1 rounded-full bg-white"></div>
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                        </div>
+                        <h3 class="text-xl font-black text-white mb-2 tracking-tight" data-i18n="featSmart">Smart
+                            Classrooms</h3>
+                        <p class="text-white/60 text-xs leading-relaxed line-clamp-2 mb-4" data-i18n="featSmartDesc">
+                            Equipped with cutting-edge interactive technology and high-speed digital resources.</p>
+                        <div class="h-[1px] w-full bg-white/10 mb-4"></div>
+                        <div
+                            class="flex justify-between items-center text-white/80 text-[9px] font-bold uppercase tracking-wider">
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-laptop text-primary"></i>
+                                <span data-i18n="labStat1">EQUIPPED</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-wifi text-primary"></i>
+                                <span data-i18n="libraryStat2">HI-SPEED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Qualified Teachers -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    <img src="./Asstes/principal_ar.png" alt="Qualified Teachers"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 left-4 px-3 py-1.5 bg-black/30 backdrop-blur-md rounded-full text-white text-[9px] font-black uppercase tracking-widest border border-white/10">
+                        FACULTY</div>
+
+                    <div
+                        class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/95 via-black/40 to-transparent">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-white"></div>
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                        </div>
+                        <h3 class="text-xl font-black text-white mb-2 tracking-tight" data-i18n="featTeachers">Qualified
+                            Teachers</h3>
+                        <p class="text-white/60 text-xs leading-relaxed line-clamp-2 mb-4" data-i18n="featTeachersDesc">
+                            A diverse team of international educators committed to student success.</p>
+                        <div class="h-[1px] w-full bg-white/10 mb-4"></div>
+                        <div
+                            class="flex justify-between items-center text-white/80 text-[9px] font-bold uppercase tracking-wider">
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-user-graduate text-secondary"></i>
+                                <span data-i18n="featTeachers">EXPERT</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-globe text-secondary"></i>
+                                <span>GLOBAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Islamic Values -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    <img src="./Asstes/library.png" alt="Islamic Values"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 left-4 px-3 py-1.5 bg-black/30 backdrop-blur-md rounded-full text-white text-[9px] font-black uppercase tracking-widest border border-white/10">
+                        CULTURE</div>
+
+                    <div
+                        class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/95 via-black/40 to-transparent">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-white"></div>
+                        </div>
+                        <h3 class="text-xl font-black text-white mb-2 tracking-tight" data-i18n="featValues">Islamic
+                            Values</h3>
+                        <p class="text-white/60 text-xs leading-relaxed line-clamp-2 mb-4" data-i18n="featValuesDesc">
+                            Integrating core Islamic principles and Omani cultural heritage.</p>
+                        <div class="h-[1px] w-full bg-white/10 mb-4"></div>
+                        <div
+                            class="flex justify-between items-center text-white/80 text-[9px] font-bold uppercase tracking-wider">
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-moon text-white"></i>
+                                <span>PRINCIPLED</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-heart text-white"></i>
+                                <span>ETHICAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4: STEM Education -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    <img src="./Asstes/lab.png" alt="STEM Education"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 left-4 px-3 py-1.5 bg-black/30 backdrop-blur-md rounded-full text-white text-[9px] font-black uppercase tracking-widest border border-white/10">
+                        INNOVATION</div>
+
+                    <div
+                        class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/95 via-black/40 to-transparent">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <div class="w-1 h-1 rounded-full bg-white"></div>
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                        </div>
+                        <h3 class="text-xl font-black text-white mb-2 tracking-tight" data-i18n="featStem">STEM
+                            Education</h3>
+                        <p class="text-white/60 text-xs leading-relaxed line-clamp-2 mb-4" data-i18n="featStemDesc">
+                            Focusing on Science, Technology, Engineering, and Math.</p>
+                        <div class="h-[1px] w-full bg-white/10 mb-4"></div>
+                        <div
+                            class="flex justify-between items-center text-white/80 text-[9px] font-bold uppercase tracking-wider">
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-microchip text-primary"></i>
+                                <span>MODERN</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-rocket text-primary"></i>
+                                <span>FUTURE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Sports Facilities -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    <img src="./Asstes/sports.png" alt="Sports Facilities"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 left-4 px-3 py-1.5 bg-black/30 backdrop-blur-md rounded-full text-white text-[9px] font-black uppercase tracking-widest border border-white/10">
+                        ATHLETICS</div>
+
+                    <div
+                        class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/95 via-black/40 to-transparent">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-white"></div>
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                        </div>
+                        <h3 class="text-xl font-black text-white mb-2 tracking-tight" data-i18n="featSports">Sports
+                            Facilities</h3>
+                        <p class="text-white/60 text-xs leading-relaxed line-clamp-2 mb-4" data-i18n="featSportsDesc">
+                            World-class athletic facilities for physical development.</p>
+                        <div class="h-[1px] w-full bg-white/10 mb-4"></div>
+                        <div
+                            class="flex justify-between items-center text-white/80 text-[9px] font-bold uppercase tracking-wider">
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-basketball text-secondary"></i>
+                                <span>INDOOR</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-trophy text-secondary"></i>
+                                <span>ELITE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6: Safe Environment -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] snap-start group relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl">
+                    <img src="./Asstes/principal_ar.png" alt="Safe Environment"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 left-4 px-3 py-1.5 bg-black/30 backdrop-blur-md rounded-full text-white text-[9px] font-black uppercase tracking-widest border border-white/10">
+                        SECURITY</div>
+
+                    <div
+                        class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/95 via-black/40 to-transparent">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-white/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-white"></div>
+                        </div>
+                        <h3 class="text-xl font-black text-white mb-2 tracking-tight" data-i18n="featSafe">Safe
+                            Environment</h3>
+                        <p class="text-white/60 text-xs leading-relaxed line-clamp-2 mb-4" data-i18n="featSafeDesc">A
+                            secure campus with 24/7 monitoring and a nurturing atmosphere.</p>
+                        <div class="h-[1px] w-full bg-white/10 mb-4"></div>
+                        <div
+                            class="flex justify-between items-center text-white/80 text-[9px] font-bold uppercase tracking-wider">
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-halved text-white"></i>
+                                <span>SECURE</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-video text-white"></i>
+                                <span>MONITORED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Our Facilities Section (Unified Dashboard Card) -->
+        <section class="py-24 bg-gray-50/50 overflow-hidden w-full" id="facilities">
+            <div class="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
+
+                <div
+                    class="bg-white rounded-[60px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.06)] border border-black/[0.03] overflow-hidden p-6 md:p-12">
+
+                    <!-- Hub Header -->
+                    <div
+                        class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8 border-b border-black/[0.03] pb-10">
+                        <div class="max-w-xl">
+                            <span
+                                class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-4"
+                                data-i18n="facilitiesTag">CAMPUS ECOSYSTEM</span>
+                            <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight"
+                                data-i18n="facilitiesHeading">
+                                World-Class <span class="text-primary">Facilities.</span>
+                            </h2>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="text-right hidden md:block">
+                                <p class="text-slate-900 font-bold text-sm">Interactive Map</p>
+                                <p class="text-slate-400 text-xs">Explore our campus</p>
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-slate-900 flex items-center justify-center text-white shadow-lg">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-6">
+
+                        <!-- 1. Science Lab (Featured) -->
+                        <div
+                            class="md:col-span-3 lg:col-span-6 relative rounded-[40px] overflow-hidden group aspect-video md:aspect-auto">
+                            <img src="./Asstes/lab.png" alt="Science Lab"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
+                            </div>
+                            <div class="absolute bottom-8 left-8">
+                                <h3 class="text-2xl font-black text-white mb-2" data-i18n="facScience">Science Labs</h3>
+                                <p class="text-white/60 text-xs max-w-xs" data-i18n="facScienceDesc">Advanced research
+                                    environments for physics, chemistry, and biology.</p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Computer Lab -->
+                        <div
+                            class="md:col-span-3 lg:col-span-3 bg-slate-50 rounded-[40px] p-8 flex flex-col justify-between hover:bg-primary transition-all duration-500 group cursor-pointer border border-black/[0.02]">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-primary shadow-sm">
+                                <i class="fa-solid fa-desktop text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-slate-900 group-hover:text-white mb-1"
+                                    data-i18n="facComputer">Computer Labs</h3>
+                                <p class="text-slate-400 group-hover:text-white/60 text-[10px] font-bold uppercase tracking-widest"
+                                    data-i18n="facComputerDesc">Smart Hub</p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Library -->
+                        <div
+                            class="md:col-span-3 lg:col-span-3 relative rounded-[40px] overflow-hidden group border border-black/[0.02]">
+                            <img src="./Asstes/library.png" alt="Library"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="text-lg font-black text-white" data-i18n="facLibrary">Library</h3>
+                            </div>
+                        </div>
+
+                        <!-- 4. Mosque -->
+                        <div
+                            class="md:col-span-3 lg:col-span-3 bg-[#003057] rounded-[40px] p-8 flex flex-col justify-between hover:bg-[#003a6a] transition-all duration-500 shadow-xl group cursor-pointer">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-secondary">
+                                <i class="fa-solid fa-mosque text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white mb-1" data-i18n="facMosque">Mosque</h3>
+                                <p class="text-white/40 text-[10px] font-black uppercase tracking-widest"
+                                    data-i18n="facMosqueDesc">Prayer Area</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Sports Complex -->
+                        <div
+                            class="md:col-span-6 lg:col-span-5 relative rounded-[40px] overflow-hidden group aspect-[2/1] md:aspect-auto border border-black/[0.02]">
+                            <img src="./Asstes/sports.png" alt="Sports"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute bottom-8 left-8">
+                                <h3 class="text-xl font-black text-white" data-i18n="facSports">Sports Complex</h3>
+                            </div>
+                        </div>
+
+                        <!-- 6. Transport & 7. Cafeteria -->
+                        <div class="md:col-span-6 lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+                            <div
+                                class="bg-secondary/10 rounded-[32px] p-6 flex items-center gap-5 hover:bg-secondary/20 transition-all group border border-secondary/10 cursor-pointer">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-secondary shadow-sm">
+                                    <i class="fa-solid fa-bus text-lg"></i>
+                                </div>
+                                <h3 class="text-sm font-black text-slate-900" data-i18n="facTransport">Transport</h3>
+                            </div>
+                            <div
+                                class="bg-primary/5 rounded-[32px] p-6 flex items-center gap-5 hover:bg-primary/10 transition-all group border border-primary/10 cursor-pointer">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-primary shadow-sm">
+                                    <i class="fa-solid fa-utensils text-lg"></i>
+                                </div>
+                                <h3 class="text-sm font-black text-slate-900" data-i18n="facCafeteria">Cafeteria</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
 
 
     <script>
@@ -294,7 +1048,6 @@
             }
         });
 
-        // RTL & LTR Toggle Logic
         // Translation Dictionary
         const translations = {
             en: {
@@ -311,7 +1064,88 @@
                 contact: "Contact Us",
                 contactBtn: "Contact",
                 admissionBtn: "Admission",
-                selectLang: "Select Language"
+                selectLang: "Select Language",
+                heroTag: "Welcome to Excellence",
+                heroHeading: "Building Future Leaders Through Quality Education",
+                heroMission: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world.",
+                applyNow: "Apply Now",
+                exploreSchool: "Explore School",
+                statYears: "Years Exp.",
+                statStudents: "Students",
+                statsTag: "Our Impact",
+                statsHeading: "Academic Excellence In Every Detail.",
+                statsDesc: "We take pride in our growth and the diverse community we've built over the years, fostering excellence and global citizenship through a dedicated educational approach.",
+                statTeachers: "Teachers",
+                statExperience: "Years Exp.",
+                statNationalities: "Nationalities",
+                statSuccess: "Success Rate",
+                statActivities: "Activities",
+                statStudentsShort: "STUDENTS",
+                statSuccessShort: "SUCCESS",
+                statTeachersShort: "TEACHERS",
+                statExpShort: "YEARS",
+                statActivitiesShort: "CLUBS",
+                statNatShort: "NATIONS",
+                messageTag: "Leadership Message",
+                principalHeading: "Message from the Principal",
+                principalMsg1: "At Ibri Private School, we are committed to nurturing the potential of every child through a balanced approach to academic excellence and character development.",
+                principalMsg2: "Our goal is to create a community of lifelong learners who are equipped with the skills and values necessary to thrive in an ever-changing global environment.",
+                principalName: "Dr. Fatima Al-Balushi",
+                principalTitle: "School Principal / Director",
+                statExpLong: "Years of Educational Leadership",
+                statSatisfaction: "Student & Parent Satisfaction",
+                statExp: "Years of Excellence",
+                whyChooseTag: "EXCELLENCE AT IBRI",
+                whyChooseHeading: "Why Choose Our School?",
+                whyChooseDesc: "We provide an environment where every student can excel through modern facilities and dedicated mentorship.",
+                featSmart: "Smart Classrooms",
+                featSmartDesc: "Equipped with cutting-edge interactive technology and high-speed digital resources for modern learning.",
+                featTeachers: "Qualified Teachers",
+                featTeachersDesc: "A diverse team of international educators committed to delivering academic excellence and student success.",
+                featValues: "Islamic Values",
+                featValuesDesc: "Integrating core Islamic principles and Omani cultural heritage into our daily educational journey.",
+                featStem: "STEM Education",
+                featStemDesc: "Focusing on Science, Technology, Engineering, and Math to prepare students for the careers of tomorrow.",
+                featSports: "Sports Facilities",
+                featSportsDesc: "World-class athletic facilities including indoor courts and multi-purpose fields for physical development.",
+                featSafe: "Safe Environment",
+                featSafeDesc: "A secure, gated campus with 24/7 monitoring and a nurturing atmosphere for student wellbeing.",
+                campusTag: "Campus Excellence",
+                campusHeading: "World-Class Facilities",
+                campusDesc: "Our campus is designed to foster creativity, physical health, and academic excellence through state-of-the-art facilities.",
+                featured: "FEATURED",
+                labTitle: "STEM Innovation Lab",
+                labDesc: "Equipped with high-tech research tools and interactive learning stations.",
+                labPrice: "ADVANCED",
+                labStat1: "EQUIPPED",
+                labStat2: "30 CAPACITY",
+                labStat3: "SAFE",
+                sportsTagSmall: "PROFESSIONAL",
+                sportsTitle: "Olympic Complex",
+                sportsDesc: "Multi-purpose athletic arena with professional-grade courts and safety gear.",
+                sportsStatus: "INDOOR",
+                sportsStat1: "PROFESSIONAL",
+                sportsStat2: "CERTIFIED",
+                sportsStat3: "HEALTHY",
+                libraryTagSmall: "SMART HUB",
+                libraryTitle: "Digital Hub",
+                libraryDesc: "A futuristic learning space with vast digital archives and quiet reading zones.",
+                libraryStatus: "24/7",
+                libraryStat1: "DIGITAL",
+                libraryStat2: "HI-SPEED",
+                libraryStat3: "ASSISTED",
+                facilitiesTag: "CAMPUS INFRASTRUCTURE",
+                facilitiesHeading: "World-Class Facilities",
+                facScience: "Science Labs",
+                facScienceDesc: "Advanced research environments for physics, chemistry, and biology.",
+                facComputer: "Computer Labs",
+                facComputerDesc: "High-speed digital hubs with modern workstations.",
+                facLibrary: "Central Library",
+                facMosque: "Prayer Area",
+                facMosqueDesc: "Mosque",
+                facSports: "Sports Complex",
+                facTransport: "Safe Transport",
+                facCafeteria: "Healthy Cafeteria"
             },
             ar: {
                 schoolNameMain: "مدرسة عبري الخاصة",
@@ -327,7 +1161,88 @@
                 contact: "اتصل بنا",
                 contactBtn: "تواصل معنا",
                 admissionBtn: "سجل الآن",
-                selectLang: "اختر اللغة"
+                selectLang: "اختر اللغة",
+                heroTag: "مرحباً بكم في التميز",
+                heroHeading: "بناء قادة المستقبل من خلال تعليم متميز",
+                heroMission: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم عالمي دائم التغير.",
+                applyNow: "سجل الآن",
+                exploreSchool: "استكشف المدرسة",
+                statYears: "سنوات الخبرة",
+                statStudents: "طلاب",
+                statsTag: "تأثيرنا",
+                statsHeading: "التميز الأكاديمي في كل تفصيل.",
+                statsDesc: "نحن فخورون بنمونا والمجتمع المتنوع الذي بنيناه على مر السنين، مما يعزز التميز والمواطنة العالمية من خلال نهج تعليمي مخصص.",
+                statTeachers: "معلمون",
+                statExperience: "سنوات الخبرة",
+                statNationalities: "جنسيات",
+                statSuccess: "نسبة النجاح",
+                statActivities: "الأنشطة",
+                statStudentsShort: "طلاب",
+                statSuccessShort: "نجاح",
+                statTeachersShort: "معلمون",
+                statExpShort: "سنوات",
+                statActivitiesShort: "أنشطة",
+                statNatShort: "جنسيات",
+                messageTag: "رسالة القيادة",
+                principalHeading: "رسالة من المديرة",
+                principalMsg1: "في مدرسة عبري الخاصة، نحن ملتزمون بتنمية إمكانات كل طفل من خلال نهج متوازن بين التميز الأكاديمي وتطوير الشخصية.",
+                principalMsg2: "هدفنا هو خلق مجتمع من المتعلمين مدى الحياة المجهزين بالمهارات والقيم اللازمة للازدهار في بيئة عالمية دائمة التغير.",
+                principalName: "د. فاطمة البلوشي",
+                principalTitle: "مديرة المدرسة / الإدارة",
+                statExpLong: "سنوات من القيادة التعليمية",
+                statSatisfaction: "رضا الطلاب وأولياء الأمور",
+                statExp: "سنوات من التميز",
+                whyChooseTag: "التميز في عبري",
+                whyChooseHeading: "لماذا تختار مدرستنا؟",
+                whyChooseDesc: "نحن نوفر بيئة يمكن لكل طالب فيها التفوق من خلال مرافق حديثة وتوجيه مخصص.",
+                featSmart: "فصول دراسية ذكية",
+                featSmartDesc: "مجهزة بأحدث التقنيات التفاعلية والموارد الرقمية عالية السرعة للتعلم الحديث.",
+                featTeachers: "معلمون مؤهلون",
+                featTeachersDesc: "فريق متنوع من المعلمين الدوليين الملتزمين بتحقيق التميز الأكاديمي ونجاح الطلاب.",
+                featValues: "قيم إسلامية",
+                featValuesDesc: "دمج المبادئ الإسلامية الأساسية والتراث الثقافي العماني في رحلتنا التعليمية اليومية.",
+                featStem: "تعليم STEM",
+                featStemDesc: "التركيز على العلوم والتكنولوجيا والهندسة والرياضيات لإعداد الطلاب لمهن المستقبل.",
+                featSports: "مرافق رياضية",
+                featSportsDesc: "مرافق رياضية عالمية المستوى تشمل ملاعب داخلية وساحات متعددة الأغراض للتطوير البدني.",
+                featSafe: "بيئة آمنة",
+                featSafeDesc: "حرم جامعي آمن ومسور مع مراقبة على مدار الساعة طوال أيام الأسبوع وجو رعاية لرفاهية الطلاب.",
+                campusTag: "تميز الحرم المدرسي",
+                campusHeading: "مرافق عالمية المستوى",
+                campusDesc: "تم تصميم حرمنا المدرسي لتعزيز الإبداع والصحة البدنية والتميز الأكاديمي من خلال مرافق حديثة.",
+                featured: "مميز",
+                labTitle: "مختبر STEM للابتكار",
+                labDesc: "مجهز بأدوات بحث عالية التقنية ومحطات تعلم تفاعلية.",
+                labPrice: "متقدم",
+                labStat1: "مجهز",
+                labStat2: "30 سعة",
+                labStat3: "آمن",
+                sportsTagSmall: "احترافي",
+                sportsTitle: "المجمع الأولمبي",
+                sportsDesc: "ساحة رياضية متعددة الأغراض مع ملاعب احترافية وأدوات سلامة.",
+                sportsStatus: "داخلي",
+                sportsStat1: "احترافي",
+                sportsStat2: "معتمد",
+                sportsStat3: "صحي",
+                libraryTagSmall: "مركز ذكي",
+                libraryTitle: "المركز الرقمي",
+                libraryDesc: "مساحة تعلم مستقبلية مع أرشيفات رقمية واسعة ومناطق قراءة هادئة.",
+                libraryStatus: "24/7",
+                libraryStat1: "رقمي",
+                libraryStat2: "سرعة عالية",
+                libraryStat3: "مساعد",
+                facilitiesTag: "البنية التحتية للحرم المدرسي",
+                facilitiesHeading: "مرافق عالمية المستوى",
+                facScience: "مختبرات العلوم",
+                facScienceDesc: "بيئات بحثية متقدمة للفيزياء والكيمياء والأحياء.",
+                facComputer: "مختبرات الكمبيوتر",
+                facComputerDesc: "محاور رقمية عالية السرعة مع محطات عمل حديثة.",
+                facLibrary: "المكتبة المركزية",
+                facMosque: "منطقة الصلاة",
+                facMosqueDesc: "المسجد",
+                facSports: "المجمع الرياضي",
+                facTransport: "نقل آمن",
+                facCafeteria: "كافتيريا صحية"
             }
         };
 
@@ -382,6 +1297,87 @@
                     el.textContent = translations[lang][key];
                 }
             });
+        }
+
+        // Professional Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.remove('pt-3', 'sm:pt-5');
+                header.classList.add('pt-2');
+            } else {
+                header.classList.add('pt-3', 'sm:pt-5');
+                header.classList.remove('pt-2');
+            }
+        });
+
+        // Statistics Bar & Number Animation
+        const statsSection = document.getElementById('stats-visual');
+        const statBars = document.querySelectorAll('.stat-bar-fill');
+        const countElements = document.querySelectorAll('.count-up');
+
+        function animateNumbers() {
+            countElements.forEach(el => {
+                const target = parseInt(el.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const update = () => {
+                    current += increment;
+                    if (current < target) {
+                        el.innerText = Math.floor(current);
+                        requestAnimationFrame(update);
+                    } else {
+                        el.innerText = target;
+                    }
+                };
+                update();
+            });
+        }
+
+        const observerOptions = {
+            root: null,
+            threshold: 0.3
+        };
+
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate Bars
+                    statBars.forEach(bar => {
+                        const height = bar.getAttribute('data-height');
+                        bar.style.height = height;
+                    });
+                    // Animate Numbers
+                    animateNumbers();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Slider Navigation Logic
+        const sliderContainer = document.getElementById('why-slider-container');
+        const prevBtn = document.getElementById('slider-prev');
+        const nextBtn = document.getElementById('slider-next');
+
+        if (sliderContainer && prevBtn && nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const scrollAmount = window.innerWidth < 768 ? 296 : 352; // card width + gap (280+16 or 320+32)
+                sliderContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                const scrollAmount = window.innerWidth < 768 ? 296 : 352;
+                sliderContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            // Adjust scroll for RTL if needed
+            // Native scrollBy handles RTL automatically if dir="rtl" is set on html
         }
     </script>
 </body>
