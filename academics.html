@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Header</title>
+    <title>Academics - Ibri Private School</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,128 +40,86 @@
     </script>
 
     <style>
-
-
         /* Glassmorphism effect for the navbar background */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
         }
 
-        /* MODERN CARD DESIGN - Premium & Advanced */
-        .academic-card-modern {
-            background: white;
-            border-radius: 28px;
-            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            position: relative;
+        /* Mobile menu smooth expansion */
+        #mobile-menu {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 0;
+            opacity: 0;
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            transform: translateY(-10px);
+            visibility: hidden;
         }
-        
-        .academic-card-modern::before {
-            content: '';
+
+        #mobile-menu.open {
+            max-height: 600px;
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        /* Progress bar styles */
+        .progress-bar-clean {
+            width: 100%;
+            height: 16px;
+            background: #ececec;
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill-clean {
+            height: 100%;
+            width: 0;
+            border-radius: 999px;
+            transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+        }
+
+        /* YOUR ORIGINAL GRADIENT COLORS */
+        .teal-fill {
+            background: linear-gradient(to bottom, #8ad6cb, #4ca89d);
+        }
+
+        .yellow-fill {
+            background: linear-gradient(to bottom, #ffe970, #f4cf00);
+        }
+
+        .dark-fill {
+            background: linear-gradient(to bottom, #666, #2f2f2f);
+        }
+
+        .teal-light-fill {
+            background: linear-gradient(to bottom, #b9e5df, #85c4bb);
+        }
+
+        .progress-fill-clean::after {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
+            width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(63,163,148,0.03) 0%, rgba(255,213,5,0.03) 100%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
+            background: rgba(255, 255, 255, 0.15);
         }
-        
-        .academic-card-modern:hover::before {
-            opacity: 1;
-        }
-        
-        .academic-card-modern:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
-            border-color: rgba(63,163,148,0.2);
-        }
-        
-        .card-icon-wrapper {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, rgba(63,163,148,0.1) 0%, rgba(255,213,5,0.1) 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-        }
-        
-        .academic-card-modern:hover .card-icon-wrapper {
-            transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, #3fa394 0%, #ffd505 100%);
-        }
-        
-        .academic-card-modern:hover .card-icon-wrapper i {
-            color: white !important;
-        }
-        
-        /* Progress bar - clean teal color only */
-        .progress-bar-clean {
-            height: 8px;
-            background: #e5e7eb;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .progress-fill-clean {
-            height: 100%;
-            background: #3fa394;
-            border-radius: 10px;
-            width: 0%;
-            transition: width 1.8s cubic-bezier(0.22, 0.97, 0.36, 1);
-        }
-        
-        /* Stat cards */
-        .stat-card-modern {
-            background: white;
-            border-radius: 24px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .stat-card-modern:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.1);
-            border-color: rgba(63,163,148,0.3);
-        }
-        
+
         /* Section reveal animation */
         [data-aos] {
             transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        /* Facility item */
-        .facility-item {
-            transition: all 0.3s ease;
-        }
-        
-        .facility-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .facility-item:hover .facility-icon {
-            background: #3fa394;
-            color: white;
-        }
-        
-        .facility-icon {
-            transition: all 0.3s ease;
         }
     </style>
 </head>
 
 <body class="bg-white min-h-screen text-black">
 
-    <!-- YOUR EXACT NAVBAR (unchanged) -->
+    <!-- YOUR EXACT NAVBAR -->
     <header class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
         <nav class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
-            <!-- Logo -->
             <a href="#" class="flex items-center gap-2.5 shrink-0 group">
                 <div class="h-9 w-9 md:h-11 md:w-11 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shrink-0 shadow-sm">
                     <img src="./Asstes/school logo.jpeg" alt="School Logo" class="h-full w-full object-contain rounded-lg">
@@ -173,15 +131,14 @@
             </a>
 
             <ul class="hidden xl:flex flex-1 justify-center items-center gap-5 2xl:gap-10">
-                <li><a href="index.html" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="home">Home</span></a></li>
-                <li><a href="about.html" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="about">About School</span></a></li>
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="home">Home</span></a></li>
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="about">About School</span></a></li>
                 <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-user-plus text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="admissions">Admissions</span></a></li>
                 <li class="relative group py-2">
                     <button class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors focus:outline-none"><i class="fa-solid fa-layer-group text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="explore">Explore</span><i class="fa-solid fa-chevron-down ms-1.5 text-[9px] text-black/40 group-hover:text-primary transition-transform duration-300 group-hover:rotate-180"></i></button>
                     <div class="absolute start-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-3 group-hover:translate-y-0 z-50">
                         <div class="p-2 flex flex-col gap-1">
-                            <a href="academics.html" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
-                                <i class="fa-solid fa-book-open w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="academics">Academics</span></a>
+                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-book-open w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="academics">Academics</span></a>
                             <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="studentLife">Student Life</span></a>
                             <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-calendar-days w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="news">News & Events</span></a>
                             <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-images w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="gallery">Gallery</span></a>
@@ -211,11 +168,8 @@
         </nav>
     </header>
 
-    <!-- Mobile Menu Overlay (Full Page) -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-white z-[100] xl:hidden transition-all duration-500 transform translate-x-full opacity-0 invisible">
-        
-        <!-- Menu Header -->
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] xl:hidden transition-all duration-500 transform translate-x-full opacity-0 invisible">
         <div class="flex items-center justify-between p-6 border-b border-black/5">
             <div class="flex items-center gap-3">
                 <img src="./Asstes/school logo.jpeg" alt="Logo" class="h-10 w-auto rounded-lg">
@@ -228,58 +182,13 @@
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
-
         <div class="flex flex-col h-[calc(100vh-80px)] overflow-y-auto p-6">
             <nav class="flex flex-col gap-2 mb-8">
-                <a href="index.html" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
-                    <i class="fa-solid fa-house w-6 text-center text-black/20"></i>
-                    <span data-i18n="home">Home</span>
-                </a>
-                <a href="about.html" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
-                    <i class="fa-solid fa-building-columns w-6 text-center text-black/20"></i>
-                    <span data-i18n="about">About School</span>
-                </a>
-                
-                <!-- Explore Submenu (Interactive) -->
-                <div class="flex flex-col gap-1">
-                    <button id="mobile-explore-toggle" class="flex items-center justify-between p-4 rounded-2xl text-black/80 font-bold bg-black/[0.02] hover:bg-black/[0.05] transition-colors group">
-                        <div class="flex items-center gap-4">
-                            <i class="fa-solid fa-layer-group w-6 text-center text-primary"></i>
-                            <span data-i18n="explore">Explore</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-down text-[10px] text-black/20 transition-transform duration-300" id="explore-chevron"></i>
-                    </button>
-                    <div id="mobile-explore-menu" class="grid grid-cols-2 gap-2 ps-2 pe-2 mt-0 max-h-0 opacity-0 invisible overflow-hidden transition-all duration-500 ease-in-out">
-                        <a href="academics.html" class="flex flex-col gap-2 p-4 rounded-2xl bg-primary/5 border border-primary/10 group/item hover:bg-primary/10 transition-colors">
-                            <i class="fa-solid fa-book-open text-primary group-hover/item:scale-110 transition-transform"></i>
-                            <span class="text-xs font-bold" data-i18n="academics">Academics</span>
-                        </a>
-                        <a href="#" class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
-                            <i class="fa-solid fa-users text-secondary group-hover/item:scale-110 transition-transform"></i>
-                            <span class="text-xs font-bold" data-i18n="studentLife">Student Life</span>
-                        </a>
-                        <a href="#" class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
-                            <i class="fa-solid fa-calendar-days text-black/30 group-hover/item:scale-110 transition-transform"></i>
-                            <span class="text-xs font-bold" data-i18n="news">Events</span>
-                        </a>
-                        <a href="#" class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
-                            <i class="fa-solid fa-images text-black/30 group-hover/item:scale-110 transition-transform"></i>
-                            <span class="text-xs font-bold" data-i18n="gallery">Gallery</span>
-                        </a>
-                    </div>
-                </div>
-
-                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
-                    <i class="fa-solid fa-user-plus w-6 text-center text-black/20"></i>
-                    <span data-i18n="admissions">Admissions</span>
-                </a>
-                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
-                    <i class="fa-solid fa-envelope w-6 text-center text-black/20"></i>
-                    <span data-i18n="contact">Contact Us</span>
-                </a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-house w-6 text-center text-black/20"></i><span data-i18n="home">Home</span></a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-building-columns w-6 text-center text-black/20"></i><span data-i18n="about">About School</span></a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-user-plus w-6 text-center text-black/20"></i><span data-i18n="admissions">Admissions</span></a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-envelope w-6 text-center text-black/20"></i><span data-i18n="contact">Contact Us</span></a>
             </nav>
-
-            <!-- Language & Actions -->
             <div class="mt-auto pt-8 border-t border-black/5 space-y-6">
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-black text-black/30 uppercase tracking-widest" data-i18n="selectLang">Select Language</span>
@@ -288,11 +197,7 @@
                         <button onclick="setLanguage('ar')" id="mob-lang-ar" class="px-4 py-2 rounded-lg text-xs font-black transition-all">AR</button>
                     </div>
                 </div>
-                
-                <a href="#" class="flex items-center justify-center gap-3 w-full bg-primary text-white py-4 rounded-2xl font-black shadow-lg shadow-primary/20">
-                    <span data-i18n="admissionBtn">Admission 2024</span>
-                    <i class="fa-solid fa-rocket"></i>
-                </a>
+                <a href="#" class="flex items-center justify-center gap-3 w-full bg-primary text-white py-4 rounded-2xl font-black shadow-lg shadow-primary/20"><span data-i18n="admissionBtn">Admission 2024</span><i class="fa-solid fa-rocket"></i></a>
             </div>
         </div>
     </div>
@@ -300,15 +205,15 @@
     <!-- ========== ACADEMICS PAGE CONTENT ========== -->
     <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-12">
 
-        <!-- YOUR EXACT HERO SECTION - UNCHANGED -->
-        <section class="text-center  mb-16 md:mb-10 p-5 data-aos="fade-up">
-            <div class="inline-flex items-center gap-2 bg-secondary/20 border  border-secondary/30 px-4 py-2 rounded-full mb-6">
+        <!-- HERO SECTION -->
+        <section class="text-center mb-16 md:mb-10 p-5" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-4 py-2 rounded-full mb-6">
                 <i class="fa-solid fa-graduation-cap text-primary text-sm"></i>
                 <span class="text-primary font-semibold text-sm uppercase tracking-wide" data-i18n="academicsTag">Academic Excellence</span>
             </div>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-black mb-6 leading-tight">
-                Shape Your Future<br>
-                <span class="text-primary">With World-Class Education</span>
+                <span data-i18n="heroLine1">Shape Your Future</span><br>
+                <span class="text-primary" data-i18n="heroLine2">With World-Class Education</span>
             </h1>
             <p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto" data-i18n="academicsHeroText">
                 Ibri Private School offers a rigorous, innovative curriculum that prepares students for global success while honoring local values.
@@ -319,802 +224,359 @@
             </div>
         </section>
 
-        <!-- MODERN STATS SECTION -->
-<section class="grid  grid-cols-4 gap-3 md:gap-6 mb-10 p-5 md:mb-10">
-
-    <!-- CARD -->
-    <div
-        class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2"
-        data-aos="zoom-in"
-        data-aos-delay="0">
-
-        <!-- Glow -->
-        <div
-            class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500">
-        </div>
-
-        <!-- Icon -->
-        <div
-            class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
-
-            <i
-                class="fa-solid fa-chalkboard-user text-lg md:text-3xl text-primary group-hover:text-white transition duration-500"></i>
-        </div>
-
-        <!-- Number -->
-        <h3
-            class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
-
-            <span class="counter text-primary" data-target="52">0</span>
-
-            <span class="text-secondary text-sm md:text-2xl">+</span>
-        </h3>
-
-        <!-- Text -->
-        <p
-            class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight"
-            data-i18n="statFaculty">
-            Expert Faculty
-        </p>
-    </div>
-
-    <!-- CARD -->
-    <div
-        class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2"
-        data-aos="zoom-in"
-        data-aos-delay="100">
-
-        <div
-            class="absolute top-0 right-0 w-20 h-20 bg-secondary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500">
-        </div>
-
-        <div
-            class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
-
-            <i
-                class="fa-solid fa-user-graduate text-lg md:text-3xl text-black group-hover:text-black transition duration-500"></i>
-        </div>
-
-        <h3
-            class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
-
-            <span class="counter text-primary" data-target="1250">0</span>
-
-            <span class="text-secondary text-sm md:text-2xl">+</span>
-        </h3>
-
-        <p
-            class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight"
-            data-i18n="statStudents">
-            Students
-        </p>
-    </div>
-
-    <!-- CARD -->
-    <div
-        class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2"
-        data-aos="zoom-in"
-        data-aos-delay="200">
-
-        <div
-            class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500">
-        </div>
-
-        <div
-            class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
-
-            <i
-                class="fa-solid fa-award text-lg md:text-3xl text-primary group-hover:text-white transition duration-500"></i>
-        </div>
-
-        <h3
-            class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
-
-            <span class="counter text-primary" data-target="98">0</span>
-
-            <span class="text-secondary text-sm md:text-2xl">%</span>
-        </h3>
-
-        <p
-            class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight"
-            data-i18n="statGraduation">
-            Graduation
-        </p>
-    </div>
-
-    <!-- CARD -->
-    <div
-        class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2"
-        data-aos="zoom-in"
-        data-aos-delay="300">
-
-        <div
-            class="absolute top-0 right-0 w-20 h-20 bg-secondary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500">
-        </div>
-
-        <div
-            class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
-
-            <i
-                class="fa-solid fa-globe text-lg md:text-3xl text-black group-hover:text-black transition duration-500"></i>
-        </div>
-
-        <h3
-            class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
-
-            <span class="counter text-primary" data-target="18">0</span>
-
-            <span class="text-secondary text-sm md:text-2xl">+</span>
-        </h3>
-
-        <p
-            class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight"
-            data-i18n="statNationalities">
-            Nations
-        </p>
-    </div>
-
-</section>
-
-        <!-- PREMIUM SCHOOL PROGRAM CARDS - MATCHING NAVBAR COLORS bg-gradient-to-b  -->
-<section class=" p-5 rounded-[32px] from-white bg-gradient-to-b  to-primary/5">
-
-    <!-- Heading -->
-    <div class="text-center mb-14" data-aos="fade-up">
-        <span
-            class="inline-flex items-center gap-2 bg-secondary/20 text-black text-sm font-bold px-5 py-2 rounded-full mb-5 border border-secondary/30">
-            <i class="fa-solid fa-graduation-cap text-primary"></i>
-            Academic Excellence
-        </span>
-
-        <h2 class="text-3xl md:text-5xl font-black text-black mb-4">
-            Our Academic <span class="text-primary">Programs</span>
-        </h2>
-
-        <p class="text-black/60 max-w-2xl mx-auto leading-relaxed">
-            Discover world-class learning pathways designed to inspire creativity,
-            innovation, leadership, and lifelong success.
-        </p>
-    </div>
-
-    <!-- Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- CARD -->
-        <div
-            class="group bg-white rounded-[32px] overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
-
-            <!-- Top Image -->
-            <div class="relative h-56 overflow-hidden">
-
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
-                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-
-                <!-- Gradient Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-
-                <!-- Floating Badge -->
-                <div
-                    class="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[12px] font-bold text-primary shadow-lg">
-                    STEM Program
+        <!-- STATS SECTION -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-10 p-5 md:mb-10">
+            <div class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="0">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+                    <i class="fa-solid fa-chalkboard-user text-lg md:text-3xl text-primary group-hover:text-white transition duration-500"></i>
                 </div>
-
-                <!-- Bookmark -->
-                <button
-                    class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-
-            <!-- Content -->
-            <div class="relative px-6 pb-6">
-
-                <!-- Floating Icon -->
-                <div class="-mt-10 mb-5 relative z-10">
-                    <div
-                        class="w-20 h-20 rounded-3xl border-[5px] border-white bg-white shadow-xl flex items-center justify-center transition duration-500">
-
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
-
-                            <i
-                                class="fa-solid fa-microchip text-2xl text-primary group-hover:text-white transition duration-500"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Title -->
-                <h3
-                    class="text-2xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors duration-300">
-                    STEM Innovation
+                <h3 class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
+                    <span class="counter text-primary" data-target="52">0</span>
+                    <span class="text-secondary text-sm md:text-2xl">+</span>
                 </h3>
-
-                <!-- Description -->
-                <p class="text-black/55 text-sm leading-relaxed mb-6">
-                    Advanced robotics, AI learning, science labs, coding workshops,
-                    and engineering pathways for future innovators.
-                </p>
-
-                <!-- Features -->
-                <div class="flex flex-wrap gap-2 mb-6">
-
-                    <span
-                        class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full border border-primary/10">
-                        Robotics
-                    </span>
-
-                    <span
-                        class="bg-secondary/20 text-black text-xs font-bold px-3 py-1.5 rounded-full border border-secondary/20">
-                        AI Labs
-                    </span>
-
-                    <span
-                        class="bg-black/5 text-black/70 text-xs font-bold px-3 py-1.5 rounded-full">
-                        Engineering
-                    </span>
-                </div>
-
-                <!-- Stats -->
-                <div class="grid grid-cols-3 gap-3 mb-6">
-
-                    <div class="text-center border-r border-black/10">
-                        <h4 class="font-black text-black text-lg">4.9</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Rating</p>
-                    </div>
-
-                    <div class="text-center border-r border-black/10">
-                        <h4 class="font-black text-black text-lg">12+</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Labs</p>
-                    </div>
-
-                    <div class="text-center">
-                        <h4 class="font-black text-primary text-lg">7-12</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Grades</p>
-                    </div>
-                </div>
-
-                <!-- Button -->
-                <a href="#"
-                    class="h-12 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg group/btn">
-
-                    Explore Program
-
-                    <i
-                        class="fa-solid fa-arrow-right text-sm group-hover/btn:translate-x-1 transition-transform duration-300"></i>
-                </a>
+                <p class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight" data-i18n="statFaculty">Expert Faculty</p>
             </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div
-            class="group bg-white rounded-[32px] overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
-
-            <div class="relative h-56 overflow-hidden">
-
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-
-                <div
-                    class="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[12px] font-bold text-primary shadow-lg">
-                    Language Program
+            <div class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-secondary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
+                    <i class="fa-solid fa-user-graduate text-lg md:text-3xl text-black group-hover:text-black transition duration-500"></i>
                 </div>
-
-                <button
-                    class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-
-            <div class="relative px-6 pb-6">
-
-                <div class="-mt-10 mb-5 relative z-10">
-                    <div
-                        class="w-20 h-20 rounded-3xl border-[5px] border-white bg-white shadow-xl flex items-center justify-center">
-
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
-
-                            <i
-                                class="fa-solid fa-language text-2xl text-black group-hover:text-black transition duration-500"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <h3
-                    class="text-2xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors duration-300">
-                    Bilingual Excellence
+                <h3 class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
+                    <span class="counter text-primary" data-target="1250">0</span>
+                    <span class="text-secondary text-sm md:text-2xl">+</span>
                 </h3>
-
-                <p class="text-black/55 text-sm leading-relaxed mb-6">
-                    Arabic and English immersion programs focused on global communication,
-                    literature, and cultural understanding.
-                </p>
-
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span
-                        class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full">English</span>
-
-                    <span
-                        class="bg-secondary/20 text-black text-xs font-bold px-3 py-1.5 rounded-full">Arabic</span>
-
-                    <span
-                        class="bg-black/5 text-black/70 text-xs font-bold px-3 py-1.5 rounded-full">Culture</span>
-                </div>
-
-                <div class="grid grid-cols-3 gap-3 mb-6">
-
-                    <div class="text-center border-r border-black/10">
-                        <h4 class="font-black text-black text-lg">4.8</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Rating</p>
-                    </div>
-
-                    <div class="text-center border-r border-black/10">
-                        <h4 class="font-black text-black text-lg">20+</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Activities</p>
-                    </div>
-
-                    <div class="text-center">
-                        <h4 class="font-black text-primary text-lg">1-12</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Grades</p>
-                    </div>
-                </div>
-
-                <a href="#"
-                    class="h-12 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg">
-
-                    Explore Program
-                    <i class="fa-solid fa-arrow-right text-sm"></i>
-                </a>
+                <p class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight" data-i18n="statStudents">Students</p>
             </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div
-            class="group bg-white rounded-[32px] overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
-
-            <div class="relative h-56 overflow-hidden">
-
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
-                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-
-                <div
-                    class="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[12px] font-bold text-primary shadow-lg">
-                    Leadership Program
+            <div class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="200">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+                    <i class="fa-solid fa-award text-lg md:text-3xl text-primary group-hover:text-white transition duration-500"></i>
                 </div>
-
-                <button
-                    class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-
-            <div class="relative px-6 pb-6">
-
-                <div class="-mt-10 mb-5 relative z-10">
-                    <div
-                        class="w-20 h-20 rounded-3xl border-[5px] border-white bg-white shadow-xl flex items-center justify-center">
-
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
-
-                            <i
-                                class="fa-solid fa-chart-line text-2xl text-primary group-hover:text-white transition duration-500"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <h3
-                    class="text-2xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors duration-300">
-                    Business & Leadership
+                <h3 class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
+                    <span class="counter text-primary" data-target="98">0</span>
+                    <span class="text-secondary text-sm md:text-2xl">%</span>
                 </h3>
-
-                <p class="text-black/55 text-sm leading-relaxed mb-6">
-                    Entrepreneurship, economics, investment simulations, and leadership
-                    development for future global leaders.
-                </p>
-
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span
-                        class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full">Business</span>
-
-                    <span
-                        class="bg-secondary/20 text-black text-xs font-bold px-3 py-1.5 rounded-full">Leadership</span>
-
-                    <span
-                        class="bg-black/5 text-black/70 text-xs font-bold px-3 py-1.5 rounded-full">Economics</span>
+                <p class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight" data-i18n="statGraduation">Graduation</p>
+            </div>
+            <div class="group relative bg-white border border-black/5 rounded-[22px] md:rounded-[28px] p-3 md:p-7 text-center overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.10)] hover:shadow-[0_25px_70px_rgba(63,163,148,0.22)] transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="300">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-secondary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="relative z-10 w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
+                    <i class="fa-solid fa-globe text-lg md:text-3xl text-black group-hover:text-black transition duration-500"></i>
                 </div>
-
-                <div class="grid grid-cols-3 gap-3 mb-6">
-
-                    <div class="text-center border-r border-black/10">
-                        <h4 class="font-black text-black text-lg">5.0</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Rating</p>
-                    </div>
-
-                    <div class="text-center border-r border-black/10">
-                        <h4 class="font-black text-black text-lg">15+</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Projects</p>
-                    </div>
-
-                    <div class="text-center">
-                        <h4 class="font-black text-primary text-lg">9-12</h4>
-                        <p class="text-[11px] text-black/40 font-semibold">Grades</p>
-                    </div>
-                </div>
-
-                <a href="#"
-                    class="h-12 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg">
-
-                    Explore Program
-                    <i class="fa-solid fa-arrow-right text-sm"></i>
-                </a>
+                <h3 class="text-xl sm:text-2xl md:text-5xl font-black text-black mb-1 flex items-center justify-center gap-1">
+                    <span class="counter text-primary" data-target="18">0</span>
+                    <span class="text-secondary text-sm md:text-2xl">+</span>
+                </h3>
+                <p class="text-black/60 font-bold text-[10px] sm:text-xs md:text-base leading-tight" data-i18n="statNationalities">Nations</p>
             </div>
-        </div>
+        </section>
 
-    </div>
-</section>
-
-        <!-- MODERN FACILITIES SECTION -->
-<section
-    class="relative my-10 rounded-[36px] p-6 md:p-8 overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/10 border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.06)]"
-    data-aos="fade-up">
-
-    <!-- Background Glow -->
-    <div class="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-secondary/20 rounded-full blur-3xl"></div>
-
-    <!-- Heading -->
-    <div class="relative z-10 text-center mb-12">
-
-        <div
-            class="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/20 px-5 py-2 rounded-full shadow-sm mb-5">
-
-            <i class="fa-solid fa-building text-primary text-sm"></i>
-
-            <span class="text-primary font-bold text-sm uppercase tracking-wide">
-                Premium Campus
-            </span>
-        </div>
-
-        <h2 class="text-3xl md:text-5xl font-black text-black mb-4 leading-tight">
-            State-of-the-Art
-            <span class="text-primary relative inline-block">
-                Facilities
-            </span>
-        </h2>
-
-        <p class="text-black/60 max-w-2xl mx-auto leading-relaxed text-xs sm:text-sm md:text-base">
-            Modern learning environments designed to inspire innovation,
-            creativity, collaboration, and student success.
-        </p>
-    </div>
-
-    <!-- Facilities Grid (ALL 4 IN ONE LINE) -->
-    <div class="relative z-10 grid grid-cols-4 gap-2 md:gap-6">
-
-        <!-- ITEM 1 -->
-        <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-3 md:p-7 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
-
-            <div class="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:bg-primary transition-all duration-500">
-                <i class="fa-solid fa-microscope text-sm md:text-2xl text-primary group-hover:text-white"></i>
-            </div>
-
-            <h3 class="font-black text-black text-[10px] sm:text-xs md:text-lg mb-1">
-                Science Labs
-            </h3>
-
-            <p class="text-[9px] sm:text-[10px] md:text-sm text-black/50 font-medium">
-                6 labs
-            </p>
-        </div>
-
-        <!-- ITEM 2 -->
-        <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-3 md:p-7 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(255,213,5,0.20)] transition-all duration-500 hover:-translate-y-2">
-
-            <div class="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:bg-secondary transition-all duration-500">
-                <i class="fa-solid fa-laptop-code text-sm md:text-2xl text-black"></i>
-            </div>
-
-            <h3 class="font-black text-black text-[10px] sm:text-xs md:text-lg mb-1">
-                Smart Classes
-            </h3>
-
-            <p class="text-[9px] sm:text-[10px] md:text-sm text-black/50 font-medium">
-                Interactive
-            </p>
-        </div>
-
-        <!-- ITEM 3 -->
-        <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-3 md:p-7 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
-
-            <div class="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:bg-primary transition-all duration-500">
-                <i class="fa-solid fa-book-open text-sm md:text-2xl text-primary group-hover:text-white"></i>
-            </div>
-
-            <h3 class="font-black text-black text-[10px] sm:text-xs md:text-lg mb-1">
-                Library
-            </h3>
-
-            <p class="text-[9px] sm:text-[10px] md:text-sm text-black/50 font-medium">
-                10k+
-            </p>
-        </div>
-
-        <!-- ITEM 4 -->
-        <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-3 md:p-7 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(255,213,5,0.20)] transition-all duration-500 hover:-translate-y-2">
-
-            <div class="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:bg-secondary transition-all duration-500">
-                <i class="fa-solid fa-futbol text-sm md:text-2xl text-black"></i>
-            </div>
-
-            <h3 class="font-black text-black text-[10px] sm:text-xs md:text-lg mb-1">
-                Sports
-            </h3>
-
-            <p class="text-[9px] sm:text-[10px] md:text-sm text-black/50 font-medium">
-                Indoor
-            </p>
-        </div>
-
-    </div>
-</section>
-
-        <!-- Academic Achievements with Animated Gradient Progress Bars -->
-<section class="mb-20 md:mb-28 overflow-hidden" data-aos="fade-up">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-        <!-- Left Content -->
-        <div>
-            <div class="inline-flex items-center gap-2 bg-secondary/20 px-4 py-2 rounded-full mb-6">
-                <i class="fa-solid fa-trophy text-secondary-dark text-sm"></i>
-                <span class="text-secondary-dark font-semibold text-sm" data-i18n="achievementBadge">
-                    Our Pride
+        <!-- PREMIUM PROGRAM CARDS -->
+        <section class="p-5 rounded-[32px] from-white bg-gradient-to-b to-primary/5">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <span class="inline-flex items-center gap-2 bg-secondary/20 text-black text-sm font-bold px-5 py-2 rounded-full mb-5 border border-secondary/30">
+                    <i class="fa-solid fa-graduation-cap text-primary"></i>
+                    <span data-i18n="academicsTag">Academic Excellence</span>
                 </span>
+                <h2 class="text-3xl md:text-5xl font-black text-black mb-4">
+                    Our Academic <span class="text-primary" data-i18n="programsTitle">Programs</span>
+                </h2>
+                <p class="text-black/60 max-w-2xl mx-auto leading-relaxed text-sm md:text-base" data-i18n="programsSubtitle">
+                    Discover world-class learning pathways designed to inspire creativity, innovation, leadership, and lifelong success.
+                </p>
             </div>
 
-            <h2 class="text-3xl md:text-5xl font-black text-black leading-tight mb-5">
-                Academic <span class="text-primary">Achievements</span>
-            </h2>
-
-            <p class="text-gray-600 text-lg leading-relaxed mb-8" data-i18n="achievementDesc">
-                We take pride in our students' outstanding accomplishments in academics,
-                competitions, and university placements.
-            </p>
-
-            <div class="space-y-5">
-                <!-- Card -->
-                <div
-                    class="flex items-start gap-4 p-5 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-medal text-primary text-xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- CARD 1 - STEM -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-primary shadow-lg" data-i18n="program1Badge1">STEM Program</div>
+                        <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
+                            <i class="fa-regular fa-bookmark text-sm"></i>
+                        </button>
                     </div>
-
-                    <div>
-                        <h4 class="font-bold text-lg" data-i18n="achievement1">
-                            95% Distinction Rate
-                        </h4>
-                        <p class="text-sm text-gray-500 mt-1" data-i18n="achievement1Desc">
-                            in national standardized assessments
-                        </p>
+                    <div class="relative px-5 pb-5">
+                        <div class="-mt-8 mb-3 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl border-[4px] border-white bg-white shadow-xl flex items-center justify-center">
+                                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+                                    <i class="fa-solid fa-microchip text-lg text-primary group-hover:text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-black mb-1 group-hover:text-primary transition-colors duration-300" data-i18n="program1Title">STEM Innovation</h3>
+                        <p class="text-black/55 text-xs leading-relaxed mb-3" data-i18n="program1Desc">Advanced robotics, AI learning, science labs, coding workshops, and engineering pathways.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program1Badge2">Robotics</span>
+                            <span class="bg-secondary/20 text-black text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program1Badge3">AI Labs</span>
+                            <span class="bg-black/5 text-black/70 text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program1Badge4">Engineering</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="text-center border-r border-black/10">
+                                <h4 class="font-black text-black text-base">4.9</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program1Rating">Rating</p>
+                            </div>
+                            <div class="text-center border-r border-black/10">
+                                <h4 class="font-black text-black text-base">12+</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program1Labs">Labs</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="font-black text-primary text-base">7-12</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program1Grades">Grades</p>
+                            </div>
+                        </div>
+                        <a href="#" class="h-10 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold text-sm flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg">
+                            <span data-i18n="exploreBtn">Explore Program</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card -->
-                <div
-                    class="flex items-start gap-4 p-5 bg-white border border-yellow-200 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-yellow-100 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-award text-yellow-500 text-xl"></i>
+                <!-- CARD 2 - Bilingual -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-primary shadow-lg" data-i18n="program2Badge1">Language Program</div>
+                        <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
+                            <i class="fa-regular fa-bookmark text-sm"></i>
+                        </button>
                     </div>
-
-                    <div>
-                        <h4 class="font-bold text-lg" data-i18n="achievement2">
-                            Regional Science Fair Winners
-                        </h4>
-                        <p class="text-sm text-gray-500 mt-1" data-i18n="achievement2Desc">
-                            3 consecutive years of gold medals
-                        </p>
+                    <div class="relative px-5 pb-5">
+                        <div class="-mt-8 mb-3 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl border-[4px] border-white bg-white shadow-xl flex items-center justify-center">
+                                <div class="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
+                                    <i class="fa-solid fa-language text-lg text-black"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-black mb-1 group-hover:text-primary transition-colors duration-300" data-i18n="program2Title">Bilingual Excellence</h3>
+                        <p class="text-black/55 text-xs leading-relaxed mb-3" data-i18n="program2Desc">Arabic and English immersion programs focused on global communication, literature, and cultural understanding.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program2Badge2">English</span>
+                            <span class="bg-secondary/20 text-black text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program2Badge3">Arabic</span>
+                            <span class="bg-black/5 text-black/70 text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program2Badge4">Culture</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="text-center border-r border-black/10">
+                                <h4 class="font-black text-black text-base">4.8</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program2Rating">Rating</p>
+                            </div>
+                            <div class="text-center border-r border-black/10">
+                                <h4 class="font-black text-black text-base">20+</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program2Activities">Activities</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="font-black text-primary text-base">1-12</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program2Grades">Grades</p>
+                            </div>
+                        </div>
+                        <a href="#" class="h-10 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold text-sm flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg">
+                            <span data-i18n="exploreBtn">Explore Program</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card -->
-                <div
-                    class="flex items-start gap-4 p-5 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-university text-primary text-xl"></i>
+                <!-- CARD 3 - Business -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-primary shadow-lg" data-i18n="program3Badge1">Leadership Program</div>
+                        <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-black/60 hover:bg-primary hover:text-white transition-all duration-300">
+                            <i class="fa-regular fa-bookmark text-sm"></i>
+                        </button>
                     </div>
-
-                    <div>
-                        <h4 class="font-bold text-lg" data-i18n="achievement3">
-                            Top University Acceptances
-                        </h4>
-                        <p class="text-sm text-gray-500 mt-1" data-i18n="achievement3Desc">
-                            Oxford, MIT, NYU Abu Dhabi, and more
-                        </p>
+                    <div class="relative px-5 pb-5">
+                        <div class="-mt-8 mb-3 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl border-[4px] border-white bg-white shadow-xl flex items-center justify-center">
+                                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+                                    <i class="fa-solid fa-chart-line text-lg text-primary group-hover:text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-black mb-1 group-hover:text-primary transition-colors duration-300" data-i18n="program3Title">Business & Leadership</h3>
+                        <p class="text-black/55 text-xs leading-relaxed mb-3" data-i18n="program3Desc">Entrepreneurship, economics, investment simulations, and leadership development for future global leaders.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program3Badge2">Business</span>
+                            <span class="bg-secondary/20 text-black text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program3Badge3">Leadership</span>
+                            <span class="bg-black/5 text-black/70 text-[10px] font-bold px-2 py-1 rounded-full" data-i18n="program3Badge4">Economics</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="text-center border-r border-black/10">
+                                <h4 class="font-black text-black text-base">5.0</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program3Rating">Rating</p>
+                            </div>
+                            <div class="text-center border-r border-black/10">
+                                <h4 class="font-black text-black text-base">15+</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program3Projects">Projects</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="font-black text-primary text-base">9-12</h4>
+                                <p class="text-[9px] text-black/40 font-semibold" data-i18n="program3Grades">Grades</p>
+                            </div>
+                        </div>
+                        <a href="#" class="h-10 rounded-full bg-primary hover:bg-secondary text-white hover:text-black font-bold text-sm flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg">
+                            <span data-i18n="exploreBtn">Explore Program</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Right Side Progress Bars -->
-        <div
-            class="bg-gradient-to-br from-white via-gray-50 to-primary/5 border border-black/5 rounded-[32px] p-8 md:p-10 shadow-[0_15px_50px_rgba(0,0,0,0.06)]">
-
-            <div class="mb-8 text-center">
-                <span
-                    class="inline-block px-5 py-2 rounded-full bg-primary/10 text-primary font-semibold tracking-[4px] text-xs uppercase">
-                    Performance
-                </span>
-
-                <h3 class="text-3xl font-black mt-4">
-                    Excellence <span class="text-primary">Metrics</span>
-                </h3>
+        <!-- FACILITIES SECTION -->
+        <section class="relative my-10 rounded-[36px] p-6 md:p-8 overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/10 border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.06)]" data-aos="fade-up">
+            <div class="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-72 h-72 bg-secondary/20 rounded-full blur-3xl"></div>
+            <div class="relative z-10 text-center mb-8">
+                <div class="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/20 px-4 py-2 rounded-full shadow-sm mb-4">
+                    <i class="fa-solid fa-building text-primary text-sm"></i>
+                    <span class="text-primary font-bold text-sm uppercase tracking-wide" data-i18n="facilitiesTag">Premium Campus</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-black mb-3 leading-tight">
+                    State-of-the-Art
+                    <span class="text-primary relative inline-block" data-i18n="facilitiesTitleHighlight">Facilities</span>
+                </h2>
+                <p class="text-black/60 max-w-2xl mx-auto leading-relaxed text-sm md:text-base" data-i18n="facilitiesSubtitle">
+                    Modern learning environments designed to inspire innovation, creativity, collaboration, and student success.
+                </p>
             </div>
-
-            <div class="space-y-8">
-
-                <!-- Progress Item -->
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="font-semibold text-gray-700">
-                            Mathematics Excellence
-                        </span>
-                        <span class="font-black text-primary text-lg">92%</span>
+            <div class="relative z-10 grid grid-cols-4 gap-2 md:gap-6">
+                <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-2 md:p-5 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+                    <div class="w-8 h-8 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-1 md:mb-3 group-hover:bg-primary transition-all duration-500">
+                        <i class="fa-solid fa-microscope text-sm md:text-xl text-primary group-hover:text-white"></i>
                     </div>
-
-                    <div class="progress-bar-clean">
-                        <div class="progress-fill-clean teal-fill" data-width="92"></div>
-                    </div>
+                    <h3 class="font-black text-black text-[10px] sm:text-xs md:text-base mb-0.5" data-i18n="facility1">Science Labs</h3>
+                    <p class="text-[8px] sm:text-[10px] md:text-sm text-black/50 font-medium" data-i18n="facility1Desc">6 labs</p>
                 </div>
-
-                <!-- Progress Item -->
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="font-semibold text-gray-700">
-                            Science Achievement
-                        </span>
-                        <span class="font-black text-yellow-500 text-lg">89%</span>
+                <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-2 md:p-5 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(255,213,5,0.20)] transition-all duration-500 hover:-translate-y-2">
+                    <div class="w-8 h-8 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center mx-auto mb-1 md:mb-3 group-hover:bg-secondary transition-all duration-500">
+                        <i class="fa-solid fa-laptop-code text-sm md:text-xl text-black"></i>
                     </div>
-
-                    <div class="progress-bar-clean">
-                        <div class="progress-fill-clean yellow-fill" data-width="89"></div>
-                    </div>
+                    <h3 class="font-black text-black text-[10px] sm:text-xs md:text-base mb-0.5" data-i18n="facility2">Smart Classes</h3>
+                    <p class="text-[8px] sm:text-[10px] md:text-sm text-black/50 font-medium" data-i18n="facility2Desc">Interactive</p>
                 </div>
-
-                <!-- Progress Item -->
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="font-semibold text-gray-700">
-                            Language Arts
-                        </span>
-                        <span class="font-black text-gray-800 text-lg">94%</span>
+                <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-2 md:p-5 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(63,163,148,0.18)] transition-all duration-500 hover:-translate-y-2">
+                    <div class="w-8 h-8 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-1 md:mb-3 group-hover:bg-primary transition-all duration-500">
+                        <i class="fa-solid fa-book-open text-sm md:text-xl text-primary group-hover:text-white"></i>
                     </div>
-
-                    <div class="progress-bar-clean">
-                        <div class="progress-fill-clean dark-fill" data-width="94"></div>
-                    </div>
+                    <h3 class="font-black text-black text-[10px] sm:text-xs md:text-base mb-0.5" data-i18n="facility3">Library</h3>
+                    <p class="text-[8px] sm:text-[10px] md:text-sm text-black/50 font-medium" data-i18n="facility3Desc">10k+</p>
                 </div>
-
-                <!-- Progress Item -->
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="font-semibold text-gray-700">
-                            University Placement
-                        </span>
-                        <span class="font-black text-primary text-lg">97%</span>
+                <div class="group bg-white/80 backdrop-blur-xl rounded-[20px] md:rounded-[28px] p-2 md:p-5 text-center border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_60px_rgba(255,213,5,0.20)] transition-all duration-500 hover:-translate-y-2">
+                    <div class="w-8 h-8 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-secondary/20 flex items-center justify-center mx-auto mb-1 md:mb-3 group-hover:bg-secondary transition-all duration-500">
+                        <i class="fa-solid fa-futbol text-sm md:text-xl text-black"></i>
                     </div>
-
-                    <div class="progress-bar-clean">
-                        <div class="progress-fill-clean teal-light-fill" data-width="97"></div>
-                    </div>
+                    <h3 class="font-black text-black text-[10px] sm:text-xs md:text-base mb-0.5" data-i18n="facility4">Sports</h3>
+                    <p class="text-[8px] sm:text-[10px] md:text-sm text-black/50 font-medium" data-i18n="facility4Desc">Indoor</p>
                 </div>
-
             </div>
-        </div>
+        </section>
 
-    </div>
-</section>
+        <!-- ACADEMIC ACHIEVEMENTS SECTION WITH YOUR GRADIENT PROGRESS BARS -->
+        <section class="mb-20 md:mb-28 overflow-hidden" data-aos="fade-up">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-secondary/20 px-4 py-2 rounded-full mb-6">
+                        <i class="fa-solid fa-trophy text-secondary-dark text-sm"></i>
+                        <span class="text-secondary-dark font-semibold text-sm" data-i18n="achievementBadge">Our Pride</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-black text-black leading-tight mb-5">
+                        Academic <span class="text-primary" data-i18n="achievementTitle">Achievements</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8" data-i18n="achievementDesc">
+                        We take pride in our students' outstanding accomplishments in academics, competitions, and university placements.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-medal text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base" data-i18n="achievement1">95% Distinction Rate</h4>
+                                <p class="text-xs text-gray-500 mt-0.5" data-i18n="achievement1Desc">in national standardized assessments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white border border-yellow-200 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                            <div class="w-10 h-10 rounded-xl bg-yellow-100 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-award text-yellow-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base" data-i18n="achievement2">Regional Science Fair Winners</h4>
+                                <p class="text-xs text-gray-500 mt-0.5" data-i18n="achievement2Desc">3 consecutive years of gold medals</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-university text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base" data-i18n="achievement3">Top University Acceptances</h4>
+                                <p class="text-xs text-gray-500 mt-0.5" data-i18n="achievement3Desc">Oxford, MIT, NYU Abu Dhabi, and more</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-white via-gray-50 to-primary/5 border border-black/5 rounded-[32px] p-6 md:p-8 shadow-[0_15px_50px_rgba(0,0,0,0.06)]">
+                    <div class="mb-6 text-center">
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold tracking-[4px] text-xs uppercase" data-i18n="performanceBadge">Performance</span>
+                        <h3 class="text-2xl font-black mt-3">
+                            Excellence <span class="text-primary" data-i18n="performanceTitleHighlight">Metrics</span>
+                        </h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700 text-sm" data-i18n="mathScore">Mathematics Excellence</span>
+                                <span class="font-black text-primary text-base">92%</span>
+                            </div>
+                            <div class="progress-bar-clean">
+                                <div class="progress-fill-clean teal-fill" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700 text-sm" data-i18n="scienceScore">Science Achievement</span>
+                                <span class="font-black text-yellow-500 text-base">89%</span>
+                            </div>
+                            <div class="progress-bar-clean">
+                                <div class="progress-fill-clean yellow-fill" data-width="89"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700 text-sm" data-i18n="langScore">Language Arts</span>
+                                <span class="font-black text-gray-800 text-base">94%</span>
+                            </div>
+                            <div class="progress-bar-clean">
+                                <div class="progress-fill-clean dark-fill" data-width="94"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700 text-sm" data-i18n="uniScore">University Placement</span>
+                                <span class="font-black text-primary text-base">97%</span>
+                            </div>
+                            <div class="progress-bar-clean">
+                                <div class="progress-fill-clean teal-light-fill" data-width="97"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- CSS -->
-<style>
-    .progress-bar-clean {
-        width: 100%;
-        height: 16px;
-        background: #ececec;
-        border-radius: 999px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .progress-fill-clean {
-        height: 100%;
-        width: 0;
-        border-radius: 999px;
-        transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
-        position: relative;
-    }
-
-    /* Teal Gradient */
-    .teal-fill {
-        background: linear-gradient(to bottom,
-                #8ad6cb,
-                #4ca89d);
-    }
-
-    /* Yellow Gradient */
-    .yellow-fill {
-        background: linear-gradient(to bottom,
-                #ffe970,
-                #f4cf00);
-    }
-
-    /* Dark Gradient */
-    .dark-fill {
-        background: linear-gradient(to bottom,
-                #666,
-                #2f2f2f);
-    }
-
-    /* Light Teal */
-    .teal-light-fill {
-        background: linear-gradient(to bottom,
-                #b9e5df,
-                #85c4bb);
-    }
-
-    /* Smooth glow */
-    .progress-fill-clean::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.15);
-    }
-</style>
-
-<!-- JS Animation on Scroll -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-
-        const progressBars = document.querySelectorAll(".progress-fill-clean");
-
-        const animateBars = () => {
-            progressBars.forEach((bar) => {
-                const rect = bar.getBoundingClientRect();
-
-                if (rect.top < window.innerHeight - 50) {
-                    const width = bar.getAttribute("data-width");
-                    bar.style.width = width + "%";
-                }
-            });
-        };
-
-        // Run on load
-        animateBars();
-
-        // Run on scroll
-        window.addEventListener("scroll", animateBars);
-    });
-</script>
-
-        <!-- CTA Section -->
+        <!-- CTA SECTION -->
         <section class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white" data-aos="zoom-in">
             <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="ctaTitle">Ready to Begin Your Journey?</h2>
-            <p class="text-white/80 max-w-2xl mx-auto mb-6" data-i18n="ctaText">Join our community of learners and discover your full potential at Ibri Private School.</p>
+            <p class="text-white/80 max-w-2xl mx-auto mb-6 text-sm md:text-base" data-i18n="ctaText">Join our community of learners and discover your full potential at Ibri Private School.</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a href="#" class="bg-secondary text-black hover:bg-secondary-light px-6 py-3 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center gap-2"><i class="fa-solid fa-calendar-check"></i> <span data-i18n="ctaButton1">Schedule a Tour</span></a>
-                <a href="#" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-6 py-3 rounded-full font-bold transition-all inline-flex items-center gap-2"><i class="fa-solid fa-file-alt"></i> <span data-i18n="ctaButton2">Apply Now</span></a>
+                <a href="#" class="bg-secondary text-black hover:bg-secondary-light px-5 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center gap-2 text-sm"><i class="fa-solid fa-calendar-check"></i> <span data-i18n="ctaButton1">Schedule a Tour</span></a>
+                <a href="#" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-5 py-2.5 rounded-full font-bold transition-all inline-flex items-center gap-2 text-sm"><i class="fa-solid fa-file-alt"></i> <span data-i18n="ctaButton2">Apply Now</span></a>
             </div>
         </section>
     </main>
@@ -1125,12 +587,7 @@
 
     <script>
         // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100,
-            easing: 'ease-out-quad'
-        });
+        AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-quad' });
 
         // Counter Animation
         const counters = document.querySelectorAll('.counter');
@@ -1165,30 +622,22 @@
             });
         };
 
-        // Progress Bar Animation - Clean teal only
+        // Progress Bar Animation
         const progressBars = document.querySelectorAll('.progress-fill-clean');
         const animateProgress = () => {
             progressBars.forEach(bar => {
                 const rect = bar.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100 && bar.style.width === '0%' || bar.style.width === '') {
+                if (rect.top < window.innerHeight - 100 && (bar.style.width === '0%' || bar.style.width === '')) {
                     const width = bar.getAttribute('data-width');
                     bar.style.width = width + '%';
                 }
             });
         };
 
-        window.addEventListener('scroll', () => {
-            animateCounters();
-            animateProgress();
-        });
-        window.addEventListener('load', () => {
-            animateCounters();
-            animateProgress();
-        });
+        window.addEventListener('scroll', () => { animateCounters(); animateProgress(); });
+        window.addEventListener('load', () => { animateCounters(); animateProgress(); });
 
-
-
-        // Complete Translations with Arabic support
+        // Complete Translations
         const translations = {
             en: {
                 schoolNameMain: "Ibri Private School",
@@ -1206,42 +655,58 @@
                 admissionBtn: "Admission",
                 selectLang: "Select Language",
                 academicsTag: "Academic Excellence",
+                heroLine1: "Shape Your Future",
+                heroLine2: "With World-Class Education",
                 academicsHeroText: "Ibri Private School offers a rigorous, innovative curriculum that prepares students for global success while honoring local values.",
                 brochureBtn: "Download Brochure",
                 tourBtn: "Virtual Tour",
                 statFaculty: "Expert Faculty",
-                statStudents: "Active Students",
-                statGraduation: "Graduation Rate",
-                statNationalities: "Nationalities",
-                programsSubtitle: "Discover diverse pathways designed to nurture curiosity and critical thinking",
+                statStudents: "Students",
+                statGraduation: "Graduation",
+                statNationalities: "Nations",
+                programsTitle: "Programs",
+                programsSubtitle: "Discover world-class learning pathways designed to inspire creativity, innovation, leadership, and lifelong success.",
                 program1Title: "STEM Innovation",
-                program1Desc: "Cutting-edge science, technology, engineering, and math with advanced robotics lab and research opportunities.",
-                grades1: "Grades 7-12",
+                program1Desc: "Advanced robotics, AI learning, science labs, coding workshops, and engineering pathways.",
+                program1Badge1: "STEM Program",
+                program1Badge2: "Robotics",
+                program1Badge3: "AI Labs",
+                program1Badge4: "Engineering",
+                program1Rating: "Rating",
+                program1Labs: "Labs",
+                program1Grades: "Grades",
                 program2Title: "Bilingual Excellence",
-                program2Desc: "Full Arabic & English immersion with literature, poetry, cultural studies, and international exchange programs.",
-                grades2: "Grades 1-12",
+                program2Desc: "Arabic and English immersion programs focused on global communication, literature, and cultural understanding.",
+                program2Badge1: "Language Program",
+                program2Badge2: "English",
+                program2Badge3: "Arabic",
+                program2Badge4: "Culture",
+                program2Rating: "Rating",
+                program2Activities: "Activities",
+                program2Grades: "Grades",
                 program3Title: "Business & Leadership",
-                program3Desc: "Entrepreneurship, economics, investment simulations, and leadership skills for future global leaders.",
-                grades3: "Grades 9-12",
-                program4Title: "Creative Arts",
-                program4Desc: "Visual arts, music production, drama theater, creative writing workshops, and annual exhibitions.",
-                grades4: "All Grades",
-                program5Title: "Computer Science",
-                program5Desc: "Coding, AI fundamentals, game development, cybersecurity, and professional certification tracks.",
-                grades5: "Grades 6-12",
-                program6Title: "Health & Wellness",
-                program6Desc: "Sports science, nutrition, mental wellness, competitive athletics, and Olympic-standard facilities.",
-                grades6: "All Grades",
-                facilitiesSubtitle: "Modern learning environments designed to inspire and empower students",
+                program3Desc: "Entrepreneurship, economics, investment simulations, and leadership development for future global leaders.",
+                program3Badge1: "Leadership Program",
+                program3Badge2: "Business",
+                program3Badge3: "Leadership",
+                program3Badge4: "Economics",
+                program3Rating: "Rating",
+                program3Projects: "Projects",
+                program3Grades: "Grades",
+                exploreBtn: "Explore Program",
+                facilitiesTag: "Premium Campus",
+                facilitiesTitleHighlight: "Facilities",
+                facilitiesSubtitle: "Modern learning environments designed to inspire innovation, creativity, collaboration, and student success.",
                 facility1: "Science Labs",
-                facility1Desc: "6 specialized labs",
-                facility2: "Smart Classrooms",
-                facility2Desc: "Interactive learning",
-                facility3: "Digital Library",
-                facility3Desc: "10,000+ resources",
-                facility4: "Sports Complex",
-                facility4Desc: "Indoor & outdoor",
+                facility1Desc: "6 labs",
+                facility2: "Smart Classes",
+                facility2Desc: "Interactive",
+                facility3: "Library",
+                facility3Desc: "10k+",
+                facility4: "Sports",
+                facility4Desc: "Indoor",
                 achievementBadge: "Our Pride",
+                achievementTitle: "Achievements",
                 achievementDesc: "We take pride in our students' outstanding accomplishments in academics, competitions, and university placements.",
                 achievement1: "95% Distinction Rate",
                 achievement1Desc: "in national standardized assessments",
@@ -1249,7 +714,8 @@
                 achievement2Desc: "3 consecutive years of gold medals",
                 achievement3: "Top University Acceptances",
                 achievement3Desc: "Oxford, MIT, NYU Abu Dhabi, and more",
-                progressTitle: "Performance Metrics",
+                performanceBadge: "Performance",
+                performanceTitleHighlight: "Metrics",
                 mathScore: "Mathematics Excellence",
                 scienceScore: "Science Achievement",
                 langScore: "Language Arts",
@@ -1268,49 +734,65 @@
                 explore: "استكشف",
                 academics: "الأكاديميا",
                 studentLife: "الحياة الطلابية",
-                news: "الأخبار",
-                gallery: "المعرض",
+                news: "الأخبار والفعاليات",
+                gallery: "معرض الصور",
                 contact: "اتصل بنا",
-                contactBtn: "تواصل",
+                contactBtn: "تواصل معنا",
                 admissionBtn: "سجل الآن",
                 selectLang: "اختر اللغة",
                 academicsTag: "التميز الأكاديمي",
+                heroLine1: "شكل مستقبلك",
+                heroLine2: "بتعليم عالمي المستوى",
                 academicsHeroText: "تقدم مدرسة عبري الخاصة منهجاً دراسياً مبتكراً يعد الطلاب للنجاح العالمي مع الحفاظ على القيم المحلية.",
                 brochureBtn: "تحميل البروشور",
                 tourBtn: "جولة افتراضية",
                 statFaculty: "هيئة تدريس",
-                statStudents: "طلاب نشطاء",
-                statGraduation: "نسبة التخرج",
+                statStudents: "طلاب",
+                statGraduation: "تخرج",
                 statNationalities: "جنسيات",
-                programsSubtitle: "اكتشف مسارات تعليمية متنوعة مصممة لتنمية الفضول والتفكير النقدي",
+                programsTitle: "البرامج",
+                programsSubtitle: "اكتشف مسارات تعليمية عالمية المستوى مصممة لإلهام الإبداع والابتكار والقيادة والنجاح مدى الحياة.",
                 program1Title: "ابتكار STEM",
-                program1Desc: "العلوم والتكنولوجيا والهندسة والرياضيات مع مختبر روبوتات متقدم وفرص بحثية.",
-                grades1: "الصفوف 7-12",
+                program1Desc: "روبوتات متقدمة، تعلم الذكاء الاصطناعي، مختبرات العلوم، ورش البرمجة، ومسارات الهندسة.",
+                program1Badge1: "برنامج STEM",
+                program1Badge2: "روبوتات",
+                program1Badge3: "مختبرات الذكاء",
+                program1Badge4: "هندسة",
+                program1Rating: "تقييم",
+                program1Labs: "مختبر",
+                program1Grades: "صفوف",
                 program2Title: "التميز في ثنائية اللغة",
-                program2Desc: "اندماج كامل باللغتين العربية والإنجليزية مع الأدب والشعر والدراسات الثقافية وبرامج التبادل الدولي.",
-                grades2: "الصفوف 1-12",
+                program2Desc: "برامج انغماس باللغتين العربية والإنجليزية تركز على التواصل العالمي والأدب والفهم الثقافي.",
+                program2Badge1: "برنامج لغوي",
+                program2Badge2: "إنجليزي",
+                program2Badge3: "عربي",
+                program2Badge4: "ثقافة",
+                program2Rating: "تقييم",
+                program2Activities: "نشاط",
+                program2Grades: "صفوف",
                 program3Title: "الأعمال والقيادة",
-                program3Desc: "ريادة الأعمال والاقتصاد ومحاكاة الاستثمار ومهارات القيادة لقادة العالم في المستقبل.",
-                grades3: "الصفوف 9-12",
-                program4Title: "الفنون الإبداعية",
-                program4Desc: "الفنون البصرية وإنتاج الموسيقى والمسرح وورش الكتابة الإبداعية والمعارض السنوية.",
-                grades4: "جميع الصفوف",
-                program5Title: "علوم الحاسوب",
-                program5Desc: "البرمجة وأساسيات الذكاء الاصطناعي وتطوير الألعاب والأمن السيبراني وشهادات احترافية.",
-                grades5: "الصفوف 6-12",
-                program6Title: "الصحة والعافية",
-                program6Desc: "علوم الرياضة والتغذية والصحة النفسية والرياضات التنافسية ومرافق ذات مستوى أولمبي.",
-                grades6: "جميع الصفوف",
-                facilitiesSubtitle: "بيئات تعليمية حديثة مصممة لإلهام وتمكين الطلاب",
+                program3Desc: "ريادة الأعمال والاقتصاد ومحاكاة الاستثمار وتطوير المهارات القيادية لقادة العالم في المستقبل.",
+                program3Badge1: "برنامج قيادي",
+                program3Badge2: "أعمال",
+                program3Badge3: "قيادة",
+                program3Badge4: "اقتصاد",
+                program3Rating: "تقييم",
+                program3Projects: "مشروع",
+                program3Grades: "صفوف",
+                exploreBtn: "استكشف البرنامج",
+                facilitiesTag: "حرم جامعي متميز",
+                facilitiesTitleHighlight: "المرافق",
+                facilitiesSubtitle: "بيئات تعليمية حديثة مصممة لإلهام الابتكار والإبداع والتعاون ونجاح الطلاب.",
                 facility1: "المختبرات العلمية",
-                facility1Desc: "6 مختبرات متخصصة",
+                facility1Desc: "6 مختبرات",
                 facility2: "الفصول الذكية",
-                facility2Desc: "تعلم تفاعلي",
-                facility3: "المكتبة الرقمية",
-                facility3Desc: "أكثر من 10,000 مصدر",
-                facility4: "المجمع الرياضي",
-                facility4Desc: "داخلي وخارجي",
+                facility2Desc: "تفاعلية",
+                facility3: "المكتبة",
+                facility3Desc: "أكثر من 10 آلاف",
+                facility4: "الرياضة",
+                facility4Desc: "داخلي",
                 achievementBadge: "فخرنا",
+                achievementTitle: "الإنجازات",
                 achievementDesc: "نفتخر بإنجازات طلابنا المتميزة في الأكاديميا والمسابقات والالتحاق بالجامعات.",
                 achievement1: "95% نسبة التميز",
                 achievement1Desc: "في التقييمات الوطنية الموحدة",
@@ -1318,7 +800,8 @@
                 achievement2Desc: "3 سنوات متتالية من الميداليات الذهبية",
                 achievement3: "قبولات في أفضل الجامعات",
                 achievement3Desc: "أكسفورد، معهد ماساتشوستس للتكنولوجيا، نيويورك أبوظبي والمزيد",
-                progressTitle: "مقاييس الأداء",
+                performanceBadge: "الأداء",
+                performanceTitleHighlight: "المقاييس",
                 mathScore: "التميز في الرياضيات",
                 scienceScore: "الإنجاز العلمي",
                 langScore: "اللغات",
@@ -1387,48 +870,34 @@
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-
-        if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
-            const openMenu = () => {
-                mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
-                mobileMenu.classList.add('translate-x-0', 'opacity-100', 'visible');
-                document.body.style.overflow = 'hidden';
-            };
-
-            const closeMenu = () => {
-                mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
-                mobileMenu.classList.remove('translate-x-0', 'opacity-100', 'visible');
-                document.body.style.overflow = '';
-            };
-
-            mobileMenuBtn.addEventListener('click', openMenu);
-            closeMenuBtn.addEventListener('click', closeMenu);
-
-            // Explore Toggle
-            const exploreToggle = document.getElementById('mobile-explore-toggle');
-            const exploreMenu = document.getElementById('mobile-explore-menu');
-            const exploreChevron = document.getElementById('explore-chevron');
-
-            if (exploreToggle && exploreMenu) {
-                exploreToggle.addEventListener('click', () => {
-                    const isOpen = !exploreMenu.classList.contains('max-h-0');
-                    if (isOpen) {
-                        exploreMenu.classList.add('max-h-0', 'opacity-0', 'invisible');
-                        exploreMenu.classList.remove('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
-                        exploreChevron.classList.remove('rotate-180');
-                    } else {
-                        exploreMenu.classList.remove('max-h-0', 'opacity-0', 'invisible');
-                        exploreMenu.classList.add('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
-                        exploreChevron.classList.add('rotate-180');
+        let icon = null;
+        
+        if (mobileMenuBtn && mobileMenu) {
+            icon = mobileMenuBtn.querySelector('i');
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('open');
+                if (mobileMenu.classList.contains('open')) {
+                    if (icon) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-xmark');
                     }
-                });
-            }
-
-            // Close menu when clicking a link
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', closeMenu);
+                } else {
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                }
             });
         }
 
