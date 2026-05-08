@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Fonts (Cairo for excellent Arabic and English support) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -71,8 +73,31 @@
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
+        @keyframes pingSlow {
+
+            75%,
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .animate-ping-slow {
+            animation: pingSlow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
         .hero-rounded {
             border-radius: 0 0 40px 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-rounded {
+                border-radius: 0 0 20px 20px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -83,7 +108,7 @@
     </style>
 </head>
 
-<body class="bg-white min-h-screen text-black">
+<body class="bg-white min-h-screen text-black overflow-x-hidden">
 
     <header id="main-header"
         class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
@@ -321,8 +346,8 @@
     </div>
 
     <!-- About Hero Section -->
-    <section class="w-full pt-0 pb-12 -mt-[88px] sm:-mt-[104px]">
-        <div class="relative w-full h-[450px] md:h-[570px]  overflow-hidden shadow-lg bg-slate-900">
+    <section class="w-full pt-0 pb-0 -mt-[88px] sm:-mt-[104px]">
+        <div class="relative w-full h-screen md:h-[600px] overflow-hidden shadow-lg bg-slate-900">
             <img src="./Asstes/school image.jpeg" alt="School Campus"
                 class="absolute inset-0 w-full h-full object-cover object-center  opacity-60">
 
@@ -332,8 +357,8 @@
 
             <!-- Hero Content (Professionally Aligned) -->
             <div
-                class="relative z-10 px-2 sm:px-12 lg:px-24 h-full flex flex-col justify-start items-start pt-36 md:pt-32">
-                <div class="max-w-3xl space-y-5 text-start animate-fade-in-up">
+                class="relative z-10 px-2 sm:px-12 lg:px-24 h-full flex flex-col justify-start items-start pt-32 md:pt-44">
+                <div class="max-w-3xl space-y-5 animate-fade-in-up">
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 bg-primary/20 border border-primary/30 rounded-full">
                         <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
@@ -341,11 +366,13 @@
                             data-i18n="establishedTag">Established
                             1990</span>
                     </div>
-                    <h2 class="text-white text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight drop-shadow-sm"
+                    <h2 id="hero-heading"
+                        class="text-white text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight drop-shadow-sm"
                         data-i18n="aboutHeroHeading">
                         Building Future <br> <span class="text-secondary">Leaders in Ibri</span>
                     </h2>
-                    <p class="text-white/70 text-sm md:text-base font-medium max-w-lg leading-relaxed border-l-2 border-primary/50 ps-4"
+                    <p id="hero-desc"
+                        class="text-white/70 text-sm md:text-base font-medium max-w-lg leading-relaxed border-l-2 border-primary/50 ps-4"
                         data-i18n="aboutHeroDesc">
                         A legacy of excellence in bilingual education, fostering
                         global citizens with strong Islamic values and modern skills.
@@ -355,18 +382,19 @@
 
             <!-- Floating Search-style Bar (Bottom) - Hidden on Mobile -->
             <div
-                class="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 w-[94%] md:w-[90%] lg:w-[85%] max-w-5xl z-20">
+                class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 w-[94%] md:w-[90%] lg:w-[85%] max-w-5xl z-20">
                 <div
                     class="bg-white/95 backdrop-blur-md rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-1.5 md:p-2 border border-white/20">
-                    <!-- Tabs - More Compact -->
-                    <div class="flex items-center gap-6 px-5 pt-3 pb-1">
-                        <button class="text-[11px] md:text-[13px] font-black text-black border-b-2 border-primary pb-1"
+                    <!-- Tabs - More Compact & Scrollable on Mobile -->
+                    <div class="flex items-center gap-6 px-5 pt-3 pb-1 overflow-x-auto no-scrollbar whitespace-nowrap">
+                        <button id="tab-mission" onclick="switchAboutTab('mission')"
+                            class="text-[11px] md:text-[13px] font-black text-black border-b-2 border-primary pb-1 transition-all"
                             data-i18n="aboutHeroTab1">Our Mission</button>
-                        <button
-                            class="text-[11px] md:text-[13px] font-bold text-black/40 hover:text-black transition-colors pb-1"
+                        <button id="tab-vision" onclick="switchAboutTab('vision')"
+                            class="text-[11px] md:text-[13px] font-bold text-black/40 hover:text-black transition-all pb-1"
                             data-i18n="aboutHeroTab2">Our Vision</button>
-                        <button
-                            class="text-[11px] md:text-[13px] font-bold text-black/40 hover:text-black transition-colors pb-1"
+                        <button id="tab-values" onclick="switchAboutTab('values')"
+                            class="text-[11px] md:text-[13px] font-bold text-black/40 hover:text-black transition-all pb-1"
                             data-i18n="aboutHeroTab3">Our Values</button>
                     </div>
 
@@ -374,34 +402,37 @@
                     <div class="flex flex-col md:flex-row items-center gap-1 md:gap-0 mt-1">
                         <!-- Heritage -->
                         <div class="flex-1 w-full px-5 py-3 md:border-r border-black/5 flex flex-col">
-                            <span class="text-[9px] font-black text-black/30 uppercase tracking-widest mb-0.5"
+                            <span id="stat-label-1"
+                                class="text-[9px] font-black text-black/30 uppercase tracking-widest mb-0.5"
                                 data-i18n="aboutHeroStat1Title">Heritage</span>
                             <div class="flex items-center justify-between">
-                                <span class="text-[12px] md:text-[14px] font-bold text-black"
+                                <span id="stat-value-1" class="text-[12px] md:text-[14px] font-bold text-black"
                                     data-i18n="aboutHeroStat1Value">30+ Years Exp.</span>
-                                <i class="fa-solid fa-award text-primary/30 text-[10px]"></i>
+                                <i id="stat-icon-1" class="fa-solid fa-award text-primary/30 text-[10px]"></i>
                             </div>
                         </div>
 
                         <!-- Standards -->
                         <div class="flex-1 w-full px-5 py-3 md:border-r border-black/5 flex flex-col">
-                            <span class="text-[9px] font-black text-black/30 uppercase tracking-widest mb-0.5"
+                            <span id="stat-label-2"
+                                class="text-[9px] font-black text-black/30 uppercase tracking-widest mb-0.5"
                                 data-i18n="aboutHeroStat2Title">Standards</span>
                             <div class="flex items-center justify-between">
-                                <span class="text-[12px] md:text-[14px] font-bold text-black"
+                                <span id="stat-value-2" class="text-[12px] md:text-[14px] font-bold text-black"
                                     data-i18n="aboutHeroStat2Value">MOE Certified</span>
-                                <i class="fa-solid fa-certificate text-primary/30 text-[10px]"></i>
+                                <i id="stat-icon-2" class="fa-solid fa-certificate text-primary/30 text-[10px]"></i>
                             </div>
                         </div>
 
                         <!-- Faculty -->
                         <div class="flex-1 w-full px-5 py-3 flex flex-col">
-                            <span class="text-[9px] font-black text-black/30 uppercase tracking-widest mb-0.5"
+                            <span id="stat-label-3"
+                                class="text-[9px] font-black text-black/30 uppercase tracking-widest mb-0.5"
                                 data-i18n="aboutHeroStat3Title">Faculty</span>
                             <div class="flex items-center justify-between">
-                                <span class="text-[12px] md:text-[14px] font-bold text-black"
+                                <span id="stat-value-3" class="text-[12px] md:text-[14px] font-bold text-black"
                                     data-i18n="aboutHeroStat3Value">50+ Experts</span>
-                                <i class="fa-solid fa-chalkboard-user text-primary/30 text-[10px]"></i>
+                                <i id="stat-icon-3" class="fa-solid fa-chalkboard-user text-primary/30 text-[10px]"></i>
                             </div>
                         </div>
 
@@ -420,40 +451,480 @@
         </div>
     </section>
 
-    <!-- Main About Content placeholder to keep it clean -->
-    <main class="max-w-[1400px] mx-auto px-2 sm:px-6 lg:px-8 py-10 md:py-20">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <span
-                    class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full"
-                    data-i18n="aboutPageTag">WHO WE ARE</span>
-                <h2 class="text-3xl md:text-5xl font-black text-black leading-tight" data-i18n="aboutPageHeading">A
-                    Legacy of Learning in Ibri.</h2>
-                <p class="text-slate-600 text-lg leading-relaxed" data-i18n="aboutPageDesc">
-                    At Ibri Private School, we believe that education is the most powerful tool to change the world.
-                    Since our establishment in 1990, we have been dedicated to providing a nurturing environment where
-                    students can develop academically, socially, and ethically.
-                </p>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="p-6 bg-slate-50 rounded-3xl border border-black/5">
-                        <h4 class="text-2xl font-black text-primary mb-2">30+</h4>
-                        <p class="text-sm font-bold text-black/40 uppercase" data-i18n="aboutStat1">Years of Excellence
-                        </p>
+    <!-- School Overview Section  -->
+    <section class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-10 md:py-16">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+            <!-- Left Side: Staggered Images  -->
+            <div class="relative flex items-center justify-center lg:justify-start">
+                <!-- Main Campus Image -->
+                <div
+                    class="relative w-3/4 md:w-7/12 mx-auto lg:mx-0 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl z-0 group">
+                    <img src="./Asstes/school image.jpeg" alt="School Campus"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500">
                     </div>
-                    <div class="p-6 bg-slate-50 rounded-3xl border border-black/5">
-                        <h4 class="text-2xl font-black text-secondary mb-2">50+</h4>
-                        <p class="text-sm font-bold text-black/40 uppercase" data-i18n="aboutStat2">Expert Faculty</p>
+                </div>
+
+                <!-- Secondary Image  -->
+                <div
+                    class="absolute -right-2 -top-10 md:-right-4 md:-top-12 rtl:right-auto rtl:-left-2 rtl:md:-left-4 w-5/12 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl z-10 border-4 border-white group">
+                    <img src="./Asstes/school image.jpeg" alt="Academic Life"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500">
+                    </div>
+                </div>
+
+                <!-- Circular Badge -->
+                <div
+                    class="absolute top-1/2 start-[60%] -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2 z-20 w-24 h-24 md:w-32 md:h-32 bg-primary rounded-full flex flex-col items-center justify-center text-white border-4 border-white shadow-lg">
+                    <span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest opacity-70"
+                        data-i18n="estLabel">EST.</span>
+                    <span class="text-xl md:text-2xl font-black">1990</span>
+                    <div class="absolute inset-0 border-2 border-white/20 rounded-full scale-90 ">
                     </div>
                 </div>
             </div>
-            <div class="relative">
-                <img src="./Asstes/school image.jpeg" alt="Students"
-                    class="rounded-[40px] shadow-2xl relative z-10 w-full h-[500px] object-cover">
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary rounded-full -z-0"></div>
-                <div class="absolute -top-6 -left-6 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-0"></div>
+
+            <!-- Right Side: Content (Condensed) -->
+            <div class="space-y-5 lg:ps-4">
+                <div class="space-y-1.5">
+                    <div
+                        class="flex items-center gap-2 text-primary font-bold uppercase tracking-[0.2em] text-[9px] md:text-[10px]">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span data-i18n="introTag">Knowledge meets Excellence</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-[1.2]" data-i18n="introTitle">
+                        School <span class="text-primary">Overview</span>
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-slate-600 text-base md:text-lg leading-relaxed font-medium" data-i18n="introDesc1">
+                        At <span class="text-primary font-bold">Ibri Private School</span>, we believe in the <span
+                            class="bg-primary/5 text-primary px-1 rounded">transformative power</span> of education.
+                    </p>
+                    <p class="text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="introDesc2">
+                        Our mission is to foster intellectual curiosity and empower individuals through <span
+                            class="text-secondary font-bold">academic excellence</span> and <span
+                            class="text-secondary font-bold">Islamic values</span>.
+                    </p>
+                </div>
+
+                <!-- Signature Quote (Condensed) -->
+                <div class="py-4 border-y border-slate-100 flex items-start gap-4">
+                    <i class="fa-solid fa-quote-left text-2xl text-primary/20"></i>
+                    <div>
+                        <p class="text-lg font-medium text-slate-800 italic leading-relaxed font-['Dancing_Script']"
+                            data-i18n="quoteText">
+                            "We nurture the leaders of tomorrow with faith and knowledge."
+                        </p>
+                        <div class="mt-2 flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden border border-primary/20">
+                                <img src="./Asstes/school image.jpeg" alt="Principal"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h5 class="text-xs font-black text-slate-900" data-i18n="quoteAuthor">School Principal</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Value summary removed in favor of dedicated 3D slider below -->
+
+                <div class="pt-2">
+                    <a href="academics.html"
+                        class="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl text-sm font-black hover:bg-primary transition-all duration-300 group">
+                        <span data-i18n="introBtn">Explore Programs</span>
+                        <i
+                            class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Stats Bar (Condensed) -->
+    <div class="w-full bg-primary py-8 md:py-10">
+        <div class="max-w-[1400px] mx-auto px-4 flex items-center justify-between gap-4 text-center text-white">
+            <div class="flex-1 space-y-1">
+                <div class="text-2xl md:text-3xl font-black">98%</div>
+                <div class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest opacity-60"
+                    data-i18n="introStat1">
+                    Success Rate</div>
+            </div>
+            <div class="w-px h-8 bg-white/20"></div>
+            <div class="flex-1 space-y-1">
+                <div class="text-2xl md:text-3xl font-black">Top 5</div>
+                <div class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest opacity-60"
+                    data-i18n="introStat2">
+                    Regional Ranking</div>
+            </div>
+            <div class="w-px h-8 bg-white/20"></div>
+            <div class="flex-1 space-y-1">
+                <div class="text-2xl md:text-3xl font-black">No. 1</div>
+                <div class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest opacity-60"
+                    data-i18n="introStat3">
+                    In Ibri Excellence</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Values Section  -->
+    <section class="max-w-full mx-auto md:py-10 py-5 overflow-hidden bg-slate-50/30">
+        <div class="text-center md:mb-10 mb-5 space-y-3">
+            <span class="text-primary font-bold uppercase tracking-[0.3em] text-[10px]" data-i18n="valuesTag">CORE
+                PHILOSOPHY</span>
+            <h2 class="text-3xl md:text-6xl font-black text-slate-900" data-i18n="valuesTitle">Our Core <span
+                    class="text-primary">Values</span></h2>
+        </div>
+
+        <div class="relative h-[150px] md:h-[270px] flex items-center justify-center">
+            <!-- Slider Track -->
+            <div id="stack-slider" class="relative w-full max-w-[1200px] h-full flex items-center justify-center">
+                <!-- Card 1 -->
+                <div class="value-card absolute w-[220px] md:w-[380px] aspect-[16/10] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer group"
+                    onclick="focusValue(0)">
+                    <img src="./Asstes/value_islamic_morals.png" alt="Islamic Morals"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-[.active]:from-primary/95 group-[.active]:via-black/10 transition-all duration-500 z-10">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 p-6 w-full translate-y-0 transition-transform duration-500 z-20">
+                        <h3 class="text-lg md:text-xl font-black text-white" data-i18n="val1Title">Islamic Morals</h3>
+                        <p class="text-white/40 group-[.active]:text-white/90 text-[8px] md:text-[10px] leading-tight line-clamp-2 mt-1 transition-colors duration-500"
+                            data-i18n="val1Desc">Fostering strong ethical character.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="value-card absolute w-[220px] md:w-[380px] aspect-[16/10] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer group"
+                    onclick="focusValue(1)">
+                    <img src="./Asstes/value_excellence.png" alt="Excellence"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-[.active]:from-primary/95 group-[.active]:via-black/10 transition-all duration-500 z-10">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 p-6 w-full translate-y-0 transition-transform duration-500 z-20">
+                        <h3 class="text-lg md:text-xl font-black text-white" data-i18n="val2Title">Excellence</h3>
+                        <p class="text-white/40 group-[.active]:text-white/90 text-[8px] md:text-[10px] leading-tight line-clamp-2 mt-1 transition-colors duration-500"
+                            data-i18n="val2Desc">Commitment to world-class standards.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="value-card absolute w-[220px] md:w-[380px] aspect-[16/10] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer group"
+                    onclick="focusValue(2)">
+                    <img src="./Asstes/value_respect.png" alt="Respect"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-[.active]:from-primary/95 group-[.active]:via-black/10 transition-all duration-500 z-10">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 p-6 w-full translate-y-0 transition-transform duration-500 z-20">
+                        <h3 class="text-lg md:text-xl font-black text-white" data-i18n="val3Title">Respect</h3>
+                        <p class="text-white/40 group-[.active]:text-white/90 text-[8px] md:text-[10px] leading-tight line-clamp-2 mt-1 transition-colors duration-500"
+                            data-i18n="val3Desc">Promoting a culture of kindness.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 (Active) -->
+                <div class="value-card active absolute w-[220px] md:w-[380px] aspect-[16/10] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer group"
+                    onclick="focusValue(3)">
+                    <img src="./Asstes/value_integrity.png" alt="Integrity"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-[.active]:from-primary/95 group-[.active]:via-black/10 transition-all duration-500 z-10">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full z-20">
+                        <h3 class="text-xl md:text-2xl font-black text-white mb-2" data-i18n="val4Title">Integrity</h3>
+                        <p class="text-white/90 text-[10px] md:text-xs leading-relaxed max-w-sm hidden md:block"
+                            data-i18n="val4Desc">Upholding the highest moral standards and transparency.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="value-card absolute w-[220px] md:w-[380px] aspect-[16/10] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer group"
+                    onclick="focusValue(4)">
+                    <img src="./Asstes/value_innovation.png" alt="Innovation"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-[.active]:from-primary/95 group-[.active]:via-black/10 transition-all duration-500 z-10">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 p-6 w-full translate-y-0 transition-transform duration-500 z-20">
+                        <h3 class="text-lg md:text-xl font-black text-white" data-i18n="val5Title">Innovation</h3>
+                        <p class="text-white/40 group-[.active]:text-white/90 text-[8px] md:text-[10px] leading-tight line-clamp-2 mt-1 transition-colors duration-500"
+                            data-i18n="val5Desc">Pioneering creative learning solutions.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="value-card absolute w-[220px] md:w-[380px] aspect-[16/10] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer group"
+                    onclick="focusValue(5)">
+                    <img src="./Asstes/value_leadership.png" alt="Leadership"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-[.active]:from-primary/95 group-[.active]:via-black/10 transition-all duration-500 z-10">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 p-6 w-full translate-y-0 transition-transform duration-500 z-20">
+                        <h3 class="text-lg md:text-xl font-black text-white" data-i18n="val6Title">Leadership</h3>
+                        <p class="text-white/40 group-[.active]:text-white/90 text-[8px] md:text-[10px] leading-tight line-clamp-2 mt-1 transition-colors duration-500"
+                            data-i18n="val6Desc">Empowering students to become visionary leaders.</p>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="value-card absolute w-[220px] md:w-[380px] aspect-[16/10] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer group"
+                    onclick="focusValue(6)">
+                    <img src="./Asstes/value_community.png" alt="Community"
+                        class="absolute inset-0 w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-[.active]:from-primary/95 group-[.active]:via-black/10 transition-all duration-500 z-10">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 p-6 w-full translate-y-0 transition-transform duration-500 z-20">
+                        <h3 class="text-lg md:text-xl font-black text-white" data-i18n="val7Title">Community</h3>
+                        <p class="text-white/40 group-[.active]:text-white/90 text-[8px] md:text-[10px] leading-tight line-clamp-2 mt-1 transition-colors duration-500"
+                            data-i18n="val7Desc">Building strong bonds for a shared future.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button onclick="prevValue()"
+                class="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 z-50 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-xl text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button onclick="nextValue()"
+                class="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-50 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-xl text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Dots -->
+        <div class="flex justify-center items-center gap-2 mt-10 ">
+            <div class="value-dot w-2 h-2 rounded-full bg-slate-200 transition-all cursor-pointer"
+                onclick="focusValue(0)"></div>
+            <div class="value-dot w-2 h-2 rounded-full bg-slate-200 transition-all cursor-pointer"
+                onclick="focusValue(1)"></div>
+            <div class="value-dot w-2 h-2 rounded-full bg-slate-200 transition-all cursor-pointer"
+                onclick="focusValue(2)"></div>
+            <div class="value-dot w-6 h-2 rounded-full bg-primary transition-all cursor-pointer"
+                onclick="focusValue(3)"></div>
+            <div class="value-dot w-2 h-2 rounded-full bg-slate-200 transition-all cursor-pointer"
+                onclick="focusValue(4)"></div>
+            <div class="value-dot w-2 h-2 rounded-full bg-slate-200 transition-all cursor-pointer"
+                onclick="focusValue(5)"></div>
+            <div class="value-dot w-2 h-2 rounded-full bg-slate-200 transition-all cursor-pointer"
+                onclick="focusValue(6)"></div>
+        </div>
+    </section>
+
+    <style>
+        .value-slide.active {
+            z-index: 30;
+            opacity: 1;
+        }
+
+        .value-slide:not(.active) {
+            filter: grayscale(0.5) brightness(0.7);
+        }
+
+        @media (max-width: 1024px) {
+            .value-slide:not(.active):not(:nth-child(2)):not(:nth-child(4)) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .value-slide:not(.active) {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Leadership Team Section -->
+    <section class="py-8 md:py-10 bg-slate-50/50 overflow-hidden" id="leadership-team">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-6 md:mb-12 space-y-4">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/5 rounded-full border border-primary/10">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    <span class="text-[10px] font-black text-primary uppercase tracking-[0.3em]"
+                        data-i18n="leadershipTag">The Members Of</span>
+                </div>
+                <h2 class="text-4xl md:text-7xl font-black text-slate-900 tracking-tight"
+                    style="font-family: 'Cairo', sans-serif;" data-i18n="leadershipTitle">
+                    LEADERSHIP <span class="text-primary">TEAM</span>
+                </h2>
+                <p class="text-slate-500 font-medium max-w-2xl mx-auto text-sm md:text-lg mt-6"
+                    data-i18n="leadershipDesc">
+                    Meet the visionary educators and administrators dedicated to shaping the future of our students with
+                    excellence and passion.
+                </p>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row w-full h-[600px] md:h-[500px] lg:h-[450px] gap-[15px] md:py-[20px] py-4">
+                <!-- Principal -->
+                <div
+                    class="group relative flex-1 w-full h-full rounded-[32px] overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:flex-[5] md:hover:scale-100 hover:shadow-[0_40px_80px_rgba(63,163,148,0.15)]">
+                    <img src="./Asstes/team_principal.png" alt="Principal"
+                        class="w-full h-full object-cover object-top transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] grayscale contrast-[1.1] group-hover:scale-[1.12] group-hover:grayscale-0 group-hover:contrast-[1]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[rgba(63,163,148,0.98)] via-[rgba(63,163,148,0.5)] to-transparent flex flex-col justify-end p-[45px] opacity-[0.95] transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:from-[rgba(63,163,148,1)] group-hover:via-[rgba(63,163,148,0.2)]">
+                        <div
+                            class="transform translate-y-[40px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                            <h3 class="text-white text-2xl md:text-3xl font-black leading-tight"
+                                data-i18n="principalName">Dr. Fatima Al-Balushi</h3>
+                            <p class="text-secondary font-bold text-sm md:text-base uppercase tracking-widest mt-1"
+                                data-i18n="principalRole">Principal / Director</p>
+
+                            <div
+                                class="overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] mt-[15px] max-h-0 opacity-0 group-hover:max-h-[400px] group-hover:opacity-100">
+                                <p class="text-white/80 text-xs md:text-sm font-medium leading-relaxed border-l-2 border-white/20 ps-4"
+                                    data-i18n="principalQual">
+                                    PhD in Educational Leadership & Management. Over 25 years of experience in leading
+                                    international educational institutions.
+                                </p>
+                                <div
+                                    class="flex gap-[12px] mt-[25px] transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms] transform translate-y-[30px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-brands fa-twitter"></i></a>
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-solid fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vice Principal -->
+                <div
+                    class="group relative flex-1 w-full h-full rounded-[32px] overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:flex-[5] md:hover:scale-100 hover:shadow-[0_40px_80px_rgba(63,163,148,0.15)]">
+                    <img src="./Asstes/team_vp.png" alt="Vice Principal"
+                        class="w-full h-full object-cover object-top transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] grayscale contrast-[1.1] group-hover:scale-[1.12] group-hover:grayscale-0 group-hover:contrast-[1]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[rgba(63,163,148,0.98)] via-[rgba(63,163,148,0.5)] to-transparent flex flex-col justify-end p-[45px] opacity-[0.95] transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:from-[rgba(63,163,148,1)] group-hover:via-[rgba(63,163,148,0.2)]">
+                        <div
+                            class="transform translate-y-[40px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                            <h3 class="text-white text-2xl md:text-3xl font-black leading-tight" data-i18n="vpName">Mrs.
+                                Amna Al-Maamari</h3>
+                            <p class="text-secondary font-bold text-sm md:text-base uppercase tracking-widest mt-1"
+                                data-i18n="vpRole">Vice Principal</p>
+
+                            <div
+                                class="overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] mt-[15px] max-h-0 opacity-0 group-hover:max-h-[400px] group-hover:opacity-100">
+                                <p class="text-white/80 text-xs md:text-sm font-medium leading-relaxed border-l-2 border-white/20 ps-4"
+                                    data-i18n="vpQual">
+                                    M.Ed in Curriculum & Instruction. Dedicated to academic excellence and student
+                                    well-being for 15+ years.
+                                </p>
+                                <div
+                                    class="flex gap-[12px] mt-[25px] transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms] transform translate-y-[30px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-solid fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coordinators -->
+                <div
+                    class="group relative flex-1 w-full h-full rounded-[32px] overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:flex-[5] md:hover:scale-100 hover:shadow-[0_40px_80px_rgba(63,163,148,0.15)]">
+                    <img src="./Asstes/team_head_1.png" alt="Coordinator"
+                        class="w-full h-full object-cover object-top transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] grayscale contrast-[1.1] group-hover:scale-[1.12] group-hover:grayscale-0 group-hover:contrast-[1]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[rgba(63,163,148,0.98)] via-[rgba(63,163,148,0.5)] to-transparent flex flex-col justify-end p-[45px] opacity-[0.95] transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:from-[rgba(63,163,148,1)] group-hover:via-[rgba(63,163,148,0.2)]">
+                        <div
+                            class="transform translate-y-[40px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                            <h3 class="text-white text-2xl md:text-3xl font-black leading-tight" data-i18n="coordName">
+                                Mr. Khalid Al-Jabri</h3>
+                            <p class="text-secondary font-bold text-sm md:text-base uppercase tracking-widest mt-1"
+                                data-i18n="coordRole">Coordinators</p>
+
+                            <div
+                                class="overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] mt-[15px] max-h-0 opacity-0 group-hover:max-h-[400px] group-hover:opacity-100">
+                                <p class="text-white/80 text-xs md:text-sm font-medium leading-relaxed border-l-2 border-white/20 ps-4"
+                                    data-i18n="coordQual">
+                                    B.Sc in Educational Sciences. Expertise in academic planning and student discipline
+                                    management.
+                                </p>
+                                <div
+                                    class="flex gap-[12px] mt-[25px] transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms] transform translate-y-[30px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-solid fa-paper-plane"></i></a>
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-solid fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Head Teachers -->
+                <div
+                    class="group relative flex-1 w-full h-full rounded-[32px] overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:flex-[5] md:hover:scale-100 hover:shadow-[0_40px_80px_rgba(63,163,148,0.15)]">
+                    <img src="./Asstes/principal.png" alt="Head Teacher"
+                        class="w-full h-full object-cover object-top transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] grayscale contrast-[1.1] group-hover:scale-[1.12] group-hover:grayscale-0 group-hover:contrast-[1]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[rgba(63,163,148,0.98)] via-[rgba(63,163,148,0.5)] to-transparent flex flex-col justify-end p-[45px] opacity-[0.95] transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:from-[rgba(63,163,148,1)] group-hover:via-[rgba(63,163,148,0.2)]">
+                        <div
+                            class="transform translate-y-[40px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                            <h3 class="text-white text-2xl md:text-3xl font-black leading-tight"
+                                data-i18n="headTeacherName">Ms. Sarah Al-Busaidi</h3>
+                            <p class="text-secondary font-bold text-sm md:text-base uppercase tracking-widest mt-1"
+                                data-i18n="headTeacherRole">Head Teachers</p>
+
+                            <div
+                                class="overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] mt-[15px] max-h-0 opacity-0 group-hover:max-h-[400px] group-hover:opacity-100">
+                                <p class="text-white/80 text-xs md:text-sm font-medium leading-relaxed border-l-2 border-white/20 ps-4"
+                                    data-i18n="headTeacherQual">
+                                    Specialist in Early Childhood Education. Leading our primary department with
+                                    innovation and care.
+                                </p>
+                                <div
+                                    class="flex gap-[12px] mt-[25px] transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms] transform translate-y-[30px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#"
+                                        class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                            class="fa-solid fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
     <!-- CTA Section -->
     <section class="py-10 md:py-20 px-1 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
@@ -686,15 +1157,84 @@
                 aboutHeroStat2Value: "MOE Certified",
                 aboutHeroStat3Title: "Faculty",
                 aboutHeroStat3Value: "50+ Experts",
+
+                visionStat1Title: "Future",
+                visionStat1Value: "Innovation Hub",
+                visionStat2Title: "Growth",
+                visionStat2Value: "Global Reach",
+                visionStat3Title: "Impact",
+                visionStat3Value: "Future Leaders",
+
+                valuesStat1Title: "Integrity",
+                valuesStat1Value: "Ethical Core",
+                valuesStat2Title: "Respect",
+                valuesStat2Value: "Diverse Culture",
+                valuesStat3Title: "Quality",
+                valuesStat3Value: "Excellence First",
+
                 aboutHeroBtn: "Learn More",
                 establishedTag: "Established 1990",
                 aboutHeroHeading: "Building Future <br> <span class='text-secondary'>Leaders in Ibri</span>",
                 aboutHeroDesc: "A legacy of excellence in bilingual education, fostering global citizens with strong Islamic values and modern skills.",
+
+                visionHeroHeading: "Innovating for a <br> <span class='text-secondary'>Brighter Tomorrow</span>",
+                visionHeroDesc: "To be the leading educational institution in Oman, recognized for academic excellence and character building.",
+
+                valuesHeroHeading: "Excellence, Integrity <br> <span class='text-secondary'>and Respect</span>",
+                valuesHeroDesc: "Our core values shape every student's journey, creating a community of lifelong learners and ethical leaders.",
+
                 aboutPageTag: "WHO WE ARE",
+                estLabel: "EST.",
+                introTag: "Knowledge meets Excellence",
+                introTitle: "School <span class='text-primary'>Overview</span>",
+                introDesc1: "At Ibri Private School, we believe in the transformative power of education and the boundless potential that resides within each individual.",
+                introDesc2: "Our mission is to foster intellectual curiosity, empower individuals to realize their fullest potential, and contribute meaningfully to the betterment of society through academic excellence and Islamic values.",
+                phiCard1Title: "Islamic Values",
+                phiCard1Desc: "Fostering a strong moral foundation rooted in faith.",
+                phiCard2Title: "Excellence",
+                phiCard2Desc: "Striving for the highest academic standards globally.",
+                introBtn: "Explore Programs",
+                quoteText: '"We don\'t just teach students; we nurture the leaders of tomorrow with faith and knowledge."',
+                quoteAuthor: "School Principal",
+                quoteRole: "Leadership Message",
+                introStat1: "Success Rate",
+                introStat2: "Regional Ranking",
+                introStat3: "In Ibri Excellence",
+                valuesTag: "CORE PHILOSOPHY",
+                valuesTitle: "Our Core <span class='text-primary'>Values</span>",
+                val1Title: "Islamic Morals",
+                val1Desc: "Fostering strong ethical character and spiritual growth rooted in faith.",
+                val2Title: "Excellence",
+                val2Desc: "Commitment to world-class educational standards and superior academic achievement.",
+                val3Title: "Respect",
+                val3Desc: "Promoting a culture of mutual understanding, kindness, and professional regard.",
+                val4Title: "Integrity",
+                val4Desc: "Upholding the highest moral standards and transparency in all actions.",
+                val5Title: "Innovation",
+                val5Desc: "Pioneering creative learning solutions through modern technology and critical thinking.",
+                val6Title: "Leadership",
+                val6Desc: "Empowering students to become visionary leaders and responsible decision-makers.",
+                val7Title: "Community",
+                val7Desc: "Building strong bonds between students, staff, and parents for a shared future.",
                 aboutPageHeading: "A Legacy of Learning in Ibri.",
                 aboutPageDesc: "At Ibri Private School, we believe that education is the most powerful tool to change the world. Since our establishment in 1990, we have been dedicated to providing a nurturing environment where students can develop academically, socially, and ethically.",
                 aboutStat1: "Years of Excellence",
                 aboutStat2: "Expert Faculty",
+                leadershipTag: "The Members Of",
+                leadershipTitle: "LEADERSHIP <span class='text-primary'>TEAM</span>",
+                leadershipDesc: "Meet the visionary educators and administrators dedicated to shaping the future of our students with excellence and passion.",
+                principalName: "Dr. Fatima Al-Balushi",
+                principalRole: "Principal / Director",
+                principalQual: "PhD in Educational Leadership & Management. Over 25 years of experience in leading international educational institutions.",
+                vpName: "Mrs. Amna Al-Maamari",
+                vpRole: "Vice Principal",
+                vpQual: "M.Ed in Curriculum & Instruction. Dedicated to academic excellence and student well-being for 15+ years.",
+                coordName: "Mr. Khalid Al-Jabri",
+                coordRole: "Coordinators",
+                coordQual: "B.Sc in Educational Sciences. Expertise in academic planning and student discipline management.",
+                headTeacherName: "Ms. Sarah Al-Busaidi",
+                headTeacherRole: "Head Teachers",
+                headTeacherQual: "Specialist in Early Childhood Education. Leading our primary department with innovation and care.",
                 applyNow: "Apply Now"
             },
             ar: {
@@ -731,15 +1271,84 @@
                 aboutHeroStat2Value: "معتمد من الوزارة",
                 aboutHeroStat3Title: "المعلمين",
                 aboutHeroStat3Value: "أكثر من 50 خبيراً",
+
+                visionStat1Title: "المستقبل",
+                visionStat1Value: "مركز الابتكار",
+                visionStat2Title: "النمو",
+                visionStat2Value: "نطاق عالمي",
+                visionStat3Title: "الأثر",
+                visionStat3Value: "قادة المستقبل",
+
+                valuesStat1Title: "النزاهة",
+                valuesStat1Value: "جوهر أخلاقي",
+                valuesStat2Title: "الاحترام",
+                valuesStat2Value: "ثقافة متنوعة",
+                valuesStat3Title: "الجودة",
+                valuesStat3Value: "التميز أولاً",
+
                 aboutHeroBtn: "تعرف أكثر",
                 establishedTag: "تأسست عام 1990",
                 aboutHeroHeading: "بناء قادة المستقبل <br> <span class='text-secondary'>في ولاية عبري</span>",
                 aboutHeroDesc: "إرث من التميز في التعليم ثنائي اللغة، وتنشئة مواطنين عالميين بقيم إسلامية راسخة ومهارات حديثة.",
+
+                visionHeroHeading: "الابتكار من أجل <br> <span class='text-secondary'>غدٍ أكثر إشراقاً</span>",
+                visionHeroDesc: "أن نكون المؤسسة التعليمية الرائدة في عمان، والمعترف بها للتميز الأكاديمي وبناء الشخصية.",
+
+                valuesHeroHeading: "التميز والنزاهة <br> <span class='text-secondary'>والاحترام</span>",
+                valuesHeroDesc: "قيمنا الأساسية تشكل رحلة كل طالب، وتخلق مجتمعاً من المتعلمين مدى الحياة والقادة الأخلاقيين.",
+
                 aboutPageTag: "من نحن",
+                estLabel: "تأسست",
+                introTag: "المعرفة تلتقي بالتميز",
+                introTitle: "نبذة عن <span class='text-primary'>المدرسة</span>",
+                introDesc1: "في مدرسة عبري الخاصة، نؤمن بقوة التعليم التحويلية والإمكانات غير المحدودة التي تكمن داخل كل فرد.",
+                introDesc2: "مهمتنا هي تعزيز الفضول الفكري، وتمكين الأفراد من تحقيق إمكاناتهم الكاملة، والمساهمة بشكل هادف في تحسين المجتمع من خلال التميز الأكاديمي والقيم الإسلامية.",
+                phiCard1Title: "القيم الإسلامية",
+                phiCard1Desc: "تعزيز أساس أخلاقي قوي متجذر في الإيمان.",
+                phiCard2Title: "التميز الأكاديمي",
+                phiCard2Desc: "السعي لتحقيق أعلى المعايير الأكاديمية عالمياً.",
+                introBtn: "استكشف البرامج",
+                quoteText: '"نحن لا نكتفي بتعليم الطلاب؛ نحن نربي قادة الغد بالإيمان والمعرفة."',
+                quoteAuthor: "مديرة المدرسة",
+                quoteRole: "رسالة القيادة",
+                introStat1: "نسبة النجاح",
+                introStat2: "التصنيف الإقليمي",
+                introStat3: "التميز في عبري",
+                valuesTag: "الفلسفة الجوهرية",
+                valuesTitle: "قيمنا <span class='text-primary'>الأساسية</span>",
+                val1Title: "الأخلاق الإسلامية",
+                val1Desc: "تعزيز الشخصية الأخلاقية القوية والنمو الروحي المتجذر في الإيمان.",
+                val2Title: "التميز",
+                val2Desc: "الالتزام بالمعايير التعليمية العالمية والإنجاز الأكاديمي المتفوق.",
+                val3Title: "الاحترام",
+                val3Desc: "تعزيز ثقافة التفاهم المتبادل واللطف والتقدير المهني.",
+                val4Title: "النزاهة",
+                val4Desc: "التمسك بأعلى المعايير الأخلاقية والشفافية في جميع الأفعال.",
+                val5Title: "الابتكار",
+                val5Desc: "ريادة حلول التعلم الإبداعية من خلال التكنولوجيا الحديثة والتفكير النقدي.",
+                val6Title: "القيادة",
+                val6Desc: "تمكين الطلاب ليصبحوا قادة رؤى وصناع قرار مسؤولين.",
+                val7Title: "المجتمع",
+                val7Desc: "بناء روابط قوية بين الطلاب والموظفين وأولياء الأمور من أجل مستقبل مشترك.",
                 aboutPageHeading: "إرث من التعلم في عبري.",
                 aboutPageDesc: "في مدرسة عبري الخاصة، نؤمن بأن التعليم هو أقوى أداة لتغيير العالم. منذ تأسيسنا في عام 1990، كرسنا أنفسنا لتوفير بيئة رعاية حيث يمكن للطلاب التطور أكاديمياً واجتماعياً وأخلاقياً.",
                 aboutStat1: "سنوات من التميز",
                 aboutStat2: "هيئة تدريس خبيرة",
+                leadershipTag: "أعضاء فريق",
+                leadershipTitle: "فريق <span class='text-primary'>القيادة</span>",
+                leadershipDesc: "تعرف على المعلمين والإداريين الرؤيويين المكرسين لتشكيل مستقبل طلابنا بتميز وشغف.",
+                principalName: "د. فاطمة البلوشية",
+                principalRole: "المديرة / المديرة العامة",
+                principalQual: "دكتوراه في القيادة والإدارة التربوية. أكثر من 25 عاماً من الخبرة في قيادة المؤسسات التعليمية الدولية.",
+                vpName: "أ. آمنة المعمرية",
+                vpRole: "نائبة المديرة",
+                vpQual: "ماجستير في المناهج وطرق التدريس. مكرسة للتميز الأكاديمي ورفاهية الطلاب لأكثر من 15 عاماً.",
+                coordName: "أ. خالد الجابري",
+                coordRole: "المنسقون",
+                coordQual: "بكالوريوس في العلوم التربوية. خبرة في التخطيط الأكاديمي وإدارة انضباط الطلاب.",
+                headTeacherName: "أ. سارة البوسعيدية",
+                headTeacherRole: "رؤساء الأقسام",
+                headTeacherQual: "أخصائية في تعليم الطفولة المبكرة. تقود قسمنا الابتدائي بالابتكار والرعاية.",
                 applyNow: "قدم الآن"
             }
         };
@@ -836,6 +1445,171 @@
                 link.addEventListener('click', closeMenu);
             });
         }
+
+        // Tab Switching Logic
+        function switchAboutTab(tab) {
+            const tabs = ['mission', 'vision', 'values'];
+            const currentLang = localStorage.getItem('preferredLang') || 'en';
+
+            // Update UI State
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === tab) {
+                    btn.classList.add('text-black', 'border-b-2', 'border-primary', 'font-black');
+                    btn.classList.remove('text-black/40', 'font-bold');
+                } else {
+                    btn.classList.remove('text-black', 'border-b-2', 'border-primary', 'font-black');
+                    btn.classList.add('text-black/40', 'font-bold');
+                }
+            });
+
+            // Update Content mapping
+            const contentMap = {
+                mission: {
+                    stats: ['aboutHeroStat1Title', 'aboutHeroStat1Value', 'aboutHeroStat2Title', 'aboutHeroStat2Value', 'aboutHeroStat3Title', 'aboutHeroStat3Value'],
+                    hero: { heading: 'aboutHeroHeading', desc: 'aboutHeroDesc' }
+                },
+                vision: {
+                    stats: ['visionStat1Title', 'visionStat1Value', 'visionStat2Title', 'visionStat2Value', 'visionStat3Title', 'visionStat3Value'],
+                    hero: { heading: 'visionHeroHeading', desc: 'visionHeroDesc' }
+                },
+                values: {
+                    stats: ['valuesStat1Title', 'valuesStat1Value', 'valuesStat2Title', 'valuesStat2Value', 'valuesStat3Title', 'valuesStat3Value'],
+                    hero: { heading: 'valuesHeroHeading', desc: 'valuesHeroDesc' }
+                }
+            };
+
+            const heroData = contentMap[tab].hero;
+            const stats = contentMap[tab].stats;
+
+            // Update Main Hero Text via IDs
+            const headingEl = document.getElementById('hero-heading');
+            const descEl = document.getElementById('hero-desc');
+
+            if (headingEl && descEl) {
+                headingEl.setAttribute('data-i18n', heroData.heading);
+                headingEl.innerHTML = translations[currentLang][heroData.heading];
+                descEl.setAttribute('data-i18n', heroData.desc);
+                descEl.innerHTML = translations[currentLang][heroData.desc];
+            }
+
+            // Update Stats via IDs
+            for (let i = 1; i <= 3; i++) {
+                const labelEl = document.getElementById(`stat-label-${i}`);
+                const valueEl = document.getElementById(`stat-value-${i}`);
+
+                if (labelEl && valueEl) {
+                    const labelKey = stats[(i - 1) * 2];
+                    const valueKey = stats[(i - 1) * 2 + 1];
+
+                    labelEl.setAttribute('data-i18n', labelKey);
+                    labelEl.innerHTML = translations[currentLang][labelKey];
+
+                    valueEl.setAttribute('data-i18n', valueKey);
+                    valueEl.innerHTML = translations[currentLang][valueKey];
+                }
+            }
+
+            // Update Icons mapping
+            const iconMap = {
+                mission: ['fa-award', 'fa-certificate', 'fa-chalkboard-user'],
+                vision: ['fa-rocket', 'fa-globe', 'fa-lightbulb'],
+                values: ['fa-shield-halved', 'fa-handshake-angle', 'fa-star']
+            };
+
+            const icons = iconMap[tab];
+            icons.forEach((icon, index) => {
+                const iconEl = document.getElementById(`stat-icon-${index + 1}`);
+                iconEl.className = `fa-solid ${icon} text-primary/30 text-[10px] transition-all duration-300 transform scale-125`;
+                setTimeout(() => {
+                    iconEl.classList.remove('scale-125');
+                }, 300);
+            });
+        }
+
+        // Value Slider Logic (3D Stack)
+        let currentValueIndex = 3; // Center of 7
+        let autoSlideTimer;
+
+        function updateStack() {
+            const cards = document.querySelectorAll('.value-card');
+            const dots = document.querySelectorAll('.value-dot');
+            const total = cards.length;
+
+            cards.forEach((card, i) => {
+                card.classList.remove('active');
+                let diff = i - currentValueIndex;
+
+                // Handle wrapping for a seamless look
+                if (diff > 3) diff -= total;
+                if (diff < -3) diff += total;
+
+                const absDiff = Math.abs(diff);
+
+                // Refined Stack Positioning (Reduced Overlay)
+                let translateX = diff * 75; // Horizontal shift
+                if (diff > 0) translateX += 15;
+                if (diff < 0) translateX -= 15;
+
+                const scale = 1 - (absDiff * 0.18);
+                const zIndex = 30 - absDiff;
+                const opacity = absDiff > 2 ? 0 : 1 - (absDiff * 0.3);
+                const blur = absDiff * 1.0;
+
+                card.style.transform = `translateX(${translateX}%) scale(${scale})`;
+                card.style.zIndex = zIndex;
+                card.style.opacity = opacity;
+                card.style.filter = `blur(${blur}px)`;
+
+                if (i === currentValueIndex) {
+                    card.classList.add('active');
+                    card.style.transform = `translateX(0) scale(1.1)`;
+                    card.style.zIndex = 40;
+                    card.style.opacity = 1;
+                    card.style.filter = 'none';
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.remove('w-6', 'bg-primary');
+                dot.classList.add('w-2', 'bg-slate-200');
+                if (i === currentValueIndex) {
+                    dot.classList.add('w-6', 'bg-primary');
+                    dot.classList.remove('w-2', 'bg-slate-200');
+                }
+            });
+        }
+
+        function focusValue(index) {
+            currentValueIndex = index;
+            updateStack();
+            resetAutoSlide();
+        }
+
+        function nextValue() {
+            currentValueIndex = (currentValueIndex + 1) % 7;
+            updateStack();
+            resetAutoSlide();
+        }
+
+        function prevValue() {
+            currentValueIndex = (currentValueIndex - 1 + 7) % 7;
+            updateStack();
+            resetAutoSlide();
+        }
+
+        function startAutoSlide() {
+            autoSlideTimer = setInterval(nextValue, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideTimer);
+            startAutoSlide();
+        }
+
+        // Initialize
+        updateStack();
+        startAutoSlide();
     </script>
 </body>
 
