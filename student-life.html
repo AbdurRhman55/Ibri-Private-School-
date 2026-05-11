@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Header</title>
+    <title>Student Life - Ibri Private School</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,6 +15,10 @@
     <!-- Google Fonts (Cairo for excellent Arabic and English support) -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -23,12 +27,11 @@
                         sans: ['Cairo', 'sans-serif'],
                     },
                     colors: {
-                        // Strict color palette based on logo
                         primary: {
-                            DEFAULT: '#3fa394', // Teal logo color
+                            DEFAULT: '#3fa394',
                         },
                         secondary: {
-                            DEFAULT: '#ffd505', // Yellow logo color
+                            DEFAULT: '#ffd505',
                         }
                     }
                 }
@@ -37,7 +40,6 @@
     </script>
 
     <style>
-        /* Mobile menu smooth expansion */
         #mobile-menu {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             max-height: 0;
@@ -54,599 +56,937 @@
             visibility: visible;
         }
 
-        /* Glassmorphism effect for the navbar background to make it modern */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
+        }
+
+        [data-aos] {
+            transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     </style>
 </head>
 
 <body class="bg-white min-h-screen text-black">
 
-    <header
-        class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
-
-        <nav
-            class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
-
-            <!-- Logo -->
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
+        <nav class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
             <a href="#" class="flex items-center gap-2.5 shrink-0 group">
-                <div
-                    class="h-9 w-9 md:h-11 md:w-11 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shrink-0 shadow-sm">
-                    <img src="./Asstes/school logo.jpeg" alt="School Logo"
-                        class="h-full w-full object-contain rounded-lg">
+                <div class="h-9 w-9 md:h-11 md:w-11 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shrink-0 shadow-sm">
+                    <img src="./Asstes/school logo.jpeg" alt="School Logo" class="h-full w-full object-contain rounded-lg">
                 </div>
                 <div class="flex flex-col justify-center">
-                    <h1 data-i18n="schoolNameMain"
-                        class="text-[13px] md:text-[15px] font-extrabold leading-tight text-black tracking-tight group-hover:text-primary transition-colors">
-                        Ibri Private School</h1>
-                    <h2 data-i18n="schoolNameSub"
-                        class="text-[11px] md:text-[12px] font-bold leading-tight text-black/60 group-hover:text-secondary transition-colors mt-[1px]">
-                        مدرسة عبري الخاصة</h2>
+                    <h1 data-i18n="schoolNameMain" class="text-[13px] md:text-[15px] font-extrabold leading-tight text-black tracking-tight group-hover:text-primary transition-colors">Ibri Private School</h1>
+                    <h2 data-i18n="schoolNameSub" class="text-[11px] md:text-[12px] font-bold leading-tight text-black/60 group-hover:text-secondary transition-colors mt-[1px]">مدرسة عبري الخاصة</h2>
                 </div>
             </a>
 
             <ul class="hidden xl:flex flex-1 justify-center items-center gap-5 2xl:gap-10">
-                <li>
-                    <a href="#"
-                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
-                        <i
-                            class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
-                        <span data-i18n="home">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
-                        <i
-                            class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
-                        <span data-i18n="about">About School</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
-                        <i
-                            class="fa-solid fa-user-plus text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
-                        <span data-i18n="admissions">Admissions</span>
-                    </a>
-                </li>
-
-                <!-- Dropdown  -->
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="home">Home</span></a></li>
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="about">About School</span></a></li>
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-user-plus text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="admissions">Admissions</span></a></li>
                 <li class="relative group py-2">
-                    <button
-                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors focus:outline-none">
-                        <i
-                            class="fa-solid fa-layer-group text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
-                        <span data-i18n="explore">Explore</span>
-                        <i
-                            class="fa-solid fa-chevron-down ms-1.5 text-[9px] text-black/40 group-hover:text-primary transition-transform duration-300 group-hover:rotate-180"></i>
-                    </button>
-                    <div
-                        class="absolute start-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-3 group-hover:translate-y-0 z-50">
+                    <button class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors focus:outline-none"><i class="fa-solid fa-layer-group text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="explore">Explore</span><i class="fa-solid fa-chevron-down ms-1.5 text-[9px] text-black/40 group-hover:text-primary transition-transform duration-300 group-hover:rotate-180"></i></button>
+                    <div class="absolute start-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-3 group-hover:translate-y-0 z-50">
                         <div class="p-2 flex flex-col gap-1">
-                            <a href="#"
-                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
-                                <i class="fa-solid fa-book-open w-6 text-center text-black/30 me-2 text-[11px]"></i>
-                                <span data-i18n="academics">Academics</span>
-                            </a>
-                            <a href="#"
-                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
-                                <i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i> <span data-i18n="studentLife">Student Life</span>
-                            </a>
-                            <a href="#"
-                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
-                                <i class="fa-solid fa-calendar-days w-6 text-center text-black/30 me-2 text-[11px]"></i>
-                                <span data-i18n="news">News & Events</span>
-                            </a>
-                            <a href="#"
-                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
-                                <i class="fa-solid fa-images w-6 text-center text-black/30 me-2 text-[11px]"></i>
-                                <span data-i18n="gallery">Gallery</span>
-                            </a>
+                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-book-open w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="academics">Academics</span></a>
+                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="studentLife">Student Life</span></a>
+                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-calendar-days w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="news">News & Events</span></a>
+                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-images w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="gallery">Gallery</span></a>
                         </div>
                     </div>
                 </li>
-
-                <li>
-                    <a href="#"
-                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
-                        <i
-                            class="fa-solid fa-envelope text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
-                        <span data-i18n="contact">Contact Us</span>
-                    </a>
-                </li>
+                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-envelope text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="contact">Contact Us</span></a></li>
             </ul>
 
             <div class="flex items-center gap-3 md:gap-5 shrink-0 justify-end">
-
-                <!-- Language Switcher -->
-                <button onclick="toggleLanguage()"
-                    class="hidden md:flex items-center gap-1 text-[12px] font-bold text-black/80 hover:bg-black/5 px-2.5 py-1.5 rounded-lg transition-colors border border-transparent hover:border-black/10">
+                <button onclick="toggleLanguage()" class="flex items-center gap-1 text-[10px] md:text-[12px] font-bold text-black/80 hover:bg-black/5 px-2 py-1 md:px-2.5 md:py-1.5 rounded-lg transition-colors border border-black/5 md:border-transparent hover:border-black/10 shadow-sm md:shadow-none">
                     <i class="fa-solid fa-globe text-black/40 me-0.5"></i>
                     <span id="lang-ar" class="uppercase text-black/40 transition-colors">AR</span>
                     <span class="text-black/20 font-normal">|</span>
                     <span id="lang-en" class="uppercase text-primary transition-colors">EN</span>
                 </button>
-
-                <a href="#"
-                    class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span data-i18n="contactBtn">Contact</span></a>
-
-                <a href="#"
-                    class="bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] flex items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap">
-                    <span data-i18n="admissionBtn">Admission</span>
-                    <i id="btn-icon"
-                        class="fa-solid fa-rocket text-white/90 group-hover:text-black transition-colors text-[12px]"></i>
-                </a>
-
-                <button id="mobile-menu-btn"
-                    class="xl:hidden flex items-center justify-center h-10 w-10 md:h-11 md:w-11 rounded-xl bg-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 border border-black/10">
-                    <i class="fa-solid fa-bars text-lg"></i>
-                </button>
-            </div>
-
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu"
-                class="absolute top-full start-0 end-0 mt-3 bg-white rounded-2xl shadow-xl border border-black/10 xl:hidden z-50">
-                <div class="p-3 sm:p-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
-                    <!-- Mobile Links -->
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-house"></i>
-                        </div>
-                        <span data-i18n="home">Home</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </div>
-                        <span data-i18n="about">About School</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-book-open"></i>
-                        </div>
-                        <span data-i18n="academics">Academics</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-user-plus"></i>
-                        </div>
-                        <span data-i18n="admissions">Admissions</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-                        <span data-i18n="studentLife">Student Life</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-calendar-days"></i>
-                        </div>
-                        <span data-i18n="news">News & Events</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-images"></i>
-                        </div>
-                        <span data-i18n="gallery">Gallery</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <span data-i18n="contact">Contact Us</span>
-                    </a>
-
-                    <div class="border-t border-black/10 my-2"></div>
-
-                    <!-- Mobile Language Switcher -->
-                    <div class="flex items-center justify-between p-3 md:hidden">
-                        <span class="font-bold text-black/80 text-[14px]" data-i18n="selectLang">Select Language</span>
-                        <div class="flex items-center gap-2 bg-black/5 p-1 rounded-lg">
-                            <button onclick="setLanguage('ar')" id="mob-lang-ar"
-                                class="px-4 py-1.5 text-xs font-bold rounded-md transition-colors text-black/60 hover:text-black">AR</button>
-                            <button onclick="setLanguage('en')" id="mob-lang-en"
-                                class="px-4 py-1.5 text-xs font-bold rounded-md bg-white shadow-sm text-primary transition-colors">EN</button>
-                        </div>
+                <a href="#" class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span data-i18n="contactBtn">Contact</span></a>
+                <a href="#" class="hidden xl:flex bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap"><span data-i18n="admissionBtn">Admission</span><i id="btn-icon" class="fa-solid fa-rocket text-white/90 group-hover:text-black transition-colors text-[12px]"></i></a>
+                <button id="mobile-menu-btn" class="xl:hidden flex items-center justify-center h-9 w-9 md:h-11 md:w-11 rounded-xl bg-black/[0.03] border border-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-all active:scale-95 shadow-sm">
+                    <div class="flex flex-col gap-1 items-end">
+                        <span class="w-5 h-0.5 bg-current rounded-full"></span>
+                        <span class="w-3 h-0.5 bg-current rounded-full"></span>
+                        <span class="w-5 h-0.5 bg-current rounded-full"></span>
                     </div>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
-    
-<!-- ========================= -->
-<!-- COMPACT MODERN HERO -->
-<!-- ========================= -->
 
-<section
-    class="relative overflow-hidden min-h-[88vh] flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-10 bg-[#f8fafc]">
-
-    <!-- Background Glow -->
-    <div
-        class="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] bg-primary/10 rounded-full blur-[120px]"></div>
-
-    <div
-        class="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-secondary/10 rounded-full blur-[120px]"></div>
-
-    <!-- Container -->
-    <div
-        class="max-w-[1400px] mx-auto w-full grid lg:grid-cols-2 gap-10 xl:gap-16 items-center relative z-10">
-
-        <!-- ================= LEFT ================= -->
-        <div data-aos="fade-right">
-
-            <!-- Badge -->
-            <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/10 mb-6">
-
-                <i class="fa-solid fa-users text-primary text-sm"></i>
-
-                <span
-                    class="text-primary text-[11px] font-extrabold tracking-[3px] uppercase"
-                    data-i18n="studentLifeBadge">
-
-                    Student Experience
-
-                </span>
-
-            </div>
-
-            <!-- Heading -->
-            <h1
-                class="text-4xl sm:text-5xl xl:text-6xl font-black leading-[1.05] tracking-tight text-black mb-6">
-
-                <span data-i18n="studentHeroTitle1">
-                    Experience A Life
-                </span>
-
-                <span
-                    class="block text-primary"
-                    data-i18n="studentHeroTitle2">
-
-                    Beyond Academics.
-
-                </span>
-
-            </h1>
-
-            <!-- Description -->
-            <p
-                class="text-base md:text-lg text-gray-600 leading-relaxed max-w-xl mb-8"
-                data-i18n="studentHeroDesc">
-
-                Student life at Ibri Private School blends innovation,
-                creativity, leadership, sports, and unforgettable experiences
-                that shape future-ready learners.
-
-            </p>
-
-            <!-- Buttons -->
-            <div class="flex flex-wrap gap-4 mb-10">
-
-                <a href="#"
-                    class="group bg-primary hover:bg-primary/90 text-white px-7 py-3.5 rounded-2xl font-bold shadow-[0_12px_30px_rgba(0,0,0,0.10)] hover:-translate-y-1 transition-all duration-500 flex items-center gap-3">
-
-                    <i
-                        class="fa-solid fa-play group-hover:scale-110 transition duration-300 text-sm"></i>
-
-                    <span data-i18n="exploreLifeBtn">
-                        Explore Life
-                    </span>
-
-                </a>
-
-                <a href="#"
-                    class="group border-2 border-primary text-primary hover:bg-primary hover:text-white px-7 py-3.5 rounded-2xl font-bold transition-all duration-500 flex items-center gap-3">
-
-                    <i
-                        class="fa-solid fa-image group-hover:rotate-12 transition duration-300 text-sm"></i>
-
-                    <span data-i18n="galleryBtn">
-                        Gallery
-                    </span>
-
-                </a>
-
-            </div>
-
-            <!-- Stats -->
-            <div class="grid grid-cols-3 gap-4 max-w-xl">
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.05)] border border-black/5 hover:-translate-y-1 transition duration-500">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
-
-                        <i class="fa-solid fa-layer-group text-primary"></i>
-
-                    </div>
-
-                    <h3 class="text-3xl font-black text-primary">
-                        30+
-                    </h3>
-
-                    <p class="text-gray-500 font-bold text-xs mt-1">
-                        Clubs
-                    </p>
-
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] xl:hidden transition-all duration-500 transform translate-x-full opacity-0 invisible">
+        <div class="flex items-center justify-between p-6 border-b border-black/5">
+            <div class="flex items-center gap-3">
+                <img src="./Asstes/school logo.jpeg" alt="Logo" class="h-10 w-auto rounded-lg">
+                <div class="flex flex-col">
+                    <span class="text-primary font-black text-sm tracking-tight" data-i18n="schoolNameMain">IBRI PRIVATE SCHOOL</span>
+                    <span class="text-black/40 text-[10px] font-bold" data-i18n="schoolNameSub">EST. 1990</span>
                 </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.05)] border border-black/5 hover:-translate-y-1 transition duration-500">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-3">
-
-                        <i class="fa-solid fa-medal text-secondary"></i>
-
-                    </div>
-
-                    <h3 class="text-3xl font-black text-secondary">
-                        25+
-                    </h3>
-
-                    <p class="text-gray-500 font-bold text-xs mt-1">
-                        Activities
-                    </p>
-
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.05)] border border-black/5 hover:-translate-y-1 transition duration-500">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
-
-                        <i class="fa-solid fa-face-smile text-primary"></i>
-
-                    </div>
-
-                    <h3 class="text-3xl font-black text-primary">
-                        98%
-                    </h3>
-
-                    <p class="text-gray-500 font-bold text-xs mt-1">
-                        Happiness
-                    </p>
-
-                </div>
-
             </div>
-
+            <button id="close-menu" class="w-11 h-11 rounded-xl bg-black/5 flex items-center justify-center text-black/80">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
         </div>
-
-        <!-- ================= RIGHT ================= -->
-        <div
-            class="relative h-[520px] hidden lg:block"
-            data-aos="fade-left">
-
-            <!-- Main Image -->
-            <div
-                class="absolute top-0 left-10 w-[68%] h-[380px] rounded-[35px] overflow-hidden rotate-[-5deg] shadow-[0_25px_70px_rgba(0,0,0,0.15)] group hover:rotate-0 transition duration-700">
-
-                <img
-                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1400&auto=format&fit=crop"
-                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-
-                <div class="absolute bottom-6 left-6 text-white">
-
-                    <span
-                        class="bg-primary px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[2px] uppercase">
-
-                        Student Community
-
-                    </span>
-
-                    <h3 class="text-3xl font-black mt-4">
-                        Future Leaders
-                    </h3>
-
+        <div class="flex flex-col h-[calc(100vh-80px)] overflow-y-auto p-6">
+            <nav class="flex flex-col gap-2 mb-8">
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-house w-6 text-center text-black/20"></i><span data-i18n="home">Home</span></a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-building-columns w-6 text-center text-black/20"></i><span data-i18n="about">About School</span></a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-user-plus w-6 text-center text-black/20"></i><span data-i18n="admissions">Admissions</span></a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-envelope w-6 text-center text-black/20"></i><span data-i18n="contact">Contact Us</span></a>
+            </nav>
+            <div class="mt-auto pt-8 border-t border-black/5 space-y-6">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-black text-black/30 uppercase tracking-widest" data-i18n="selectLang">Select Language</span>
+                    <div class="flex bg-black/5 p-1 rounded-xl">
+                        <button onclick="setLanguage('en')" id="mob-lang-en" class="px-4 py-2 rounded-lg text-xs font-black transition-all">EN</button>
+                        <button onclick="setLanguage('ar')" id="mob-lang-ar" class="px-4 py-2 rounded-lg text-xs font-black transition-all">AR</button>
+                    </div>
                 </div>
-
+                <a href="#" class="flex items-center justify-center gap-3 w-full bg-primary text-white py-4 rounded-2xl font-black shadow-lg shadow-primary/20"><span data-i18n="admissionBtn">Admission 2024</span><i class="fa-solid fa-rocket"></i></a>
             </div>
-
-            <!-- Floating Image -->
-            <div
-                class="absolute bottom-10 right-0 w-[50%] h-[220px] rounded-[30px] overflow-hidden border-[6px] border-white shadow-2xl group hover:-translate-y-2 transition duration-500">
-
-                <img
-                    src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1400&auto=format&fit=crop"
-                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-
-            </div>
-
-            <!-- Floating Small Card -->
-            <div
-                class="absolute top-8 right-2 bg-white/90 backdrop-blur-xl rounded-[25px] p-5 shadow-2xl hover:-translate-y-2 transition duration-500">
-
-                <div class="flex items-center gap-4">
-
-                    <div
-                        class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-
-                        <i class="fa-solid fa-globe text-primary text-xl"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h3 class="text-4xl font-black text-primary">
-                            15+
-                        </h3>
-
-                        <p class="text-gray-500 font-bold text-sm">
-                            Nations
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Yellow Card -->
-            <div
-                class="absolute bottom-0 left-0 bg-secondary rounded-[25px] px-6 py-5 shadow-2xl hover:scale-105 transition duration-500">
-
-                <div class="flex items-center gap-4">
-
-                    <div
-                        class="w-14 h-14 rounded-xl bg-black/10 flex items-center justify-center">
-
-                        <i class="fa-solid fa-trophy text-black text-xl"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h3 class="text-4xl font-black text-black">
-                            120+
-                        </h3>
-
-                        <p class="text-black/70 font-bold text-sm">
-                            Events
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </div>
-
     </div>
 
+    <!-- ========================= -->
+    <!-- HERO SECTION - FIXED SIZES -->
+    <!-- ========================= -->
+    <section class="relative overflow-hidden min-h-[90vh] md:min-h-[85vh] flex items-center p-5  sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-primary/5">
+        <div class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-[1400px] mx-auto w-full grid lg:grid-cols-2 gap-8 xl:gap-12 items-center relative z-10">
+            <!-- LEFT CONTENT -->
+            <div data-aos="fade-right">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-5">
+                    <i class="fa-solid fa-users text-primary text-sm"></i>
+                    <span class="text-primary text-[8px] font-extrabold tracking-[3px] uppercase" data-i18n="studentLifeBadge">Student Experience</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-6xl font-black leading-[1.1] tracking-tight text-black mb-2">
+                    <span data-i18n="studentHeroTitle1">Experience A Life</span>
+                    <span class="block text-primary" data-i18n="studentHeroTitle2">Beyond <br/> Academics.</span>
+                </h1>
+
+                <p class="text-base md:text-md text-gray-600 leading-relaxed max-w-xl mb-4" data-i18n="studentHeroDesc">
+                    Student life at Ibri Private School blends innovation, creativity, leadership, sports, and unforgettable experiences that shape future-ready learners.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mb-5">
+                    <a href="#" class="group bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:-translate-y-1 transition-all duration-500 flex items-center gap-2">
+                        <i class="fa-solid fa-play group-hover:scale-110 transition duration-300 text-xs"></i>
+                        <span data-i18n="exploreLifeBtn">Explore Life</span>
+                    </a>
+                    <a href="#" class="group border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-xl font-bold transition-all duration-500 flex items-center gap-2">
+                        <i class="fa-solid fa-image group-hover:rotate-12 transition duration-300 text-xs"></i>
+                        <span data-i18n="galleryBtn">Gallery</span>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 max-w-lg">
+                    <div class="bg-white rounded-2xl p-3 shadow-md border border-black/5 hover:-translate-y-1 transition duration-500">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-2"><i class="fa-solid fa-layer-group text-primary text-sm"></i></div>
+                        <h3 class="text-2xl font-black text-primary counter" data-target="30">0</h3>
+                        <p class="text-gray-500 font-bold text-[10px] mt-0.5" data-i18n="clubsStat">Clubs</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-3 shadow-md border border-black/5 hover:-translate-y-1 transition duration-500">
+                        <div class="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center mb-2"><i class="fa-solid fa-medal text-secondary-dark text-sm"></i></div>
+                        <h3 class="text-2xl font-black text-secondary-dark counter" data-target="25">0</h3>
+                        <p class="text-gray-500 font-bold text-[10px] mt-0.5" data-i18n="activitiesStat">Activities</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-3 shadow-md border border-black/5 hover:-translate-y-1 transition duration-500">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-2"><i class="fa-solid fa-face-smile text-primary text-sm"></i></div>
+                        <h3 class="text-2xl font-black text-primary counter" data-target="98">0<span class="text-base">%</span></h3>
+                        <p class="text-gray-500 font-bold text-[10px] mt-0.5" data-i18n="happinessStat">Happiness</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGES -->
+            <div class="relative h-[480px]  lg:block" data-aos="fade-left">
+                <div class="absolute top-6 left-10 w-[65%] h-[340px] rounded-3xl overflow-hidden rotate-[-4deg] shadow-2xl group  transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                    <div class="absolute bottom-5 left-5 text-white">
+                        <span class="bg-primary px-3 py-1 rounded-full text-[8px]  font-bold tracking-[2px] uppercase" data-i18n="studentCommunityBadge">Student Community</span>
+                        <h3 class="text-lg font-black mt-2" data-i18n="futureLeadersText">Future Leaders</h3>
+                    </div>
+                </div>
+                <div class="absolute bottom-8 right-0 w-[48%] h-[200px] rounded-2xl overflow-hidden border-[4px] border-white shadow-2xl group hover:-translate-y-2 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="absolute top-5 right-2 bg-white/90 backdrop-blur-xl rounded-2xl p-4 shadow-2xl hover:-translate-y-2 transition duration-500">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"><i class="fa-solid fa-globe text-primary text-lg"></i></div>
+                        <div><h3 class="text-3xl font-black text-primary counter" data-target="15">0</h3><p class="text-gray-500 font-bold text-xs" data-i18n="nationsStat">Nations</p></div>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-0 bg-secondary rounded-2xl px-5 py-4 shadow-2xl hover:scale-105 transition duration-500">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-black/10 flex items-center justify-center"><i class="fa-solid fa-trophy text-black text-lg"></i></div>
+                        <div><h3 class="text-3xl font-black text-black counter" data-target="120">0</h3><p class="text-black/70 font-bold text-xs" data-i18n="eventsStat">Events</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+<!-- CLUBS & ACTIVITIES SECTION - SINGLE SMOOTH INFINITE SLIDER -->
+<!-- ========================= -->
+<section class="py-10 md:py-18 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-gray-50 overflow-hidden" data-aos="fade-up">
+    <div class="max-w-[1400px]  mx-auto">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 border border-secondary/30 bg-secondary/20 px-4 py-2 rounded-full mb-4">
+                <i class="fa-solid fa-users text-secondary-dark text-sm"></i>
+                <span class="text-secondary-dark font-bold text-xs uppercase tracking-wider" data-i18n="clubsBadge">Join The Community</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black text-black mb-4">Explore <span class="text-primary">Clubs & Activities</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="clubsSubtitle">Discover your passion and develop new skills through our diverse extracurricular programs</p>
+        </div>
+
+        <!-- Infinite Marquee Slider - Single Track -->
+        <div class="relative py-5 overflow-hidden">
+            <!-- Single Track with Duplicate Content for Seamless Loop -->
+            <div class="marquee-track flex gap-6">
+                <!-- Club 1 -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-500 shadow-md group-hover:shadow-lg">
+                        <i class="fa-solid fa-microchip text-3xl text-primary group-hover:text-white transition-all duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="club1">Robotics Club</h3>
+                    <p class="text-gray-500 text-sm mb-3" data-i18n="club1Desc">Build and program competitive robots</p>
+                    <div class="flex items-center justify-center gap-1 text-primary/60 text-xs">
+                        <i class="fa-solid fa-users"></i>
+                        <span>45+ Members</span>
+                    </div>
+                </div>
+
+                <!-- Club 2 -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-secondary group-hover:to-secondary/80 transition-all duration-500 shadow-md group-hover:shadow-lg">
+                        <i class="fa-solid fa-futbol text-3xl text-secondary-dark group-hover:text-black transition-all duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-secondary-dark transition-colors" data-i18n="club2">Sports Academy</h3>
+                    <p class="text-gray-500 text-sm mb-3" data-i18n="club2Desc">Football, basketball, swimming & more</p>
+                    <div class="flex items-center justify-center gap-1 text-secondary-dark/60 text-xs">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>12+ Teams</span>
+                    </div>
+                </div>
+
+                <!-- Club 3 -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-500 shadow-md group-hover:shadow-lg">
+                        <i class="fa-solid fa-palette text-3xl text-primary group-hover:text-white transition-all duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="club3">Art & Design</h3>
+                    <p class="text-gray-500 text-sm mb-3" data-i18n="club3Desc">Drawing, painting, digital art workshops</p>
+                    <div class="flex items-center justify-center gap-1 text-primary/60 text-xs">
+                        <i class="fa-solid fa-paintbrush"></i>
+                        <span>30+ Artists</span>
+                    </div>
+                </div>
+
+                <!-- Club 4 -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-secondary group-hover:to-secondary/80 transition-all duration-500 shadow-md group-hover:shadow-lg">
+                        <i class="fa-solid fa-music text-3xl text-secondary-dark group-hover:text-black transition-all duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-secondary-dark transition-colors" data-i18n="club4">Music Band</h3>
+                    <p class="text-gray-500 text-sm mb-3" data-i18n="club4Desc">Learn instruments & perform live</p>
+                    <div class="flex items-center justify-center gap-1 text-secondary-dark/60 text-xs">
+                        <i class="fa-solid fa-headphones"></i>
+                        <span>25+ Musicians</span>
+                    </div>
+                </div>
+
+                <!-- Club 5 - Drama -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-500 shadow-md group-hover:shadow-lg">
+                        <i class="fa-solid fa-mask text-3xl text-primary group-hover:text-white transition-all duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Drama & Theater</h3>
+                    <p class="text-gray-500 text-sm mb-3">Acting, stage performance, and theater production</p>
+                    <div class="flex items-center justify-center gap-1 text-primary/60 text-xs">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>8+ Productions</span>
+                    </div>
+                </div>
+
+                <!-- Club 6 - Debate -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-secondary group-hover:to-secondary/80 transition-all duration-500 shadow-md group-hover:shadow-lg">
+                        <i class="fa-solid fa-gavel text-3xl text-secondary-dark group-hover:text-black transition-all duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-secondary-dark transition-colors">Debate Club</h3>
+                    <p class="text-gray-500 text-sm mb-3">Public speaking, critical thinking, and competitions</p>
+                    <div class="flex items-center justify-center gap-1 text-secondary-dark/60 text-xs">
+                        <i class="fa-solid fa-microphone"></i>
+                        <span>Regional Winners</span>
+                    </div>
+                </div>
+
+                <!-- Club 7 - Coding -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-500 shadow-md group-hover:shadow-lg">
+                        <i class="fa-solid fa-laptop-code text-3xl text-primary group-hover:text-white transition-all duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Coding Club</h3>
+                    <p class="text-gray-500 text-sm mb-3">Web development, app building, and hackathons</p>
+                    <div class="flex items-center justify-center gap-1 text-primary/60 text-xs">
+                        <i class="fa-solid fa-code"></i>
+                        <span>50+ Coders</span>
+                    </div>
+                </div>
+
+                <!-- Club 8 - Environment -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-secondary group-hover:to-secondary/80 transition-all duration-500 shadow-md group-hover:shadow-lg">
+                        <i class="fa-solid fa-leaf text-3xl text-secondary-dark group-hover:text-black transition-all duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-secondary-dark transition-colors">Eco Club</h3>
+                    <p class="text-gray-500 text-sm mb-3">Sustainability, gardening, and environmental awareness</p>
+                    <div class="flex items-center justify-center gap-1 text-secondary-dark/60 text-xs">
+                        <i class="fa-solid fa-tree"></i>
+                        <span>Green Initiative</span>
+                    </div>
+                </div>
+
+                <!-- DUPLICATE CLUBS FOR SEAMLESS LOOP (Hidden duplicate, no visible double line) -->
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-500">
+                        <i class="fa-solid fa-microchip text-3xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Robotics Club</h3>
+                    <p class="text-gray-500 text-sm mb-3">Build and program competitive robots</p>
+                    <div class="flex items-center justify-center gap-1 text-primary/60 text-xs"><i class="fa-solid fa-users"></i><span>45+ Members</span></div>
+                </div>
+
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-secondary group-hover:to-secondary/80 transition-all duration-500">
+                        <i class="fa-solid fa-futbol text-3xl text-secondary-dark group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Sports Academy</h3>
+                    <p class="text-gray-500 text-sm mb-3">Football, basketball, swimming & more</p>
+                    <div class="flex items-center justify-center gap-1 text-secondary-dark/60 text-xs"><i class="fa-solid fa-trophy"></i><span>12+ Teams</span></div>
+                </div>
+
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-500">
+                        <i class="fa-solid fa-palette text-3xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Art & Design</h3>
+                    <p class="text-gray-500 text-sm mb-3">Drawing, painting, digital art workshops</p>
+                    <div class="flex items-center justify-center gap-1 text-primary/60 text-xs"><i class="fa-solid fa-paintbrush"></i><span>30+ Artists</span></div>
+                </div>
+
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-secondary group-hover:to-secondary/80 transition-all duration-500">
+                        <i class="fa-solid fa-music text-3xl text-secondary-dark group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Music Band</h3>
+                    <p class="text-gray-500 text-sm mb-3">Learn instruments & perform live</p>
+                    <div class="flex items-center justify-center gap-1 text-secondary-dark/60 text-xs"><i class="fa-solid fa-headphones"></i><span>25+ Musicians</span></div>
+                </div>
+
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-500">
+                        <i class="fa-solid fa-mask text-3xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Drama & Theater</h3>
+                    <p class="text-gray-500 text-sm mb-3">Acting, stage performance, and theater production</p>
+                    <div class="flex items-center justify-center gap-1 text-primary/60 text-xs"><i class="fa-solid fa-ticket"></i><span>8+ Productions</span></div>
+                </div>
+
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-secondary group-hover:to-secondary/80 transition-all duration-500">
+                        <i class="fa-solid fa-gavel text-3xl text-secondary-dark group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Debate Club</h3>
+                    <p class="text-gray-500 text-sm mb-3">Public speaking, critical thinking, and competitions</p>
+                    <div class="flex items-center justify-center gap-1 text-secondary-dark/60 text-xs"><i class="fa-solid fa-microphone"></i><span>Regional Winners</span></div>
+                </div>
+
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-500">
+                        <i class="fa-solid fa-laptop-code text-3xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Coding Club</h3>
+                    <p class="text-gray-500 text-sm mb-3">Web development, app building, and hackathons</p>
+                    <div class="flex items-center justify-center gap-1 text-primary/60 text-xs"><i class="fa-solid fa-code"></i><span>50+ Coders</span></div>
+                </div>
+
+                <div class="club-card group w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-center border border-black/5 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondary/20">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-secondary group-hover:to-secondary/80 transition-all duration-500">
+                        <i class="fa-solid fa-leaf text-3xl text-secondary-dark group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Eco Club</h3>
+                    <p class="text-gray-500 text-sm mb-3">Sustainability, gardening, and environmental awareness</p>
+                    <div class="flex items-center justify-center gap-1 text-secondary-dark/60 text-xs"><i class="fa-solid fa-tree"></i><span>Green Initiative</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
+<style>
+    /* Single Infinite Marquee Animation */
+    .marquee-track {
+        display: flex;
+        gap: 1.5rem;
+        width: fit-content;
+        animation: marqueeScroll 40s linear infinite;
+    }
+
+    @keyframes marqueeScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Pause animation on hover */
+    .overflow-hidden:hover .marquee-track {
+        animation-play-state: paused;
+    }
+
+    /* Club card enhancements */
+    .club-card {
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .club-card:hover {
+        transform: translateY(-8px);
+    }
+
+    /* RTL Support */
+    [dir="rtl"] .marquee-track {
+        animation-direction: reverse;
+    }
+</style>
+
+   <!-- ========================= -->
+<!-- UPCOMING EVENTS SECTION - PROFESSIONAL WITH HIGH-QUALITY IMAGES -->
+<!-- ========================= -->
+<section class="py-10 md:py-18 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-[1400px] mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 border border-primary/20 bg-primary/10 px-4 py-2 rounded-full mb-4">
+                <i class="fa-solid fa-calendar-days text-primary text-sm"></i>
+                <span class="text-primary font-bold text-xs uppercase tracking-wider" data-i18n="eventsBadge">Never Miss Out</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black text-black mb-4">Upcoming <span class="text-primary">Events</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="eventsSubtitle">Join us for exciting events throughout the academic year</p>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="relative">
+            <!-- Swiper Slider -->
+            <div class="swiper eventsSwiper overflow-hidden ">
+                <div class="swiper-wrapper">
+                    <!-- Event 1 - Science Fair -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
+                                    <span class="text-xl font-black text-primary">25</span>
+                                    <span class="text-[10px] font-bold text-gray-500 block">MAR</span>
+                                </div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="bg-primary/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">SCIENCE & TECH</span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fa-regular fa-clock text-primary text-xs"></i>
+                                    <span class="text-gray-500 text-xs">9:00 AM - 3:00 PM</span>
+                                    <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                    <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
+                                    <span class="text-gray-500 text-xs">Main Hall</span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">Annual Science Fair</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Showcase innovative projects from our young scientists. Prizes for best exhibits!</p>
+                                <a href="#" class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
+                                    <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register Now</span>
+                                    <i class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 - Cultural Day -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
+                                    <span class="text-xl font-black text-secondary">12</span>
+                                    <span class="text-[10px] font-bold text-gray-500 block">APR</span>
+                                </div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="bg-secondary/90 backdrop-blur-sm text-black px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">CULTURAL</span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fa-regular fa-clock text-primary text-xs"></i>
+                                    <span class="text-gray-500 text-xs">10:00 AM - 6:00 PM</span>
+                                    <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                    <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
+                                    <span class="text-gray-500 text-xs">School Grounds</span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">Cultural Day Festival</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Celebrate diversity with food, music, traditional dances, and cultural exhibitions.</p>
+                                <a href="#" class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
+                                    <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register Now</span>
+                                    <i class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 - Sports Championship -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
+                                    <span class="text-xl font-black text-primary">5</span>
+                                    <span class="text-[10px] font-bold text-gray-500 block">MAY</span>
+                                </div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="bg-primary/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">SPORTS</span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fa-regular fa-clock text-primary text-xs"></i>
+                                    <span class="text-gray-500 text-xs">8:00 AM - 5:00 PM</span>
+                                    <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                    <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
+                                    <span class="text-gray-500 text-xs">Sports Complex</span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">Sports Championship</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Inter-school competition in football, basketball, athletics, and swimming.</p>
+                                <a href="#" class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
+                                    <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register Now</span>
+                                    <i class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 - Art Exhibition -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
+                                    <span class="text-xl font-black text-secondary">18</span>
+                                    <span class="text-[10px] font-bold text-gray-500 block">MAY</span>
+                                </div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="bg-secondary/90 backdrop-blur-sm text-black px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">ARTS</span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fa-regular fa-clock text-primary text-xs"></i>
+                                    <span class="text-gray-500 text-xs">4:00 PM - 8:00 PM</span>
+                                    <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                    <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
+                                    <span class="text-gray-500 text-xs">Art Gallery</span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">Annual Art Exhibition</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Display of student artwork, photography, and creative projects.</p>
+                                <a href="#" class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
+                                    <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Learn More</span>
+                                    <i class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 5 - Graduation Ceremony -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
+                                    <span class="text-xl font-black text-primary">10</span>
+                                    <span class="text-[10px] font-bold text-gray-500 block">JUN</span>
+                                </div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="bg-primary/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">GRADUATION</span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <i class="fa-regular fa-clock text-primary text-xs"></i>
+                                    <span class="text-gray-500 text-xs">5:00 PM - 9:00 PM</span>
+                                    <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                    <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
+                                    <span class="text-gray-500 text-xs">Main Auditorium</span>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">Graduation Ceremony 2025</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Celebrating the achievements of our graduating class. Families welcome!</p>
+                                <a href="#" class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
+                                    <span class="text-sm font-bold text-gray-700 group-hover:text-primary">View Details</span>
+                                    <i class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="flex justify-center items-center gap-4 mt-6">
+                <button class="swiper-button-prev-custom w-11 h-11 rounded-full bg-white border border-gray-200 shadow-md hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 flex items-center justify-center cursor-pointer group">
+                    <i class="fa-solid fa-chevron-left text-gray-600 group-hover:text-white text-sm"></i>
+                </button>
+                
+                <!-- Pagination Dots -->
+                <div class="swiper-pagination-custom flex justify-center gap-2"></div>
+                
+                <button class="swiper-button-next-custom w-11 h-11 rounded-full bg-white border border-gray-200 shadow-md hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 flex items-center justify-center cursor-pointer group">
+                    <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-white text-sm"></i>
+                </button>
+            </div>
+            </div>
+
+            <!-- Professional Navigation Buttons - Bottom Center -->
+           
+        </div>
+    </div>
+</section>
+
+<style>
+    .eventsSwiper {
+        padding: 0 0 10px 0;
+    }
+    .swiper-slide {
+        height: auto;
+    }
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        background: #cbd5e1;
+        opacity: 1;
+        transition: all 0.3s ease;
+        border-radius: 50%;
+        margin: 0 4px !important;
+    }
+    .swiper-pagination-bullet-active {
+        background: #3fa394;
+        width: 24px;
+        border-radius: 10px;
+    }
+    [dir="rtl"] .swiper-button-prev-custom i,
+    [dir="rtl"] .swiper-button-next-custom i {
+        transform: scaleX(-1);
+    }
+</style>
+
+<!-- Swiper JS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    // Initialize Swiper for Events Section
+    const eventsSwiper = new Swiper('.eventsSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        speed: 800,
+        navigation: {
+            nextEl: '.swiper-button-next-custom',
+            prevEl: '.swiper-button-prev-custom',
+        },
+        pagination: {
+            el: '.swiper-pagination-custom',
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
+
+    // Pause autoplay on hover for better user experience
+    const swiperContainer = document.querySelector('.eventsSwiper');
+    if (swiperContainer) {
+        swiperContainer.addEventListener('mouseenter', () => {
+            eventsSwiper.autoplay.stop();
+        });
+        swiperContainer.addEventListener('mouseleave', () => {
+            eventsSwiper.autoplay.start();
+        });
+    }
+</script>
+
+    <!-- ========================= -->
+    <!-- GALLERY PREVIEW SECTION -->
+    <!-- ========================= -->
+    <section class="py-10 md:py-18 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto" data-aos="fade-up">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 border  border-secondary/30 bg-secondary/20 px-4 py-2 rounded-full mb-4">
+                <i class="fa-solid fa-images text-secondary-dark text-sm"></i>
+                <span class="text-secondary-dark font-bold text-xs uppercase tracking-wider" data-i18n="galleryBadge">Memories</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black text-black mb-4">Life at <span class="text-primary">Ibri Private School</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="gallerySubtitle">Capturing moments of joy, learning, and friendship</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="rounded-2xl overflow-hidden h-48 group cursor-pointer"><img src="https://images.unsplash.com/photo-1524178236063-0f4e8b47f6f5?q=80&w=1400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+            <div class="rounded-2xl overflow-hidden h-48 group cursor-pointer"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+            <div class="rounded-2xl overflow-hidden h-48 group cursor-pointer"><img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+            <div class="rounded-2xl overflow-hidden h-48 group cursor-pointer"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+        </div>
+        <div class="text-center mt-8"><a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all" data-i18n="viewGalleryBtn">View Full Gallery <i class="fa-solid fa-arrow-right text-xs"></i></a></div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- TESTIMONIALS SECTION -->
+    <!-- ========================= -->
+    <section class="py-10 md:py-18 px-4 sm:px-6 lg:px-8 bg-primary/5">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-4 py-2 rounded-full mb-4">
+                    <i class="fa-solid fa-comment-dots text-primary text-sm"></i>
+                    <span class=" font-bold text-xs uppercase tracking-wider" data-i18n="testimonialBadge">Student Voices</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-black mb-4">What Our <span class="text-primary">Students Say</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="0"><i class="fa-solid fa-quote-left text-3xl text-secondary mb-4"></i><p class="text-gray-600 mb-4" data-i18n="testimonial1">"The teachers are amazing and the extracurricular activities have helped me discover my passion for robotics."</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center"><i class="fa-solid fa-user text-primary"></i></div><div><h4 class="font-bold">Ahmed Al Balushi</h4><p class="text-xs text-gray-500" data-i18n="grade11">Grade 11 Student</p></div></div></div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-quote-left text-3xl text-secondary mb-4"></i><p class="text-gray-600 mb-4" data-i18n="testimonial2">"The sports facilities are world-class. I've improved so much in basketball with our coaches."</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center"><i class="fa-solid fa-user text-secondary-dark"></i></div><div><h4 class="font-bold">Fatima Al Kindi</h4><p class="text-xs text-gray-500" data-i18n="grade9">Grade 9 Student</p></div></div></div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-quote-left text-3xl text-secondary mb-4"></i><p class="text-gray-600 mb-4" data-i18n="testimonial3">"The art club gave me the confidence to pursue my dream of becoming a graphic designer."</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center"><i class="fa-solid fa-user text-primary"></i></div><div><h4 class="font-bold">Omar Al Hinai</h4><p class="text-xs text-gray-500" data-i18n="grade12">Grade 12 Student</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- CTA SECTION -->
+    <!-- ========================= -->
+    <section class="py-10 md:py-18 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1200px] mx-auto bg-primary rounded-3xl p-8 md:p-12 text-center text-white" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-5xl font-black mb-4" data-i18n="ctaTitle">Start Your Journey Today</h2>
+            <p class="text-white/80 max-w-2xl mx-auto mb-8 text-lg" data-i18n="ctaDesc">Join our vibrant community and experience a truly transformative education</p>
+            <div class="flex flex-wrap gap-4 justify-center"><a href="#" class="bg-secondary text-black hover:bg-secondary-light px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center gap-2"><i class="fa-solid fa-calendar-check"></i> <span data-i18n="ctaBtn1">Schedule a Tour</span></a><a href="#" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-8 py-3 rounded-full font-bold transition-all inline-flex items-center gap-2"><i class="fa-solid fa-file-alt"></i> <span data-i18n="ctaBtn2">Apply Now</span></a></div>
+        </div>
+    </section>
+
+    <footer class="bg-black/5 mt-8 py-8 text-center text-gray-500 border-t">
+        <p>© 2025 Ibri Private School — Excellence in Education</p>
+    </footer>
 
     <script>
+        AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-quad' });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const rect = counter.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100 && !counter.classList.contains('animated')) {
+                    counter.classList.add('animated');
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 50;
+                    const hasPercent = counter.innerHTML.includes('%');
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            let val = Math.ceil(current);
+                            if (hasPercent) {
+                                counter.innerHTML = val + '<span class="text-base">%</span>';
+                            } else {
+                                counter.innerText = val;
+                            }
+                            setTimeout(updateCounter, 20);
+                        } else {
+                            if (hasPercent) {
+                                counter.innerHTML = target + '<span class="text-base">%</span>';
+                            } else {
+                                counter.innerText = target;
+                            }
+                        }
+                    };
+                    updateCounter();
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateCounters);
+        window.addEventListener('load', animateCounters);
+
         // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const icon = mobileMenuBtn.querySelector('i');
+        let icon = null;
+        if (mobileMenuBtn && mobileMenu) {
+            icon = mobileMenuBtn.querySelector('i');
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('open');
+                if (mobileMenu.classList.contains('open')) {
+                    if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark'); }
+                } else {
+                    if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars'); }
+                }
+            });
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars'); }
+                }
+            });
+        }
 
-        mobileMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('open');
-            if (mobileMenu.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('open')) {
+        const closeMenuBtn = document.getElementById('close-menu');
+        if (closeMenuBtn && mobileMenu) {
+            closeMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
+                if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars'); }
+            });
+        }
 
-        // RTL & LTR Toggle Logic
-        // Translation Dictionary
+        // Complete Translations
         const translations = {
             en: {
-                schoolNameMain: "Ibri Private School",
-                schoolNameSub: "مدرسة عبري الخاصة",
-                home: "Home",
-                about: "About School",
-                admissions: "Admissions",
-                explore: "Explore",
-                academics: "Academics",
-                studentLife: "Student Life",
-                news: "News & Events",
-                gallery: "Gallery",
-                contact: "Contact Us",
-                contactBtn: "Contact",
-                admissionBtn: "Admission",
-                selectLang: "Select Language"
+                schoolNameMain: "Ibri Private School", schoolNameSub: "مدرسة عبري الخاصة",
+                home: "Home", about: "About School", admissions: "Admissions", explore: "Explore",
+                academics: "Academics", studentLife: "Student Life", news: "News & Events",
+                gallery: "Gallery", contact: "Contact Us", contactBtn: "Contact", admissionBtn: "Admission",
+                selectLang: "Select Language",
+                studentLifeBadge: "Student Experience",
+                studentHeroTitle1: "Experience A Life", studentHeroTitle2: "Beyond Academics.",
+                studentHeroDesc: "Student life at Ibri Private School blends innovation, creativity, leadership, sports, and unforgettable experiences that shape future-ready learners.",
+                exploreLifeBtn: "Explore Life", galleryBtn: "Gallery",
+                clubsStat: "Clubs", activitiesStat: "Activities", happinessStat: "Happiness",
+                studentCommunityBadge: "Student Community", futureLeadersText: "Future Leaders",
+                nationsStat: "Nations", eventsStat: "Events",
+                clubsBadge: "Join The Community",
+                clubsSubtitle: "Discover your passion and develop new skills through our diverse extracurricular programs",
+                club1: "Robotics Club", club1Desc: "Build and program competitive robots",
+                club2: "Sports Academy", club2Desc: "Football, basketball, swimming & more",
+                club3: "Art & Design", club3Desc: "Drawing, painting, digital art workshops",
+                club4: "Music Band", club4Desc: "Learn instruments & perform live",
+                eventsBadge: "Never Miss Out", eventsSubtitle: "Join us for exciting events throughout the academic year",
+                event1Title: "Annual Science Fair", event1Desc: "Showcase innovative projects from our young scientists",
+                event2Title: "Cultural Day Festival", event2Desc: "Celebrate diversity with food, music, and traditions",
+                event3Title: "Sports Championship", event3Desc: "Inter-school competition in multiple sports",
+                galleryBadge: "Memories", gallerySubtitle: "Capturing moments of joy, learning, and friendship",
+                viewGalleryBtn: "View Full Gallery",
+                testimonialBadge: "Student Voices", testimonial1: '"The teachers are amazing and the extracurricular activities have helped me discover my passion for robotics."', testimonial2: '"The sports facilities are world-class. I\'ve improved so much in basketball with our coaches."', testimonial3: '"The art club gave me the confidence to pursue my dream of becoming a graphic designer."',
+                grade11: "Grade 11 Student", grade9: "Grade 9 Student", grade12: "Grade 12 Student",
+                ctaTitle: "Start Your Journey Today", ctaDesc: "Join our vibrant community and experience a truly transformative education",
+                ctaBtn1: "Schedule a Tour", ctaBtn2: "Apply Now"
             },
             ar: {
-                schoolNameMain: "مدرسة عبري الخاصة",
-                schoolNameSub: "Ibri Private School",
-                home: "الرئيسية",
-                about: "عن المدرسة",
-                admissions: "القبول والتسجيل",
-                explore: "استكشف",
-                academics: "الشؤون الأكاديمية",
-                studentLife: "الحياة الطلابية",
-                news: "الأخبار والفعاليات",
-                gallery: "معرض الصور",
-                contact: "اتصل بنا",
-                contactBtn: "تواصل معنا",
-                admissionBtn: "سجل الآن",
-                selectLang: "اختر اللغة"
+                schoolNameMain: "مدرسة عبري الخاصة", schoolNameSub: "Ibri Private School",
+                home: "الرئيسية", about: "عن المدرسة", admissions: "القبول", explore: "استكشف",
+                academics: "الأكاديميا", studentLife: "الحياة الطلابية", news: "الأخبار", gallery: "المعرض",
+                contact: "اتصل بنا", contactBtn: "تواصل", admissionBtn: "سجل الآن", selectLang: "اختر اللغة",
+                studentLifeBadge: "تجربة الطالب",
+                studentHeroTitle1: "عش حياة", studentHeroTitle2: "ما وراء الأكاديميا",
+                studentHeroDesc: "تدمج الحياة الطلابية في مدرسة عبري الخاصة بين الابتكار والإبداع والقيادة والرياضة والتجارب التي لا تنسى والتي تشكل متعلمي المستقبل.",
+                exploreLifeBtn: "استكشف الحياة", galleryBtn: "المعرض",
+                clubsStat: "نوادي", activitiesStat: "أنشطة", happinessStat: "سعادة",
+                studentCommunityBadge: "مجتمع الطلاب", futureLeadersText: "قادة المستقبل",
+                nationsStat: "دول", eventsStat: "فعاليات",
+                clubsBadge: "انضم إلى المجتمع",
+                clubsSubtitle: "اكتشف شغفك وطور مهاراتك من خلال برامجنا اللامنهجية المتنوعة",
+                club1: "نادي الروبوتات", club1Desc: "بناء وبرمجة الروبوتات التنافسية",
+                club2: "الأكاديمية الرياضية", club2Desc: "كرة القدم، كرة السلة، السباحة والمزيد",
+                club3: "الفن والتصميم", club3Desc: "ورش الرسم والتلوين والفن الرقمي",
+                club4: "الفرقة الموسيقية", club4Desc: "تعلم الآلات الموسيقية والعروض الحية",
+                eventsBadge: "لا تفوت الفرصة", eventsSubtitle: "انضم إلينا في فعاليات مثيرة طوال العام الدراسي",
+                event1Title: "معرض العلوم السنوي", event1Desc: "عرض المشاريع المبتكرة من علمائنا الشباب",
+                event2Title: "مهرجان اليوم الثقافي", event2Desc: "احتفال بالتنوع من خلال الطعام والموسيقى والتقاليد",
+                event3Title: "بطولة الرياضة", event3Desc: "منافسة بين المدارس في رياضات متعددة",
+                galleryBadge: "ذكريات", gallerySubtitle: "نلتقط لحظات الفرح والتعلم والصداقة",
+                viewGalleryBtn: "عرض المعرض الكامل",
+                testimonialBadge: "أصوات الطلاب", testimonial1: '"المعلمون رائعون والأنشطة اللامنهجية ساعدتني في اكتشاف شغفي بالروبوتات."', testimonial2: '"المرافق الرياضية عالمية المستوى. لقد تحسنت كثيراً في كرة السلة مع مدربينا."', testimonial3: '"نادي الفن أعطاني الثقة لمتابعة حلمي في أن أصبح مصممة جرافيك."',
+                grade11: "طالب الصف 11", grade9: "طالب الصف 9", grade12: "طالب الصف 12",
+                ctaTitle: "ابدأ رحلتك اليوم", ctaDesc: "انضم إلى مجتمعنا النابض بالحياة واختبر تعليماً تحويلياً حقاً",
+                ctaBtn1: "جدولة جولة", ctaBtn2: "قدم الآن"
             }
         };
-
-        // RTL & LTR Toggle Logic
-        function toggleLanguage() {
-            const currentDir = document.documentElement.getAttribute('dir');
-            setLanguage(currentDir === 'rtl' ? 'en' : 'ar');
-        }
 
         function setLanguage(lang) {
             const htmlTag = document.documentElement;
             const btnIcon = document.getElementById('btn-icon');
-
             if (lang === 'ar') {
                 htmlTag.setAttribute('dir', 'rtl');
                 htmlTag.setAttribute('lang', 'ar');
-
-                // Desktop Toggle
-                document.getElementById('lang-ar').classList.replace('text-black/40', 'text-primary');
-                document.getElementById('lang-en').classList.replace('text-primary', 'text-black/40');
-
-                // Mobile Toggle
-                document.getElementById('mob-lang-ar').classList.add('bg-white', 'shadow-sm', 'text-primary');
-                document.getElementById('mob-lang-ar').classList.remove('text-black/60');
-                document.getElementById('mob-lang-en').classList.remove('bg-white', 'shadow-sm', 'text-primary');
-                document.getElementById('mob-lang-en').classList.add('text-black/60');
-
-                // Adjust specific elements for RTL
-                btnIcon.style.transform = 'scaleX(-1)';
+                const langAr = document.getElementById('lang-ar');
+                const langEn = document.getElementById('lang-en');
+                if (langAr && langEn) {
+                    langAr.classList.replace('text-black/40', 'text-primary');
+                    langEn.classList.replace('text-primary', 'text-black/40');
+                }
+                const mobLangAr = document.getElementById('mob-lang-ar');
+                const mobLangEn = document.getElementById('mob-lang-en');
+                if (mobLangAr && mobLangEn) {
+                    mobLangAr.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangAr.classList.remove('text-black/60');
+                    mobLangEn.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangEn.classList.add('text-black/60');
+                }
+                if (btnIcon) btnIcon.style.transform = 'scaleX(-1)';
             } else {
                 htmlTag.setAttribute('dir', 'ltr');
                 htmlTag.setAttribute('lang', 'en');
-
-                // Desktop Toggle
-                document.getElementById('lang-en').classList.replace('text-black/40', 'text-primary');
-                document.getElementById('lang-ar').classList.replace('text-primary', 'text-black/40');
-
-                // Mobile Toggle
-                document.getElementById('mob-lang-en').classList.add('bg-white', 'shadow-sm', 'text-primary');
-                document.getElementById('mob-lang-en').classList.remove('text-black/60');
-                document.getElementById('mob-lang-ar').classList.remove('bg-white', 'shadow-sm', 'text-primary');
-                document.getElementById('mob-lang-ar').classList.add('text-black/60');
-
-                // Adjust specific elements for LTR
-                btnIcon.style.transform = 'scaleX(1)';
+                const langEn = document.getElementById('lang-en');
+                const langAr = document.getElementById('lang-ar');
+                if (langEn && langAr) {
+                    langEn.classList.replace('text-black/40', 'text-primary');
+                    langAr.classList.replace('text-primary', 'text-black/40');
+                }
+                const mobLangEn = document.getElementById('mob-lang-en');
+                const mobLangAr = document.getElementById('mob-lang-ar');
+                if (mobLangEn && mobLangAr) {
+                    mobLangEn.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangEn.classList.remove('text-black/60');
+                    mobLangAr.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangAr.classList.add('text-black/60');
+                }
+                if (btnIcon) btnIcon.style.transform = 'scaleX(1)';
             }
-
-            // Apply Translations to all elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
@@ -654,5 +994,14 @@
                 }
             });
         }
+
+        function toggleLanguage() {
+            const currentDir = document.documentElement.getAttribute('dir');
+            setLanguage(currentDir === 'rtl' ? 'en' : 'ar');
+        }
+
+        setLanguage('en');
     </script>
 </body>
+
+</html>
