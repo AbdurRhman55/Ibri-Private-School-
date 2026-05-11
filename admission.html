@@ -123,6 +123,110 @@
                 border-radius: 0 0 20px 20px;
             }
         }
+
+        /* Infographic Styles */
+        .infographic-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        .hub-container {
+            position: relative;
+            width: 280px;
+            height: 320px;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+            z-index: 10;
+        }
+
+        .hub-outer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f59e0b, #84cc16, #3b82f6, #06b6d4, #ec4899);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            padding: 4px;
+        }
+
+        .hub-inner {
+            width: 100%;
+            height: 100%;
+            background: white;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-node {
+            position: relative;
+            width: 340px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 5;
+        }
+
+        .step-node:hover {
+            transform: translateX(10px) scale(1.02);
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+        }
+
+        .step-shape-outer {
+            width: 100%;
+            background: var(--node-color);
+            clip-path: polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
+            padding: 3px;
+        }
+
+        .step-shape-inner {
+            background: white;
+            clip-path: polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
+            padding: 15px 35px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .connections-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        [dir="rtl"] .infographic-wrapper {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .step-node:hover {
+            transform: translateX(-10px) scale(1.02);
+        }
+
+        [dir="rtl"] .connections-svg {
+            transform: scaleX(-1);
+        }
+
+        @media (max-width: 1024px) {
+            .infographic-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .connections-svg {
+                display: none;
+            }
+            .step-node {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
     </style>
 </head>
 
@@ -543,211 +647,106 @@
         </div>
     </section>
 
-    <!-- Professional Admission Process (Premium Bento Dashboard) -->
-    <section class="py-8 md:py-12 bg-white overflow-hidden">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-xl mx-auto mb-10">
-                <span class="text-primary font-black text-[8px] uppercase tracking-[0.5em] mb-2 block" data-i18n="processTag">OUR JOURNEY TOGETHER</span>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900 leading-tight mb-2" data-i18n="processTitle">Simple & Transparent Process</h2>
-                <div class="h-1 w-10 bg-secondary mx-auto rounded-full"></div>
+    <!-- Professional Admission Process (Pixel Perfect Infographic) -->
+    <section class="py-12 md:py-20 bg-white overflow-hidden relative">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-primary font-black text-[10px] uppercase tracking-[0.5em] mb-3 block" data-i18n="processTag">OUR JOURNEY TOGETHER</span>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight mb-4" data-i18n="processTitle">Simple & Transparent Process</h2>
+                <div class="h-1.5 w-16 bg-secondary mx-auto rounded-full"></div>
             </div>
 
-            <div class="flex flex-col md:flex-row items-end justify-center gap-2 md:h-[480px] relative">
-                <!-- Step 01 -->
-                <div class="w-full md:w-44 bg-white border border-slate-100 h-auto md:h-[45%] group relative transition-all duration-700 hover:shadow-xl hover:-translate-y-1 z-10 rounded-t-[2.5rem]" data-aos="fade-up" data-aos-delay="0">
-                    <div class="p-5 flex flex-col h-full">
-                        <div class="mb-4">
-                            <span class="text-[9px] font-black bg-primary/5 text-primary px-3 py-1 rounded-full" data-i18n="phase1">PHASE 01</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-2xl bg-primary/5 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                            <i class="fa-solid fa-file-invoice text-sm text-primary group-hover:text-white"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-xs md:text-sm font-black text-slate-900 mb-3 leading-tight" data-i18n="pStep1Title">Submit Application</h3>
-                            <ul class="space-y-1.5">
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep1_1">Online Registration</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep1_2">Application Fee</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep1_3">Email Confirmation</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-auto pt-3 border-t border-slate-50 flex justify-between items-center">
-                            <span class="text-2xl font-black text-slate-100 group-hover:text-primary/10 transition-colors">01</span>
-                            <i class="fa-solid fa-chevron-right text-[8px] text-slate-200"></i>
+            <div class="infographic-wrapper">
+                <!-- SVG Connections for Desktop -->
+                <svg class="connections-svg hidden lg:block" viewBox="0 0 1000 600" preserveAspectRatio="none">
+                    <!-- Lines from Hub to Steps -->
+                    <path d="M 350 300 C 450 300, 450 80, 600 80" stroke="#f59e0b" stroke-width="2.5" fill="none" opacity="0.4" />
+                    <path d="M 350 300 C 450 300, 450 190, 600 190" stroke="#84cc16" stroke-width="2.5" fill="none" opacity="0.4" />
+                    <path d="M 350 300 L 600 300" stroke="#3b82f6" stroke-width="2.5" fill="none" opacity="0.4" />
+                    <path d="M 350 300 C 450 300, 450 410, 600 410" stroke="#06b6d4" stroke-width="2.5" fill="none" opacity="0.4" />
+                    <path d="M 350 300 C 450 300, 450 520, 600 520" stroke="#ec4899" stroke-width="2.5" fill="none" opacity="0.4" />
+                </svg>
+
+                <!-- Central Hub -->
+                <div class="hub-container" data-aos="zoom-in">
+                    <div class="hub-outer">
+                        <div class="hub-inner">
+                            <h3 class="text-[42px] font-black text-slate-900 leading-none">5 STEPS</h3>
+                            <p class="text-[10px] font-extrabold text-slate-400 tracking-[0.3em] mt-2">INFOGRAPHICS</p>
+                            <div class="flex gap-2 mt-6">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#f59e0b]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#84cc16]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#3b82f6]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#06b6d4]"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#ec4899]"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 02 -->
-                <div class="w-full md:w-44 bg-slate-50/40 border border-slate-100 h-auto md:h-[56%] group relative transition-all duration-700 hover:bg-white hover:shadow-xl hover:-translate-y-1 z-20 rounded-t-[2.5rem]" data-aos="fade-up" data-aos-delay="100">
-                    <div class="p-5 flex flex-col h-full">
-                        <div class="mb-4">
-                            <span class="text-[9px] font-black bg-primary/10 text-primary px-3 py-1 rounded-full" data-i18n="phase2">PHASE 02</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                            <i class="fa-solid fa-shield-check text-sm text-primary group-hover:text-white"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-xs md:text-sm font-black text-slate-900 mb-3 leading-tight" data-i18n="pStep2Title">Verification</h3>
-                            <ul class="space-y-1.5">
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep2_1">Document Review</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep2_2">Eligibility Check</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep2_3">Profile Matching</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-auto pt-3 border-t border-slate-50 flex justify-between items-center">
-                            <span class="text-2xl font-black text-slate-100 group-hover:text-primary/10 transition-colors">02</span>
-                            <i class="fa-solid fa-chevron-right text-[8px] text-slate-200"></i>
+                <!-- Steps Container -->
+                <div class="flex flex-col gap-5 lg:gap-6">
+                    <!-- Step 01 -->
+                    <div class="step-node" style="--node-color: #f59e0b;" data-aos="fade-left" data-aos-delay="0">
+                        <div class="step-shape-outer">
+                            <div class="step-shape-inner">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="text-sm font-black text-slate-900">01.</span>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep1Title">Submit Application</h4>
+                                </div>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Fill out the online registration form and submit the required application fee to begin.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Step 03 -->
-                <div class="w-full md:w-44 bg-white border border-slate-100 h-auto md:h-[67%] group relative transition-all duration-700 hover:shadow-xl hover:-translate-y-1 z-30 rounded-t-[2.5rem]" data-aos="fade-up" data-aos-delay="200">
-                    <div class="p-5 flex flex-col h-full">
-                        <div class="mb-4">
-                            <span class="text-[9px] font-black bg-primary/15 text-primary px-3 py-1 rounded-full" data-i18n="phase3">PHASE 03</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-2xl bg-primary/15 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                            <i class="fa-solid fa-user-graduate text-sm text-primary group-hover:text-white"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-xs md:text-sm font-black text-slate-900 mb-3 leading-tight" data-i18n="pStep3Title">Assessment</h3>
-                            <ul class="space-y-1.5">
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep3_1">Entrance Exam</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep3_2">Student Interview</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep3_3">Skill Evaluation</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-auto pt-3 border-t border-slate-50 flex justify-between items-center">
-                            <span class="text-2xl font-black text-slate-100 group-hover:text-primary/10 transition-colors">03</span>
-                            <i class="fa-solid fa-chevron-right text-[8px] text-slate-200"></i>
+                    <!-- Step 02 -->
+                    <div class="step-node" style="--node-color: #84cc16;" data-aos="fade-left" data-aos-delay="100">
+                        <div class="step-shape-outer">
+                            <div class="step-shape-inner">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="text-sm font-black text-slate-900">02.</span>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep2Title">Verification</h4>
+                                </div>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Our admissions team will review your documents for eligibility and profile matching.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Step 04 -->
-                <div class="w-full md:w-44 bg-slate-50/40 border border-slate-100 h-auto md:h-[78%] group relative transition-all duration-700 hover:bg-white hover:shadow-xl hover:-translate-y-1 z-40 rounded-t-[2.5rem]" data-aos="fade-up" data-aos-delay="300">
-                    <div class="p-5 flex flex-col h-full">
-                        <div class="mb-4">
-                            <span class="text-[9px] font-black bg-primary/20 text-primary px-3 py-1 rounded-full" data-i18n="phase4">PHASE 04</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-2xl bg-primary/20 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                            <i class="fa-solid fa-comments text-sm text-primary group-hover:text-white"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-xs md:text-sm font-black text-slate-900 mb-3 leading-tight" data-i18n="pStep4Title">Parent Meeting</h3>
-                            <ul class="space-y-1.5">
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep4_1">School Orientation</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep4_2">Admin Discussion</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">
-                                    <i class="fa-solid fa-check text-[6px] text-primary"></i>
-                                    <span data-i18n="pStep4_3">Goal Alignment</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-auto pt-3 border-t border-slate-50 flex justify-between items-center">
-                            <span class="text-2xl font-black text-slate-100 group-hover:text-primary/10 transition-colors">04</span>
-                            <i class="fa-solid fa-chevron-right text-[8px] text-slate-200"></i>
+                    <!-- Step 03 -->
+                    <div class="step-node" style="--node-color: #3b82f6;" data-aos="fade-left" data-aos-delay="200">
+                        <div class="step-shape-outer">
+                            <div class="step-shape-inner">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="text-sm font-black text-slate-900">03.</span>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep3Title">Assessment</h4>
+                                </div>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Students participate in entrance exams and skill evaluations to determine placement.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Step 05 -->
-                <div class="w-full md:w-44 bg-primary/90 backdrop-blur-md h-auto md:h-[89%] group relative transition-all duration-700 hover:bg-primary hover:shadow-xl hover:-translate-y-1 z-50 rounded-t-[2.5rem]" data-aos="fade-up" data-aos-delay="400">
-                    <div class="p-5 flex flex-col h-full text-white">
-                        <div class="mb-4">
-                            <span class="text-[9px] font-black bg-white/20 text-white px-3 py-1 rounded-full" data-i18n="phase5">PHASE 05</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center mb-5 group-hover:bg-white group-hover:text-primary transition-all duration-500 shadow-md">
-                            <i class="fa-solid fa-circle-check text-sm text-secondary"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-xs md:text-sm font-black mb-3 leading-tight" data-i18n="pStep5Title">Approval</h3>
-                            <ul class="space-y-1.5">
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-white/60 group-hover:text-white transition-colors">
-                                    <i class="fa-solid fa-star text-[5px] text-secondary"></i>
-                                    <span data-i18n="pStep5_1">Offer Letter Issued</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-white/60 group-hover:text-white transition-colors">
-                                    <i class="fa-solid fa-star text-[5px] text-secondary"></i>
-                                    <span data-i18n="pStep5_2">Seat Allocation</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-white/60 group-hover:text-white transition-colors">
-                                    <i class="fa-solid fa-star text-[5px] text-secondary"></i>
-                                    <span data-i18n="pStep5_3">Initial Onboarding</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-auto pt-3 border-t border-white/10 flex justify-between items-center">
-                            <span class="text-2xl font-black text-white/10 group-hover:text-white/20 transition-colors">05</span>
-                            <i class="fa-solid fa-chevron-right text-[8px] text-white/30"></i>
+                    <!-- Step 04 -->
+                    <div class="step-node" style="--node-color: #06b6d4;" data-aos="fade-left" data-aos-delay="300">
+                        <div class="step-shape-outer">
+                            <div class="step-shape-inner">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="text-sm font-black text-slate-900">04.</span>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep4Title">Parent Meeting</h4>
+                                </div>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">A meeting for parents and students to align goals and explore the school campus.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Step 06 -->
-                <div class="w-full md:w-44 bg-primary h-auto md:h-[100%] group relative transition-all duration-700 hover:shadow-2xl hover:-translate-y-1 z-60 rounded-t-[2.5rem]" data-aos="fade-up" data-aos-delay="500">
-                    <div class="p-5 flex flex-col h-full text-white">
-                        <div class="mb-4">
-                            <span class="text-[9px] font-black bg-secondary text-black px-3 py-1 rounded-full shadow-sm" data-i18n="phase6">PHASE 06</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:text-black transition-all duration-500 shadow-md">
-                            <i class="fa-solid fa-graduation-cap text-sm text-white group-hover:text-black"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-xs md:text-sm font-black mb-3 leading-tight" data-i18n="pStep6Title">Fee Payment</h3>
-                            <ul class="space-y-1.5">
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-white/80">
-                                    <i class="fa-solid fa-check text-[6px] text-secondary"></i>
-                                    <span data-i18n="pStep6_1">Final Enrollment</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-white/80">
-                                    <i class="fa-solid fa-check text-[6px] text-secondary"></i>
-                                    <span data-i18n="pStep6_2">Welcome Package</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-[10px] font-bold text-white/80">
-                                    <i class="fa-solid fa-check text-[6px] text-secondary"></i>
-                                    <span data-i18n="pStep6_3">Uniform & Books</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-auto pt-3 flex justify-between items-center border-t border-white/10">
-                            <span class="text-3xl font-black text-white/20">06</span>
-                            <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-black shadow-lg">
-                                <i class="fa-solid fa-check text-[10px]"></i>
+                    <!-- Step 05 -->
+                    <div class="step-node" style="--node-color: #ec4899;" data-aos="fade-left" data-aos-delay="400">
+                        <div class="step-shape-outer">
+                            <div class="step-shape-inner">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="text-sm font-black text-slate-900">05.</span>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep5Title">Approval</h4>
+                                </div>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Upon final approval, the offer letter is issued and seat allocation is confirmed.</p>
                             </div>
                         </div>
                     </div>
