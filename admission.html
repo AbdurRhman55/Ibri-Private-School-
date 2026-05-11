@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Dancing+Script:wght@700&display=swap"
         rel="stylesheet">
-    
+
     <!-- AOS Library for Scroll Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -73,8 +73,15 @@
         }
 
         @keyframes bounceX {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
         }
 
         .animate-bounce-x {
@@ -138,7 +145,7 @@
             position: relative;
             width: 280px;
             height: 320px;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
             z-index: 10;
         }
 
@@ -167,14 +174,14 @@
         .step-node {
             position: relative;
             width: 340px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.05));
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 5;
         }
 
         .step-node:hover {
             transform: translateX(10px) scale(1.02);
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
         }
 
         .step-shape-outer {
@@ -219,9 +226,11 @@
                 flex-direction: column;
                 gap: 30px;
             }
+
             .connections-svg {
                 display: none;
             }
+
             .step-node {
                 width: 100%;
                 max-width: 400px;
@@ -275,8 +284,7 @@
                 <li>
                     <a href="admission.html"
                         class="group flex items-center text-[13px] font-bold text-primary transition-colors">
-                        <i
-                            class="fa-solid fa-user-plus text-primary me-1.5 text-[12px]"></i>
+                        <i class="fa-solid fa-user-plus text-primary me-1.5 text-[12px]"></i>
                         <span data-i18n="admissions">Admissions</span>
                     </a>
                 </li>
@@ -608,7 +616,7 @@
                     </div>
 
                     <div class="pt-4">
-                        <a href="#apply-now"
+                        <a href="#apply"
                             class="inline-flex items-center gap-3 bg-primary hover:bg-secondary text-white hover:text-black px-10 py-4 rounded-xl font-black transition-all duration-300 transform hover:-translate-y-1 shadow-xl shadow-primary/30 group text-sm">
                             <span data-i18n="quickApply">Quick Apply Now</span>
                             <i class="fa-solid fa-bolt group-hover:scale-125 transition-transform"></i>
@@ -649,8 +657,10 @@
     <section class="py-12 md:py-20 bg-white overflow-hidden relative">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-primary font-black text-[10px] uppercase tracking-[0.5em] mb-3 block" data-i18n="processTag">OUR JOURNEY TOGETHER</span>
-                <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight mb-4" data-i18n="processTitle">Simple & Transparent Process</h2>
+                <span class="text-primary font-black text-[10px] uppercase tracking-[0.5em] mb-3 block"
+                    data-i18n="processTag">OUR JOURNEY TOGETHER</span>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight mb-4" data-i18n="processTitle">
+                    Simple & Transparent Process</h2>
                 <div class="h-1.5 w-16 bg-secondary mx-auto rounded-full"></div>
             </div>
 
@@ -658,11 +668,15 @@
                 <!-- SVG Connections for Desktop -->
                 <svg class="connections-svg hidden lg:block" viewBox="0 0 1000 600" preserveAspectRatio="none">
                     <!-- Lines from Hub to Steps -->
-                    <path d="M 350 300 C 450 300, 450 80, 600 80" stroke="#f59e0b" stroke-width="2.5" fill="none" opacity="0.4" />
-                    <path d="M 350 300 C 450 300, 450 190, 600 190" stroke="#84cc16" stroke-width="2.5" fill="none" opacity="0.4" />
+                    <path d="M 350 300 C 450 300, 450 80, 600 80" stroke="#f59e0b" stroke-width="2.5" fill="none"
+                        opacity="0.4" />
+                    <path d="M 350 300 C 450 300, 450 190, 600 190" stroke="#84cc16" stroke-width="2.5" fill="none"
+                        opacity="0.4" />
                     <path d="M 350 300 L 600 300" stroke="#3b82f6" stroke-width="2.5" fill="none" opacity="0.4" />
-                    <path d="M 350 300 C 450 300, 450 410, 600 410" stroke="#06b6d4" stroke-width="2.5" fill="none" opacity="0.4" />
-                    <path d="M 350 300 C 450 300, 450 520, 600 520" stroke="#ec4899" stroke-width="2.5" fill="none" opacity="0.4" />
+                    <path d="M 350 300 C 450 300, 450 410, 600 410" stroke="#06b6d4" stroke-width="2.5" fill="none"
+                        opacity="0.4" />
+                    <path d="M 350 300 C 450 300, 450 520, 600 520" stroke="#ec4899" stroke-width="2.5" fill="none"
+                        opacity="0.4" />
                 </svg>
 
                 <!-- Central Hub -->
@@ -690,9 +704,11 @@
                             <div class="step-shape-inner">
                                 <div class="flex items-center gap-3 mb-1">
                                     <span class="text-sm font-black text-slate-900">01.</span>
-                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep1Title">Submit Application</h4>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep1Title">
+                                        Submit Application</h4>
                                 </div>
-                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Fill out the online registration form and submit the required application fee to begin.</p>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Fill out the online
+                                    registration form and submit the required application fee to begin.</p>
                             </div>
                         </div>
                     </div>
@@ -703,9 +719,11 @@
                             <div class="step-shape-inner">
                                 <div class="flex items-center gap-3 mb-1">
                                     <span class="text-sm font-black text-slate-900">02.</span>
-                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep2Title">Verification</h4>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep2Title">
+                                        Verification</h4>
                                 </div>
-                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Our admissions team will review your documents for eligibility and profile matching.</p>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Our admissions team will
+                                    review your documents for eligibility and profile matching.</p>
                             </div>
                         </div>
                     </div>
@@ -716,9 +734,11 @@
                             <div class="step-shape-inner">
                                 <div class="flex items-center gap-3 mb-1">
                                     <span class="text-sm font-black text-slate-900">03.</span>
-                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep3Title">Assessment</h4>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep3Title">
+                                        Assessment</h4>
                                 </div>
-                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Students participate in entrance exams and skill evaluations to determine placement.</p>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Students participate in
+                                    entrance exams and skill evaluations to determine placement.</p>
                             </div>
                         </div>
                     </div>
@@ -729,9 +749,11 @@
                             <div class="step-shape-inner">
                                 <div class="flex items-center gap-3 mb-1">
                                     <span class="text-sm font-black text-slate-900">04.</span>
-                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep4Title">Parent Meeting</h4>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep4Title">
+                                        Parent Meeting</h4>
                                 </div>
-                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">A meeting for parents and students to align goals and explore the school campus.</p>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">A meeting for parents
+                                    and students to align goals and explore the school campus.</p>
                             </div>
                         </div>
                     </div>
@@ -742,9 +764,11 @@
                             <div class="step-shape-inner">
                                 <div class="flex items-center gap-3 mb-1">
                                     <span class="text-sm font-black text-slate-900">05.</span>
-                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep5Title">Approval</h4>
+                                    <h4 class="text-sm font-black text-slate-900 uppercase" data-i18n="pStep5Title">
+                                        Approval</h4>
                                 </div>
-                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Upon final approval, the offer letter is issued and seat allocation is confirmed.</p>
+                                <p class="text-[11px] font-bold text-slate-500 leading-relaxed">Upon final approval, the
+                                    offer letter is issued and seat allocation is confirmed.</p>
                             </div>
                         </div>
                     </div>
@@ -759,55 +783,74 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <!-- Left: Header -->
                 <div class="w-full lg:w-2/5 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/10">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/10">
                         <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                        <span class="text-primary font-black text-[9px] uppercase tracking-[0.3em]" data-i18n="docsTag">PREPARATION</span>
+                        <span class="text-primary font-black text-[9px] uppercase tracking-[0.3em]"
+                            data-i18n="docsTag">PREPARATION</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight" data-i18n="docsTitle">Required Documents</h2>
-                    <p class="text-slate-500 text-sm font-medium leading-relaxed max-w-md" data-i18n="docsDesc">Please ensure you have the following documents ready for a smooth application process.</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight" data-i18n="docsTitle">
+                        Required Documents</h2>
+                    <p class="text-slate-500 text-sm font-medium leading-relaxed max-w-md" data-i18n="docsDesc">Please
+                        ensure you have the following documents ready for a smooth application process.</p>
                 </div>
 
                 <!-- Right: Grid -->
                 <div class="w-full lg:w-3/5 grid sm:grid-cols-2 gap-4">
                     <!-- Doc 01 -->
-                    <div class="flex items-center justify-between p-4 bg-white rounded-3xl border border-slate-100 shadow-sm group hover:border-primary/20 hover:shadow-md transition-all duration-500">
+                    <div
+                        class="flex items-center justify-between p-4 bg-white rounded-3xl border border-slate-100 shadow-sm group hover:border-primary/20 hover:shadow-md transition-all duration-500">
                         <div class="flex items-center gap-4">
-                            <div class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+                            <div
+                                class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
                                 <i class="fa-solid fa-id-card text-sm"></i>
                             </div>
-                            <span class="text-xs font-black text-slate-700" data-i18n="doc1">Child's Birth Certificate</span>
+                            <span class="text-xs font-black text-slate-700" data-i18n="doc1">Child's Birth
+                                Certificate</span>
                         </div>
-                        <i class="fa-solid fa-circle-check text-[10px] text-slate-100 group-hover:text-secondary transition-colors"></i>
+                        <i
+                            class="fa-solid fa-circle-check text-[10px] text-slate-100 group-hover:text-secondary transition-colors"></i>
                     </div>
                     <!-- Doc 02 -->
-                    <div class="flex items-center justify-between p-4 bg-white rounded-3xl border border-slate-100 shadow-sm group hover:border-primary/20 hover:shadow-md transition-all duration-500">
+                    <div
+                        class="flex items-center justify-between p-4 bg-white rounded-3xl border border-slate-100 shadow-sm group hover:border-primary/20 hover:shadow-md transition-all duration-500">
                         <div class="flex items-center gap-4">
-                            <div class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+                            <div
+                                class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
                                 <i class="fa-solid fa-passport text-sm"></i>
                             </div>
                             <span class="text-xs font-black text-slate-700" data-i18n="doc2">Passport & ID Copies</span>
                         </div>
-                        <i class="fa-solid fa-circle-check text-[10px] text-slate-100 group-hover:text-secondary transition-colors"></i>
+                        <i
+                            class="fa-solid fa-circle-check text-[10px] text-slate-100 group-hover:text-secondary transition-colors"></i>
                     </div>
                     <!-- Doc 03 -->
-                    <div class="flex items-center justify-between p-4 bg-white rounded-3xl border border-slate-100 shadow-sm group hover:border-primary/20 hover:shadow-md transition-all duration-500">
+                    <div
+                        class="flex items-center justify-between p-4 bg-white rounded-3xl border border-slate-100 shadow-sm group hover:border-primary/20 hover:shadow-md transition-all duration-500">
                         <div class="flex items-center gap-4">
-                            <div class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+                            <div
+                                class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
                                 <i class="fa-solid fa-image text-sm"></i>
                             </div>
-                            <span class="text-xs font-black text-slate-700" data-i18n="doc3">Recent Passport Size Photos</span>
+                            <span class="text-xs font-black text-slate-700" data-i18n="doc3">Recent Passport Size
+                                Photos</span>
                         </div>
-                        <i class="fa-solid fa-circle-check text-[10px] text-slate-100 group-hover:text-secondary transition-colors"></i>
+                        <i
+                            class="fa-solid fa-circle-check text-[10px] text-slate-100 group-hover:text-secondary transition-colors"></i>
                     </div>
                     <!-- Doc 04 -->
-                    <div class="flex items-center justify-between p-4 bg-white rounded-3xl border border-slate-100 shadow-sm group hover:border-primary/20 hover:shadow-md transition-all duration-500">
+                    <div
+                        class="flex items-center justify-between p-4 bg-white rounded-3xl border border-slate-100 shadow-sm group hover:border-primary/20 hover:shadow-md transition-all duration-500">
                         <div class="flex items-center gap-4">
-                            <div class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+                            <div
+                                class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
                                 <i class="fa-solid fa-file-medical text-sm"></i>
                             </div>
-                            <span class="text-xs font-black text-slate-700" data-i18n="doc4">Health & Vaccination Records</span>
+                            <span class="text-xs font-black text-slate-700" data-i18n="doc4">Health & Vaccination
+                                Records</span>
                         </div>
-                        <i class="fa-solid fa-circle-check text-[10px] text-slate-100 group-hover:text-secondary transition-colors"></i>
+                        <i
+                            class="fa-solid fa-circle-check text-[10px] text-slate-100 group-hover:text-secondary transition-colors"></i>
                     </div>
                 </div>
             </div>
@@ -818,561 +861,928 @@
     <section class="py-12 md:py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-primary font-black text-[9px] uppercase tracking-[0.3em] mb-3 block" data-i18n="faqTag">SUPPORT</span>
+                <span class="text-primary font-black text-[9px] uppercase tracking-[0.3em] mb-3 block"
+                    data-i18n="faqTag">SUPPORT</span>
                 <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-3" data-i18n="faqTitle">Admission FAQs</h2>
-                <p class="text-slate-500 text-sm font-medium" data-i18n="faqDesc">Find answers to common questions about our enrollment process.</p>
+                <p class="text-slate-500 text-sm font-medium" data-i18n="faqDesc">Find answers to common questions about
+                    our enrollment process.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Q1 -->
-                <div class="p-6 bg-slate-50/50 rounded-3xl border-l-4 border-primary/20 border-t border-r border-b border-slate-100 group cursor-pointer transition-all hover:bg-white hover:border-primary/40 hover:shadow-xl">
-                    <h4 class="text-sm font-black text-slate-900 mb-3 group-hover:text-primary transition-colors flex items-center gap-3">
-                        <span class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] text-primary">01</span>
+                <div
+                    class="p-6 bg-slate-50/50 rounded-3xl border-l-4 border-primary/20 border-t border-r border-b border-slate-100 group cursor-pointer transition-all hover:bg-white hover:border-primary/40 hover:shadow-xl">
+                    <h4
+                        class="text-sm font-black text-slate-900 mb-3 group-hover:text-primary transition-colors flex items-center gap-3">
+                        <span
+                            class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] text-primary">01</span>
                         <span data-i18n="q1">What is the age criteria for Kindergarten?</span>
                     </h4>
-                    <p class="text-xs text-slate-500 leading-relaxed font-medium pl-9" data-i18n="a1">Children should be 3 years and 6 months by the start of the academic year for KG1 admission.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium pl-9" data-i18n="a1">Children should be
+                        3 years and 6 months by the start of the academic year for KG1 admission.</p>
                 </div>
                 <!-- Q2 -->
-                <div class="p-6 bg-slate-50/50 rounded-3xl border-l-4 border-primary/20 border-t border-r border-b border-slate-100 group cursor-pointer transition-all hover:bg-white hover:border-primary/40 hover:shadow-xl">
-                    <h4 class="text-sm font-black text-slate-900 mb-3 group-hover:text-primary transition-colors flex items-center gap-3">
-                        <span class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] text-primary">02</span>
+                <div
+                    class="p-6 bg-slate-50/50 rounded-3xl border-l-4 border-primary/20 border-t border-r border-b border-slate-100 group cursor-pointer transition-all hover:bg-white hover:border-primary/40 hover:shadow-xl">
+                    <h4
+                        class="text-sm font-black text-slate-900 mb-3 group-hover:text-primary transition-colors flex items-center gap-3">
+                        <span
+                            class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] text-primary">02</span>
                         <span data-i18n="q2">Is there an entrance assessment?</span>
                     </h4>
-                    <p class="text-xs text-slate-500 leading-relaxed font-medium pl-9" data-i18n="a2">Yes, we conduct age-appropriate assessments to understand each child's current learning level and social development.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium pl-9" data-i18n="a2">Yes, we conduct
+                        age-appropriate assessments to understand each child's current learning level and social
+                        development.</p>
                 </div>
                 <!-- Q3 -->
-                <div class="p-6 bg-slate-50/50 rounded-3xl border-l-4 border-primary/20 border-t border-r border-b border-slate-100 group cursor-pointer transition-all hover:bg-white hover:border-primary/40 hover:shadow-xl">
-                    <h4 class="text-sm font-black text-slate-900 mb-3 group-hover:text-primary transition-colors flex items-center gap-3">
-                        <span class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] text-primary">03</span>
+                <div
+                    class="p-6 bg-slate-50/50 rounded-3xl border-l-4 border-primary/20 border-t border-r border-b border-slate-100 group cursor-pointer transition-all hover:bg-white hover:border-primary/40 hover:shadow-xl">
+                    <h4
+                        class="text-sm font-black text-slate-900 mb-3 group-hover:text-primary transition-colors flex items-center gap-3">
+                        <span
+                            class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] text-primary">03</span>
                         <span data-i18n="q3">Do you provide transportation?</span>
                     </h4>
-                    <p class="text-xs text-slate-500 leading-relaxed font-medium pl-9" data-i18n="a3">Yes, the school offers safe and monitored transportation services covering most areas in and around Ibri.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium pl-9" data-i18n="a3">Yes, the school
+                        offers safe and monitored transportation services covering most areas in and around Ibri.</p>
                 </div>
                 <!-- Q4 -->
-                <div class="p-6 bg-slate-50/50 rounded-3xl border-l-4 border-primary/20 border-t border-r border-b border-slate-100 group cursor-pointer transition-all hover:bg-white hover:border-primary/40 hover:shadow-xl">
-                    <h4 class="text-sm font-black text-slate-900 mb-3 group-hover:text-primary transition-colors flex items-center gap-3">
-                        <span class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] text-primary">04</span>
+                <div
+                    class="p-6 bg-slate-50/50 rounded-3xl border-l-4 border-primary/20 border-t border-r border-b border-slate-100 group cursor-pointer transition-all hover:bg-white hover:border-primary/40 hover:shadow-xl">
+                    <h4
+                        class="text-sm font-black text-slate-900 mb-3 group-hover:text-primary transition-colors flex items-center gap-3">
+                        <span
+                            class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] text-primary">04</span>
                         <span data-i18n="q4">When do admissions open?</span>
                     </h4>
-                    <p class="text-xs text-slate-500 leading-relaxed font-medium pl-9" data-i18n="a4">Admissions typically open in February each year for the upcoming academic session starting in August.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium pl-9" data-i18n="a4">Admissions
+                        typically open in February each year for the upcoming academic session starting in August.</p>
                 </div>
             </div>
         </div>
-     <!-- CTA Section (Cinematic Glassmorphism) -->
-    <section class="py-12 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div class="relative rounded-[3rem] overflow-hidden bg-slate-900 p-8 md:p-16 lg:p-24 text-center">
-            <!-- Dynamic Background Layers -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/10 opacity-30"></div>
-            <div class="absolute -top-32 -right-32 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-pulse"></div>
-            <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
-            
-            <div class="relative z-10 max-w-4xl mx-auto">
-                <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md text-secondary text-[10px] font-black uppercase tracking-[0.4em] rounded-full mb-8 border border-white/10" data-i18n="ctaTag">JOIN OUR COMMUNITY</span>
-                <h2 class="text-4xl md:text-6xl font-black text-white mb-8 leading-tight tracking-tighter" data-i18n="ctaHeading">
-                    Ready to Start Your Child's<br />
-                    <span class="bg-gradient-to-r from-secondary via-white to-secondary bg-clip-text text-transparent">Success Journey?</span>
-                </h2>
-                <p class="text-white/60 text-lg md:text-xl mb-12 font-medium max-w-2xl mx-auto" data-i18n="ctaDesc">
-                    Enroll your child today at Ibri Private School and give them the foundation they deserve for a brilliant future.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <a href="contact.php" class="px-10 py-5 bg-secondary text-black font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-white hover:scale-105 transition-all duration-500 shadow-xl shadow-secondary/20" data-i18n="applyNowBtn">Apply Now</a>
-                    <a href="about.html" class="px-10 py-5 bg-white/5 backdrop-blur-md text-white border border-white/10 font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-white hover:text-black transition-all duration-500" data-i18n="viewProgramsBtn">View Programs</a>
+        <!-- Online Admission Form Section -->
+        <section id="apply" class="py-12 md:py-20 bg-white relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                    <span
+                        class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/5 text-primary text-[9px] font-bold uppercase tracking-[0.4em] rounded-full mb-4 border border-primary/10">
+                        <i class="fa-solid fa-file-signature"></i>
+                        <span data-i18n="formTag">ENROLLMENT FORM</span>
+                    </span>
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-3"
+                        data-i18n="formTitle">Detailed Admission Application</h2>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium" data-i18n="formDesc">Please provide
+                        comprehensive information to ensure a smooth enrollment process for your child.</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer Section -->
-    <footer class=" pt-8 pb-4 md:pt-20 md:pb-2 px-3 sm:px-6 lg:px-8 border-t border-black/[0.05]">
-        <div class="max-w-[1600px] mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 md:mb-20">
-                <!-- Column 1: Brand -->
-                <div class="space-y-6">
-                    <a href="index.html" class="flex items-center gap-3 group">
-                        <div
-                            class="h-12 w-12 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shadow-sm">
-                            <img src="./Asstes/school logo.jpeg" alt="School Logo"
-                                class="h-full w-full object-contain rounded-lg">
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_10px_50px_rgba(0,0,0,0.04)] overflow-hidden"
+                    data-aos="fade-up">
+                    <form class="p-6 md:p-10 space-y-10">
+                        <!-- Section 1: Student Profile -->
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-3 border-b border-slate-50 pb-3">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-slate-800 uppercase tracking-tight"
+                                    data-i18n="studentInfoTitle">Student Profile</h3>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelFullName">Full Name</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300"
+                                        placeholder="Student's full name">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelDOB">Date of Birth</label>
+                                    <input type="date"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelGender">Gender</label>
+                                    <select
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23cbd5e1%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E')] bg-[length:16px] bg-[right_12px_center] bg-no-repeat">
+                                        <option value="" disabled selected data-i18n="optSelect">Select Gender</option>
+                                        <option value="male" data-i18n="optMale">Male</option>
+                                        <option value="female" data-i18n="optFemale">Female</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelNationality">Nationality</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300"
+                                        placeholder="e.g. Omani">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelPassport">Passport / ID Number</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300"
+                                        placeholder="ID Number">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelGrade">Grade Applied For</label>
+                                    <select
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23cbd5e1%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E')] bg-[length:16px] bg-[right_12px_center] bg-no-repeat">
+                                        <option value="" disabled selected data-i18n="optGrade">Select Grade</option>
+                                        <option value="kg1">KG 1</option>
+                                        <option value="kg2">KG 2</option>
+                                        <option value="1">Grade 1</option>
+                                        <option value="2">Grade 2</option>
+                                        <option value="3">Grade 3</option>
+                                        <option value="4">Grade 4</option>
+                                        <option value="5">Grade 5</option>
+                                        <option value="6">Grade 6</option>
+                                        <option value="7">Grade 7</option>
+                                        <option value="8">Grade 8</option>
+                                        <option value="9">Grade 9</option>
+                                        <option value="10">Grade 10</option>
+                                        <option value="11">Grade 11</option>
+                                        <option value="12">Grade 12</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-base font-black text-black leading-tight tracking-tight"
-                                data-i18n="schoolNameMain">Ibri Private School</h3>
-                            <p class="text-[10px] font-bold text-black/40 mt-[1px]" data-i18n="schoolNameSub">مدرسة
-                                عبري الخاصة</p>
+
+                        <!-- Section 2: Parent/Guardian Details -->
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-3 border-b border-slate-50 pb-3">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary-dark text-sm">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-slate-800 uppercase tracking-tight"
+                                    data-i18n="guardianInfoTitle">Parent / Guardian Details</h3>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                <!-- Parent 1 -->
+                                <div class="space-y-4 p-5 bg-slate-50/50 rounded-2xl border border-slate-100">
+                                    <h4 class="text-[10px] font-black text-primary uppercase tracking-widest"
+                                        data-i18n="labelParent1">Parent 1 / Guardian</h4>
+                                    <div class="space-y-3">
+                                        <input type="text"
+                                            class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                            placeholder="Full Name" data-i18n="[placeholder]labelFullName">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <input type="text"
+                                                class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                                placeholder="Relationship" data-i18n="[placeholder]labelRelation">
+                                            <input type="tel"
+                                                class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                                placeholder="Phone Number" dir="ltr">
+                                        </div>
+                                        <input type="email"
+                                            class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                            placeholder="Email Address">
+                                        <input type="text"
+                                            class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                            placeholder="Profession / Occupation"
+                                            data-i18n="[placeholder]labelProfession">
+                                    </div>
+                                </div>
+                                <!-- Parent 2 -->
+                                <div class="space-y-4 p-5 bg-slate-50/50 rounded-2xl border border-slate-100">
+                                    <h4 class="text-[10px] font-black text-secondary-dark uppercase tracking-widest"
+                                        data-i18n="labelParent2">Parent 2 / Guardian</h4>
+                                    <div class="space-y-3">
+                                        <input type="text"
+                                            class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                            placeholder="Full Name" data-i18n="[placeholder]labelFullName">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <input type="text"
+                                                class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                                placeholder="Relationship" data-i18n="[placeholder]labelRelation">
+                                            <input type="tel"
+                                                class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                                placeholder="Phone Number" dir="ltr">
+                                        </div>
+                                        <input type="email"
+                                            class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                            placeholder="Email Address">
+                                        <input type="text"
+                                            class="w-full px-4 py-2.5 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600"
+                                            placeholder="Profession / Occupation"
+                                            data-i18n="[placeholder]labelProfession">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                    <p class="text-slate-500 text-sm leading-relaxed font-medium pr-8" data-i18n="footerAbout">
-                        Empowering students with knowledge, character, and skills to excel in an ever-changing
-                        global world through high-quality education.
+
+                        <!-- Section 3: Emergency & Medical -->
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-3 border-b border-slate-50 pb-3">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-500 text-sm">
+                                    <i class="fa-solid fa-hand-holding-medical"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-slate-800 uppercase tracking-tight"
+                                    data-i18n="emergencyInfoTitle">Emergency & Medical</h3>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelEmergencyName">Emergency Contact Name</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelEmergencyPhone">Emergency Contact Phone</label>
+                                    <input type="tel"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300"
+                                        dir="ltr">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelBloodGroup">Blood Group</label>
+                                    <select
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23cbd5e1%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E')] bg-[length:16px] bg-[right_12px_center] bg-no-repeat">
+                                        <option value="">Unknown</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
+                                </div>
+                                <div class="md:col-span-3 space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelAllergies">Medical Allergies / Conditions (if any)</label>
+                                    <textarea rows="2"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300 resize-none"
+                                        placeholder="Enter any medical concerns..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 4: Academic Background -->
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-3 border-b border-slate-50 pb-3">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 text-sm">
+                                    <i class="fa-solid fa-school"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-slate-800 uppercase tracking-tight"
+                                    data-i18n="academicInfoTitle">Academic Background</h3>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                                <div class="space-y-1.5 lg:col-span-2">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelLastSchool">Last School Attended</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelLastGrade">Last Grade Completed</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300">
+                                </div>
+                                <div class="md:col-span-3 space-y-1.5">
+                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pl-1"
+                                        data-i18n="labelAddress">Home Address</label>
+                                    <textarea rows="2"
+                                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-sm font-medium text-slate-600 placeholder:text-slate-300 resize-none"
+                                        placeholder="Enter residential address..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4">
+                            <button type="submit"
+                                class="w-full bg-primary hover:bg-slate-900 text-white py-4 rounded-xl font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-[1.01] active:scale-[0.98] flex items-center justify-center gap-3 group">
+                                <span data-i18n="btnSubmitForm">Submit Application</span>
+                                <i
+                                    class="fa-solid fa-paper-plane text-[10px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                            </button>
+                            <p class="text-center text-[9px] font-medium text-slate-400 mt-4 uppercase tracking-widest"
+                                data-i18n="formNote">* Official confirmation will be sent via email after review.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section (Cinematic Glassmorphism) -->
+        <section class="py-12 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+            <div class="relative rounded-[3rem] overflow-hidden bg-slate-900 p-8 md:p-16 lg:p-24 text-center">
+                <!-- Dynamic Background Layers -->
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/10 opacity-30"></div>
+                <div class="absolute -top-32 -right-32 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-pulse">
+                </div>
+                <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] animate-pulse"
+                    style="animation-delay: 2s;"></div>
+
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md text-secondary text-[10px] font-black uppercase tracking-[0.4em] rounded-full mb-8 border border-white/10"
+                        data-i18n="ctaTag">JOIN OUR COMMUNITY</span>
+                    <h2 class="text-4xl md:text-6xl font-black text-white mb-8 leading-tight tracking-tighter"
+                        data-i18n="ctaHeading">
+                        Ready to Start Your Child's<br />
+                        <span
+                            class="bg-gradient-to-r from-secondary via-white to-secondary bg-clip-text text-transparent">Success
+                            Journey?</span>
+                    </h2>
+                    <p class="text-white/60 text-lg md:text-xl mb-12 font-medium max-w-2xl mx-auto" data-i18n="ctaDesc">
+                        Enroll your child today at Ibri Private School and give them the foundation they deserve for a
+                        brilliant future.
                     </p>
-                    <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
-                            <i class="fa-brands fa-facebook-f text-sm"></i>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <a href="#apply"
+                            class="px-10 py-5 bg-secondary text-black font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-white hover:scale-105 transition-all duration-500 shadow-xl shadow-secondary/20"
+                            data-i18n="applyNowBtn">Apply Now</a>
+                        <a href="about.html"
+                            class="px-10 py-5 bg-white/5 backdrop-blur-md text-white border border-white/10 font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-white hover:text-black transition-all duration-500"
+                            data-i18n="viewProgramsBtn">View Programs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class=" pt-8 pb-4 md:pt-20 md:pb-2 px-3 sm:px-6 lg:px-8 border-t border-black/[0.05]">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 md:mb-20">
+                    <!-- Column 1: Brand -->
+                    <div class="space-y-6">
+                        <a href="index.html" class="flex items-center gap-3 group">
+                            <div
+                                class="h-12 w-12 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shadow-sm">
+                                <img src="./Asstes/school logo.jpeg" alt="School Logo"
+                                    class="h-full w-full object-contain rounded-lg">
+                            </div>
+                            <div>
+                                <h3 class="text-base font-black text-black leading-tight tracking-tight"
+                                    data-i18n="schoolNameMain">Ibri Private School</h3>
+                                <p class="text-[10px] font-bold text-black/40 mt-[1px]" data-i18n="schoolNameSub">مدرسة
+                                    عبري الخاصة</p>
+                            </div>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
-                            <i class="fa-brands fa-instagram text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
-                            <i class="fa-brands fa-twitter text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
-                            <i class="fa-brands fa-youtube text-sm"></i>
-                        </a>
+                        <p class="text-slate-500 text-sm leading-relaxed font-medium pr-8" data-i18n="footerAbout">
+                            Empowering students with knowledge, character, and skills to excel in an ever-changing
+                            global world through high-quality education.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <i class="fa-brands fa-facebook-f text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <i class="fa-brands fa-instagram text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <i class="fa-brands fa-twitter text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <i class="fa-brands fa-youtube text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Quick Links -->
+                    <div>
+                        <h4
+                            class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                            <span data-i18n="quickLinks">Quick Links</span>
+                        </h4>
+                        <ul class="space-y-4">
+                            <li><a href="index.html"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="home"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Home</a>
+                            </li>
+                            <li><a href="about.html"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="about"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>About
+                                    School</a></li>
+                            <li><a href="admission.html"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="admissions"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Admissions</a>
+                            </li>
+                            <li><a href="academics.html"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="academics"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Academics</a>
+                            </li>
+                            <li><a href="student-life.html"
+                                    class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                    data-i18n="studentLife"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Student
+                                    Life</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Academics -->
+                    <div>
+                        <h4
+                            class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                            <span data-i18n="academics">Programs</span>
+                        </h4>
+                        <ul class="space-y-4">
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Kindergarten</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Primary
+                                    Education</a></li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Secondary
+                                    School</a></li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Extra-Curricular</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                        class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>STEM
+                                    Program</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Contact -->
+                    <div>
+                        <h4
+                            class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                            <span data-i18n="contactInfo">Contact Info</span>
+                        </h4>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <p class="text-slate-500 text-sm font-bold leading-relaxed" data-i18n="footerAddress">
+                                    Ibri, Ad Dhahirah Governorate, Sultanate of Oman
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <p class="text-slate-500 text-sm font-bold leading-relaxed" dir="ltr">
+                                    +968 2568 0000
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <p class="text-slate-500 text-sm font-bold leading-relaxed">
+                                    info@ibri-school.com
+                                </p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Links -->
-                <div>
-                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
-                        <span data-i18n="quickLinks">Quick Links</span>
-                    </h4>
-                    <ul class="space-y-4">
-                        <li><a href="index.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="home"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Home</a>
-                        </li>
-                        <li><a href="about.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="about"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>About
-                                School</a></li>
-                        <li><a href="admission.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="admissions"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Admissions</a>
-                        </li>
-                        <li><a href="academics.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="academics"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Academics</a>
-                        </li>
-                        <li><a href="student-life.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="studentLife"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Student
-                                Life</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Academics -->
-                <div>
-                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
-                        <span data-i18n="academics">Programs</span>
-                    </h4>
-                    <ul class="space-y-4">
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Kindergarten</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Primary
-                                Education</a></li>
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Secondary
-                                School</a></li>
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Extra-Curricular</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>STEM
-                                Program</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Contact -->
-                <div>
-                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
-                        <span data-i18n="contactInfo">Contact Info</span>
-                    </h4>
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <p class="text-slate-500 text-sm font-bold leading-relaxed" data-i18n="footerAddress">
-                                Ibri, Ad Dhahirah Governorate, Sultanate of Oman
-                            </p>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <p class="text-slate-500 text-sm font-bold leading-relaxed" dir="ltr">
-                                +968 2568 0000
-                            </p>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <p class="text-slate-500 text-sm font-bold leading-relaxed">
-                                info@ibri-school.com
-                            </p>
-                        </li>
-                    </ul>
+                <!-- Bottom Bar -->
+                <div
+                    class="pt-8 border-t border-black/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]" data-i18n="copyright">
+                        © 2024 Ibri Private School. All rights reserved.
+                    </p>
+                    <div class="flex gap-8 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
+                        <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    </div>
                 </div>
             </div>
+        </footer>
 
-            <!-- Bottom Bar -->
-            <div class="pt-8 border-t border-black/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]" data-i18n="copyright">
-                    © 2024 Ibri Private School. All rights reserved.
-                </p>
-                <div class="flex gap-8 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
-                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        <script>
+            // Translation Dictionary
+            const translations = {
+                en: {
+                    schoolNameMain: "Ibri Private School",
+                    schoolNameSub: "مدرسة عبري الخاصة",
+                    home: "Home",
+                    about: "About School",
+                    admissions: "Admissions",
+                    explore: "Explore",
+                    academics: "Academics",
+                    studentLife: "Student Life",
+                    news: "News & Events",
+                    gallery: "Gallery",
+                    contact: "Contact Us",
+                    contactBtn: "Contact",
+                    admissionBtn: "Admission",
+                    selectLang: "Select Language",
+                    ctaTag: "JOIN OUR COMMUNITY",
+                    ctaHeading: "Ready to Start Your Child's Success Journey?",
+                    ctaDesc: "Enroll your child today at Ibri Private School and give them the foundation they deserve for a brilliant future.",
+                    faqTag: "SUPPORT",
+                    q4: "When do admissions open?",
+                    a4: "Admissions typically open in February each year for the upcoming academic session starting in August.",
+                    applyNowBtn: "Apply Now",
+                    viewProgramsBtn: "View Programs",
+                    contactUs: "Contact Us",
+                    footerAbout: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world through high-quality education.",
+                    quickLinks: "Quick Links",
+                    contactInfo: "Contact Info",
+                    footerAddress: "Ibri, Ad Dhahirah Governorate, Sultanate of Oman",
+                    copyright: "© 2024 Ibri Private School. All rights reserved.",
+                    applyNow: "Apply Now",
+                    admissionTag: "Admissions Open 2024-2025",
+                    heroTitle_1: "Shaping Minds,",
+                    heroTitle_2: "Defining Futures",
+                    heroSubtitle: "Join Ibri's premier educational community where excellence meets character. We provide a world-class environment for your child to thrive and lead.",
+                    learnMore: "Learn More",
+                    statLegacy: "Years of Legacy",
+                    statSuccess: "Success Rate",
+                    statFaculty: "Faculty Team",
+                    badgeTitle: "Excellence in Oman",
+                    badgeDesc: "Ministry of Education Certified",
+                    welcomeTitle: "WELCOME TO ADMISSIONS",
+                    welcomeIntro: "We welcome students from diverse backgrounds into a safe, innovative, and inspiring educational environment.",
+                    philosophyText: "Our educational philosophy centers on nurturing character, fostering curiosity, and achieving academic excellence through a holistic approach that prepares students for global challenges.",
+                    officeTimingLabel: "Office Timing",
+                    officeTimingValue: "7:30 AM - 2:30 PM",
+                    contactNumberLabel: "Contact Number",
+                    quickApply: "Quick Apply Now",
+                    processTag: "OUR JOURNEY TOGETHER",
+                    processTitle: "Simple & Transparent Admission Process",
+                    processDesc: "We've streamlined our admission process to make it as smooth as possible for families joining the Ibri Private School community.",
+                    step1Title: "Inquiry & Visit",
+                    step1Desc: "Submit an online inquiry or visit our campus for a personalized tour of our world-class facilities.",
+                    step2Title: "Application Submission",
+                    step2Desc: "Fill out the official application form and provide the necessary documents for review.",
+                    step3Title: "Assessment & Interview",
+                    step3Desc: "A friendly assessment and family interview to ensure the best fit for your child's educational needs.",
+                    step4Title: "Final Enrollment",
+                    step4Desc: "Upon acceptance, complete the registration formalities and welcome your child to our school!",
+                    docsTag: "PREPARATION",
+                    docsTitle: "Required Documents",
+                    docsDesc: "Please ensure you have the following documents ready for the application process.",
+                    doc1: "Child's Birth Certificate",
+                    doc2: "Passport & ID Copies",
+                    doc3: "Recent Passport Size Photos",
+                    doc4: "Health & Vaccination Records",
+                    faqTitle: "Admission FAQs",
+                    faqDesc: "Find answers to common questions about our enrollment process.",
+                    q1: "What is the age criteria for Kindergarten?",
+                    a1: "Children should be 3 years and 6 months by the start of the academic year for KG1 admission.",
+                    q2: "Is there an entrance assessment?",
+                    a2: "Yes, we conduct age-appropriate assessments to understand each child's current learning level and social development.",
+                    q3: "Yes, the school offers safe and monitored transportation services covering most areas in and around Ibri.",
+                    pStep1Title: "Submit Application",
+                    pStep1_Desc: "Begin your child's journey with a simple online registration process and basic information.",
+                    pStep2Title: "Verification",
+                    pStep2_Desc: "Our admission team meticulously reviews all submitted documents for eligibility.",
+                    pStep3Title: "Assessment",
+                    pStep3_Desc: "Students undergo a friendly assessment to determine their current academic level.",
+                    pStep4Title: "Parent Meeting",
+                    pStep4_Desc: "An interaction with parents to discuss educational goals and school expectations.",
+                    pStep5Title: "Approval",
+                    pStep5_Desc: "Successful candidates receive an official offer letter for enrollment at our school.",
+                    pStep6Title: "Final Enrollment",
+                    pStep6_Desc: "Complete the fee payment and formalities to officially join the Ibri School family.",
+                    pStep1_1: "Online Registration",
+                    pStep1_2: "Application Fee",
+                    pStep1_3: "Email Confirmation",
+                    pStep2Title: "Verification",
+                    pStep2_1: "Document Review",
+                    pStep2_2: "Eligibility Check",
+                    pStep2_3: "Profile Matching",
+                    pStep3Title: "Assessment",
+                    pStep3_1: "Entrance Exam",
+                    pStep3_2: "Student Interview",
+                    pStep3_3: "Skill Evaluation",
+                    pStep4Title: "Parent Meeting",
+                    pStep4_1: "School Orientation",
+                    pStep4_2: "Admin Discussion",
+                    pStep4_3: "Goal Alignment",
+                    pStep5Title: "Approval",
+                    pStep5_1: "Offer Letter Issued",
+                    pStep5_2: "Seat Allocation",
+                    pStep5_3: "Initial Onboarding",
+                    pStep6Title: "Fee Payment",
+                    pStep6_1: "Final Enrollment",
+                    pStep6_2: "Welcome Package",
+                    pStep6_3: "Uniform & Books",
+                    phase1: "PHASE 01",
+                    phase2: "PHASE 02",
+                    phase3: "PHASE 03",
+                    phase4: "PHASE 04",
+                    phase5: "PHASE 05",
+                    phase6: "PHASE 06",
+                    formTag: "ENROLLMENT FORM",
+                    formTitle: "Online Admission Application",
+                    formDesc: "Please fill out the form below with accurate information to start the admission process.",
+                    studentInfoTitle: "Student Information",
+                    labelFullName: "Full Name (As per Passport)",
+                    labelDOB: "Date of Birth",
+                    labelGender: "Gender",
+                    labelGrade: "Grade Applied For",
+                    optSelect: "Select Gender",
+                    optMale: "Male",
+                    optFemale: "Female",
+                    optGrade: "Select Grade",
+                    guardianInfoTitle: "Guardian Information",
+                    labelGuardianName: "Parent / Guardian Name",
+                    labelRelation: "Relationship",
+                    labelEmail: "Email Address",
+                    labelPhone: "Phone Number",
+                    additionalInfoTitle: "Address & Other Details",
+                    labelAddress: "Home Address",
+                    labelPrevSchool: "Previous School Name",
+                    labelNationality: "Nationality",
+                    btnSubmitForm: "Submit Application",
+                    formNote: "* Official confirmation will be sent via email after review.",
+                    studentInfoTitle: "Student Profile",
+                    guardianInfoTitle: "Parent / Guardian Details",
+                    emergencyInfoTitle: "Emergency & Medical",
+                    academicInfoTitle: "Academic Background",
+                    labelPassport: "Passport / ID Number",
+                    labelParent1: "Parent 1 / Guardian",
+                    labelParent2: "Parent 2 / Guardian",
+                    labelProfession: "Profession / Occupation",
+                    labelEmergencyName: "Emergency Contact Name",
+                    labelEmergencyPhone: "Emergency Phone",
+                    labelBloodGroup: "Blood Group",
+                    labelAllergies: "Medical Allergies / Conditions",
+                    labelLastSchool: "Last School Attended",
+                    labelLastGrade: "Last Grade Completed"
+                },
+                ar: {
+                    schoolNameMain: "مدرسة عبري الخاصة",
+                    schoolNameSub: "Ibri Private School",
+                    home: "الرئيسية",
+                    about: "عن المدرسة",
+                    admissions: "القبول",
+                    explore: "استكشف",
+                    academics: "الأكاديميا",
+                    studentLife: "حياة الطالب",
+                    news: "الأخبار والفعاليات",
+                    gallery: "المعرض",
+                    contact: "اتصل بنا",
+                    contactBtn: "تواصل",
+                    admissionBtn: "التسجيل",
+                    selectLang: "اختر اللغة",
+                    ctaTag: "انضم إلى مجتمعنا",
+                    ctaHeading: "مستعد لبدء رحلة نجاح طفلك؟",
+                    ctaDesc: "سجل طفلك اليوم في مدرسة عبري الخاصة وامنحه الأساس الذي يستحقه لمستقبل باهر.",
+                    faqTag: "الدعم",
+                    q4: "متى يفتح باب القبول؟",
+                    a4: "يفتح باب القبول عادة في فبراير من كل عام للدورة الأكاديمية القادمة التي تبدأ في أغسطس.",
+                    applyNowBtn: "قدّم الآن",
+                    viewProgramsBtn: "عرض البرامج",
+                    contactUs: "اتصل بنا",
+                    footerAbout: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتفوق في عالم عالمي دائم التغير من خلال تعليم عالي الجودة.",
+                    quickLinks: "روابط سريعة",
+                    contactInfo: "معلومات التواصل",
+                    footerAddress: "عبري، محافظة الظاهرة، سلطنة عمان",
+                    copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة.",
+                    applyNow: "قدم الآن",
+                    admissionTag: "باب التسجيل مفتوح 2024-2025",
+                    heroTitle_1: "صياغة العقول،",
+                    heroTitle_2: "تحديد المستقبل",
+                    heroSubtitle: "انضم إلى المجتمع التعليمي الرائد في عبري حيث يلتقي التميز بالشخصية. نحن نوفر بيئة عالمية المستوى لطفلك ليزدهر ويقود.",
+                    learnMore: "تعرف علينا",
+                    statLegacy: "عاماً من العطاء",
+                    statSuccess: "نسبة النجاح",
+                    statFaculty: "فريق النخبة",
+                    badgeTitle: "التميز في عمان",
+                    badgeDesc: "معتمد من وزارة التربية والتعليم",
+                    welcomeTitle: "مرحباً بكم في قسم القبول",
+                    welcomeIntro: "نرحب بالطلاب من مختلف الخلفيات في بيئة تعليمية آمنة ومبتكرة وملهمة.",
+                    philosophyText: "تتمحور فلسفتنا التعليمية حول تنمية الشخصية، وتعزيز الفضول، وتحقيق التميز الأكاديمي من خلال نهج شمولي يعد الطلاب للتحديات العالمية.",
+                    officeTimingLabel: "أوقات المكتب",
+                    officeTimingValue: "7:30 صباحاً - 2:30 مساءً",
+                    contactNumberLabel: "رقم التواصل",
+                    quickApply: "قدم الآن",
+                    processTag: "رحلتنا معاً",
+                    processTitle: "عملية قبول بسيطة وشفافة",
+                    processDesc: "لقد قمنا بتبسيط عملية القبول لدينا لجعلها سلسة قدر الإمكان للعائلات التي تنضم إلى مجتمع مدرسة عبري الخاصة.",
+                    step1Title: "الاستفسار والزيارة",
+                    step1Desc: "قدم استفساراً عبر الإنترنت أو قم بزيارة حرمنا المدرسي في جولة شخصية لمرافقنا العالمية المستوى.",
+                    step2Title: "تقديم الطلب",
+                    step2Desc: "املأ نموذج الطلب الرسمي وقدم المستندات اللازمة للمراجعة.",
+                    step3Title: "التقييم والمقابلة",
+                    step3Desc: "تقييم ودي ومقابلة عائلية لضمان أفضل ملاءمة لاحتياجات طفلك التعليمية.",
+                    step4Title: "التسجيل النهائي",
+                    step4Desc: "عند القبول، استكمل إجراءات التسجيل ورحب بطفلك في مدرستنا!",
+                    docsTag: "التجهيز",
+                    docsTitle: "المستندات المطلوبة",
+                    docsDesc: "يرجى التأكد من تجهيز المستندات التالية لعملية التقديم.",
+                    doc1: "شهادة ميلاد الطفل",
+                    doc2: "نسخ من جواز السفر والبطاقة المدنية",
+                    doc3: "صور شخصية حديثة (قياس جواز السفر)",
+                    doc4: "السجلات الصحية وشهادات التطعيم",
+                    faqTitle: "الأسئلة الشائعة حول القبول",
+                    faqDesc: "ابحث عن إجابات للأسئلة الشائعة حول عملية التسجيل لدينا.",
+                    q1: "ما هو معيار العمر لمرحلة الروضة؟",
+                    a1: "يجب أن يكون عمر الطفل 3 سنوات و6 أشهر بحلول بداية العام الدراسي للقبول في الروضة الأولى.",
+                    q2: "هل هناك اختبار تقييم للقبول؟",
+                    a2: "نعم، نجري تقييمات مناسبة للعمر لفهم مستوى التعلم الحالي للطفل وتطوره الاجتماعي.",
+                    q3: "نعم، توفر المدرسة خدمات نقل آمنة ومراقبة تغطي معظم المناطق في عبري وما حولها.",
+                    pStep1Title: "تقديم الطلب",
+                    pStep1_Desc: "ابدأ رحلة طفلك بعملية تسجيل بسيطة عبر الإنترنت ومعلومات أساسية.",
+                    pStep2Title: "التحقق",
+                    pStep2_Desc: "يقوم فريق القبول لدينا بمراجعة جميع المستندات المقدمة بدقة للتأكد من الأهلية.",
+                    pStep3Title: "التقييم",
+                    pStep3_Desc: "يخضع الطلاب لتقييم ودي لتحديد مستواهم الأكاديمي الحالي.",
+                    pStep4Title: "اجتماع أولياء الأمور",
+                    pStep4_Desc: "تفاعل مع أولياء الأمور لمناقشة الأهداف التعليمية وتوقعات المدرسة.",
+                    pStep5Title: "الموافقة",
+                    pStep5_Desc: "يتلقى المرشحون الناجحون خطاب عرض رسمي للتسجيل في مدرستنا.",
+                    pStep6Title: "التسجيل النهائي",
+                    pStep6_Desc: "أكمل دفع الرسوم والإجراءات الرسمية للانضمام رسميًا إلى عائلة مدرسة عبري.",
+                    pStep1_1: "التسجيل عبر الإنترنت",
+                    pStep1_2: "رسوم الطلب",
+                    pStep1_3: "تأكيد بالبريد الإلكتروني",
+                    pStep2Title: "التدقيق",
+                    pStep2_1: "مراجعة المستندات",
+                    pStep2_2: "فحص الأهلية",
+                    pStep2_3: "مطابقة الملف الشخصي",
+                    pStep3Title: "التقييم",
+                    pStep3_1: "امتحان القبول",
+                    pStep3_2: "مقابلة الطالب",
+                    pStep3_3: "تقييم المهارات",
+                    pStep4Title: "اجتماع أولياء الأمور",
+                    pStep4_1: "التوجيه المدرسي",
+                    pStep4_2: "مناقشة الإدارة",
+                    pStep4_3: "توافق الأهداف",
+                    pStep5Title: "الموافقة",
+                    pStep5_1: "إصدار خطاب العرض",
+                    pStep5_2: "تخصيص المقعد",
+                    pStep5_3: "التدريب الأولي",
+                    pStep6Title: "دفع الرسوم",
+                    pStep6_1: "التسجيل النهائي",
+                    pStep6_2: "حزمة الترحيب",
+                    pStep6_3: "الزي المدرسي والكتب",
+                    phase1: "المرحلة 01",
+                    phase2: "المرحلة 02",
+                    phase3: "المرحلة 03",
+                    phase4: "المرحلة 04",
+                    phase5: "المرحلة 05",
+                    phase6: "المرحلة 06",
+                    formTag: "نموذج التسجيل",
+                    formTitle: "طلب الالتحاق عبر الإنترنت",
+                    formDesc: "يرجى ملء النموذج أدناه بمعلومات دقيقة لبدء عملية القبول.",
+                    studentInfoTitle: "معلومات الطالب",
+                    labelFullName: "الاسم الكامل (كما في جواز السفر)",
+                    labelDOB: "تاريخ الميلاد",
+                    labelGender: "الجنس",
+                    labelGrade: "الصف المطلوب",
+                    optSelect: "اختر الجنس",
+                    optMale: "ذكر",
+                    optFemale: "أنثى",
+                    optGrade: "اختر الصف",
+                    guardianInfoTitle: "معلومات ولي الأمر",
+                    labelGuardianName: "اسم ولي الأمر",
+                    labelRelation: "صلة القرابة",
+                    labelEmail: "البريد الإلكتروني",
+                    labelPhone: "رقم الهاتف",
+                    additionalInfoTitle: "العنوان وتفاصيل أخرى",
+                    labelAddress: "عنوان السكن",
+                    labelPrevSchool: "اسم المدرسة السابقة",
+                    labelNationality: "الجنسية",
+                    btnSubmitForm: "تقديم الطلب",
+                    formNote: "* سيتم إرسال التأكيد الرسمي عبر البريد الإلكتروني بعد المراجعة.",
+                    studentInfoTitle: "ملف الطالب",
+                    guardianInfoTitle: "تفاصيل ولي الأمر",
+                    emergencyInfoTitle: "الطوارئ والبيانات الطبية",
+                    academicInfoTitle: "الخلفية الأكاديمية",
+                    labelPassport: "رقم الجواز / البطاقة المدنية",
+                    labelParent1: "ولي الأمر 1",
+                    labelParent2: "ولي الأمر 2",
+                    labelProfession: "المهنة / الوظيفة",
+                    labelEmergencyName: "اسم جهة الاتصال للطوارئ",
+                    labelEmergencyPhone: "رقم هاتف الطوارئ",
+                    labelBloodGroup: "فصيلة الدم",
+                    labelAllergies: "الحساسية / الحالات الطبية",
+                    labelLastSchool: "آخر مدرسة التحق بها",
+                    labelLastGrade: "آخر صف دراسي مكتمل"
+                }
+            };
 
-    <script>
-        // Translation Dictionary
-        const translations = {
-            en: {
-                schoolNameMain: "Ibri Private School",
-                schoolNameSub: "مدرسة عبري الخاصة",
-                home: "Home",
-                about: "About School",
-                admissions: "Admissions",
-                explore: "Explore",
-                academics: "Academics",
-                studentLife: "Student Life",
-                news: "News & Events",
-                gallery: "Gallery",
-                contact: "Contact Us",
-                contactBtn: "Contact",
-                admissionBtn: "Admission",
-                selectLang: "Select Language",
-                ctaTag: "JOIN OUR COMMUNITY",
-                ctaHeading: "Ready to Start Your Child's Success Journey?",
-                ctaDesc: "Enroll your child today at Ibri Private School and give them the foundation they deserve for a brilliant future.",
-                faqTag: "SUPPORT",
-                q4: "When do admissions open?",
-                a4: "Admissions typically open in February each year for the upcoming academic session starting in August.",
-                applyNowBtn: "Apply Now",
-                viewProgramsBtn: "View Programs",
-                contactUs: "Contact Us",
-                footerAbout: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world through high-quality education.",
-                quickLinks: "Quick Links",
-                contactInfo: "Contact Info",
-                footerAddress: "Ibri, Ad Dhahirah Governorate, Sultanate of Oman",
-                copyright: "© 2024 Ibri Private School. All rights reserved.",
-                applyNow: "Apply Now",
-                admissionTag: "Admissions Open 2024-2025",
-                heroTitle_1: "Shaping Minds,",
-                heroTitle_2: "Defining Futures",
-                heroSubtitle: "Join Ibri's premier educational community where excellence meets character. We provide a world-class environment for your child to thrive and lead.",
-                learnMore: "Learn More",
-                statLegacy: "Years of Legacy",
-                statSuccess: "Success Rate",
-                statFaculty: "Faculty Team",
-                badgeTitle: "Excellence in Oman",
-                badgeDesc: "Ministry of Education Certified",
-                welcomeTitle: "WELCOME TO ADMISSIONS",
-                welcomeIntro: "We welcome students from diverse backgrounds into a safe, innovative, and inspiring educational environment.",
-                philosophyText: "Our educational philosophy centers on nurturing character, fostering curiosity, and achieving academic excellence through a holistic approach that prepares students for global challenges.",
-                officeTimingLabel: "Office Timing",
-                officeTimingValue: "7:30 AM - 2:30 PM",
-                contactNumberLabel: "Contact Number",
-                quickApply: "Quick Apply Now",
-                processTag: "OUR JOURNEY TOGETHER",
-                processTitle: "Simple & Transparent Admission Process",
-                processDesc: "We've streamlined our admission process to make it as smooth as possible for families joining the Ibri Private School community.",
-                step1Title: "Inquiry & Visit",
-                step1Desc: "Submit an online inquiry or visit our campus for a personalized tour of our world-class facilities.",
-                step2Title: "Application Submission",
-                step2Desc: "Fill out the official application form and provide the necessary documents for review.",
-                step3Title: "Assessment & Interview",
-                step3Desc: "A friendly assessment and family interview to ensure the best fit for your child's educational needs.",
-                step4Title: "Final Enrollment",
-                step4Desc: "Upon acceptance, complete the registration formalities and welcome your child to our school!",
-                docsTag: "PREPARATION",
-                docsTitle: "Required Documents",
-                docsDesc: "Please ensure you have the following documents ready for the application process.",
-                doc1: "Child's Birth Certificate",
-                doc2: "Passport & ID Copies",
-                doc3: "Recent Passport Size Photos",
-                doc4: "Health & Vaccination Records",
-                faqTitle: "Admission FAQs",
-                faqDesc: "Find answers to common questions about our enrollment process.",
-                q1: "What is the age criteria for Kindergarten?",
-                a1: "Children should be 3 years and 6 months by the start of the academic year for KG1 admission.",
-                q2: "Is there an entrance assessment?",
-                a2: "Yes, we conduct age-appropriate assessments to understand each child's current learning level and social development.",
-                q3: "Yes, the school offers safe and monitored transportation services covering most areas in and around Ibri.",
-                pStep1Title: "Submit Application",
-                pStep1_Desc: "Begin your child's journey with a simple online registration process and basic information.",
-                pStep2Title: "Verification",
-                pStep2_Desc: "Our admission team meticulously reviews all submitted documents for eligibility.",
-                pStep3Title: "Assessment",
-                pStep3_Desc: "Students undergo a friendly assessment to determine their current academic level.",
-                pStep4Title: "Parent Meeting",
-                pStep4_Desc: "An interaction with parents to discuss educational goals and school expectations.",
-                pStep5Title: "Approval",
-                pStep5_Desc: "Successful candidates receive an official offer letter for enrollment at our school.",
-                pStep6Title: "Final Enrollment",
-                pStep6_Desc: "Complete the fee payment and formalities to officially join the Ibri School family.",
-                pStep1_1: "Online Registration",
-                pStep1_2: "Application Fee",
-                pStep1_3: "Email Confirmation",
-                pStep2Title: "Verification",
-                pStep2_1: "Document Review",
-                pStep2_2: "Eligibility Check",
-                pStep2_3: "Profile Matching",
-                pStep3Title: "Assessment",
-                pStep3_1: "Entrance Exam",
-                pStep3_2: "Student Interview",
-                pStep3_3: "Skill Evaluation",
-                pStep4Title: "Parent Meeting",
-                pStep4_1: "School Orientation",
-                pStep4_2: "Admin Discussion",
-                pStep4_3: "Goal Alignment",
-                pStep5Title: "Approval",
-                pStep5_1: "Offer Letter Issued",
-                pStep5_2: "Seat Allocation",
-                pStep5_3: "Initial Onboarding",
-                pStep6Title: "Fee Payment",
-                pStep6_1: "Final Enrollment",
-                pStep6_2: "Welcome Package",
-                pStep6_3: "Uniform & Books",
-                phase1: "PHASE 01",
-                phase2: "PHASE 02",
-                phase3: "PHASE 03",
-                phase4: "PHASE 04",
-                phase5: "PHASE 05",
-                phase6: "PHASE 06"
-            },
-            ar: {
-                schoolNameMain: "مدرسة عبري الخاصة",
-                schoolNameSub: "Ibri Private School",
-                home: "الرئيسية",
-                about: "عن المدرسة",
-                admissions: "القبول",
-                explore: "استكشف",
-                academics: "الأكاديميا",
-                studentLife: "حياة الطالب",
-                news: "الأخبار والفعاليات",
-                gallery: "المعرض",
-                contact: "اتصل بنا",
-                contactBtn: "تواصل",
-                admissionBtn: "التسجيل",
-                selectLang: "اختر اللغة",
-                ctaTag: "انضم إلى مجتمعنا",
-                ctaHeading: "مستعد لبدء رحلة نجاح طفلك؟",
-                ctaDesc: "سجل طفلك اليوم في مدرسة عبري الخاصة وامنحه الأساس الذي يستحقه لمستقبل باهر.",
-                faqTag: "الدعم",
-                q4: "متى يفتح باب القبول؟",
-                a4: "يفتح باب القبول عادة في فبراير من كل عام للدورة الأكاديمية القادمة التي تبدأ في أغسطس.",
-                applyNowBtn: "قدّم الآن",
-                viewProgramsBtn: "عرض البرامج",
-                contactUs: "اتصل بنا",
-                footerAbout: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتفوق في عالم عالمي دائم التغير من خلال تعليم عالي الجودة.",
-                quickLinks: "روابط سريعة",
-                contactInfo: "معلومات التواصل",
-                footerAddress: "عبري، محافظة الظاهرة، سلطنة عمان",
-                copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة.",
-                applyNow: "قدم الآن",
-                admissionTag: "باب التسجيل مفتوح 2024-2025",
-                heroTitle_1: "صياغة العقول،",
-                heroTitle_2: "تحديد المستقبل",
-                heroSubtitle: "انضم إلى المجتمع التعليمي الرائد في عبري حيث يلتقي التميز بالشخصية. نحن نوفر بيئة عالمية المستوى لطفلك ليزدهر ويقود.",
-                learnMore: "تعرف علينا",
-                statLegacy: "عاماً من العطاء",
-                statSuccess: "نسبة النجاح",
-                statFaculty: "فريق النخبة",
-                badgeTitle: "التميز في عمان",
-                badgeDesc: "معتمد من وزارة التربية والتعليم",
-                welcomeTitle: "مرحباً بكم في قسم القبول",
-                welcomeIntro: "نرحب بالطلاب من مختلف الخلفيات في بيئة تعليمية آمنة ومبتكرة وملهمة.",
-                philosophyText: "تتمحور فلسفتنا التعليمية حول تنمية الشخصية، وتعزيز الفضول، وتحقيق التميز الأكاديمي من خلال نهج شمولي يعد الطلاب للتحديات العالمية.",
-                officeTimingLabel: "أوقات المكتب",
-                officeTimingValue: "7:30 صباحاً - 2:30 مساءً",
-                contactNumberLabel: "رقم التواصل",
-                quickApply: "قدم الآن",
-                processTag: "رحلتنا معاً",
-                processTitle: "عملية قبول بسيطة وشفافة",
-                processDesc: "لقد قمنا بتبسيط عملية القبول لدينا لجعلها سلسة قدر الإمكان للعائلات التي تنضم إلى مجتمع مدرسة عبري الخاصة.",
-                step1Title: "الاستفسار والزيارة",
-                step1Desc: "قدم استفساراً عبر الإنترنت أو قم بزيارة حرمنا المدرسي في جولة شخصية لمرافقنا العالمية المستوى.",
-                step2Title: "تقديم الطلب",
-                step2Desc: "املأ نموذج الطلب الرسمي وقدم المستندات اللازمة للمراجعة.",
-                step3Title: "التقييم والمقابلة",
-                step3Desc: "تقييم ودي ومقابلة عائلية لضمان أفضل ملاءمة لاحتياجات طفلك التعليمية.",
-                step4Title: "التسجيل النهائي",
-                step4Desc: "عند القبول، استكمل إجراءات التسجيل ورحب بطفلك في مدرستنا!",
-                docsTag: "التجهيز",
-                docsTitle: "المستندات المطلوبة",
-                docsDesc: "يرجى التأكد من تجهيز المستندات التالية لعملية التقديم.",
-                doc1: "شهادة ميلاد الطفل",
-                doc2: "نسخ من جواز السفر والبطاقة المدنية",
-                doc3: "صور شخصية حديثة (قياس جواز السفر)",
-                doc4: "السجلات الصحية وشهادات التطعيم",
-                faqTitle: "الأسئلة الشائعة حول القبول",
-                faqDesc: "ابحث عن إجابات للأسئلة الشائعة حول عملية التسجيل لدينا.",
-                q1: "ما هو معيار العمر لمرحلة الروضة؟",
-                a1: "يجب أن يكون عمر الطفل 3 سنوات و6 أشهر بحلول بداية العام الدراسي للقبول في الروضة الأولى.",
-                q2: "هل هناك اختبار تقييم للقبول؟",
-                a2: "نعم، نجري تقييمات مناسبة للعمر لفهم مستوى التعلم الحالي للطفل وتطوره الاجتماعي.",
-                q3: "نعم، توفر المدرسة خدمات نقل آمنة ومراقبة تغطي معظم المناطق في عبري وما حولها.",
-                pStep1Title: "تقديم الطلب",
-                pStep1_Desc: "ابدأ رحلة طفلك بعملية تسجيل بسيطة عبر الإنترنت ومعلومات أساسية.",
-                pStep2Title: "التحقق",
-                pStep2_Desc: "يقوم فريق القبول لدينا بمراجعة جميع المستندات المقدمة بدقة للتأكد من الأهلية.",
-                pStep3Title: "التقييم",
-                pStep3_Desc: "يخضع الطلاب لتقييم ودي لتحديد مستواهم الأكاديمي الحالي.",
-                pStep4Title: "اجتماع أولياء الأمور",
-                pStep4_Desc: "تفاعل مع أولياء الأمور لمناقشة الأهداف التعليمية وتوقعات المدرسة.",
-                pStep5Title: "الموافقة",
-                pStep5_Desc: "يتلقى المرشحون الناجحون خطاب عرض رسمي للتسجيل في مدرستنا.",
-                pStep6Title: "التسجيل النهائي",
-                pStep6_Desc: "أكمل دفع الرسوم والإجراءات الرسمية للانضمام رسميًا إلى عائلة مدرسة عبري.",
-                pStep1_1: "التسجيل عبر الإنترنت",
-                pStep1_2: "رسوم الطلب",
-                pStep1_3: "تأكيد بالبريد الإلكتروني",
-                pStep2Title: "التدقيق",
-                pStep2_1: "مراجعة المستندات",
-                pStep2_2: "فحص الأهلية",
-                pStep2_3: "مطابقة الملف الشخصي",
-                pStep3Title: "التقييم",
-                pStep3_1: "امتحان القبول",
-                pStep3_2: "مقابلة الطالب",
-                pStep3_3: "تقييم المهارات",
-                pStep4Title: "اجتماع أولياء الأمور",
-                pStep4_1: "التوجيه المدرسي",
-                pStep4_2: "مناقشة الإدارة",
-                pStep4_3: "توافق الأهداف",
-                pStep5Title: "الموافقة",
-                pStep5_1: "إصدار خطاب العرض",
-                pStep5_2: "تخصيص المقعد",
-                pStep5_3: "التدريب الأولي",
-                pStep6Title: "دفع الرسوم",
-                pStep6_1: "التسجيل النهائي",
-                pStep6_2: "حزمة الترحيب",
-                pStep6_3: "الزي المدرسي والكتب",
-                phase1: "المرحلة 01",
-                phase2: "المرحلة 02",
-                phase3: "المرحلة 03",
-                phase4: "المرحلة 04",
-                phase5: "المرحلة 05",
-                phase6: "المرحلة 06"
+            function setLanguage(lang) {
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang][key]) {
+                        el.innerHTML = translations[lang][key];
+                    }
+                });
+
+                // Update specific elements if needed
+                document.getElementById('lang-en').className = lang === 'en' ? 'uppercase text-primary transition-colors' : 'uppercase text-black/40 transition-colors';
+                document.getElementById('lang-ar').className = lang === 'ar' ? 'uppercase text-primary transition-colors' : 'uppercase text-black/40 transition-colors';
+
+                // Mobile language indicators
+                const mobEn = document.getElementById('mob-lang-en');
+                const mobAr = document.getElementById('mob-lang-ar');
+                if (mobEn && mobAr) {
+                    mobEn.className = lang === 'en' ? 'px-4 py-2 rounded-lg text-xs font-black bg-primary text-white transition-all' : 'px-4 py-2 rounded-lg text-xs font-black text-black/40 transition-all';
+                    mobAr.className = lang === 'ar' ? 'px-4 py-2 rounded-lg text-xs font-black bg-primary text-white transition-all' : 'px-4 py-2 rounded-lg text-xs font-black text-black/40 transition-all';
+                }
+
+                localStorage.setItem('preferredLang', lang);
             }
-        };
 
-        function setLanguage(lang) {
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            function toggleLanguage() {
+                const currentLang = localStorage.getItem('preferredLang') || 'en';
+                setLanguage(currentLang === 'en' ? 'ar' : 'en');
+            }
 
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
+            // Initialize language
+            const savedLang = localStorage.getItem('preferredLang') || 'en';
+            setLanguage(savedLang);
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 50) {
+                    header.classList.remove('pt-3', 'sm:pt-5');
+                    header.classList.add('pt-2');
+                } else {
+                    header.classList.add('pt-3', 'sm:pt-5');
+                    header.classList.remove('pt-2');
                 }
             });
 
-            // Update specific elements if needed
-            document.getElementById('lang-en').className = lang === 'en' ? 'uppercase text-primary transition-colors' : 'uppercase text-black/40 transition-colors';
-            document.getElementById('lang-ar').className = lang === 'ar' ? 'uppercase text-primary transition-colors' : 'uppercase text-black/40 transition-colors';
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
+                const openMenu = () => {
+                    mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+                    mobileMenu.classList.add('translate-x-0', 'opacity-100', 'visible');
+                    document.body.style.overflow = 'hidden';
+                };
 
-            // Mobile language indicators
-            const mobEn = document.getElementById('mob-lang-en');
-            const mobAr = document.getElementById('mob-lang-ar');
-            if (mobEn && mobAr) {
-                mobEn.className = lang === 'en' ? 'px-4 py-2 rounded-lg text-xs font-black bg-primary text-white transition-all' : 'px-4 py-2 rounded-lg text-xs font-black text-black/40 transition-all';
-                mobAr.className = lang === 'ar' ? 'px-4 py-2 rounded-lg text-xs font-black bg-primary text-white transition-all' : 'px-4 py-2 rounded-lg text-xs font-black text-black/40 transition-all';
-            }
+                const closeMenu = () => {
+                    mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
+                    mobileMenu.classList.remove('translate-x-0', 'opacity-100', 'visible');
+                    document.body.style.overflow = '';
+                };
 
-            localStorage.setItem('preferredLang', lang);
-        }
+                mobileMenuBtn.addEventListener('click', openMenu);
+                closeMenuBtn.addEventListener('click', closeMenu);
 
-        function toggleLanguage() {
-            const currentLang = localStorage.getItem('preferredLang') || 'en';
-            setLanguage(currentLang === 'en' ? 'ar' : 'en');
-        }
+                // Explore Toggle
+                const exploreToggle = document.getElementById('mobile-explore-toggle');
+                const exploreMenu = document.getElementById('mobile-explore-menu');
+                const exploreChevron = document.getElementById('explore-chevron');
 
-        // Initialize language
-        const savedLang = localStorage.getItem('preferredLang') || 'en';
-        setLanguage(savedLang);
+                if (exploreToggle && exploreMenu) {
+                    exploreToggle.addEventListener('click', () => {
+                        const isOpen = !exploreMenu.classList.contains('max-h-0');
+                        if (isOpen) {
+                            exploreMenu.classList.add('max-h-0', 'opacity-0', 'invisible');
+                            exploreMenu.classList.remove('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
+                            exploreChevron.classList.remove('rotate-180');
+                        } else {
+                            exploreMenu.classList.remove('max-h-0', 'opacity-0', 'invisible');
+                            exploreMenu.classList.add('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
+                            exploreChevron.classList.add('rotate-180');
+                        }
+                    });
+                }
 
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.remove('pt-3', 'sm:pt-5');
-                header.classList.add('pt-2');
-            } else {
-                header.classList.add('pt-3', 'sm:pt-5');
-                header.classList.remove('pt-2');
-            }
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
-            const openMenu = () => {
-                mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
-                mobileMenu.classList.add('translate-x-0', 'opacity-100', 'visible');
-                document.body.style.overflow = 'hidden';
-            };
-
-            const closeMenu = () => {
-                mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
-                mobileMenu.classList.remove('translate-x-0', 'opacity-100', 'visible');
-                document.body.style.overflow = '';
-            };
-
-            mobileMenuBtn.addEventListener('click', openMenu);
-            closeMenuBtn.addEventListener('click', closeMenu);
-
-            // Explore Toggle
-            const exploreToggle = document.getElementById('mobile-explore-toggle');
-            const exploreMenu = document.getElementById('mobile-explore-menu');
-            const exploreChevron = document.getElementById('explore-chevron');
-
-            if (exploreToggle && exploreMenu) {
-                exploreToggle.addEventListener('click', () => {
-                    const isOpen = !exploreMenu.classList.contains('max-h-0');
-                    if (isOpen) {
-                        exploreMenu.classList.add('max-h-0', 'opacity-0', 'invisible');
-                        exploreMenu.classList.remove('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
-                        exploreChevron.classList.remove('rotate-180');
-                    } else {
-                        exploreMenu.classList.remove('max-h-0', 'opacity-0', 'invisible');
-                        exploreMenu.classList.add('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
-                        exploreChevron.classList.add('rotate-180');
-                    }
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
                 });
             }
 
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', closeMenu);
+            // Initialize AOS for professional scroll animations
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
             });
-        }
-
-        // Initialize AOS for professional scroll animations
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-    </script>
+        </script>
 </body>
 
 </html>
