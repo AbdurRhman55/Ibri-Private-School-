@@ -118,46 +118,125 @@
 <body class="bg-white min-h-screen text-black">
 
     <!-- YOUR EXACT NAVBAR -->
-    <header class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
-        <nav class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
-            <a href="#" class="flex items-center gap-2.5 shrink-0 group">
-                <div class="h-9 w-9 md:h-11 md:w-11 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shrink-0 shadow-sm">
-                    <img src="./Asstes/school logo.jpeg" alt="School Logo" class="h-full w-full object-contain rounded-lg">
+    <header id="main-header"
+        class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
+
+        <nav
+            class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
+                <div
+                    class="h-9 w-9 md:h-11 md:w-11 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shrink-0 shadow-sm">
+                    <img src="./Asstes/school logo.jpeg" alt="School Logo"
+                        class="h-full w-full object-contain rounded-lg">
                 </div>
                 <div class="flex flex-col justify-center">
-                    <h1 data-i18n="schoolNameMain" class="text-[13px] md:text-[15px] font-extrabold leading-tight text-black tracking-tight group-hover:text-primary transition-colors">Ibri Private School</h1>
-                    <h2 data-i18n="schoolNameSub" class="text-[11px] md:text-[12px] font-bold leading-tight text-black/60 group-hover:text-secondary transition-colors mt-[1px]">مدرسة عبري الخاصة</h2>
+                    <h1 data-i18n="schoolNameMain"
+                        class="text-[13px] md:text-[15px] font-extrabold leading-tight text-black tracking-tight group-hover:text-primary transition-colors">
+                        Ibri Private School</h1>
+                    <h2 data-i18n="schoolNameSub"
+                        class="text-[11px] md:text-[12px] font-bold leading-tight text-black/60 group-hover:text-secondary transition-colors mt-[1px]">
+                        مدرسة عبري الخاصة</h2>
                 </div>
             </a>
 
             <ul class="hidden xl:flex flex-1 justify-center items-center gap-5 2xl:gap-10">
-                <li><a href="index.html" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="home">Home</span></a></li>
-                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="about">About School</span></a></li>
-                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-user-plus text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="admissions">Admissions</span></a></li>
+                <li>
+                    <a href="index.html"
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
+                        <i
+                            class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
+                        <span data-i18n="home">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html"
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
+                        <i class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
+                        <span data-i18n="about">About School</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admission.html"
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
+                        <i
+                            class="fa-solid fa-user-plus text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
+                        <span data-i18n="admissions">Admissions</span>
+                    </a>
+                </li>
+
+                <!-- Dropdown  -->
                 <li class="relative group py-2">
-                    <button class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors focus:outline-none"><i class="fa-solid fa-layer-group text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="explore">Explore</span><i class="fa-solid fa-chevron-down ms-1.5 text-[9px] text-black/40 group-hover:text-primary transition-transform duration-300 group-hover:rotate-180"></i></button>
-                    <div class="absolute start-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-3 group-hover:translate-y-0 z-50">
+                    <button
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors focus:outline-none">
+                        <i
+                            class="fa-solid fa-layer-group text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
+                        <span data-i18n="explore">Explore</span>
+                        <i
+                            class="fa-solid fa-chevron-down ms-1.5 text-[9px] text-black/40 group-hover:text-primary transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="absolute start-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-3 group-hover:translate-y-0 z-50">
                         <div class="p-2 flex flex-col gap-1">
-                            <a href="academics.html" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-book-open w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="academics">Academics</span></a>
-                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="studentLife">Student Life</span></a>
-                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-calendar-days w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="news">News & Events</span></a>
-                            <a href="#" class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i class="fa-solid fa-images w-6 text-center text-black/30 me-2 text-[11px]"></i><span data-i18n="gallery">Gallery</span></a>
+                            <a href="academics.html"
+                                class="px-3 py-2 text-[12px] font-bold text-primary bg-primary/5 rounded-lg transition-colors flex items-center">
+                                <i class="fa-solid fa-book-open w-6 text-center text-primary me-2 text-[11px]"></i>
+                                <span data-i18n="academics">Academics</span>
+                            </a>
+                            <a href="student-life.html"
+                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
+                                <i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i> <span
+                                    data-i18n="studentLife">Student Life</span>
+                            </a>
+                            <a href="#"
+                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
+                                <i class="fa-solid fa-calendar-days w-6 text-center text-black/30 me-2 text-[11px]"></i>
+                                <span data-i18n="news">News & Events</span>
+                            </a>
+                            <a href="#"
+                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
+                                <i class="fa-solid fa-images w-6 text-center text-black/30 me-2 text-[11px]"></i>
+                                <span data-i18n="gallery">Gallery</span>
+                            </a>
                         </div>
                     </div>
                 </li>
-                <li><a href="#" class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i class="fa-solid fa-envelope text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span data-i18n="contact">Contact Us</span></a></li>
+
+                <li>
+                    <a href="#"
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
+                        <i
+                            class="fa-solid fa-envelope text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
+                        <span data-i18n="contact">Contact Us</span>
+                    </a>
+                </li>
             </ul>
 
             <div class="flex items-center gap-3 md:gap-5 shrink-0 justify-end">
-                <button onclick="toggleLanguage()" class="flex items-center gap-1 text-[10px] md:text-[12px] font-bold text-black/80 hover:bg-black/5 px-2 py-1 md:px-2.5 md:py-1.5 rounded-lg transition-colors border border-black/5 md:border-transparent hover:border-black/10 shadow-sm md:shadow-none">
+
+                <!-- Language Switcher -->
+                <button onclick="toggleLanguage()"
+                    class="flex items-center gap-1 text-[10px] md:text-[12px] font-bold text-black/80 hover:bg-black/5 px-2 py-1 md:px-2.5 md:py-1.5 rounded-lg transition-colors border border-black/5 md:border-transparent hover:border-black/10 shadow-sm md:shadow-none">
                     <i class="fa-solid fa-globe text-black/40 me-0.5"></i>
                     <span id="lang-ar" class="uppercase text-black/40 transition-colors">AR</span>
                     <span class="text-black/20 font-normal">|</span>
                     <span id="lang-en" class="uppercase text-primary transition-colors">EN</span>
                 </button>
-                <a href="#" class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span data-i18n="contactBtn">Contact</span></a>
-                <a href="#" class="hidden xl:flex bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap"><span data-i18n="admissionBtn">Admission</span><i id="btn-icon" class="fa-solid fa-rocket text-white/90 group-hover:text-black transition-colors text-[12px]"></i></a>
-                <button id="mobile-menu-btn" class="xl:hidden flex items-center justify-center h-9 w-9 md:h-11 md:w-11 rounded-xl bg-black/[0.03] border border-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-all active:scale-95 shadow-sm">
+
+                <a href="#"
+                    class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span
+                        data-i18n="contactBtn">Contact</span></a>
+
+                <a href="admission.html"
+                    class="hidden xl:flex bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap">
+                    <span data-i18n="admissionBtn">Admission</span>
+                    <i id="btn-icon"
+                        class="fa-solid fa-rocket text-white/90 group-hover:text-black transition-colors text-[12px]"></i>
+                </a>
+
+                <button id="mobile-menu-btn"
+                    class="xl:hidden flex items-center justify-center h-9 w-9 md:h-11 md:w-11 rounded-xl bg-black/[0.03] border border-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-all active:scale-95 shadow-sm">
                     <div class="flex flex-col gap-1 items-end">
                         <span class="w-5 h-0.5 bg-current rounded-full"></span>
                         <span class="w-3 h-0.5 bg-current rounded-full"></span>
@@ -165,39 +244,111 @@
                     </div>
                 </button>
             </div>
+
         </nav>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] xl:hidden transition-all duration-500 transform translate-x-full opacity-0 invisible">
+    <!-- Mobile Menu  -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-[100] xl:hidden transition-all duration-500 transform translate-x-full opacity-0 invisible">
+
+        <!-- Menu Header -->
         <div class="flex items-center justify-between p-6 border-b border-black/5">
             <div class="flex items-center gap-3">
                 <img src="./Asstes/school logo.jpeg" alt="Logo" class="h-10 w-auto rounded-lg">
                 <div class="flex flex-col">
-                    <span class="text-primary font-black text-sm tracking-tight" data-i18n="schoolNameMain">IBRI PRIVATE SCHOOL</span>
+                    <span class="text-primary font-black text-sm tracking-tight" data-i18n="schoolNameMain">IBRI PRIVATE
+                        SCHOOL</span>
                     <span class="text-black/40 text-[10px] font-bold" data-i18n="schoolNameSub">EST. 1990</span>
                 </div>
             </div>
-            <button id="close-menu" class="w-11 h-11 rounded-xl bg-black/5 flex items-center justify-center text-black/80">
+            <button id="close-menu"
+                class="w-11 h-11 rounded-xl bg-black/5 flex items-center justify-center text-black/80">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
+
         <div class="flex flex-col h-[calc(100vh-80px)] overflow-y-auto p-6">
             <nav class="flex flex-col gap-2 mb-8">
-                <a href="index.html" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-house w-6 text-center text-black/20"></i><span data-i18n="home">Home</span></a>
-                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-building-columns w-6 text-center text-black/20"></i><span data-i18n="about">About School</span></a>
-                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-user-plus w-6 text-center text-black/20"></i><span data-i18n="admissions">Admissions</span></a>
-                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5"><i class="fa-solid fa-envelope w-6 text-center text-black/20"></i><span data-i18n="contact">Contact Us</span></a>
-            </nav>
-            <div class="mt-auto pt-8 border-t border-black/5 space-y-6">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-black text-black/30 uppercase tracking-widest" data-i18n="selectLang">Select Language</span>
-                    <div class="flex bg-black/5 p-1 rounded-xl">
-                        <button onclick="setLanguage('en')" id="mob-lang-en" class="px-4 py-2 rounded-lg text-xs font-black transition-all">EN</button>
-                        <button onclick="setLanguage('ar')" id="mob-lang-ar" class="px-4 py-2 rounded-lg text-xs font-black transition-all">AR</button>
+                <a href="index.html"
+                    class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-house w-6 text-center text-black/20"></i>
+                    <span data-i18n="home">Home</span>
+                </a>
+                <a href="about.html"
+                    class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-building-columns w-6 text-center text-black/20"></i>
+                    <span data-i18n="about">About School</span>
+                </a>
+
+                <!-- Explore Submenu (Interactive) -->
+                <div class="flex flex-col gap-1">
+                    <button id="mobile-explore-toggle"
+                        class="flex items-center justify-between p-4 rounded-2xl text-primary font-bold bg-primary/5 transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-layer-group w-6 text-center text-primary"></i>
+                            <span data-i18n="explore">Explore</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-primary transition-transform duration-300"
+                            id="explore-chevron"></i>
+                    </button>
+                    <div id="mobile-explore-menu"
+                        class="grid grid-cols-2 gap-2 ps-2 pe-2 mt-0 max-h-0 opacity-0 invisible overflow-hidden transition-all duration-500 ease-in-out">
+                        <a href="academics.html"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-primary/5 border border-primary/10 group/item hover:bg-primary/10 transition-colors">
+                            <i
+                                class="fa-solid fa-book-open text-primary group-hover/item:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold" data-i18n="academics">Academics</span>
+                        </a>
+                        <a href="#"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i
+                                class="fa-solid fa-users text-secondary group-hover/item:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold" data-i18n="studentLife">Student Life</span>
+                        </a>
+                        <a href="#"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i
+                                class="fa-solid fa-calendar-days text-black/30 group-hover/item:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold" data-i18n="news">Events</span>
+                        </a>
+                        <a href="#"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i
+                                class="fa-solid fa-images text-black/30 group-hover/item:scale-110 transition-transform"></i>
+                            <span class="text-xs font-bold" data-i18n="gallery">Gallery</span>
+                        </a>
                     </div>
                 </div>
-                <a href="#" class="flex items-center justify-center gap-3 w-full bg-primary text-white py-4 rounded-2xl font-black shadow-lg shadow-primary/20"><span data-i18n="admissionBtn">Admission 2024</span><i class="fa-solid fa-rocket"></i></a>
+
+                <a href="admission.html" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-user-plus w-6 text-center text-black/20"></i>
+                    <span data-i18n="admissions">Admissions</span>
+                </a>
+                <a href="#" class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-envelope w-6 text-center text-black/20"></i>
+                    <span data-i18n="contact">Contact Us</span>
+                </a>
+            </nav>
+
+            <!-- Language & Actions -->
+            <div class="mt-auto pt-8 border-t border-black/5 space-y-6">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-black text-black/30 uppercase tracking-widest"
+                        data-i18n="selectLang">Select Language</span>
+                    <div class="flex bg-black/5 p-1 rounded-xl">
+                        <button onclick="setLanguage('en')" id="mob-lang-en"
+                            class="px-4 py-2 rounded-lg text-xs font-black transition-all">EN</button>
+                        <button onclick="setLanguage('ar')" id="mob-lang-ar"
+                            class="px-4 py-2 rounded-lg text-xs font-black transition-all">AR</button>
+                    </div>
+                </div>
+
+                <a href="admission.html"
+                    class="flex items-center justify-center gap-3 w-full bg-primary text-white py-4 rounded-2xl font-black shadow-lg shadow-primary/20">
+                    <span data-i18n="admissionBtn">Admission</span>
+                    <i class="fa-solid fa-rocket"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -570,19 +721,198 @@
             </div>
         </section>
 
-        <!-- CTA SECTION -->
-        <section class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white" data-aos="zoom-in">
-            <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="ctaTitle">Ready to Begin Your Journey?</h2>
-            <p class="text-white/80 max-w-2xl mx-auto mb-6 text-sm md:text-base" data-i18n="ctaText">Join our community of learners and discover your full potential at Ibri Private School.</p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="#" class="bg-secondary text-black hover:bg-secondary-light px-5 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center gap-2 text-sm"><i class="fa-solid fa-calendar-check"></i> <span data-i18n="ctaButton1">Schedule a Tour</span></a>
-                <a href="#" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-5 py-2.5 rounded-full font-bold transition-all inline-flex items-center gap-2 text-sm"><i class="fa-solid fa-file-alt"></i> <span data-i18n="ctaButton2">Apply Now</span></a>
-            </div>
-        </section>
-    </main>
+    <!-- CTA Section -->
+    <section class="py-10 md:py-20 px-1 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
+        <div
+            class="relative rounded-[30px] md:rounded-[40px] overflow-hidden bg-[#003057] p-6 md:p-12 lg:p-20 text-center">
+            <!-- Decorative Circles -->
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
 
-    <footer class="bg-black/5 mt-16 py-8 text-center text-gray-500 border-t">
-        <p>© 2025 Ibri Private School — Excellence in Education</p>
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <span
+                    class="inline-block px-4 py-1.5 bg-white/10 text-secondary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6"
+                    data-i18n="ctaTag">JOIN OUR COMMUNITY</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tight"
+                    data-i18n="ctaHeading">
+                    Ready to Start Your Child's <br /> <span class="text-secondary">Success
+                        Journey?</span>
+                </h2>
+                <p class="text-white/70 text-lg mb-10 font-medium" data-i18n="ctaDesc">
+                    Enroll your child today at Ibri Private School and give them the foundation they deserve.
+                    Admissions for the new academic year are now open.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="admission.html"
+                        class="bg-primary hover:bg-secondary text-white hover:text-black px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-primary/30 flex items-center gap-3 group">
+                        <span data-i18n="applyNow">Apply Now</span>
+                        <i
+                            class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3">
+                        <span data-i18n="contactUs">Contact Us</span>
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class=" pt-8 pb-4 md:pt-20 md:pb-2 px-3 sm:px-6 lg:px-8 border-t border-black/[0.05]">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 md:mb-20">
+                <!-- Column 1: Brand -->
+                <div class="space-y-6">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div
+                            class="h-12 w-12 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shadow-sm">
+                            <img src="./Asstes/school logo.jpeg" alt="School Logo"
+                                class="h-full w-full object-contain rounded-lg">
+                        </div>
+                        <div>
+                            <h3 class="text-base font-black text-black leading-tight tracking-tight"
+                                data-i18n="schoolNameMain">Ibri Private School</h3>
+                            <p class="text-[10px] font-bold text-black/40 mt-[1px]" data-i18n="schoolNameSub">مدرسة
+                                عبري الخاصة</p>
+                        </div>
+                    </a>
+                    <p class="text-slate-500 text-sm leading-relaxed font-medium pr-8" data-i18n="footerAbout">
+                        Empowering students with knowledge, character, and skills to excel in an ever-changing
+                        global world through high-quality education.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                            <i class="fa-brands fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                        <span data-i18n="quickLinks">Quick Links</span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="home"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Home</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="about"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>About
+                                School</a></li>
+                        <li><a href="admission.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="admissions"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Admissions</a>
+                        </li>
+                        <li><a href="academics.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="academics"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Academics</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="news"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>News
+                                & Events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Academics -->
+                <div>
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                        <span data-i18n="academics">Programs</span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Kindergarten</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Primary
+                                Education</a></li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Secondary
+                                School</a></li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Extra-Curricular</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>STEM
+                                Program</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                        <span data-i18n="contactInfo">Contact Info</span>
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed" data-i18n="footerAddress">
+                                Ibri, Ad Dhahirah Governorate, Sultanate of Oman
+                            </p>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed" dir="ltr">
+                                +968 2568 0000
+                            </p>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed">
+                                info@ibri-school.com
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-black/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]" data-i18n="copyright">
+                    © 2024 Ibri Private School. All rights reserved.
+                </p>
+                <div class="flex gap-8 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script>

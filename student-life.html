@@ -64,14 +64,14 @@
 
 <body class="bg-white min-h-screen text-black">
 
-    <header
+    <header id="main-header"
         class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
 
         <nav
             class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
 
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+            <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
                 <div
                     class="h-9 w-9 md:h-11 md:w-11 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shrink-0 shadow-sm">
                     <img src="./Asstes/school logo.jpeg" alt="School Logo"
@@ -89,7 +89,7 @@
 
             <ul class="hidden xl:flex flex-1 justify-center items-center gap-5 2xl:gap-10">
                 <li>
-                    <a href="#"
+                    <a href="index.html"
                         class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
                         <i
                             class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
@@ -97,15 +97,14 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="about.html"
                         class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
-                        <i
-                            class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
+                        <i class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
                         <span data-i18n="about">About School</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="admission.html"
                         class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors">
                         <i
                             class="fa-solid fa-user-plus text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
@@ -126,14 +125,15 @@
                     <div
                         class="absolute start-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-3 group-hover:translate-y-0 z-50">
                         <div class="p-2 flex flex-col gap-1">
-                            <a href="#"
+                            <a href="academics.html"
                                 class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
                                 <i class="fa-solid fa-book-open w-6 text-center text-black/30 me-2 text-[11px]"></i>
                                 <span data-i18n="academics">Academics</span>
                             </a>
-                            <a href="#"
-                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
-                                <i class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i> <span data-i18n="studentLife">Student Life</span>
+                             <a href="student-life.html"
+                                class="px-3 py-2 text-[12px] font-bold text-primary bg-primary/5 rounded-lg transition-colors flex items-center">
+                                <i class="fa-solid fa-users w-6 text-center text-primary me-2 text-[11px]"></i> <span
+                                    data-i18n="studentLife">Student Life</span>
                             </a>
                             <a href="#"
                                 class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center">
@@ -163,7 +163,7 @@
 
                 <!-- Language Switcher -->
                 <button onclick="toggleLanguage()"
-                    class="hidden md:flex items-center gap-1 text-[12px] font-bold text-black/80 hover:bg-black/5 px-2.5 py-1.5 rounded-lg transition-colors border border-transparent hover:border-black/10">
+                    class="flex items-center gap-1 text-[10px] md:text-[12px] font-bold text-black/80 hover:bg-black/5 px-2 py-1 md:px-2.5 md:py-1.5 rounded-lg transition-colors border border-black/5 md:border-transparent hover:border-black/10 shadow-sm md:shadow-none">
                     <i class="fa-solid fa-globe text-black/40 me-0.5"></i>
                     <span id="lang-ar" class="uppercase text-black/40 transition-colors">AR</span>
                     <span class="text-black/20 font-normal">|</span>
@@ -171,59 +171,17 @@
                 </button>
 
                 <a href="#"
-                    class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span data-i18n="contactBtn">Contact</span></a>
+                    class="hidden sm:block text-[13px] font-bold text-black/80 hover:text-primary transition-colors px-2"><span
+                        data-i18n="contactBtn">Contact</span></a>
 
-                <a href="#"
-                    class="bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] flex items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap">
+                <a href="admission.html"
+                    class="hidden xl:flex bg-primary hover:bg-secondary text-white hover:text-black transition-all duration-300 transform hover:-translate-y-0.5 text-[13px] font-bold py-1.5 px-4 md:py-2.5 md:px-5 rounded-[10px] items-center gap-2 shadow-sm hover:shadow-md group whitespace-nowrap">
                     <span data-i18n="admissionBtn">Admission</span>
                     <i id="btn-icon"
                         class="fa-solid fa-rocket text-white/90 group-hover:text-black transition-colors text-[12px]"></i>
                 </a>
 
                 <button id="mobile-menu-btn"
-                    class="xl:hidden flex items-center justify-center h-10 w-10 md:h-11 md:w-11 rounded-xl bg-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 border border-black/10">
-                    <i class="fa-solid fa-bars text-lg"></i>
-                </button>
-            </div>
-
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu"
-                class="absolute top-full start-0 end-0 mt-3 bg-white rounded-2xl shadow-xl border border-black/10 xl:hidden z-50">
-                <div class="p-3 sm:p-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
-                    <!-- Mobile Links -->
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-house"></i>
-                        </div>
-                        <span data-i18n="home">Home</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </div>
-                        <span data-i18n="about">About School</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-book-open"></i>
-                        </div>
-                        <span data-i18n="academics">Academics</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-user-plus"></i>
-                        </div>
-                        <span data-i18n="admissions">Admissions</span>
-                    </a>
-                    <a href="#"
-                        class="flex items-center gap-3 p-3 rounded-xl text-black/80 font-bold hover:bg-primary/10 hover:text-primary transition-colors">
-                        <div class="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/40">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
                         <span data-i18n="studentLife">Student Life</span>
                     </a>
                     <a href="#"
@@ -538,34 +496,261 @@
 </section>
 
 
+    <!-- CTA Section -->
+    <section class="py-10 md:py-20 px-1 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
+        <div
+            class="relative rounded-[30px] md:rounded-[40px] overflow-hidden bg-[#003057] p-6 md:p-12 lg:p-20 text-center">
+            <!-- Decorative Circles -->
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <span
+                    class="inline-block px-4 py-1.5 bg-white/10 text-secondary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6"
+                    data-i18n="ctaTag">JOIN OUR COMMUNITY</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tight"
+                    data-i18n="ctaHeading">
+                    Ready to Start Your Child's <br /> <span class="text-secondary">Success
+                        Journey?</span>
+                </h2>
+                <p class="text-white/70 text-lg mb-10 font-medium" data-i18n="ctaDesc">
+                    Enroll your child today at Ibri Private School and give them the foundation they deserve.
+                    Admissions for the new academic year are now open.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="admission.html"
+                        class="bg-primary hover:bg-secondary text-white hover:text-black px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-primary/30 flex items-center gap-3 group">
+                        <span data-i18n="applyNow">Apply Now</span>
+                        <i
+                            class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3">
+                        <span data-i18n="contactUs">Contact Us</span>
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class=" pt-8 pb-4 md:pt-20 md:pb-2 px-3 sm:px-6 lg:px-8 border-t border-black/[0.05]">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 md:mb-20">
+                <!-- Column 1: Brand -->
+                <div class="space-y-6">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div
+                            class="h-12 w-12 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shadow-sm">
+                            <img src="./Asstes/school logo.jpeg" alt="School Logo"
+                                class="h-full w-full object-contain rounded-lg">
+                        </div>
+                        <div>
+                            <h3 class="text-base font-black text-black leading-tight tracking-tight"
+                                data-i18n="schoolNameMain">Ibri Private School</h3>
+                            <p class="text-[10px] font-bold text-black/40 mt-[1px]" data-i18n="schoolNameSub">مدرسة
+                                عبري الخاصة</p>
+                        </div>
+                    </a>
+                    <p class="text-slate-500 text-sm leading-relaxed font-medium pr-8" data-i18n="footerAbout">
+                        Empowering students with knowledge, character, and skills to excel in an ever-changing
+                        global world through high-quality education.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                            <i class="fa-brands fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                        <span data-i18n="quickLinks">Quick Links</span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="home"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Home</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="about"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>About
+                                School</a></li>
+                        <li><a href="admission.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="admissions"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Admissions</a>
+                        </li>
+                        <li><a href="academics.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="academics"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Academics</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
+                                data-i18n="news"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>News
+                                & Events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Academics -->
+                <div>
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                        <span data-i18n="academics">Programs</span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Kindergarten</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Primary
+                                Education</a></li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Secondary
+                                School</a></li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Extra-Curricular</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
+                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>STEM
+                                Program</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8 flex items-center gap-2">
+                        <span data-i18n="contactInfo">Contact Info</span>
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed" data-i18n="footerAddress">
+                                Ibri, Ad Dhahirah Governorate, Sultanate of Oman
+                            </p>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed" dir="ltr">
+                                +968 2568 0000
+                            </p>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed">
+                                info@ibri-school.com
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-black/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]" data-i18n="copyright">
+                    © 2024 Ibri Private School. All rights reserved.
+                </p>
+                <div class="flex gap-8 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
     <script>
-        // Mobile Menu Logic
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const icon = mobileMenuBtn.querySelector('i');
-
-        mobileMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('open');
-            if (mobileMenu.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
+        // Professional Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.remove('pt-3', 'sm:pt-5');
+                header.classList.add('pt-2');
             } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
+                header.classList.add('pt-3', 'sm:pt-5');
+                header.classList.remove('pt-2');
             }
         });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('open')) {
-                mobileMenu.classList.remove('open');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        // RTL & LTR Toggle Logic
+        if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
+            const openMenu = () => {
+                mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+                mobileMenu.classList.add('translate-x-0', 'opacity-100', 'visible');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeMenu = () => {
+                mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
+                mobileMenu.classList.remove('translate-x-0', 'opacity-100', 'visible');
+                document.body.style.overflow = '';
+            };
+
+            mobileMenuBtn.addEventListener('click', openMenu);
+            closeMenuBtn.addEventListener('click', closeMenu);
+
+            // Explore Toggle
+            const exploreToggle = document.getElementById('mobile-explore-toggle');
+            const exploreMenu = document.getElementById('mobile-explore-menu');
+            const exploreChevron = document.getElementById('explore-chevron');
+
+            if (exploreToggle && exploreMenu) {
+                exploreToggle.addEventListener('click', () => {
+                    const isOpen = !exploreMenu.classList.contains('max-h-0');
+                    if (isOpen) {
+                        exploreMenu.classList.add('max-h-0', 'opacity-0', 'invisible');
+                        exploreMenu.classList.remove('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
+                        exploreChevron.classList.remove('rotate-180');
+                    } else {
+                        exploreMenu.classList.remove('max-h-0', 'opacity-0', 'invisible');
+                        exploreMenu.classList.add('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
+                        exploreChevron.classList.add('rotate-180');
+                    }
+                });
+            }
+
+            // Close menu when clicking a link (except toggle)
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+
         // Translation Dictionary
         const translations = {
             en: {
@@ -582,7 +767,17 @@
                 contact: "Contact Us",
                 contactBtn: "Contact",
                 admissionBtn: "Admission",
-                selectLang: "Select Language"
+                selectLang: "Select Language",
+                ctaTag: "JOIN OUR COMMUNITY",
+                ctaHeading: "Ready to Start Your Child's Success Journey?",
+                ctaDesc: "Enroll your child today at Ibri Private School and give them the foundation they deserve. Admissions for the new academic year are now open.",
+                applyNow: "Apply Now",
+                contactUs: "Contact Us",
+                footerAbout: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world through high-quality education.",
+                quickLinks: "Quick Links",
+                contactInfo: "Contact Info",
+                footerAddress: "Ibri, Ad Dhahirah Governorate, Sultanate of Oman",
+                copyright: "© 2024 Ibri Private School. All rights reserved."
             },
             ar: {
                 schoolNameMain: "مدرسة عبري الخاصة",
@@ -598,7 +793,17 @@
                 contact: "اتصل بنا",
                 contactBtn: "تواصل معنا",
                 admissionBtn: "سجل الآن",
-                selectLang: "اختر اللغة"
+                selectLang: "اختر اللغة",
+                ctaTag: "انضم إلى مجتمعنا",
+                ctaHeading: "هل أنت مستعد لبدء رحلة طفلك؟",
+                ctaDesc: "سجل طفلك اليوم في مدرسة عبري الخاصة وامنحه الأساس الذي يستحقه.",
+                applyNow: "سجل الآن",
+                contactUs: "اتصل بنا",
+                footerAbout: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم متطور.",
+                quickLinks: "روابط سريعة",
+                contactInfo: "معلومات الاتصال",
+                footerAddress: "عبري، سلطنة عمان",
+                copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة."
             }
         };
 
