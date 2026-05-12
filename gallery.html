@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - Ibri Private School</title>
+    <title>Gallery - Ibri Private School</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,9 +14,6 @@
 
     <!-- Google Fonts (Cairo for excellent Arabic and English support) -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Swiper CSS for Events Slider -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- AOS for scroll animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -50,10 +47,6 @@
 
         [data-aos] {
             transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .swiper-pagination-bullet-active {
-            background: #3fa394 !bit;
         }
     </style>
 </head>
@@ -113,12 +106,12 @@
                                         class="fa-solid fa-users w-6 text-center text-black/30 me-2 text-[11px]"></i><span
                                         data-i18n="studentLife">Student Life</span></a>
                                 <a href="events.html"
-                                    class="px-3 py-2 text-[12px] font-bold text-primary bg-primary/5 rounded-lg transition-colors flex items-center"><i
-                                        class="fa-solid fa-calendar-days w-6 text-center text-primary me-2 text-[11px]"></i><span
+                                    class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i
+                                        class="fa-solid fa-calendar-days w-6 text-center text-black/30 me-2 text-[11px]"></i><span
                                         data-i18n="news">News & Events</span></a>
                                 <a href="gallery.html"
-                                    class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg transition-colors flex items-center"><i
-                                        class="fa-solid fa-images w-6 text-center text-black/30 me-2 text-[11px]"></i><span
+                                    class="px-3 py-2 text-[12px] font-bold text-primary bg-primary/5 rounded-lg transition-colors flex items-center"><i
+                                        class="fa-solid fa-images w-6 text-center text-primary me-2 text-[11px]"></i><span
                                         data-i18n="gallery">Gallery</span></a>
                             </div>
                         </div>
@@ -155,7 +148,6 @@
                 </div>
             </nav>
         </header>
-    </div>
     </div>
 
     <!-- Mobile Menu -->
@@ -222,14 +214,14 @@
                             <span class="text-xs font-bold text-black/60" data-i18n="studentLife">Student Life</span>
                         </a>
                         <a href="events.html"
-                            class="flex flex-col gap-2 p-4 rounded-2xl bg-primary/10 border border-primary/20 group/item transition-colors">
-                            <i class="fa-solid fa-calendar-days text-primary"></i>
-                            <span class="text-xs font-bold text-primary" data-i18n="news">News & Events</span>
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i class="fa-solid fa-calendar-days text-black/20"></i>
+                            <span class="text-xs font-bold text-black/60" data-i18n="news">News & Events</span>
                         </a>
                         <a href="gallery.html"
-                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
-                            <i class="fa-solid fa-images text-black/20"></i>
-                            <span class="text-xs font-bold text-black/60" data-i18n="gallery">Gallery</span>
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-primary/10 border border-primary/20 group/item transition-colors">
+                            <i class="fa-solid fa-images text-primary"></i>
+                            <span class="text-xs font-bold text-primary" data-i18n="gallery">Gallery</span>
                         </a>
                     </div>
                 </div>
@@ -261,167 +253,27 @@
         </div>
     </div>
 
-    <!-- ========================= -->
-    <!-- UPCOMING EVENTS SECTION -->
-    <!-- ========================= -->
-    <section class="py-10 md:py-18 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <div
-                    class="inline-flex items-center gap-2 border border-primary/20 bg-primary/10 px-4 py-2 rounded-full mb-4">
-                    <i class="fa-solid fa-calendar-days text-primary text-sm"></i>
-                    <span class="text-primary font-bold text-xs uppercase tracking-wider" data-i18n="eventsBadge">Never
-                        Miss Out</span>
-                </div>
-                <h2 class="text-3xl md:text-5xl font-black text-black mb-4">Upcoming <span
-                        class="text-primary">Events</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="eventsSubtitle">Join us for exciting events
-                    throughout the academic year</p>
+    <!-- MAIN CONTENT -->
+    <main class="min-h-[60vh] flex items-center justify-center py-20">
+        <div class="text-center" data-aos="fade-up">
+            <div
+                class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full mb-6">
+                <i class="fa-solid fa-images text-primary text-sm"></i>
+                <span class="text-primary font-bold text-xs uppercase tracking-wider" data-i18n="gallery">Gallery</span>
             </div>
+            <h2 class="text-4xl md:text-6xl font-black text-black mb-4">Our School <span
+                    class="text-primary">Gallery</span></h2>
+            <p class="text-gray-500 max-w-2xl mx-auto" data-i18n="gallerySubtitle">Capturing beautiful moments and
+                achievements of our students.</p>
 
-            <!-- Slider Container -->
-            <div class="relative">
-                <div class="swiper eventsSwiper overflow-hidden">
-                    <div class="swiper-wrapper">
-                        <!-- Event 1 - Science Fair -->
-                        <div class="swiper-slide">
-                            <div
-                                class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-                                <div class="relative h-56 overflow-hidden">
-                                    <img src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800"
-                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
-                                        <span class="text-xl font-black text-primary">25</span>
-                                        <span class="text-[10px] font-bold text-gray-500 block">MAR</span>
-                                    </div>
-                                    <div class="absolute bottom-4 left-4">
-                                        <span
-                                            class="bg-primary/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">SCIENCE
-                                            & TECH</span>
-                                    </div>
-                                </div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <i class="fa-regular fa-clock text-primary text-xs"></i>
-                                        <span class="text-gray-500 text-xs">9:00 AM - 3:00 PM</span>
-                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                                        <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
-                                        <span class="text-gray-500 text-xs">Main Hall</span>
-                                    </div>
-                                    <h3
-                                        class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">
-                                        Annual Science Fair</h3>
-                                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Showcase innovative
-                                        projects from our young scientists. Prizes for best exhibits!</p>
-                                    <a href="#"
-                                        class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
-                                        <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register
-                                            Now</span>
-                                        <i
-                                            class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Event 2 - Cultural Day -->
-                        <div class="swiper-slide">
-                            <div
-                                class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-                                <div class="relative h-56 overflow-hidden">
-                                    <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800"
-                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
-                                        <span class="text-xl font-black text-secondary">12</span>
-                                        <span class="text-[10px] font-bold text-gray-500 block">APR</span>
-                                    </div>
-                                    <div class="absolute bottom-4 left-4">
-                                        <span
-                                            class="bg-secondary/90 backdrop-blur-sm text-black px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">CULTURAL</span>
-                                    </div>
-                                </div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <i class="fa-regular fa-clock text-primary text-xs"></i>
-                                        <span class="text-gray-500 text-xs">10:00 AM - 6:00 PM</span>
-                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                                        <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
-                                        <span class="text-gray-500 text-xs">School Grounds</span>
-                                    </div>
-                                    <h3
-                                        class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">
-                                        Cultural Day Festival</h3>
-                                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Celebrate diversity
-                                        with food, music, traditional dances, and cultural exhibitions.</p>
-                                    <a href="#"
-                                        class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
-                                        <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register
-                                            Now</span>
-                                        <i
-                                            class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Event 3 - Sports Championship -->
-                        <div class="swiper-slide">
-                            <div
-                                class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-                                <div class="relative h-56 overflow-hidden">
-                                    <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800"
-                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
-                                        <span class="text-xl font-black text-primary">5</span>
-                                        <span class="text-[10px] font-bold text-gray-500 block">MAY</span>
-                                    </div>
-                                    <div class="absolute bottom-4 left-4">
-                                        <span
-                                            class="bg-primary/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">SPORTS</span>
-                                    </div>
-                                </div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <i class="fa-regular fa-clock text-primary text-xs"></i>
-                                        <span class="text-gray-500 text-xs">8:00 AM - 2:00 PM</span>
-                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                                        <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
-                                        <span class="text-gray-500 text-xs">Sports Complex</span>
-                                    </div>
-                                    <h3
-                                        class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">
-                                        Inter-School Championship</h3>
-                                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Annual sports meet
-                                        featuring football, athletics, and swimming competitions.</p>
-                                    <a href="#"
-                                        class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
-                                        <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register
-                                            Now</span>
-                                        <i
-                                            class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination !-bottom-2"></div>
-                </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto px-4">
+                <!-- Gallery items will go here -->
+                <div class="bg-gray-100 h-64 rounded-3xl animate-pulse"></div>
+                <div class="bg-gray-100 h-64 rounded-3xl animate-pulse"></div>
+                <div class="bg-gray-100 h-64 rounded-3xl animate-pulse"></div>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- CTA Section -->
     <section class="py-10 md:py-20 px-1 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
@@ -617,26 +469,9 @@
         </div>
     </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script>
         // Initialize AOS
         AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-quad' });
-
-        // Initialize Swiper
-        const swiper = new Swiper(".eventsSwiper", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 30 },
-            },
-        });
 
         // Translations
         const translations = {
@@ -651,6 +486,7 @@
                 studentLife: "Student Life",
                 news: "News & Events",
                 gallery: "Gallery",
+                gallerySubtitle: "Capturing beautiful moments and achievements of our students.",
                 contact: "Contact Us",
                 contactBtn: "Contact",
                 admissionBtn: "Admission",
@@ -664,9 +500,7 @@
                 contactInfo: "Contact Info",
                 footerAbout: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world.",
                 footerAddress: "Ibri, Ad Dhahirah Governorate, Sultanate of Oman",
-                copyright: "© 2024 Ibri Private School. All rights reserved.",
-                eventsBadge: "Never Miss Out",
-                eventsSubtitle: "Join us for exciting events throughout the academic year"
+                copyright: "© 2024 Ibri Private School. All rights reserved."
             },
             ar: {
                 schoolNameMain: "مدرسة عبري الخاصة",
@@ -679,6 +513,7 @@
                 studentLife: "الحياة الطلابية",
                 news: "الأخبار والفعاليات",
                 gallery: "معرض الصور",
+                gallerySubtitle: "نلتقط أجمل اللحظات وإنجازات طلابنا.",
                 contact: "اتصل بنا",
                 contactBtn: "تواصل معنا",
                 admissionBtn: "سجل الآن",
@@ -692,9 +527,7 @@
                 contactInfo: "معلومات التواصل",
                 footerAbout: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم عالمي دائم التغير.",
                 footerAddress: "عبري، محافظة الظاهرة، سلطنة عمان",
-                copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة.",
-                eventsBadge: "لا تفوت أبداً",
-                eventsSubtitle: "انضم إلينا في فعاليات مثيرة طوال العام الدراسي"
+                copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة."
             }
         };
 
