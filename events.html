@@ -53,7 +53,34 @@
         }
 
         .swiper-pagination-bullet-active {
-            background: #3fa394 !bit;
+            background: #3fa394 !important;
+        }
+
+        .marquee-container {
+            display: flex;
+            width: fit-content;
+            animation: marqueeScroll 20s linear infinite;
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .overflow-hidden:hover .marquee-container {
+            animation-play-state: paused;
+        }
+
+        [dir="rtl"] .marquee-container {
+            animation-direction: reverse;
+        }
+
+        .progress-bar {
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
     </style>
 </head>
@@ -155,7 +182,6 @@
                 </div>
             </nav>
         </header>
-    </div>
     </div>
 
     <!-- Mobile Menu -->
@@ -261,198 +287,573 @@
         </div>
     </div>
 
-    <!-- ========================= -->
-    <!-- UPCOMING EVENTS SECTION -->
-    <!-- ========================= -->
-    <section class="py-10 md:py-18 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <div
-                    class="inline-flex items-center gap-2 border border-primary/20 bg-primary/10 px-4 py-2 rounded-full mb-4">
-                    <i class="fa-solid fa-calendar-days text-primary text-sm"></i>
-                    <span class="text-primary font-bold text-xs uppercase tracking-wider" data-i18n="eventsBadge">Never
-                        Miss Out</span>
-                </div>
-                <h2 class="text-3xl md:text-5xl font-black text-black mb-4">Upcoming <span
-                        class="text-primary">Events</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="eventsSubtitle">Join us for exciting events
-                    throughout the academic year</p>
-            </div>
+    <!-- ============================================ -->
+    <!-- NEWS & EVENTS HERO - ALTERNATE LAYOUT -->
+    <!-- WITH PROGRESS BAR ANIMATIONS -->
+    <!-- ============================================ -->
+    <section class="relative min-h-[70vh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+        
+        <!-- Clean White Background -->
+        <div class="absolute inset-0 bg-white"></div>
+        
+        <!-- Left Accent Bar -->
+        <div class="absolute top-0 left-0 w-1 h-full bg-primary to-secondary"></div>
+        
+        <!-- Subtle Dot Pattern -->
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(rgba(63,163,148,0.1) 1px, transparent 1px); background-size: 30px 30px;"></div>
 
-            <!-- Slider Container -->
-            <div class="relative">
-                <div class="swiper eventsSwiper overflow-hidden">
-                    <div class="swiper-wrapper">
-                        <!-- Event 1 - Science Fair -->
-                        <div class="swiper-slide">
-                            <div
-                                class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-                                <div class="relative h-56 overflow-hidden">
-                                    <img src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800"
-                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
-                                        <span class="text-xl font-black text-primary">25</span>
-                                        <span class="text-[10px] font-bold text-gray-500 block">MAR</span>
-                                    </div>
-                                    <div class="absolute bottom-4 left-4">
-                                        <span
-                                            class="bg-primary/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">SCIENCE
-                                            & TECH</span>
-                                    </div>
-                                </div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <i class="fa-regular fa-clock text-primary text-xs"></i>
-                                        <span class="text-gray-500 text-xs">9:00 AM - 3:00 PM</span>
-                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                                        <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
-                                        <span class="text-gray-500 text-xs">Main Hall</span>
-                                    </div>
-                                    <h3
-                                        class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">
-                                        Annual Science Fair</h3>
-                                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Showcase innovative
-                                        projects from our young scientists. Prizes for best exhibits!</p>
-                                    <a href="#"
-                                        class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
-                                        <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register
-                                            Now</span>
-                                        <i
-                                            class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
-                                    </a>
-                                </div>
+        <div class="max-w-[1200px] mx-auto relative z-10 w-full">
+            <div class="grid lg:grid-cols-5 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-3">
+                    <div class="mb-4" data-aos="fade-right">
+                        <span class="text-primary text-sm font-semibold uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-circle text-[6px]"></i>
+                            <span data-i18n="whatsNew">WHAT'S NEW</span>
+                        </span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-black text-black leading-[1.2] mb-5" data-aos="fade-right" data-aos-delay="100">
+                        <span data-i18n="heroTitle1">Discover the</span><br>
+                        <span class="text-primary" data-i18n="heroTitle2">Latest Stories</span>
+                    </h1>
+
+                    <p class="text-gray-500 text-base leading-relaxed mb-8 max-w-md" data-aos="fade-right" data-aos-delay="150" data-i18n="heroDesc">
+                        From academic achievements to community events — everything happening at our school
+                    </p>
+
+                    <!-- Trending Topic Pills -->
+                    <div class="flex flex-wrap gap-3 mb-8" data-aos="fade-right" data-aos-delay="200">
+                        <div class="group cursor-pointer">
+                            <div class="flex items-center gap-2 bg-gray-100 hover:bg-primary hover:text-white px-4 py-2 rounded-full transition-all duration-300">
+                                <i class="fa-solid fa-hashtag text-gray-400 group-hover:text-white text-xs"></i>
+                                <span class="text-gray-600 group-hover:text-white text-sm font-medium" data-i18n="trend1">ScienceFair2025</span>
                             </div>
                         </div>
-
-                        <!-- Event 2 - Cultural Day -->
-                        <div class="swiper-slide">
-                            <div
-                                class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-                                <div class="relative h-56 overflow-hidden">
-                                    <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800"
-                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
-                                        <span class="text-xl font-black text-secondary">12</span>
-                                        <span class="text-[10px] font-bold text-gray-500 block">APR</span>
-                                    </div>
-                                    <div class="absolute bottom-4 left-4">
-                                        <span
-                                            class="bg-secondary/90 backdrop-blur-sm text-black px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">CULTURAL</span>
-                                    </div>
-                                </div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <i class="fa-regular fa-clock text-primary text-xs"></i>
-                                        <span class="text-gray-500 text-xs">10:00 AM - 6:00 PM</span>
-                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                                        <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
-                                        <span class="text-gray-500 text-xs">School Grounds</span>
-                                    </div>
-                                    <h3
-                                        class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">
-                                        Cultural Day Festival</h3>
-                                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Celebrate diversity
-                                        with food, music, traditional dances, and cultural exhibitions.</p>
-                                    <a href="#"
-                                        class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
-                                        <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register
-                                            Now</span>
-                                        <i
-                                            class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
-                                    </a>
-                                </div>
+                        <div class="group cursor-pointer">
+                            <div class="flex items-center gap-2 bg-gray-100 hover:bg-primary hover:text-white px-4 py-2 rounded-full transition-all duration-300">
+                                <i class="fa-solid fa-hashtag text-gray-400 group-hover:text-white text-xs"></i>
+                                <span class="text-gray-600 group-hover:text-white text-sm font-medium" data-i18n="trend2">CulturalDay</span>
                             </div>
                         </div>
-
-                        <!-- Event 3 - Sports Championship -->
-                        <div class="swiper-slide">
-                            <div
-                                class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-                                <div class="relative h-56 overflow-hidden">
-                                    <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800"
-                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 text-center shadow-lg">
-                                        <span class="text-xl font-black text-primary">5</span>
-                                        <span class="text-[10px] font-bold text-gray-500 block">MAY</span>
-                                    </div>
-                                    <div class="absolute bottom-4 left-4">
-                                        <span
-                                            class="bg-primary/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide">SPORTS</span>
-                                    </div>
-                                </div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <i class="fa-regular fa-clock text-primary text-xs"></i>
-                                        <span class="text-gray-500 text-xs">8:00 AM - 2:00 PM</span>
-                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                                        <i class="fa-solid fa-location-dot text-primary/60 text-xs"></i>
-                                        <span class="text-gray-500 text-xs">Sports Complex</span>
-                                    </div>
-                                    <h3
-                                        class="text-xl font-extrabold text-black mb-2 group-hover:text-primary transition-colors">
-                                        Inter-School Championship</h3>
-                                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">Annual sports meet
-                                        featuring football, athletics, and swimming competitions.</p>
-                                    <a href="#"
-                                        class="inline-flex items-center justify-between w-full bg-gray-50 hover:bg-primary/10 rounded-xl px-4 py-3 transition-all duration-300">
-                                        <span class="text-sm font-bold text-gray-700 group-hover:text-primary">Register
-                                            Now</span>
-                                        <i
-                                            class="fa-solid fa-arrow-right text-xs text-primary group-hover:translate-x-1 transition-transform"></i>
-                                    </a>
-                                </div>
+                        <div class="group cursor-pointer">
+                            <div class="flex items-center gap-2 bg-gray-100 hover:bg-primary hover:text-white px-4 py-2 rounded-full transition-all duration-300">
+                                <i class="fa-solid fa-hashtag text-gray-400 group-hover:text-white text-xs"></i>
+                                <span class="text-gray-600 group-hover:text-white text-sm font-medium" data-i18n="trend3">SportsChampions</span>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="flex items-center gap-2 bg-gray-100 hover:bg-primary hover:text-white px-4 py-2 rounded-full transition-all duration-300">
+                                <i class="fa-solid fa-hashtag text-gray-400 group-hover:text-white text-xs"></i>
+                                <span class="text-gray-600 group-hover:text-white text-sm font-medium" data-i18n="trend4">Graduation2025</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination !-bottom-2"></div>
+
+                    <div class="flex gap-4" data-aos="fade-right" data-aos-delay="250">
+                        <a href="#" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition shadow-md" data-i18n="exploreNowBtn">Explore Now</a>
+                        <a href="#" class="border border-gray-300 text-gray-600 px-6 py-2.5 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition" data-i18n="subscribeBtn">Subscribe</a>
+                    </div>
+                </div>
+
+                <!-- Right Stats Column with Animated Progress Bars -->
+                <div class="lg:col-span-2" data-aos="fade-left" data-aos-delay="100">
+                    <div class="space-y-4">
+                        <!-- Stat Card 1 -->
+                        <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:shadow-md transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                                    <i class="fa-regular fa-newspaper text-primary text-lg"></i>
+                                </div>
+                                <span class="text-3xl font-black text-primary counter" data-target="156">0</span>
+                            </div>
+                            <p class="text-gray-600 text-sm" data-i18n="stat1">Stories published this month</p>
+                            <div class="mt-2 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="progress-bar w-0 h-full bg-primary rounded-full" data-width="75"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Stat Card 2 -->
+                        <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:shadow-md transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center">
+                                    <i class="fa-regular fa-eye text-secondary-dark text-lg"></i>
+                                </div>
+                                <span class="text-3xl font-black text-secondary-dark counter" data-target="12500">0</span>
+                            </div>
+                            <p class="text-gray-600 text-sm" data-i18n="stat2">Total community views</p>
+                            <div class="mt-2 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="progress-bar w-0 h-full bg-secondary rounded-full" data-width="66"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Stat Card 3 -->
+                        <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:shadow-md transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                                    <i class="fa-regular fa-message text-primary text-lg"></i>
+                                </div>
+                                <span class="text-3xl font-black text-primary counter" data-target="345">0</span>
+                            </div>
+                            <p class="text-gray-600 text-sm" data-i18n="stat3">Community responses</p>
+                            <div class="mt-2 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="progress-bar w-0 h-full bg-primary rounded-full" data-width="50"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ========================= -->
+    <!-- LIVE NEWS TICKER -->
+    <!-- ========================= -->
+    <section class="border-y border-black/5 bg-white overflow-hidden">
+        <div class="max-w-[1600px] mx-auto flex items-center">
+
+            <!-- Left Label -->
+            <div class="bg-primary text-white px-6 py-4 shrink-0 flex items-center gap-2 z-10 relative">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                <span class="text-[11px] font-black tracking-[3px] uppercase" data-i18n="liveUpdates">
+                    Live Updates
+                </span>
+            </div>
+
+            <!-- Moving News - Continuous Auto Slide -->
+            <div class="flex-1 overflow-hidden relative">
+                <div class="marquee-container flex whitespace-nowrap">
+                    
+                    <!-- First Set of News -->
+                    <div class="marquee-track flex items-center gap-16 px-8 py-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-trophy text-secondary"></i>
+                            <p class="text-sm font-semibold text-black/70" data-i18n="news1">Ibri School wins Robotics Championship 2025</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-graduation-cap text-primary"></i>
+                            <p class="text-sm font-semibold text-black/70" data-i18n="news2">Graduation Ceremony starts June 20</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-flask text-primary"></i>
+                            <p class="text-sm font-semibold text-black/70" data-i18n="news3">New AI & STEM Labs officially opened</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-masks-theater text-secondary"></i>
+                            <p class="text-sm font-semibold text-black/70" data-i18n="news4">Cultural Festival registrations now open</p>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Track for Seamless Loop -->
+                    <div class="marquee-track flex items-center gap-16 px-8 py-4" aria-hidden="true">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-trophy text-secondary"></i>
+                            <p class="text-sm font-semibold text-black/70" data-i18n="news1">Ibri School wins Robotics Championship 2025</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-graduation-cap text-primary"></i>
+                            <p class="text-sm font-semibold text-black/70" data-i18n="news2">Graduation Ceremony starts June 20</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-flask text-primary"></i>
+                            <p class="text-sm font-semibold text-black/70" data-i18n="news3">New AI & STEM Labs officially opened</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-masks-theater text-secondary"></i>
+                            <p class="text-sm font-semibold text-black/70" data-i18n="news4">Cultural Festival registrations now open</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- FEATURED STORIES -->
+    <!-- ========================= -->
+    <section class="relative py-20 md:py-25 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#f8fafc]">
+
+        <!-- Background Blur -->
+        <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/10 blur-[120px] rounded-full"></div>
+
+        <div class="max-w-[1450px] mx-auto relative z-10">
+
+            <!-- Header -->
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+
+                <div>
+                    <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-primary/30 shadow-sm mb-6">
+                        <i class="fa-solid fa-newspaper text-primary text-sm"></i>
+                        <span class="text-[11px] font-black tracking-[3px] uppercase text-primary" data-i18n="featuredBadge">
+                            Featured Stories
+                        </span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-black text-black leading-[1.1]">
+                        <span data-i18n="featuredTitle1">Discover The</span>
+                        <span class="text-primary block" data-i18n="featuredTitle2">
+                            Stories Behind Success
+                        </span>
+                    </h2>
+                </div>
+
+                <p class="max-w-md text-gray-500 leading-relaxed text-base" data-i18n="featuredDesc">
+                    Explore inspiring achievements, student experiences, school innovations,
+                    and unforgettable moments happening inside our campus.
+                </p>
+
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid lg:grid-cols-12 gap-7">
+
+                <!-- BIG FEATURE CARD -->
+                <div class="lg:col-span-7 group relative overflow-hidden rounded-[40px] min-h-[650px] shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
+
+                    <!-- Image -->
+                    <img src="./Asstes/school image.jpeg" alt="Featured Story Image"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition duration-700">
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+                    <!-- Glass Badge -->
+                    <div class="absolute top-6 left-6 bg-primary backdrop-blur-xl border border-primary/30 px-5 py-3 rounded-2xl">
+                        <span class="text-base text-[10px] font-black tracking-[3px] uppercase" data-i18n="featuredArticle">
+                            Featured Article
+                        </span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
+
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xl flex items-center justify-center">
+                                <i class="fa-solid fa-microchip text-secondary"></i>
+                            </div>
+                            <span class="text-[11px] uppercase tracking-[3px] font-black text-white/80" data-i18n="featuredCategory">
+                                Innovation & Technology
+                            </span>
+                        </div>
+
+                        <h3 class="text-4xl md:text-5xl font-black leading-tight max-w-3xl mb-5" data-i18n="featuredTitle">
+                            Students Build AI Powered Smart City Projects
+                        </h3>
+
+                        <p class="text-white/70 text-base leading-relaxed max-w-2xl" data-i18n="featuredDescText">
+                            Young innovators showcased futuristic solutions using robotics,
+                            sustainability concepts, and artificial intelligence technologies.
+                        </p>
+
+                        <div class="flex items-center gap-5 mt-8">
+                            <button class="bg-primary hover:bg-secondary hover:text-black text-white px-8 py-4 rounded-2xl font-bold transition-all duration-500 hover:-translate-y-1" data-i18n="readFullStory">
+                                Read Full Story
+                            </button>
+                            <button class="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 hover:bg-white hover:text-black transition-all duration-500 flex items-center justify-center">
+                                <i class="fa-solid fa-book-open"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- SIDE CONTENT -->
+                <div class="lg:col-span-5 flex flex-col gap-7">
+
+                    <!-- Small Story -->
+                    <div class="group bg-white border border-black/5 rounded-[35px] p-7 hover:bg-primary hover:text-white transition-all duration-500 shadow-[0_15px_50px_rgba(0,0,0,0.05)]">
+
+                        <div class="flex items-start gap-5 mb-6">
+                            <div class="w-24 h-24 rounded-[24px] overflow-hidden shrink-0">
+                                <img src="./Asstes/sports.png" alt="Story Image"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div>
+                                <span class="text-[10px] uppercase tracking-[3px] font-black opacity-70" data-i18n="educationTag">
+                                    Education
+                                </span>
+                                <h3 class="text-2xl font-black mt-3 leading-tight" data-i18n="smallStoryTitle">
+                                    New STEM Laboratories Opened
+                                </h3>
+                            </div>
+                        </div>
+
+                        <p class="text-sm leading-relaxed opacity-70" data-i18n="smallStoryDesc">
+                            Students now have access to advanced robotics, engineering,
+                            coding, and AI innovation labs.
+                        </p>
+
+                    </div>
+
+                    <!-- Achievement Card -->
+                    <div class="relative overflow-hidden rounded-[35px] bg-black text-white p-8 min-h-[260px]">
+
+                        <div class="absolute top-[-50px] right-[-50px] w-[180px] h-[180px] rounded-full border border-white/10"></div>
+
+                        <div class="relative z-10">
+
+                            <div class="flex items-center justify-between mb-10">
+                                <span class="bg-white/10 border border-white/10 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[3px]" data-i18n="achievementBadge">
+                                    Achievement
+                                </span>
+                                <div class="w-14 h-14 rounded-2xl bg-secondary text-black flex items-center justify-center">
+                                    <i class="fa-solid fa-award text-xl"></i>
+                                </div>
+                            </div>
+
+                            <h3 class="text-5xl font-black mb-4">
+                                98%
+                            </h3>
+
+                            <p class="text-white/70 text-lg leading-relaxed" data-i18n="achievementDesc">
+                                Academic excellence and student performance growth this year.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <!-- Floating Glass Card -->
+                    <div class="bg-white/70 backdrop-blur-xl border border-white shadow-[0_15px_60px_rgba(0,0,0,0.06)] rounded-[35px] p-7">
+
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <span class="text-primary text-[10px] font-black uppercase tracking-[3px]" data-i18n="upcomingTag">
+                                    Upcoming
+                                </span>
+                                <h3 class="text-2xl font-black mt-2" data-i18n="upcomingTitle">
+                                    Graduation Week
+                                </h3>
+                            </div>
+                            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                                <i class="fa-solid fa-graduation-cap text-primary text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-semibold text-gray-500" data-i18n="event1">Final Rehearsals</p>
+                                <span class="text-sm font-black text-primary" data-i18n="date1">June 14</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-semibold text-gray-500" data-i18n="event2">Parents Gathering</p>
+                                <span class="text-sm font-black text-primary" data-i18n="date2">June 17</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-semibold text-gray-500" data-i18n="event3">Graduation Ceremony</p>
+                                <span class="text-sm font-black text-primary" data-i18n="date3">June 20</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- ADVANCED EVENT TIMELINE -->
+    <!-- ========================= -->
+    <section class="relative py-10 md:py-18 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/10">
+
+        <!-- Background Blurs -->
+        <div class="absolute top-0 left-0 w-[300px] h-[300px] bg-primary/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-secondary/10 blur-[120px] rounded-full"></div>
+
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-[0.03]"
+            style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(to right, #000 1px, transparent 1px); background-size: 60px 60px;">
+        </div>
+
+        <div class="max-w-[1350px] mx-auto relative z-10">
+
+            <!-- Header -->
+            <div class="text-center mb-24" data-aos="fade-up">
+
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-primary/10 shadow-sm mb-6">
+                    <i class="fa-solid fa-timeline text-primary"></i>
+                    <span class="text-[11px] font-black tracking-[3px] uppercase text-primary" data-i18n="annualJourney">
+                        Annual Journey
+                    </span>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl font-black leading-tight text-black">
+                    <span data-i18n="timelineTitle1">A Year Filled With</span>
+                    <span class="text-primary block mt-2" data-i18n="timelineTitle2">
+                        Extraordinary Experiences
+                    </span>
+                </h2>
+
+                <p class="text-gray-500 max-w-2xl mx-auto mt-6 text-lg leading-relaxed" data-i18n="timelineDesc">
+                    Explore the unforgettable moments, competitions, leadership programs,
+                    and celebrations shaping our student community.
+                </p>
+
+            </div>
+
+            <!-- Timeline Wrapper -->
+            <div class="relative">
+
+                <!-- Center Line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-secondary to-primary rounded-full -translate-x-1/2">
+                </div>
+
+                <!-- ================= ITEM 1 ================= -->
+                <div class="grid md:grid-cols-2 gap-14 items-center mb-18 relative">
+
+                    <!-- LEFT CONTENT -->
+                    <div class="md:text-right" data-aos="fade-right">
+
+                        <!-- Month -->
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/10 mb-6">
+                            <i class="fa-regular fa-calendar text-primary text-sm"></i>
+                            <span class="text-primary font-black text-xs uppercase tracking-[3px]" data-i18n="month1">
+                                January 2025
+                            </span>
+                        </div>
+
+                        <h3 class="text-4xl md:text-5xl font-black text-black leading-tight mb-6" data-i18n="timelineEvent1">
+                            Leadership Winter Camp
+                        </h3>
+
+                        <p class="text-gray-500 leading-relaxed text-lg max-w-lg md:ml-auto mb-8" data-i18n="timelineDesc1">
+                            Students enhanced communication, leadership, teamwork,
+                            and problem-solving skills through immersive workshops
+                            and outdoor collaborative activities.
+                        </p>
+
+                        <!-- Stats -->
+                        <div class="flex md:justify-end gap-5">
+                            <div class="bg-white rounded-2xl px-6 py-5 border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
+                                <h4 class="text-3xl font-black text-primary">250+</h4>
+                                <p class="text-gray-400 text-xs uppercase tracking-[2px] mt-1" data-i18n="studentsStat">Students</p>
+                            </div>
+                            <div class="bg-white rounded-2xl px-6 py-5 border border-black/5 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
+                                <h4 class="text-3xl font-black text-secondary">12</h4>
+                                <p class="text-gray-400 text-xs uppercase tracking-[2px] mt-1" data-i18n="workshopsStat">Workshops</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT IMAGE -->
+                    <div class="relative" data-aos="fade-left">
+
+                        <!-- Timeline Dot -->
+                        <div class="hidden md:flex absolute left-3 top-1/2 -translate-x-[72px] -translate-y-1/2 w-16 h-16 rounded-full bg-white border-[8px] border-primary shadow-[0_10px_40px_rgba(63,163,148,0.3)] items-center justify-center z-20">
+                            <i class="fa-solid fa-users text-primary text-xl"></i>
+                        </div>
+
+                        <!-- Image Card -->
+                        <div class="group relative overflow-hidden rounded-[35px] border border-black/5 shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
+
+                            <img src="./Asstes/lab.png"
+                                class="w-full h-[450px] object-cover group-hover:scale-110 transition duration-700">
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent">
+                            </div>
+
+                            <div class="absolute top-6 right-6">
+                                <div class="bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl text-white">
+                                    <p class="text-xs uppercase tracking-[2px] text-white/70 mb-1" data-i18n="featuredEvent">Featured Event</p>
+                                    <h4 class="text-xl font-black" data-i18n="leadership2025">Leadership 2025</h4>
+                                </div>
+                            </div>
+
+                            <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 flex items-center justify-center">
+                                        <i class="fa-solid fa-award text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-2xl font-black" data-i18n="empoweringLeaders">Empowering Future Leaders</h4>
+                                        <p class="text-white/70 text-sm mt-1" data-i18n="skillsText">Confidence • Communication • Collaboration</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- VIDEO HIGHLIGHT SECTION -->
+    <!-- ========================= -->
+    <section class="px-4 sm:px-6 lg:px-8 bg-[#f8fafc] py-10">
+
+        <div class="max-w-[1450px] mx-auto">
+
+            <div class="relative overflow-hidden rounded-[40px] min-h-[400px]">
+
+                <img src="./Asstes/school image.jpeg" class="absolute inset-0 w-full h-full object-cover">
+
+                <div class="absolute inset-0 bg-black/60"></div>
+
+                <div class="absolute top-0 left-0 w-[220px] h-[220px] bg-primary/20 blur-[100px] rounded-full"></div>
+
+                <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 py-16 text-white">
+
+                    <span class="text-secondary text-[10px] uppercase tracking-[4px] font-black" data-i18n="schoolHighlights">
+                        School Highlights
+                    </span>
+
+                    <h2 class="text-4xl md:text-6xl font-black leading-[1.1] mt-5 max-w-4xl" data-i18n="videoTitle">
+                        Experience The Energy
+                        Of Our School Community
+                    </h2>
+
+                    <p class="text-white/70 max-w-2xl mt-5 text-base leading-relaxed" data-i18n="videoDesc">
+                        Watch unforgettable moments from competitions, student achievements,
+                        sports championships, and cultural celebrations.
+                    </p>
+
+                    <button class="group mt-8 w-20 h-20 rounded-full bg-white text-primary text-2xl hover:scale-110 transition-all duration-500 flex items-center justify-center shadow-[0_20px_60px_rgba(255,255,255,0.20)]">
+                        <i class="fa-solid fa-play group-hover:scale-125 transition duration-300"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-10 md:py-20 px-1 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
-        <div
-            class="relative rounded-[30px] md:rounded-[40px] overflow-hidden bg-[#003057] p-6 md:p-12 lg:p-20 text-center">
-            <!-- Decorative Circles -->
+        <div class="relative rounded-[30px] md:rounded-[40px] overflow-hidden bg-[#003057] p-6 md:p-12 lg:p-20 text-center">
             <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
 
             <div class="relative z-10 max-w-3xl mx-auto">
-                <span
-                    class="inline-block px-4 py-1.5 bg-white/10 text-secondary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6"
-                    data-i18n="ctaTag">JOIN OUR COMMUNITY</span>
-                <h2 class="text-3xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tight"
-                    data-i18n="ctaHeading">
-                    Ready to Start Your Child's <br /> <span class="text-secondary">Success
-                        Journey?</span>
+                <span class="inline-block px-4 py-1.5 bg-white/10 text-secondary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6" data-i18n="ctaTag">JOIN OUR COMMUNITY</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tight">
+                    <span data-i18n="ctaHeading1">Ready to Start Your Child's</span> <br /> <span class="text-secondary" data-i18n="ctaHeading2">Success Journey?</span>
                 </h2>
                 <p class="text-white/70 text-lg mb-10 font-medium" data-i18n="ctaDesc">
                     Enroll your child today at Ibri Private School and give them the foundation they deserve.
                     Admissions for the new academic year are now open.
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="admission.html"
-                        class="bg-primary hover:bg-secondary text-white hover:text-black px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-primary/30 flex items-center gap-3 group">
+                    <a href="admission.html" class="bg-primary hover:bg-secondary text-white hover:text-black px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-primary/30 flex items-center gap-3 group">
                         <span data-i18n="applyNow">Apply Now</span>
-                        <i
-                            class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        <i class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                     </a>
-                    <a href="index.html#contact-section"
-                        class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3">
+                    <a href="index.html#contact-section" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3">
                         <span data-i18n="contactUs">Contact Us</span>
                         <i class="fa-solid fa-phone"></i>
                     </a>
@@ -462,45 +863,26 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class=" pt-8 pb-4 md:pt-20 md:pb-2 px-3 sm:px-6 lg:px-8 border-t border-black/[0.05]">
+    <footer class="pt-8 pb-4 md:pt-20 md:pb-2 px-3 sm:px-6 lg:px-8 border-t border-black/[0.05]">
         <div class="max-w-[1600px] mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 md:mb-20">
                 <!-- Column 1: Brand -->
                 <div class="space-y-6">
                     <a href="index.html" class="flex items-center gap-3 group">
-                        <div
-                            class="h-12 w-12 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shadow-sm">
-                            <img src="./Asstes/school logo.jpeg" alt="School Logo"
-                                class="h-full w-full object-contain rounded-lg">
+                        <div class="h-12 w-12 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shadow-sm">
+                            <img src="./Asstes/school logo.jpeg" alt="School Logo" class="h-full w-full object-contain rounded-lg">
                         </div>
                         <div>
-                            <h3 class="text-base font-black text-black leading-tight tracking-tight"
-                                data-i18n="schoolNameMain">Ibri Private School</h3>
-                            <p class="text-[10px] font-bold text-black/40 mt-[1px]" data-i18n="schoolNameSub">مدرسة
-                                عبري الخاصة</p>
+                            <h3 class="text-base font-black text-black leading-tight tracking-tight" data-i18n="schoolNameMain">Ibri Private School</h3>
+                            <p class="text-[10px] font-bold text-black/40 mt-[1px]" data-i18n="schoolNameSub">مدرسة عبري الخاصة</p>
                         </div>
                     </a>
-                    <p class="text-slate-500 text-sm leading-relaxed font-medium pr-8" data-i18n="footerAbout">
-                        Empowering students with knowledge, character, and skills to excel in an ever-changing
-                        global world through high-quality education.
-                    </p>
+                    <p class="text-slate-500 text-sm leading-relaxed font-medium pr-8" data-i18n="footerAbout">Empowering students with knowledge, character, and skills to excel in an ever-changing global world through high-quality education.</p>
                     <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
-                            <i class="fa-brands fa-facebook-f text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
-                            <i class="fa-brands fa-instagram text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
-                            <i class="fa-brands fa-twitter text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all">
-                            <i class="fa-brands fa-youtube text-sm"></i>
-                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-50 border border-black/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all"><i class="fa-brands fa-youtube text-sm"></i></a>
                     </div>
                 </div>
 
@@ -510,31 +892,11 @@
                         <span data-i18n="quickLinks">Quick Links</span>
                     </h4>
                     <ul class="space-y-4">
-                        <li><a href="index.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="home"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Home</a>
-                        </li>
-                        <li><a href="about.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="about"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>About
-                                School</a></li>
-                        <li><a href="admission.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="admissions"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Admissions</a>
-                        </li>
-                        <li><a href="academics.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="academics"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Academics</a>
-                        </li>
-                        <li><a href="events.html"
-                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group"
-                                data-i18n="news"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>News
-                                & Events</a></li>
+                        <li><a href="index.html" class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group" data-i18n="home"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Home</a></li>
+                        <li><a href="about.html" class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group" data-i18n="about"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>About School</a></li>
+                        <li><a href="admission.html" class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group" data-i18n="admissions"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Admissions</a></li>
+                        <li><a href="academics.html" class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group" data-i18n="academics"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Academics</a></li>
+                        <li><a href="events.html" class="text-slate-500 hover:text-primary font-bold text-sm transition-colors flex items-center gap-2 group" data-i18n="news"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>News & Events</a></li>
                     </ul>
                 </div>
 
@@ -544,26 +906,11 @@
                         <span data-i18n="academics">Programs</span>
                     </h4>
                     <ul class="space-y-4">
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Kindergarten</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Primary
-                                Education</a></li>
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Secondary
-                                School</a></li>
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Extra-Curricular</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i
-                                    class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>STEM
-                                Program</a></li>
+                        <li><a href="#" class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Kindergarten</a></li>
+                        <li><a href="#" class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Primary Education</a></li>
+                        <li><a href="#" class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Secondary School</a></li>
+                        <li><a href="#" class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>Extra-Curricular</a></li>
+                        <li><a href="#" class="text-slate-500 hover:text-secondary font-bold text-sm transition-colors flex items-center gap-2 group"><i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>STEM Program</a></li>
                     </ul>
                 </div>
 
@@ -574,31 +921,16 @@
                     </h4>
                     <ul class="space-y-6">
                         <li class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <p class="text-slate-500 text-sm font-bold leading-relaxed" data-i18n="footerAddress">
-                                Ibri, Ad Dhahirah Governorate, Sultanate of Oman
-                            </p>
+                            <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed" data-i18n="footerAddress">Ibri, Ad Dhahirah Governorate, Sultanate of Oman</p>
                         </li>
                         <li class="flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <p class="text-slate-500 text-sm font-bold leading-relaxed" dir="ltr">
-                                +968 2568 0000
-                            </p>
+                            <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0"><i class="fa-solid fa-phone"></i></div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed" dir="ltr">+968 2568 0000</p>
                         </li>
                         <li class="flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <p class="text-slate-500 text-sm font-bold leading-relaxed">
-                                info@ibri-school.com
-                            </p>
+                            <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                            <p class="text-slate-500 text-sm font-bold leading-relaxed">info@ibri-school.com</p>
                         </li>
                     </ul>
                 </div>
@@ -606,12 +938,10 @@
 
             <!-- Bottom Bar -->
             <div class="pt-8 border-t border-black/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]" data-i18n="copyright">
-                    © 2024 Ibri Private School. All rights reserved.
-                </p>
+                <p class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]" data-i18n="copyright">© 2024 Ibri Private School. All rights reserved.</p>
                 <div class="flex gap-8 text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]">
-                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="privacy">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-i18n="terms">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -624,18 +954,55 @@
         // Initialize AOS
         AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-quad' });
 
-        // Initialize Swiper
-        const swiper = new Swiper(".eventsSwiper", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 30 },
-            },
+        // Animate numbers and progress bars when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Animate Counter Numbers
+            const counters = document.querySelectorAll('.counter');
+            
+            const animateCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 60;
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        if (target === 12500) {
+                            if (current < 1000) {
+                                counter.innerText = Math.floor(current);
+                            } else {
+                                counter.innerText = (Math.floor(current) / 1000).toFixed(1) + 'k';
+                            }
+                        } else {
+                            counter.innerText = Math.floor(current);
+                        }
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        if (target === 12500) {
+                            counter.innerText = '12.5k';
+                        } else {
+                            counter.innerText = target;
+                        }
+                    }
+                };
+                updateCounter();
+            };
+            
+            // Animate Progress Bars
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            const animateProgressBar = (bar) => {
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 200);
+            };
+            
+            // Start animations after a short delay
+            setTimeout(() => {
+                counters.forEach(animateCounter);
+                progressBars.forEach(animateProgressBar);
+            }, 300);
         });
 
         // Translations
@@ -658,15 +1025,77 @@
                 applyNow: "Apply Now",
                 contactUs: "Contact Us",
                 ctaTag: "JOIN OUR COMMUNITY",
-                ctaHeading: "Ready to Start Your Child's Success Journey?",
+                ctaHeading1: "Ready to Start Your Child's",
+                ctaHeading2: "Success Journey?",
                 ctaDesc: "Enroll your child today at Ibri Private School and give them the foundation they deserve.",
                 quickLinks: "Quick Links",
                 contactInfo: "Contact Info",
                 footerAbout: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world.",
                 footerAddress: "Ibri, Ad Dhahirah Governorate, Sultanate of Oman",
                 copyright: "© 2024 Ibri Private School. All rights reserved.",
-                eventsBadge: "Never Miss Out",
-                eventsSubtitle: "Join us for exciting events throughout the academic year"
+                privacy: "Privacy Policy",
+                terms: "Terms of Service",
+                // Hero Section
+                whatsNew: "WHAT'S NEW",
+                heroTitle1: "Discover the",
+                heroTitle2: "Latest Stories",
+                heroDesc: "From academic achievements to community events — everything happening at our school",
+                trend1: "ScienceFair2025",
+                trend2: "CulturalDay",
+                trend3: "SportsChampions",
+                trend4: "Graduation2025",
+                exploreNowBtn: "Explore Now",
+                subscribeBtn: "Subscribe",
+                stat1: "Stories published this month",
+                stat2: "Total community views",
+                stat3: "Community responses",
+                // Live Ticker
+                liveUpdates: "Live Updates",
+                news1: "Ibri School wins Robotics Championship 2025",
+                news2: "Graduation Ceremony starts June 20",
+                news3: "New AI & STEM Labs officially opened",
+                news4: "Cultural Festival registrations now open",
+                // Featured Stories
+                featuredBadge: "Featured Stories",
+                featuredTitle1: "Discover The",
+                featuredTitle2: "Stories Behind Success",
+                featuredDesc: "Explore inspiring achievements, student experiences, school innovations, and unforgettable moments happening inside our campus.",
+                featuredArticle: "Featured Article",
+                featuredCategory: "Innovation & Technology",
+                featuredTitle: "Students Build AI Powered Smart City Projects",
+                featuredDescText: "Young innovators showcased futuristic solutions using robotics, sustainability concepts, and artificial intelligence technologies.",
+                readFullStory: "Read Full Story",
+                educationTag: "Education",
+                smallStoryTitle: "New STEM Laboratories Opened",
+                smallStoryDesc: "Students now have access to advanced robotics, engineering, coding, and AI innovation labs.",
+                achievementBadge: "Achievement",
+                achievementDesc: "Academic excellence and student performance growth this year.",
+                upcomingTag: "Upcoming",
+                upcomingTitle: "Graduation Week",
+                event1: "Final Rehearsals",
+                event2: "Parents Gathering",
+                event3: "Graduation Ceremony",
+                date1: "June 14",
+                date2: "June 17",
+                date3: "June 20",
+                // Timeline
+                annualJourney: "Annual Journey",
+                timelineTitle1: "A Year Filled With",
+                timelineTitle2: "Extraordinary Experiences",
+                timelineDesc: "Explore the unforgettable moments, competitions, leadership programs, and celebrations shaping our student community.",
+                month1: "January 2025",
+                timelineEvent1: "Leadership Winter Camp",
+                timelineDesc1: "Students enhanced communication, leadership, teamwork, and problem-solving skills through immersive workshops and outdoor collaborative activities.",
+                studentsStat: "Students",
+                workshopsStat: "Workshops",
+                featuredEvent: "Featured Event",
+                leadership2025: "Leadership 2025",
+                empoweringLeaders: "Empowering Future Leaders",
+                skillsText: "Confidence • Communication • Collaboration",
+                // Video Section
+                schoolHighlights: "School Highlights",
+                videoTitle: "Experience The Energy Of Our School Community",
+                videoDesc: "Watch unforgettable moments from competitions, student achievements, sports championships, and cultural celebrations."
             },
             ar: {
                 schoolNameMain: "مدرسة عبري الخاصة",
@@ -686,15 +1115,77 @@
                 applyNow: "قدم الآن",
                 contactUs: "اتصل بنا",
                 ctaTag: "انضم إلى مجتمعنا",
-                ctaHeading: "هل أنت مستعد لبدء رحلة نجاح طفلك؟",
-                ctaDesc: "سجل طفلك اليوم في مدرسة عبري الخاصة وامنحه الأساس الذي يستحقه.",
+                ctaHeading1: "هل أنت مستعد لبدء",
+                ctaHeading2: "رحلة نجاح طفلك؟",
+                ctaDesc: "سجل طفلك اليوم في مدرسة عبري الخاصة وامنحه الأساس الذي يستحقه. القبول للعام الدراسي الجديد مفتوح الآن.",
                 quickLinks: "روابط سريعة",
                 contactInfo: "معلومات التواصل",
                 footerAbout: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم عالمي دائم التغير.",
                 footerAddress: "عبري، محافظة الظاهرة، سلطنة عمان",
                 copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة.",
-                eventsBadge: "لا تفوت أبداً",
-                eventsSubtitle: "انضم إلينا في فعاليات مثيرة طوال العام الدراسي"
+                privacy: "سياسة الخصوصية",
+                terms: "شروط الخدمة",
+                // Hero Section
+                whatsNew: "ما الجديد",
+                heroTitle1: "اكتشف",
+                heroTitle2: "أحدث القصص",
+                heroDesc: "من الإنجازات الأكاديمية إلى الفعاليات المجتمعية — كل ما يحدث في مدرستنا",
+                trend1: "معرضالعلوم2025",
+                trend2: "اليومالثقافي",
+                trend3: "أبطالالرياضة",
+                trend4: "التخرج2025",
+                exploreNowBtn: "استكشف الآن",
+                subscribeBtn: "اشترك",
+                stat1: "القصص المنشورة هذا الشهر",
+                stat2: "إجمالي المشاهدات",
+                stat3: "ردود المجتمع",
+                // Live Ticker
+                liveUpdates: "تحديثات مباشرة",
+                news1: "مدرسة عبري تفوز ببطولة الروبوتات 2025",
+                news2: "حفل التخرج يبدأ في 20 يونيو",
+                news3: "افتتاح مختبرات الذكاء الاصطناعي والعلوم",
+                news4: "التسجيل في المهرجان الثقافي مفتوح الآن",
+                // Featured Stories
+                featuredBadge: "قصص مميزة",
+                featuredTitle1: "اكتشف",
+                featuredTitle2: "قصص النجاح",
+                featuredDesc: "استكشف الإنجازات الملهمة والتجارب الطلابية والابتكارات المدرسية واللحظات التي لا تنسى داخل حرمنا الجامعي.",
+                featuredArticle: "مقال مميز",
+                featuredCategory: "الابتكار والتكنولوجيا",
+                featuredTitle: "الطلاب يبنون مشاريع مدن ذكية تعمل بالذكاء الاصطناعي",
+                featuredDescText: "قدم المبتكرون الصغار حلولاً مستقبلية باستخدام الروبوتات ومفاهيم الاستدامة وتقنيات الذكاء الاصطناعي.",
+                readFullStory: "اقرأ القصة كاملة",
+                educationTag: "التعليم",
+                smallStoryTitle: "افتتاح مختبرات STEM الجديدة",
+                smallStoryDesc: "أصبح لدى الطلاب الآن إمكانية الوصول إلى مختبرات متقدمة للروبوتات والهندسة والبرمجة والابتكار في الذكاء الاصطناعي.",
+                achievementBadge: "إنجاز",
+                achievementDesc: "التميز الأكاديمي ونمو أداء الطلاب هذا العام.",
+                upcomingTag: "قادم",
+                upcomingTitle: "أسبوع التخرج",
+                event1: "البروفات النهائية",
+                event2: "لقاء أولياء الأمور",
+                event3: "حفل التخرج",
+                date1: "14 يونيو",
+                date2: "17 يونيو",
+                date3: "20 يونيو",
+                // Timeline
+                annualJourney: "الرحلة السنوية",
+                timelineTitle1: "عام مليء",
+                timelineTitle2: "بتجارب استثنائية",
+                timelineDesc: "استكشف اللحظات التي لا تنسى والمسابقات وبرامج القيادة والاحتفالات التي تشكل مجتمع طلابنا.",
+                month1: "يناير 2025",
+                timelineEvent1: "معسكر القيادة الشتوي",
+                timelineDesc1: "عزز الطلاب مهارات التواصل والقيادة والعمل الجماعي وحل المشكلات من خلال ورش عمل غامرة وأنشطة تعاونية في الهواء الطلق.",
+                studentsStat: "طالب",
+                workshopsStat: "ورشة عمل",
+                featuredEvent: "فعالية مميزة",
+                leadership2025: "القيادة 2025",
+                empoweringLeaders: "تمكين قادة المستقبل",
+                skillsText: "الثقة • التواصل • التعاون",
+                // Video Section
+                schoolHighlights: "أبرز فعاليات المدرسة",
+                videoTitle: "اختبر طاقة مجتمع مدرستنا",
+                videoDesc: "شاهد لحظات لا تنسى من المسابقات والإنجازات الطلابية وبطولات الرياضة والاحتفالات الثقافية."
             }
         };
 
@@ -705,20 +1196,44 @@
             if (lang === 'ar') {
                 htmlTag.setAttribute('dir', 'rtl');
                 htmlTag.setAttribute('lang', 'ar');
-                document.getElementById('lang-ar').classList.replace('text-black/40', 'text-primary');
-                document.getElementById('lang-en').classList.replace('text-primary', 'text-black/40');
+                const langAr = document.getElementById('lang-ar');
+                const langEn = document.getElementById('lang-en');
+                if (langAr && langEn) {
+                    langAr.classList.replace('text-black/40', 'text-primary');
+                    langEn.classList.replace('text-primary', 'text-black/40');
+                }
+                const mobLangAr = document.getElementById('mob-lang-ar');
+                const mobLangEn = document.getElementById('mob-lang-en');
+                if (mobLangAr && mobLangEn) {
+                    mobLangAr.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangAr.classList.remove('text-black/60');
+                    mobLangEn.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangEn.classList.add('text-black/60');
+                }
                 if (btnIcon) btnIcon.style.transform = 'scaleX(-1)';
             } else {
                 htmlTag.setAttribute('dir', 'ltr');
                 htmlTag.setAttribute('lang', 'en');
-                document.getElementById('lang-en').classList.replace('text-black/40', 'text-primary');
-                document.getElementById('lang-ar').classList.replace('text-primary', 'text-black/40');
+                const langEn = document.getElementById('lang-en');
+                const langAr = document.getElementById('lang-ar');
+                if (langEn && langAr) {
+                    langEn.classList.replace('text-black/40', 'text-primary');
+                    langAr.classList.replace('text-primary', 'text-black/40');
+                }
+                const mobLangEn = document.getElementById('mob-lang-en');
+                const mobLangAr = document.getElementById('mob-lang-ar');
+                if (mobLangEn && mobLangAr) {
+                    mobLangEn.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangEn.classList.remove('text-black/60');
+                    mobLangAr.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangAr.classList.add('text-black/60');
+                }
                 if (btnIcon) btnIcon.style.transform = 'scaleX(1)';
             }
 
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
+                if (translations[lang] && translations[lang][key]) {
                     el.textContent = translations[lang][key];
                 }
             });
@@ -734,35 +1249,39 @@
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
-            mobileMenu.classList.add('translate-x-0', 'opacity-100', 'visible');
-            document.body.style.overflow = 'hidden';
-        });
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+                mobileMenu.classList.add('translate-x-0', 'opacity-100', 'visible');
+                document.body.style.overflow = 'hidden';
+            });
 
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
-            mobileMenu.classList.remove('translate-x-0', 'opacity-100', 'visible');
-            document.body.style.overflow = '';
-        });
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full', 'opacity-0', 'invisible');
+                mobileMenu.classList.remove('translate-x-0', 'opacity-100', 'visible');
+                document.body.style.overflow = '';
+            });
+        }
 
         // Explore Toggle
         const exploreToggle = document.getElementById('mobile-explore-toggle');
         const exploreMenu = document.getElementById('mobile-explore-menu');
         const exploreChevron = document.getElementById('explore-chevron');
 
-        exploreToggle.addEventListener('click', () => {
-            const isOpen = !exploreMenu.classList.contains('max-h-0');
-            if (isOpen) {
-                exploreMenu.classList.add('max-h-0', 'opacity-0', 'invisible');
-                exploreMenu.classList.remove('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
-                exploreChevron.classList.remove('rotate-180');
-            } else {
-                exploreMenu.classList.remove('max-h-0', 'opacity-0', 'invisible');
-                exploreMenu.classList.add('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
-                exploreChevron.classList.add('rotate-180');
-            }
-        });
+        if (exploreToggle && exploreMenu && exploreChevron) {
+            exploreToggle.addEventListener('click', () => {
+                const isOpen = !exploreMenu.classList.contains('max-h-0');
+                if (isOpen) {
+                    exploreMenu.classList.add('max-h-0', 'opacity-0', 'invisible');
+                    exploreMenu.classList.remove('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
+                    exploreChevron.classList.remove('rotate-180');
+                } else {
+                    exploreMenu.classList.remove('max-h-0', 'opacity-0', 'invisible');
+                    exploreMenu.classList.add('max-h-[500px]', 'opacity-100', 'visible', 'mt-4');
+                    exploreChevron.classList.add('rotate-180');
+                }
+            });
+        }
 
         setLanguage('en');
     </script>
