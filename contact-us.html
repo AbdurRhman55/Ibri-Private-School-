@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ibri Private School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['DM Sans', 'Cairo', 'sans-serif'],
+                        display: ['DM Serif Display', 'serif'],
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: { DEFAULT: '#3fa394' },
+                        secondary: { DEFAULT: '#ffd505' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --teal: #3fa394;
+            --teal-light: #e8f5f3;
+            --teal-mid: #c2e5e0;
+            --yellow: #ffd505;
+            --dark: #0e1a18;
+            --muted: #6b7c7a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        /* ── HERO ── */
+        .hero-section {
+            background: #f7faf9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(63, 163, 148, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 213, 5, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: white;
+            border: 1px solid var(--teal-mid);
+            color: var(--teal);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* ── INFO STRIP ── */
+        .info-strip {
+            background: white;
+            border-top: 1px solid #eef2f1;
+            border-bottom: 1px solid #eef2f1;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 0;
+            flex: 1;
+            position: relative;
+        }
+
+        .info-item+.info-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: #eef2f1;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--teal-light);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .info-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #9caeac;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        /* ── FORM SECTION ── */
+        .form-card {
+            background: white;
+            border: 1px solid #eef2f1;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: var(--dark);
+            padding: 28px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-header::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(63, 163, 148, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .form-body {
+            padding: 28px 32px;
+        }
+
+        .field-group {
+            margin-bottom: 18px;
+        }
+
+        .field-label {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            color: #9caeac;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+
+        .field-input {
+            width: 100%;
+            height: 46px;
+            border: 1.5px solid #e8eeec;
+            border-radius: 10px;
+            padding: 0 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--dark);
+            font-family: 'DM Sans', sans-serif;
+            background: #f9fbfb;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .field-input:focus {
+            border-color: var(--teal);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(63, 163, 148, 0.08);
+        }
+
+        .field-textarea {
+            height: auto;
+            resize: none;
+            padding: 12px 14px;
+        }
+
+        .send-btn {
+            width: 100%;
+            height: 48px;
+            background: var(--teal);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.25s;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .send-btn:hover {
+            background: var(--yellow);
+            color: var(--dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(63, 163, 148, 0.25);
+        }
+
+        /* ── MAP CARD ── */
+        .map-card {
+            background: white;
+            border: 1px solid #eef2f1;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .map-frame {
+            height: 385px;
+            position: relative;
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: saturate(0.7) contrast(1.05);
+        }
+
+        .map-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(14, 26, 24, 0.15) 0%, transparent 60%);
+        }
+
+        .map-info {
+            padding: 20px 24px;
+            border-top: 1px solid #eef2f1;
+        }
+
+        /* ── SOCIAL ROW ── */
+        .social-row {
+            background: var(--teal-light);
+            border: 1px solid var(--teal-mid);
+            border-radius: 16px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: white;
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid var(--teal-mid);
+        }
+
+        .social-btn:hover {
+            background: var(--teal);
+            color: white;
+            transform: translateY(-2px);
+            border-color: var(--teal);
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 48px 40px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(63, 163, 148, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 213, 5, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--teal);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .cta-btn:hover {
+            background: var(--yellow);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.55s ease both;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-5 {
+            animation-delay: 0.5s;
+        }
+
+        /* RTL adjustments */
+        [dir="rtl"] .info-item+.info-item::before {
+            left: auto;
+            right: 0;
+        }
+
+        [dir="rtl"] .info-item {
+            flex-direction: row;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .info-item+.info-item::before {
+                display: none;
+            }
+
+            .form-body,
+            .form-header {
+                padding: 20px;
+            }
+
+            .cta-section {
+                padding: 36px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white min-h-screen text-black font-sans">
+
+    <!-- ═══════════════════════════════════════════ NAVBAR (unchanged) -->
+    <header id="main-header"
+        class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
+        <nav
+            class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
+            <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
+                <div
+                    class="h-9 w-9 md:h-11 md:w-11 rounded-xl bg-white flex items-center justify-center p-1 border border-black/10 group-hover:border-primary transition-colors shrink-0 shadow-sm">
+                    <img src="./Asstes/school logo.jpeg" alt="School Logo"
+                        class="h-full w-full object-contain rounded-lg">
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h1 data-i18n="schoolNameMain"
+                        class="text-[13px] md:text-[15px] font-extrabold leading-tight text-black tracking-tight group-hover:text-primary transition-colors">
+                        Ibri Private School</h1>
+                    <h2 data-i18n="schoolNameSub"
+                        class="text-[11px] md:text-[12px] font-bold leading-tight text-black/60 group-hover:text-secondary transition-colors mt-[1px]">
+                        مدرسة عبري الخاصة</h2>
+                </div>
+            </a>
+            <ul class="hidden xl:flex flex-1 justify-center items-center gap-5 2xl:gap-10">
+                <li><a href="index.html"
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i
+                            class="fa-solid fa-house text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span
+                            data-i18n="home">Home</span></a></li>
+                <li><a href="about.html"
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i
+                            class="fa-solid fa-building-columns text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span
+                            data-i18n="about">About</span></a></li>
+                <li><a href="admission.html"
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors"><i
+                            class="fa-solid fa-user-plus text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i><span
+                            data-i18n="admissions">Admissions</span></a></li>
+                <li class="relative group py-2">
+                    <button
+                        class="group flex items-center text-[13px] font-bold text-black/80 hover:text-primary transition-colors focus:outline-none">
+                        <i
+                            class="fa-solid fa-layer-group text-black/40 group-hover:text-primary transition-colors me-1.5 text-[12px]"></i>
+                        <span data-i18n="explore">Explore</span>
+                        <i
+                            class="fa-solid fa-chevron-down ms-1.5 text-[9px] text-black/40 group-hover:text-primary transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="absolute start-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white rounded-xl shadow-xl border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="p-2 flex flex-col gap-1">
+                            <a href="academics.html"
+                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg flex items-center"><i
+                                    class="fa-solid fa-book-open w-6 text-center me-2 text-[11px]"></i><span
+                                    data-i18n="academics">Academics</span></a>
+                            <a href="student-life.html"
+                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg flex items-center"><i
+                                    class="fa-solid fa-users w-6 text-center me-2 text-[11px]"></i><span
+                                    data-i18n="studentLife">Student Life</span></a>
+                            <a href="events.html"
+                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg flex items-center"><i
+                                    class="fa-solid fa-calendar-days w-6 text-center me-2 text-[11px]"></i><span
+                                    data-i18n="news">News & Events</span></a>
+                            <a href="gallery.html"
+                                class="px-3 py-2 text-[12px] font-bold text-black/70 hover:bg-black/5 hover:text-primary rounded-lg flex items-center"><i
+                                    class="fa-solid fa-images w-6 text-center me-2 text-[11px]"></i><span
+                                    data-i18n="gallery">Gallery</span></a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="contact-us.html"
+                        class="group flex items-center text-[13px] font-bold text-primary transition-colors"><i
+                            class="fa-solid fa-envelope text-primary transition-colors me-1.5 text-[12px]"></i><span
+                            data-i18n="contact">Contact</span></a></li>
+            </ul>
+            <div class="flex items-center gap-3 md:gap-5">
+                <button onclick="toggleLanguage()"
+                    class="flex items-center gap-1 text-[10px] md:text-[12px] font-bold text-black/80 hover:bg-black/5 px-2 py-1 md:px-2.5 md:py-1.5 rounded-lg transition-colors border border-black/5">
+                    <i class="fa-solid fa-globe text-black/40 me-0.5"></i>
+                    <span id="lang-ar" class="uppercase text-black/40">AR</span>
+                    <span class="text-black/20 font-normal">|</span>
+                    <span id="lang-en" class="uppercase text-primary">EN</span>
+                </button>
+                <a href="admission.html"
+                    class="hidden xl:flex bg-primary hover:bg-secondary text-white hover:text-black transition-all px-5 py-2.5 rounded-[10px] text-[13px] font-bold items-center gap-2 group shadow-sm">
+                    <span data-i18n="admissionBtn">Admission</span>
+                    <i id="btn-icon" class="fa-solid fa-rocket group-hover:rotate-12 transition-transform"></i>
+                </a>
+                <button id="mobile-menu-btn"
+                    class="xl:hidden flex items-center justify-center h-10 w-10 rounded-xl bg-black/5 text-black/80 hover:bg-primary/10 hover:text-primary transition-all">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-[100] xl:hidden transition-all duration-500 transform translate-x-full opacity-0 invisible">
+        <div class="flex items-center justify-between p-6 border-b border-black/5">
+            <div class="flex items-center gap-3">
+                <img src="./Asstes/school logo.jpeg" alt="Logo" class="h-10 w-auto rounded-lg">
+                <div class="flex flex-col">
+                    <span class="text-primary font-black text-sm tracking-tight" data-i18n="schoolNameMain">IBRI PRIVATE
+                        SCHOOL</span>
+                    <span class="text-black/40 text-[10px] font-bold" data-i18n="schoolNameSub">EST. 1990</span>
+                </div>
+            </div>
+            <button id="close-menu"
+                class="w-11 h-11 rounded-xl bg-black/5 flex items-center justify-center text-black/80"><i
+                    class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+        <div class="flex flex-col h-[calc(100vh-80px)] overflow-y-auto p-6">
+            <nav class="flex flex-col gap-2 mb-8">
+                <a href="index.html"
+                    class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-house w-6 text-center text-black/20"></i>
+                    <span data-i18n="home">Home</span>
+                </a>
+                <a href="about.html"
+                    class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-building-columns w-6 text-center text-black/20"></i>
+                    <span data-i18n="about">About School</span>
+                </a>
+                <a href="admission.html"
+                    class="flex items-center gap-4 p-4 rounded-2xl text-black/80 font-bold hover:bg-black/5">
+                    <i class="fa-solid fa-user-plus w-6 text-center text-black/20"></i>
+                    <span data-i18n="admissions">Admissions</span>
+                </a>
+
+                <!-- Explore Submenu -->
+                <div class="flex flex-col gap-1">
+                    <button id="mobile-explore-toggle"
+                        class="flex items-center justify-between p-4 rounded-2xl text-black/80 font-bold bg-black/[0.02] hover:bg-black/[0.05] transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-layer-group w-6 text-center text-primary"></i>
+                            <span data-i18n="explore">Explore</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-black/20 transition-transform duration-300"
+                            id="explore-chevron"></i>
+                    </button>
+                    <div id="mobile-explore-menu"
+                        class="grid grid-cols-2 gap-2 ps-2 pe-2 mt-0 max-h-0 opacity-0 invisible overflow-hidden transition-all duration-500 ease-in-out">
+                        <a href="academics.html"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i
+                                class="fa-solid fa-book-open text-black/20 group-hover/item:text-primary transition-colors"></i>
+                            <span class="text-xs font-bold text-black/60" data-i18n="academics">Academics</span>
+                        </a>
+                        <a href="student-life.html"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i
+                                class="fa-solid fa-users text-black/20 group-hover/item:text-primary transition-colors"></i>
+                            <span class="text-xs font-bold text-black/60" data-i18n="studentLife">Student Life</span>
+                        </a>
+                        <a href="events.html"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i class="fa-solid fa-calendar-days text-black/20"></i>
+                            <span class="text-xs font-bold text-black/60" data-i18n="news">News & Events</span>
+                        </a>
+                        <a href="gallery.html"
+                            class="flex flex-col gap-2 p-4 rounded-2xl bg-gray-50 border border-black/5 group/item hover:bg-black/[0.05] transition-colors">
+                            <i class="fa-solid fa-images text-black/20"></i>
+                            <span class="text-xs font-bold text-black/60" data-i18n="gallery">Gallery</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="contact-us.html"
+                    class="flex items-center gap-4 p-4 rounded-2xl text-primary font-bold bg-primary/5">
+                    <i class="fa-solid fa-envelope w-6 text-center text-primary"></i>
+                    <span data-i18n="contact">Contact Us</span>
+                </a>
+
+                <div class="border-t border-black/10 my-4"></div>
+
+                <!-- Mobile Language Switcher -->
+                <div class="flex items-center justify-between p-4">
+                    <span class="font-bold text-black/80 text-[14px]" data-i18n="selectLang">Select Language</span>
+                    <div class="flex items-center gap-2 bg-black/5 p-1 rounded-lg">
+                        <button onclick="setLanguage('ar')" id="mob-lang-ar"
+                            class="px-4 py-1.5 text-xs font-bold rounded-md transition-colors text-black/60 hover:text-black">AR</button>
+                        <button onclick="setLanguage('en')" id="mob-lang-en"
+                            class="px-4 py-1.5 text-xs font-bold rounded-md bg-white shadow-sm text-primary transition-colors">EN</button>
+                    </div>
+                </div>
+            </nav>
+
+            <a href="admission.html"
+                class="bg-primary text-white text-center py-4 rounded-2xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                <span data-i18n="admissionBtn">Admission</span>
+            </a>
+        </div>
+    </div>
+
+    <!--  HERO  -->
+    <section class="hero-section pt-6 pb-14 md:pt-8 md:pb-20">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-xl fade-up">
+                <span class="hero-badge mb-5 inline-flex" data-i18n="contactTag">Get In Touch</span>
+                <h1 class="font-display text-4xl md:text-5xl text-[var(--dark)] leading-[1.15] mb-4 mt-3">
+                    We're here<br><em class="text-primary not-italic">to help you.</em>
+                </h1>
+                <p class="text-[var(--muted)] text-[15px] leading-relaxed font-normal max-w-md"
+                    data-i18n="contactSubtitle">
+                    Have questions about admissions, curriculum, or school life? Our team is ready to assist you every
+                    step of the way.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--  INFO STRIP  -->
+    <div class="info-strip fade-up delay-1">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row flex-wrap divide-y sm:divide-y-0">
+
+                <div class="info-item sm:px-6 first:ps-0 last:pe-0">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <div class="info-label" data-i18n="infoAddress">Location</div>
+                        <div class="info-value" data-i18n="footerAddress">Ibri, Ad Dhahirah, Oman</div>
+                    </div>
+                </div>
+
+                <div class="info-item sm:px-6">
+                    <div class="info-icon" style="background:#fff8d6;color:#b89300;"><i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <div class="info-label" data-i18n="infoPhone">Phone</div>
+                        <div class="info-value">+968 2568 0000</div>
+                    </div>
+                </div>
+
+                <div class="info-item sm:px-6">
+                    <div class="info-icon" style="background:#f0f0f0;color:#555;"><i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <div class="info-label" data-i18n="infoEmail">Email</div>
+                        <div class="info-value">info@ibri-school.com</div>
+                    </div>
+                </div>
+
+                <div class="info-item sm:px-6 last:pe-0">
+                    <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <div class="info-label" data-i18n="infoHours">Office Hours</div>
+                        <div class="info-value" data-i18n="infoHoursDays">Sun – Thu &nbsp;·&nbsp; 07:30 – 14:30</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ FORM + MAP (NEW) -->
+    <section class="py-14 md:py-20 px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto">
+        <div class="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_460px] gap-8 items-start">
+
+            <!-- LEFT: Form Card -->
+            <div class="form-card fade-up delay-2">
+                <div class="form-header">
+                    <p class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1 relative z-10"
+                        data-i18n="contactTag">Get In Touch</p>
+                    <h2 class="font-display text-2xl text-white relative z-10" data-i18n="formTitle">Send Us a Message
+                    </h2>
+                </div>
+
+                <div class="form-body">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5">
+                        <div class="field-group">
+                            <label class="field-label" data-i18n="labelName">Full Name</label>
+                            <input type="text" class="field-input" placeholder="e.g. Ahmed Al-Balushi">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" data-i18n="labelEmail">Email</label>
+                            <input type="email" class="field-input" placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label" data-i18n="labelSubject">Subject</label>
+                        <input type="text" class="field-input" placeholder="e.g. Admission Inquiry">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label" data-i18n="labelMessage">Message</label>
+                        <textarea rows="4" class="field-input field-textarea"
+                            placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button class="send-btn mt-2" data-i18n-btn="btnSend">
+                        <span data-i18n="btnSend">Send Message</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                    <p class="text-center text-[11px] text-[var(--muted)] mt-4 font-normal" data-i18n="formSubtitle">We
+                        reply within 24 hours on working days.</p>
+                </div>
+            </div>
+
+            <!-- RIGHT: Map + Social -->
+            <div class="flex flex-col gap-5 fade-up delay-3">
+
+                <!-- Map Card -->
+                <div class="map-card">
+                    <div class="map-frame">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29252.531845584!2d56.49!3d23.23!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8fa84c0703ad35%3A0x4c36b0c0a5b0a167!2sIbri%2C%20Oman!5e0!3m2!1sen!2som!4v1700000000000!5m2!1sen!2som"
+                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="map-overlay"></div>
+                    </div>
+                    <div class="map-info flex items-center justify-between gap-4">
+                        <div>
+                            <p class="text-[11px] font-bold text-[var(--muted)] uppercase tracking-wider mb-0.5"
+                                data-i18n="mapTitle">Our Location</p>
+                            <p class="text-[13px] font-semibold text-[var(--dark)]" data-i18n="footerAddress">Ibri, Ad
+                                Dhahirah Governorate, Oman</p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank"
+                            class="shrink-0 flex items-center gap-2 text-[11px] font-bold text-primary hover:text-[var(--dark)] transition-colors">
+                            <span>Directions</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social Row -->
+                <div class="social-row">
+                    <div>
+                        <p class="text-[13px] font-bold text-[var(--dark)]" data-i18n="socialTitle">Follow Our Journey
+                        </p>
+                        <p class="text-[11px] text-[var(--muted)] mt-0.5 font-normal" data-i18n="socialSubtitle">Stay
+                            updated with news & events.</p>
+                    </div>
+                    <div class="flex gap-2.5">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-twitter text-xs"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-4 pb-14 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto">
+        <div class="cta-section fade-up delay-4">
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <span
+                    class="inline-block px-3 py-1 bg-white/10 text-secondary text-[9px] font-black uppercase tracking-[0.3em] rounded-full mb-5"
+                    data-i18n="ctaTag">Join Our Community</span>
+                <h2 class="font-display text-3xl md:text-4xl text-white mb-4 leading-snug" data-i18n="ctaHeading">
+                    Ready to start your child's <br><span class="text-secondary">success journey?</span>
+                </h2>
+                <p class="text-white/60 text-[14px] mb-8 max-w-md mx-auto leading-relaxed font-normal"
+                    data-i18n="ctaDesc">
+                    Admissions for the new academic year are now open. Give your child the foundation they deserve.
+                </p>
+                <a href="admission.html" class="cta-btn">
+                    <span data-i18n="applyNow">Apply Now</span>
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pt-10 pb-4 px-4 sm:px-6 lg:px-8 border-t border-black/[0.05]">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+                <div class="space-y-6">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="./Asstes/school logo.jpeg" alt="Logo"
+                            class="h-12 w-auto rounded-xl shadow-sm border border-black/5">
+                        <div class="flex flex-col">
+                            <span class="text-lg font-black text-black leading-tight" data-i18n="schoolNameMain">Ibri
+                                Private School</span>
+                            <span class="text-[10px] font-bold text-black/40 mt-[1px]" data-i18n="schoolNameSub">مدرسة
+                                عبري الخاصة</span>
+                        </div>
+                    </a>
+                    <p class="text-slate-500 text-sm leading-relaxed font-medium" data-i18n="footerAbout">Empowering
+                        students with knowledge, character, and skills to excel in an ever-changing global world.</p>
+
+
+                    <div class="flex items-center gap-3">
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center text-black/30 hover:text-primary hover:border-primary/20 hover:bg-primary/5 transition-all"><i
+                                class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center text-black/30 hover:text-primary hover:border-primary/20 hover:bg-primary/5 transition-all"><i
+                                class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center text-black/30 hover:text-primary hover:border-primary/20 hover:bg-primary/5 transition-all"><i
+                                class="fa-brands fa-twitter text-xs"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center text-black/30 hover:text-primary hover:border-primary/20 hover:bg-primary/5 transition-all"><i
+                                class="fa-brands fa-youtube text-xs"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center text-black/30 hover:text-primary hover:border-primary/20 hover:bg-primary/5 transition-all"><i
+                                class="fa-brands fa-tiktok text-xs"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8" data-i18n="quickLinks">
+                        Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors"
+                                data-i18n="home">Home</a></li>
+                        <li><a href="about.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors"
+                                data-i18n="about">About</a></li>
+                        <li><a href="admission.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors"
+                                data-i18n="admissions">Admissions</a></li>
+                        <li><a href="events.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors"
+                                data-i18n="news">News & Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8" data-i18n="explore">Explore
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="academics.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors"
+                                data-i18n="academics">Academics</a></li>
+                        <li><a href="student-life.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors"
+                                data-i18n="studentLife">Student Life</a></li>
+                        <li><a href="gallery.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors"
+                                data-i18n="gallery">Gallery</a></li>
+                        <li><a href="contact-us.html"
+                                class="text-slate-500 hover:text-primary font-bold text-sm transition-colors"
+                                data-i18n="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-sm font-black text-black uppercase tracking-widest mb-8" data-i18n="contactInfo">
+                        Contact Info</h4>
+                    <p class="text-slate-500 text-sm font-bold flex items-start gap-3"><i
+                            class="fa-solid fa-location-dot text-primary mt-1"></i><span data-i18n="footerAddress">Ibri,
+                            Ad Dhahirah Governorate, Sultanate of Oman</span></p>
+                    <p class="text-slate-500 text-sm font-bold flex items-center gap-3"><i
+                            class="fa-solid fa-phone text-primary"></i><span>+968 2568 0000</span></p>
+                    <p class="text-slate-500 text-sm font-bold flex items-center gap-3"><i
+                            class="fa-solid fa-envelope text-primary"></i><span>info@ibri-school.com</span></p>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-black/[0.05] flex items-center justify-center gap-4">
+                <p class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em]" data-i18n="copyright">© 2026
+                    Ibri Private School. All rights reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) { header.classList.remove('pt-3', 'sm:pt-5'); header.classList.add('pt-2'); }
+            else { header.classList.add('pt-3', 'sm:pt-5'); header.classList.remove('pt-2'); }
+        });
+
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').onclick = () => {
+            const m = document.getElementById('mobile-menu');
+            m.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+            m.classList.add('translate-x-0', 'opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
+        };
+        document.getElementById('close-menu').onclick = () => {
+            const m = document.getElementById('mobile-menu');
+            m.classList.add('translate-x-full', 'opacity-0', 'invisible');
+            m.classList.remove('translate-x-0', 'opacity-100', 'visible');
+            document.body.style.overflow = '';
+        };
+
+        // Mobile Explore Toggle
+        const exploreToggle = document.getElementById('mobile-explore-toggle');
+        const exploreMenu = document.getElementById('mobile-explore-menu');
+        const exploreChevron = document.getElementById('explore-chevron');
+        if (exploreToggle && exploreMenu) {
+            exploreToggle.addEventListener('click', () => {
+                const isOpen = !exploreMenu.classList.contains('max-h-0');
+                if (isOpen) {
+                    exploreMenu.classList.add('max-h-0', 'opacity-0', 'invisible');
+                    exploreMenu.classList.remove('max-h-[500px]', 'opacity-100', 'visible', 'mt-2');
+                    if (exploreChevron) exploreChevron.style.transform = '';
+                } else {
+                    exploreMenu.classList.remove('max-h-0', 'opacity-0', 'invisible');
+                    exploreMenu.classList.add('max-h-[500px]', 'opacity-100', 'visible', 'mt-2');
+                    if (exploreChevron) exploreChevron.style.transform = 'rotate(180deg)';
+                }
+            });
+        }
+
+        // Translations
+        const translations = {
+            en: {
+                schoolNameMain: "Ibri Private School", schoolNameSub: "مدرسة عبري الخاصة",
+                home: "Home", about: "About", admissions: "Admissions", explore: "Explore",
+                academics: "Academics", studentLife: "Student Life", news: "News & Events",
+                gallery: "Gallery", contact: "Contact", admissionBtn: "Admission", selectLang: "Select Language",
+                contactTag: "GET IN TOUCH",
+                contactTitle: "We're here to help you.",
+                contactSubtitle: "Have questions about admissions, curriculum, or school life? Our team is ready to assist you every step of the way.",
+                infoAddress: "Location", footerAddress: "Ibri, Ad Dhahirah Governorate, Oman",
+                infoPhone: "Phone", infoEmail: "Email", infoHours: "Office Hours",
+                infoHoursDays: "Sun – Thu · 07:30 – 14:30",
+                formTitle: "Send Us a Message",
+                formSubtitle: "We reply within 24 hours on working days.",
+                labelName: "Full Name", labelEmail: "Email", labelSubject: "Subject", labelMessage: "Message",
+                btnSend: "Send Message", mapTitle: "Our Location",
+                socialTitle: "Follow Our Journey", socialSubtitle: "Stay updated with news & events.",
+                ctaTag: "JOIN OUR COMMUNITY", ctaHeading: "Ready to start your child's success journey?",
+                ctaDesc: "Admissions for the new academic year are now open. Give your child the foundation they deserve.",
+                applyNow: "Apply Now", quickLinks: "Quick Links", explore: "Explore",
+                contactInfo: "Contact Info", footerAbout: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world.",
+                copyright: "© 2024 Ibri Private School. All rights reserved."
+            },
+            ar: {
+                schoolNameMain: "مدرسة عبري الخاصة", schoolNameSub: "Ibri Private School",
+                home: "الرئيسية", about: "عن المدرسة", admissions: "القبول", explore: "استكشف",
+                academics: "الأكاديميا", studentLife: "الحياة الطلابية", news: "الأخبار والفعاليات",
+                gallery: "معرض الصور", contact: "اتصل بنا", admissionBtn: "التسجيل", selectLang: "اختر اللغة",
+                contactTag: "تواصل معنا",
+                contactTitle: "نحن هنا لمساعدتكم.",
+                contactSubtitle: "هل لديكم استفسارات حول القبول أو المناهج أو الحياة المدرسية؟ فريقنا مستعد لمساعدتكم.",
+                infoAddress: "الموقع", footerAddress: "عبري، محافظة الظاهرة، سلطنة عمان",
+                infoPhone: "الهاتف", infoEmail: "البريد الإلكتروني", infoHours: "ساعات العمل",
+                infoHoursDays: "الأحد – الخميس · 07:30 – 14:30",
+                formTitle: "أرسل لنا رسالة",
+                formSubtitle: "نرد خلال 24 ساعة في أيام العمل.",
+                labelName: "الاسم الكامل", labelEmail: "البريد الإلكتروني", labelSubject: "الموضوع", labelMessage: "الرسالة",
+                btnSend: "إرسال الرسالة", mapTitle: "موقعنا",
+                socialTitle: "تابع رحلتنا", socialSubtitle: "ابق على اطلاع بآخر الأخبار والفعاليات.",
+                ctaTag: "انضم إلى مجتمعنا", ctaHeading: "هل أنت مستعد لبدء رحلة نجاح طفلك؟",
+                ctaDesc: "التسجيل للعام الدراسي الجديد مفتوح الآن. امنح طفلك الأساس الذي يستحقه.",
+                applyNow: "قدم الآن", quickLinks: "روابط سريعة",
+                contactInfo: "معلومات التواصل", footerAbout: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم عالمي دائم التغير.",
+                copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) el.textContent = translations[lang][key];
+            });
+            document.getElementById('lang-ar').className = lang === 'ar' ? 'uppercase text-primary' : 'uppercase text-black/40';
+            document.getElementById('lang-en').className = lang === 'en' ? 'uppercase text-primary' : 'uppercase text-black/40';
+            localStorage.setItem('preferredLang', lang);
+        }
+        function toggleLanguage() {
+            setLanguage((localStorage.getItem('preferredLang') || 'en') === 'en' ? 'ar' : 'en');
+        }
+        setLanguage(localStorage.getItem('preferredLang') || 'en');
+    </script>
+</body>
+
+</html>
