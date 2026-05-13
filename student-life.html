@@ -40,13 +40,20 @@
     </script>
 
     <style>
+        /* Glassmorphism effect for the navbar background to make it modern */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
         }
 
-        [data-aos] {
-            transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        /* Hide scrollbar for slider */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
@@ -54,9 +61,8 @@
 <body class="bg-white min-h-screen text-black">
 
     <!-- NAVBAR -->
-    <div class="sticky top-0 z-50 bg-white/95 backdrop-blur-md">
-        <header id="main-header"
-            class="pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
+    <header id="main-header"
+        class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300 ">
             <nav
                 class="glass-nav rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-black/5 px-4 py-3 xl:px-6 xl:py-3.5 flex items-center justify-between relative gap-2 xl:gap-4">
                 <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
@@ -145,8 +151,7 @@
                     </button>
                 </div>
             </nav>
-        </header>
-    </div>
+    </header>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
