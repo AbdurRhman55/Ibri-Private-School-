@@ -49,12 +49,6 @@
         }
 
         /* ── HERO ── */
-        .hero-section {
-            background: #f7faf9;
-            position: relative;
-            overflow: hidden;
-        }
-
         .hero-section::before {
             content: '';
             position: absolute;
@@ -77,21 +71,6 @@
             border-radius: 50%;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: white;
-            border: 1px solid var(--teal-mid);
-            color: var(--teal);
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            border-radius: 100px;
-        }
-
         .hero-badge::before {
             content: '';
             width: 6px;
@@ -102,21 +81,6 @@
         }
 
         /* ── INFO STRIP ── */
-        .info-strip {
-            background: white;
-            border-top: 1px solid #eef2f1;
-            border-bottom: 1px solid #eef2f1;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 20px 0;
-            flex: 1;
-            position: relative;
-        }
-
         .info-item+.info-item::before {
             content: '';
             position: absolute;
@@ -127,50 +91,7 @@
             background: #eef2f1;
         }
 
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: var(--teal-light);
-            color: var(--teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-
-        .info-label {
-            font-size: 10px;
-            font-weight: 700;
-            color: #9caeac;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 2px;
-        }
-
-        .info-value {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--dark);
-            line-height: 1.3;
-        }
-
         /* ── FORM SECTION ── */
-        .form-card {
-            background: white;
-            border: 1px solid #eef2f1;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .form-header {
-            background: var(--dark);
-            padding: 28px 32px;
-            position: relative;
-            overflow: hidden;
-        }
-
         .form-header::after {
             content: '';
             position: absolute;
@@ -182,153 +103,7 @@
             border-radius: 50%;
         }
 
-        .form-body {
-            padding: 28px 32px;
-        }
-
-        .field-group {
-            margin-bottom: 18px;
-        }
-
-        .field-label {
-            display: block;
-            font-size: 10px;
-            font-weight: 700;
-            color: #9caeac;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 6px;
-        }
-
-        .field-input {
-            width: 100%;
-            height: 46px;
-            border: 1.5px solid #e8eeec;
-            border-radius: 10px;
-            padding: 0 14px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--dark);
-            font-family: 'DM Sans', sans-serif;
-            background: #f9fbfb;
-            outline: none;
-            transition: all 0.2s;
-        }
-
-        .field-input:focus {
-            border-color: var(--teal);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(63, 163, 148, 0.08);
-        }
-
-        .field-textarea {
-            height: auto;
-            resize: none;
-            padding: 12px 14px;
-        }
-
-        .send-btn {
-            width: 100%;
-            height: 48px;
-            background: var(--teal);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.25s;
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        .send-btn:hover {
-            background: var(--yellow);
-            color: var(--dark);
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(63, 163, 148, 0.25);
-        }
-
-        /* ── MAP CARD ── */
-        .map-card {
-            background: white;
-            border: 1px solid #eef2f1;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .map-frame {
-            height: 385px;
-            position: relative;
-        }
-
-        .map-frame iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            filter: saturate(0.7) contrast(1.05);
-        }
-
-        .map-overlay {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background: linear-gradient(to top, rgba(14, 26, 24, 0.15) 0%, transparent 60%);
-        }
-
-        .map-info {
-            padding: 20px 24px;
-            border-top: 1px solid #eef2f1;
-        }
-
-        /* ── SOCIAL ROW ── */
-        .social-row {
-            background: var(--teal-light);
-            border: 1px solid var(--teal-mid);
-            border-radius: 16px;
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-        }
-
-        .social-btn {
-            width: 38px;
-            height: 38px;
-            border-radius: 8px;
-            background: white;
-            color: var(--teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            text-decoration: none;
-            transition: all 0.2s;
-            border: 1px solid var(--teal-mid);
-        }
-
-        .social-btn:hover {
-            background: var(--teal);
-            color: white;
-            transform: translateY(-2px);
-            border-color: var(--teal);
-        }
-
         /* ── CTA ── */
-        .cta-section {
-            background: var(--dark);
-            border-radius: 20px;
-            padding: 48px 40px;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-
         .cta-section::before {
             content: '';
             position: absolute;
@@ -349,26 +124,6 @@
             height: 200px;
             background: radial-gradient(circle, rgba(255, 213, 5, 0.1) 0%, transparent 70%);
             border-radius: 50%;
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--teal);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.25s;
-        }
-
-        .cta-btn:hover {
-            background: var(--yellow);
-            color: var(--dark);
-            transform: translateY(-2px);
         }
 
         /* ── ANIMATIONS ── */
@@ -423,22 +178,13 @@
             .info-item+.info-item::before {
                 display: none;
             }
-
-            .form-body,
-            .form-header {
-                padding: 20px;
-            }
-
-            .cta-section {
-                padding: 36px 24px;
-            }
         }
     </style>
 </head>
 
 <body class="bg-white min-h-screen text-black font-sans">
 
-    <!-- ═══════════════════════════════════════════ NAVBAR (unchanged) -->
+    <!-- NAVBAR  -->
     <header id="main-header"
         class="sticky top-0 z-50 pt-3 px-3 sm:pt-5 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full transition-all duration-300">
         <nav
@@ -631,7 +377,9 @@
     <section class="hero-section pt-6 pb-14 md:pt-8 md:pb-20">
         <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-xl fade-up">
-                <span class="hero-badge mb-5 inline-flex" data-i18n="contactTag">Get In Touch</span>
+                <span
+                    class="hero-badge inline-flex items-center gap-[6px] bg-white border border-[#c2e5e0] text-primary text-[10px] font-bold tracking-[0.15em] uppercase px-[14px] py-[6px] rounded-full mb-5"
+                    data-i18n="contactTag">Get In Touch</span>
                 <h1 class="font-display text-4xl md:text-5xl text-[var(--dark)] leading-[1.15] mb-4 mt-3">
                     We're here<br><em class="text-primary not-italic">to help you.</em>
                 </h1>
@@ -645,41 +393,53 @@
     </section>
 
     <!--  INFO STRIP  -->
-    <div class="info-strip fade-up delay-1">
+    <div class="info-strip bg-white border-y border-[#eef2f1] fade-up delay-1">
         <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row flex-wrap divide-y sm:divide-y-0">
 
-                <div class="info-item sm:px-6 first:ps-0 last:pe-0">
-                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="info-item flex items-center gap-[14px] py-5 flex-1 relative sm:px-6 first:ps-0 last:pe-0">
+                    <div
+                        class="info-icon w-10 h-10 rounded-lg bg-[#e8f5f3] text-primary flex items-center justify-center text-[14px] shrink-0">
+                        <i class="fa-solid fa-location-dot"></i></div>
                     <div>
-                        <div class="info-label" data-i18n="infoAddress">Location</div>
-                        <div class="info-value" data-i18n="footerAddress">Ibri, Ad Dhahirah, Oman</div>
+                        <div class="text-[10px] font-bold text-[#9caeac] uppercase tracking-[0.1em] mb-[2px]"
+                            data-i18n="infoAddress">Location</div>
+                        <div class="text-[13px] font-semibold text-[#0e1a18] leading-[1.3]" data-i18n="footerAddress">
+                            Ibri, Ad Dhahirah, Oman</div>
                     </div>
                 </div>
 
-                <div class="info-item sm:px-6">
-                    <div class="info-icon" style="background:#fff8d6;color:#b89300;"><i class="fa-solid fa-phone"></i>
+                <div class="info-item flex items-center gap-[14px] py-5 flex-1 relative sm:px-6">
+                    <div class="info-icon w-10 h-10 rounded-lg flex items-center justify-center text-[14px] shrink-0"
+                        style="background:#fff8d6;color:#b89300;"><i class="fa-solid fa-phone"></i>
                     </div>
                     <div>
-                        <div class="info-label" data-i18n="infoPhone">Phone</div>
-                        <div class="info-value">+968 2568 0000</div>
+                        <div class="text-[10px] font-bold text-[#9caeac] uppercase tracking-[0.1em] mb-[2px]"
+                            data-i18n="infoPhone">Phone</div>
+                        <div class="text-[13px] font-semibold text-[#0e1a18] leading-[1.3]">+968 2568 0000</div>
                     </div>
                 </div>
 
-                <div class="info-item sm:px-6">
-                    <div class="info-icon" style="background:#f0f0f0;color:#555;"><i class="fa-solid fa-envelope"></i>
+                <div class="info-item flex items-center gap-[14px] py-5 flex-1 relative sm:px-6">
+                    <div class="info-icon w-10 h-10 rounded-lg flex items-center justify-center text-[14px] shrink-0"
+                        style="background:#f0f0f0;color:#555;"><i class="fa-solid fa-envelope"></i>
                     </div>
                     <div>
-                        <div class="info-label" data-i18n="infoEmail">Email</div>
-                        <div class="info-value">info@ibri-school.com</div>
+                        <div class="text-[10px] font-bold text-[#9caeac] uppercase tracking-[0.1em] mb-[2px]"
+                            data-i18n="infoEmail">Email</div>
+                        <div class="text-[13px] font-semibold text-[#0e1a18] leading-[1.3]">info@ibri-school.com</div>
                     </div>
                 </div>
 
-                <div class="info-item sm:px-6 last:pe-0">
-                    <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="info-item flex items-center gap-[14px] py-5 flex-1 relative sm:px-6 last:pe-0">
+                    <div
+                        class="info-icon w-10 h-10 rounded-lg bg-[#e8f5f3] text-primary flex items-center justify-center text-[14px] shrink-0">
+                        <i class="fa-solid fa-clock"></i></div>
                     <div>
-                        <div class="info-label" data-i18n="infoHours">Office Hours</div>
-                        <div class="info-value" data-i18n="infoHoursDays">Sun – Thu &nbsp;·&nbsp; 07:30 – 14:30</div>
+                        <div class="text-[10px] font-bold text-[#9caeac] uppercase tracking-[0.1em] mb-[2px]"
+                            data-i18n="infoHours">Office Hours</div>
+                        <div class="text-[13px] font-semibold text-[#0e1a18] leading-[1.3]" data-i18n="infoHoursDays">
+                            Sun – Thu &nbsp;·&nbsp; 07:30 – 14:30</div>
                     </div>
                 </div>
 
@@ -692,35 +452,50 @@
         <div class="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_460px] gap-8 items-start">
 
             <!-- LEFT: Form Card -->
-            <div class="form-card fade-up delay-2">
-                <div class="form-header">
+            <div class="form-card bg-white border border-[#eef2f1] rounded-[20px] overflow-hidden fade-up delay-2">
+                <div class="form-header bg-[#0e1a18] p-5 md:px-8 md:py-7 relative overflow-hidden">
                     <p class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1 relative z-10"
                         data-i18n="contactTag">Get In Touch</p>
                     <h2 class="font-display text-2xl text-white relative z-10" data-i18n="formTitle">Send Us a Message
                     </h2>
                 </div>
 
-                <div class="form-body">
+                <div class="p-5 md:px-8 md:py-7">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5">
-                        <div class="field-group">
-                            <label class="field-label" data-i18n="labelName">Full Name</label>
-                            <input type="text" class="field-input" placeholder="e.g. Ahmed Al-Balushi">
+                        <div class="mb-[18px]">
+                            <label
+                                class="block text-[10px] font-bold text-[#9caeac] uppercase tracking-[0.1em] mb-[6px]"
+                                data-i18n="labelName">Full Name</label>
+                            <input type="text"
+                                class="w-full h-[46px] border-[1.5px] border-[#e8eeec] rounded-[10px] px-[14px] text-[13px] font-medium text-[#0e1a18] font-sans bg-[#f9fbfb] outline-none transition-all duration-200 focus:border-primary focus:bg-white focus:ring-[3px] focus:ring-primary/10"
+                                placeholder="e.g. Ahmed Al-Balushi">
                         </div>
-                        <div class="field-group">
-                            <label class="field-label" data-i18n="labelEmail">Email</label>
-                            <input type="email" class="field-input" placeholder="you@example.com">
+                        <div class="mb-[18px]">
+                            <label
+                                class="block text-[10px] font-bold text-[#9caeac] uppercase tracking-[0.1em] mb-[6px]"
+                                data-i18n="labelEmail">Email</label>
+                            <input type="email"
+                                class="w-full h-[46px] border-[1.5px] border-[#e8eeec] rounded-[10px] px-[14px] text-[13px] font-medium text-[#0e1a18] font-sans bg-[#f9fbfb] outline-none transition-all duration-200 focus:border-primary focus:bg-white focus:ring-[3px] focus:ring-primary/10"
+                                placeholder="you@example.com">
                         </div>
                     </div>
-                    <div class="field-group">
-                        <label class="field-label" data-i18n="labelSubject">Subject</label>
-                        <input type="text" class="field-input" placeholder="e.g. Admission Inquiry">
+                    <div class="mb-[18px]">
+                        <label class="block text-[10px] font-bold text-[#9caeac] uppercase tracking-[0.1em] mb-[6px]"
+                            data-i18n="labelSubject">Subject</label>
+                        <input type="text"
+                            class="w-full h-[46px] border-[1.5px] border-[#e8eeec] rounded-[10px] px-[14px] text-[13px] font-medium text-[#0e1a18] font-sans bg-[#f9fbfb] outline-none transition-all duration-200 focus:border-primary focus:bg-white focus:ring-[3px] focus:ring-primary/10"
+                            placeholder="e.g. Admission Inquiry">
                     </div>
-                    <div class="field-group">
-                        <label class="field-label" data-i18n="labelMessage">Message</label>
-                        <textarea rows="4" class="field-input field-textarea"
+                    <div class="mb-[18px]">
+                        <label class="block text-[10px] font-bold text-[#9caeac] uppercase tracking-[0.1em] mb-[6px]"
+                            data-i18n="labelMessage">Message</label>
+                        <textarea rows="4"
+                            class="w-full border-[1.5px] border-[#e8eeec] rounded-[10px] text-[13px] font-medium text-[#0e1a18] font-sans bg-[#f9fbfb] outline-none transition-all duration-200 focus:border-primary focus:bg-white focus:ring-[3px] focus:ring-primary/10 !h-auto resize-none py-3 px-[14px]"
                             placeholder="How can we help you?"></textarea>
                     </div>
-                    <button class="send-btn mt-2" data-i18n-btn="btnSend">
+                    <button
+                        class="w-full h-[48px] bg-primary text-white rounded-[10px] text-[13px] font-bold tracking-[0.05em] flex items-center justify-center gap-2 transition-all duration-300 font-sans hover:bg-[#ffd505] hover:text-[#0e1a18] hover:-translate-y-[1px] hover:shadow-[0_8px_24px_rgba(63,163,148,0.25)] mt-2"
+                        data-i18n-btn="btnSend">
                         <span data-i18n="btnSend">Send Message</span>
                         <i class="fa-solid fa-paper-plane text-xs"></i>
                     </button>
@@ -733,14 +508,17 @@
             <div class="flex flex-col gap-5 fade-up delay-3">
 
                 <!-- Map Card -->
-                <div class="map-card">
-                    <div class="map-frame">
+                <div class="bg-white border border-[#eef2f1] rounded-[20px] overflow-hidden">
+                    <div class="h-[385px] relative">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29252.531845584!2d56.49!3d23.23!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8fa84c0703ad35%3A0x4c36b0c0a5b0a167!2sIbri%2C%20Oman!5e0!3m2!1sen!2som!4v1700000000000!5m2!1sen!2som"
-                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <div class="map-overlay"></div>
+                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full h-full border-none saturate-[0.7] contrast-[1.05]"></iframe>
+                        <div
+                            class="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0e1a18]/15 from-0% to-transparent to-60%">
+                        </div>
                     </div>
-                    <div class="map-info flex items-center justify-between gap-4">
+                    <div class="px-6 py-5 border-t border-[#eef2f1] flex items-center justify-between gap-4">
                         <div>
                             <p class="text-[11px] font-bold text-[var(--muted)] uppercase tracking-wider mb-0.5"
                                 data-i18n="mapTitle">Our Location</p>
@@ -756,7 +534,8 @@
                 </div>
 
                 <!-- Social Row -->
-                <div class="social-row">
+                <div
+                    class="bg-[#e8f5f3] border border-[#c2e5e0] rounded-2xl px-6 py-5 flex items-center justify-between gap-4">
                     <div>
                         <p class="text-[13px] font-bold text-[var(--dark)]" data-i18n="socialTitle">Follow Our Journey
                         </p>
@@ -764,9 +543,15 @@
                             updated with news & events.</p>
                     </div>
                     <div class="flex gap-2.5">
-                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f text-xs"></i></a>
-                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram text-xs"></i></a>
-                        <a href="#" class="social-btn"><i class="fa-brands fa-twitter text-xs"></i></a>
+                        <a href="#"
+                            class="w-[38px] h-[38px] rounded-lg bg-white text-primary flex items-center justify-center text-[13px] transition-all duration-200 border border-[#c2e5e0] hover:bg-primary hover:text-white hover:-translate-y-[2px] hover:border-primary"><i
+                                class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#"
+                            class="w-[38px] h-[38px] rounded-lg bg-white text-primary flex items-center justify-center text-[13px] transition-all duration-200 border border-[#c2e5e0] hover:bg-primary hover:text-white hover:-translate-y-[2px] hover:border-primary"><i
+                                class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#"
+                            class="w-[38px] h-[38px] rounded-lg bg-white text-primary flex items-center justify-center text-[13px] transition-all duration-200 border border-[#c2e5e0] hover:bg-primary hover:text-white hover:-translate-y-[2px] hover:border-primary"><i
+                                class="fa-brands fa-twitter text-xs"></i></a>
                     </div>
                 </div>
 
@@ -776,7 +561,8 @@
 
     <!-- CTA -->
     <section class="py-4 pb-14 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto">
-        <div class="cta-section fade-up delay-4">
+        <div
+            class="cta-section bg-[#0e1a18] rounded-[20px] px-6 py-9 md:px-10 md:py-12 relative overflow-hidden text-center fade-up delay-4">
             <div class="relative z-10 max-w-2xl mx-auto">
                 <span
                     class="inline-block px-3 py-1 bg-white/10 text-secondary text-[9px] font-black uppercase tracking-[0.3em] rounded-full mb-5"
@@ -788,7 +574,8 @@
                     data-i18n="ctaDesc">
                     Admissions for the new academic year are now open. Give your child the foundation they deserve.
                 </p>
-                <a href="admission.html" class="cta-btn">
+                <a href="admission.html"
+                    class="inline-flex items-center gap-2 bg-primary text-white px-8 py-[14px] rounded-[10px] text-[13px] font-bold transition-all duration-300 hover:bg-[#ffd505] hover:text-[#0e1a18] hover:-translate-y-[2px]">
                     <span data-i18n="applyNow">Apply Now</span>
                     <i class="fa-solid fa-paper-plane text-xs"></i>
                 </a>

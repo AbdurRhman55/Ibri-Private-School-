@@ -657,22 +657,36 @@
     <section class="py-8 md:py-10 bg-gray-50/50 overflow-hidden w-full" id="why-choose">
         <div class="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
             <!-- Header with Navigation -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-8">
-                <div class="max-w-2xl">
-                    <span
-                        class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-4"
-                        data-i18n="whyChooseTag">EXCELLENCE AT IBRI</span>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-6 md:gap-8">
+                <div class="max-w-2xl flex-1">
+                    <div class="flex items-center justify-between mb-4">
+                        <span
+                            class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.3em] rounded-full"
+                            data-i18n="whyChooseTag">EXCELLENCE AT IBRI</span>
+                        
+                        <!-- Nav Buttons (Mobile) -->
+                        <div class="flex md:hidden gap-2">
+                            <button onclick="document.getElementById('slider-prev').click()"
+                                class="w-10 h-10 rounded-xl border border-black/5 bg-white flex items-center justify-center text-black/40 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm group">
+                                <i class="fa-solid fa-chevron-left text-xs group-hover:-translate-x-0.5 transition-transform"></i>
+                            </button>
+                            <button onclick="document.getElementById('slider-next').click()"
+                                class="w-10 h-10 rounded-xl border border-black/5 bg-white flex items-center justify-center text-black/40 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm group">
+                                <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
                     <h2 class="text-4xl md:text-6xl font-black text-black leading-[1.1] tracking-tight"
                         data-i18n="whyChooseHeading">
                         Why Choose <br /> <span class="text-primary">Our School?</span>
                     </h2>
-                    <p class="mt-6 text-black/50 font-medium text-lg leading-relaxed" data-i18n="whyChooseDesc">
+                    <p class="mt-4 md:mt-6 text-black/50 font-medium text-lg leading-relaxed" data-i18n="whyChooseDesc">
                         We provide an environment where every student can excel through modern facilities and dedicated
                         mentorship.
                     </p>
                 </div>
-                <!-- Nav Buttons -->
-                <div class="flex gap-4">
+                <!-- Nav Buttons (Desktop) -->
+                <div class="hidden md:flex gap-4">
                     <button id="slider-prev"
                         class="w-14 h-14 rounded-2xl border border-black/5 bg-white flex items-center justify-center text-black/40 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm group">
                         <i class="fa-solid fa-chevron-left group-hover:-translate-x-0.5 transition-transform"></i>
