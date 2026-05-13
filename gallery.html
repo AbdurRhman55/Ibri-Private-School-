@@ -252,6 +252,7 @@
             </a>
         </div>
     </div>
+    
 
   <!-- ========================= -->
 <!-- CLEAN MODERN GALLERY HERO - MINIMIZED -->
@@ -270,7 +271,7 @@
             <div class="absolute bottom-0 left-0 w-[200px] h-[200px] bg-secondary/10 rounded-full blur-[100px]">
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8 items-center w-full px-6 md:px-10 lg:px-12 py-10">
+            <div class="grid lg:grid-cols-2 gap-8 items-center w-full px-6 md:px-10 lg:px-4 py-10">
 
                 <!-- LEFT -->
                 <div class="relative z-10">
@@ -281,7 +282,7 @@
 
                         <i class="fa-solid fa-camera-retro text-primary text-xs"></i>
 
-                        <span class="text-[10px] uppercase tracking-[3px] font-black text-primary">
+                        <span class="text-[10px] uppercase tracking-[3px] font-black text-primary" data-i18n="galleryBadge">
                             School Gallery
                         </span>
 
@@ -290,14 +291,14 @@
                     <!-- Heading -->
                     <h1 class="text-3xl md:text-4xl lg:text-6xl font-black leading-[1.1] text-black max-w-2xl">
 
-                        Capturing
-                        <span class="text-primary">Beautiful</span>
-                        School Moments
+                        <span data-i18n="heroTitle1">Capturing</span>
+                        <span class="text-primary" data-i18n="heroTitle2">Beautiful</span>
+                        <span data-i18n="heroTitle3">School Moments</span>
 
                     </h1>
 
                     <!-- Description -->
-                    <p class="text-gray-500 text-md md:text-lg leading-relaxed max-w-xl mt-4">
+                    <p class="text-gray-500 text-md md:text-lg leading-relaxed max-w-xl mt-4" data-i18n="heroDesc">
 
                         Explore memorable events, student achievements,
                         celebrations, sports activities, and the vibrant
@@ -308,15 +309,13 @@
                     <!-- Buttons -->
                     <div class="flex flex-wrap gap-3 mt-6">
 
-                        <button
-                            class="px-6 py-4 rounded-xl bg-primary hover:bg-secondary hover:text-black text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-primary/20">
+                        <button class="px-6 py-4 rounded-xl bg-primary hover:bg-secondary hover:text-black text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-primary/20" data-i18n="exploreGalleryBtn">
 
                             Explore Gallery
 
                         </button>
 
-                        <button
-                            class="px-6 py-4 rounded-xl bg-black/[0.03] hover:bg-black/5 border border-primary/30 text-black font-bold text-sm transition-all duration-300">
+                        <button class="px-6 py-4 rounded-xl bg-black/[0.03] hover:bg-black/5 border border-primary/30 text-black font-bold text-sm transition-all duration-300" data-i18n="viewEventsBtn">
 
                             View Events
 
@@ -334,7 +333,7 @@
                                 10K+
                             </h3>
 
-                            <p class="text-gray-500 text-xs font-semibold mt-0.5">
+                            <p class="text-gray-500 text-xs font-semibold mt-0.5" data-i18n="photosStat">
                                 Photos
                             </p>
 
@@ -347,7 +346,7 @@
                                 500+
                             </h3>
 
-                            <p class="text-gray-500 text-xs font-semibold mt-0.5">
+                            <p class="text-gray-500 text-xs font-semibold mt-0.5" data-i18n="eventsStat">
                                 Events
                             </p>
 
@@ -360,7 +359,7 @@
                                 50+
                             </h3>
 
-                            <p class="text-gray-500 text-xs font-semibold mt-0.5">
+                            <p class="text-gray-500 text-xs font-semibold mt-0.5" data-i18n="activitiesStat">
                                 Activities
                             </p>
 
@@ -391,11 +390,11 @@
 
                             <div>
 
-                                <h3 class="text-white font-black text-sm">
+                                <h3 class="text-white font-black text-sm" data-i18n="floatingTitle">
                                     Annual Sports Day
                                 </h3>
 
-                                <p class="text-white/70 text-xs">
+                                <p class="text-white/70 text-xs" data-i18n="floatingSubtitle">
                                     School Memories
                                 </p>
 
@@ -414,10 +413,10 @@
 
                     <!-- Floating Small Image -->
                     <div
-                        class="absolute -bottom-4 left-16 hidden md:block overflow-hidden rounded-[20px] border-[4px] border-white shadow-2xl w-32 rotate-[-6deg]">
+                        class="absolute -bottom-4 left-20 hidden md:block overflow-hidden rounded-[20px] border-[4px] border-secondary shadow-2xl w-48 h-48 rotate-[-12deg]">
 
                         <img src="./Asstes/library.png"
-                            class="w-full h-32 object-cover">
+                            class="w-full h-48 object-cover">
 
                     </div>
 
@@ -430,7 +429,528 @@
     </div>
 
 </section>
+<!-- Gallery Events Showcase Section -->
+<section class="py-8 md:py-10 bg-slate-50/50 overflow-hidden" id="gallery-showcase">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-12 space-y-4">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/5 rounded-full border border-primary/10">
+                <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-black text-primary uppercase tracking-[0.3em]"
+                    data-i18n="galleryTag">Moments From</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight"
+                style="font-family: 'Cairo', sans-serif;" data-i18n="galleryTitle">
+                GALLERY <span class="text-primary"></span>
+            </h2>
+            <p class="text-slate-500 font-medium max-w-2xl mx-auto text-sm md:text-lg mt-6"
+                data-i18n="galleryDesc">
+                Explore the unforgettable moments, celebrations, and achievements captured through our lens.
+            </p>
+        </div>
 
+        <div
+            class="flex flex-col md:flex-row w-full h-[600px] md:h-[500px] lg:h-[450px] gap-[15px] md:py-[20px] py-4">
+            <!-- Event 1 - Science Fair -->
+            <div
+                class="group relative flex-1 w-full h-full rounded-[32px] overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:flex-[5] md:hover:scale-100 hover:shadow-[0_40px_80px_rgba(63,163,148,0.15)]">
+                <img src="./Asstes/school image.jpeg" alt="Annual Science Fair"
+                    class="w-full h-full object-cover object-center transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] grayscale contrast-[1.1] group-hover:scale-[1.12] group-hover:grayscale-0 group-hover:contrast-[1]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(63,163,148,0.98)] via-[rgba(63,163,148,0.5)] to-transparent flex flex-col justify-end p-[45px] opacity-[0.95] transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:from-[rgba(63,163,148,1)] group-hover:via-[rgba(63,163,148,0.2)]">
+                    <div
+                        class="transform translate-y-[40px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                        <h3 class="text-white text-2xl md:text-3xl font-black leading-tight"
+                            data-i18n="event1Title">Annual Science Fair 2025</h3>
+                        <p class="text-secondary font-bold text-sm md:text-base uppercase tracking-widest mt-1"
+                            data-i18n="event1Date">March 25, 2025</p>
+
+                        <div
+                            class="overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] mt-[15px] max-h-0 opacity-0 group-hover:max-h-[400px] group-hover:opacity-100">
+                            <p class="text-white/80 text-xs md:text-sm font-medium leading-relaxed border-l-2 border-white/20 ps-4"
+                                data-i18n="event1Desc">
+                                Over 200 students showcased innovative projects in robotics, AI, and environmental science. 
+                                Winners selected for the National Science Competition.
+                            </p>
+                            <div
+                                class="flex gap-[12px] mt-[25px] transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms] transform translate-y-[30px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-solid fa-eye"></i></a>
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-regular fa-heart"></i></a>
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-solid fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 - Cultural Day -->
+            <div
+                class="group relative flex-1 w-full h-full rounded-[32px] overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:flex-[5] md:hover:scale-100 hover:shadow-[0_40px_80px_rgba(63,163,148,0.15)]">
+                <img src="./Asstes/school image.jpeg" alt="Cultural Day Festival"
+                    class="w-full h-full object-cover object-center transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] grayscale contrast-[1.1] group-hover:scale-[1.12] group-hover:grayscale-0 group-hover:contrast-[1]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(63,163,148,0.98)] via-[rgba(63,163,148,0.5)] to-transparent flex flex-col justify-end p-[45px] opacity-[0.95] transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:from-[rgba(63,163,148,1)] group-hover:via-[rgba(63,163,148,0.2)]">
+                    <div
+                        class="transform translate-y-[40px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                        <h3 class="text-white text-2xl md:text-3xl font-black leading-tight" data-i18n="event2Title">Cultural Day Festival 2025</h3>
+                        <p class="text-secondary font-bold text-sm md:text-base uppercase tracking-widest mt-1"
+                            data-i18n="event2Date">April 12, 2025</p>
+
+                        <div
+                            class="overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] mt-[15px] max-h-0 opacity-0 group-hover:max-h-[400px] group-hover:opacity-100">
+                            <p class="text-white/80 text-xs md:text-sm font-medium leading-relaxed border-l-2 border-white/20 ps-4"
+                                data-i18n="event2Desc">
+                                Students from 15+ countries showcased their traditions through music, dance, food, and 
+                                traditional attire. A celebration of diversity and unity.
+                            </p>
+                            <div
+                                class="flex gap-[12px] mt-[25px] transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms] transform translate-y-[30px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-solid fa-eye"></i></a>
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-regular fa-heart"></i></a>
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-solid fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3 - Sports Championship -->
+            <div
+                class="group relative flex-1 w-full h-full rounded-[32px] overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:flex-[5] md:hover:scale-100 hover:shadow-[0_40px_80px_rgba(63,163,148,0.15)]">
+                <img src="./Asstes/school image.jpeg" alt="Sports Championship"
+                    class="w-full h-full object-cover object-center transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] grayscale contrast-[1.1] group-hover:scale-[1.12] group-hover:grayscale-0 group-hover:contrast-[1]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(63,163,148,0.98)] via-[rgba(63,163,148,0.5)] to-transparent flex flex-col justify-end p-[45px] opacity-[0.95] transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:from-[rgba(63,163,148,1)] group-hover:via-[rgba(63,163,148,0.2)]">
+                    <div
+                        class="transform translate-y-[40px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                        <h3 class="text-white text-2xl md:text-3xl font-black leading-tight" data-i18n="event3Title">Inter-School Sports Championship</h3>
+                        <p class="text-secondary font-bold text-sm md:text-base uppercase tracking-widest mt-1"
+                            data-i18n="event3Date">May 5, 2025</p>
+
+                        <div
+                            class="overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] mt-[15px] max-h-0 opacity-0 group-hover:max-h-[400px] group-hover:opacity-100">
+                            <p class="text-white/80 text-xs md:text-sm font-medium leading-relaxed border-l-2 border-white/20 ps-4"
+                                data-i18n="event3Desc">
+                                Our school team won 12 gold medals in football, basketball, and athletics. Record-breaking 
+                                participation from 25 schools across the region.
+                            </p>
+                            <div
+                                class="flex gap-[12px] mt-[25px] transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms] transform translate-y-[30px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-solid fa-eye"></i></a>
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-regular fa-heart"></i></a>
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-solid fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 4 - Graduation Ceremony -->
+            <div
+                class="group relative flex-1 w-full h-full rounded-[32px] overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:flex-[5] md:hover:scale-100 hover:shadow-[0_40px_80px_rgba(63,163,148,0.15)]">
+                <img src="./Asstes/school image.jpeg" alt="Graduation Ceremony"
+                    class="w-full h-full object-cover object-center transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] grayscale contrast-[1.1] group-hover:scale-[1.12] group-hover:grayscale-0 group-hover:contrast-[1]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[rgba(63,163,148,0.98)] via-[rgba(63,163,148,0.5)] to-transparent flex flex-col justify-end p-[45px] opacity-[0.95] transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:from-[rgba(63,163,148,1)] group-hover:via-[rgba(63,163,148,0.2)]">
+                    <div
+                        class="transform translate-y-[40px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                        <h3 class="text-white text-2xl md:text-3xl font-black leading-tight"
+                            data-i18n="event4Title">Graduation Ceremony 2025</h3>
+                        <p class="text-secondary font-bold text-sm md:text-base uppercase tracking-widest mt-1"
+                            data-i18n="event4Date">June 10, 2025</p>
+
+                        <div
+                            class="overflow-hidden transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] mt-[15px] max-h-0 opacity-0 group-hover:max-h-[400px] group-hover:opacity-100">
+                            <p class="text-white/80 text-xs md:text-sm font-medium leading-relaxed border-l-2 border-white/20 ps-4"
+                                data-i18n="event4Desc">
+                                Celebrating the achievements of 120 graduating students. A memorable evening with parents,
+                                teachers, and distinguished guests.
+                            </p>
+                            <div
+                                class="flex gap-[12px] mt-[25px] transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms] transform translate-y-[30px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-solid fa-eye"></i></a>
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-regular fa-heart"></i></a>
+                                <a href="#"
+                                    class="w-[40px] h-[40px] rounded-[12px] bg-white/10 backdrop-blur-[10px] flex items-center justify-center text-white text-[16px] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] border border-white/10 hover:bg-[#ffd505] hover:text-black hover:-translate-y-[5px] hover:rotate-[8deg] hover:shadow-[0_10px_20px_rgba(255,213,5,0.3)]"><i
+                                        class="fa-solid fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- ========================= -->
+<!-- ========================= -->
+<!-- VIRTUAL TOUR - VIDEO & REVIEWS SLIDER (EQUAL HEIGHT FIXED) -->
+<!-- ========================= -->
+<section class="relative py-10 md:py-5 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 via-white to-secondary/5 overflow-hidden">
+
+    <!-- Animated Background Elements - Hidden on mobile -->
+    <div class="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float hidden md:block"></div>
+    <div class="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float-delayed hidden md:block"></div>
+
+    <div class="max-w-[1400px] mx-auto relative z-10">
+
+        <!-- Section Header -->
+        <div class="text-center mb-8 md:mb-10" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 bg-white shadow-sm px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-primary/10 mb-3 md:mb-4">
+                <i class="fa-solid fa-vr-cardboard text-primary text-[10px] md:text-sm"></i>
+                <span class="text-primary font-black text-[8px] md:text-[10px] uppercase tracking-[2px] md:tracking-[3px]" data-i18n="virtualBadge">Virtual Experience</span>
+            </div>
+            <h2 class="text-2xl md:text-5xl font-black text-black mb-2 md:mb-3">
+                <span data-i18n="virtualTitle1">Take a</span> <span class="text-primary" data-i18n="virtualTitle2">360° Tour</span>
+            </h2>
+            <p class="text-gray-500 max-w-2xl mx-auto text-xs md:text-sm lg:text-base px-4" data-i18n="virtualDesc">
+                Explore our campus virtually — from smart classrooms to sports facilities
+            </p>
+        </div>
+
+        <!-- Split Layout: Video + Stats & Reviews - FLEX with equal height -->
+        <div class="flex flex-col lg:flex-row gap-6 md:gap-8">
+            
+            <!-- LEFT SIDE - VIDEO (Fixed height, will match right side) -->
+            <div class="lg:w-1/2 relative group rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl" data-aos="fade-right">
+                
+                <!-- Video Preview -->
+                <div class="relative h-[280px] sm:h-[320px] md:h-[400px] lg:h-[500px] overflow-hidden">
+                    <img src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                         class="w-full h-full object-cover transition duration-1000 group-hover:scale-105">
+                    
+                    <!-- Dark Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    
+                    <!-- Video Badge -->
+                    <div class="absolute top-3 left-3 md:top-4 md:left-4 bg-black/50 backdrop-blur-md rounded-full px-2 py-1 md:px-3 md:py-1.5">
+                        <div class="flex items-center gap-1 md:gap-1.5">
+                            <i class="fa-regular fa-circle-play text-white text-[10px] md:text-sm"></i>
+                            <span class="text-white text-[8px] md:text-[10px] font-bold tracking-wide" data-i18n="videoDuration">3:45 MIN</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 360° Badge -->
+                    <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-black/50 backdrop-blur-md rounded-full px-2 py-1 md:px-3 md:py-1.5">
+                        <div class="flex items-center gap-1 md:gap-1.5">
+                            <i class="fa-solid fa-rotate text-secondary text-[8px] md:text-xs animate-spin-slow"></i>
+                            <span class="text-white text-[8px] md:text-[10px] font-bold">360°</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Center Play Button -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <button class="w-12 h-12 md:w-16 md:h-20 rounded-full bg-white/20 backdrop-blur-2xl border-2 border-white/40 flex items-center justify-center hover:scale-110 transition-all duration-500 group/play">
+                            <div class="w-9 h-9 md:w-12 md:h-14 rounded-full bg-primary flex items-center justify-center shadow-2xl group-hover/play:bg-secondary transition-all">
+                                <i class="fa-solid fa-play text-white text-xs md:text-base group-hover/play:scale-110 transition ml-0.5"></i>
+                            </div>
+                        </button>
+                    </div>
+                    
+                    <!-- Bottom Info -->
+                    <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 bg-gradient-to-t from-black to-transparent">
+                        <h3 class="text-white text-sm md:text-lg lg:text-xl font-black" data-i18n="videoTitle">Interactive Campus Tour</h3>
+                        <p class="text-white/70 text-[10px] md:text-xs mt-0.5 md:mt-1" data-i18n="videoSubtitle">Discover every corner of our campus</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE - STATS + REVIEW SLIDER -->
+            <div class="lg:w-1/2 flex flex-col justify-between gap-4 md:gap-5 h-full" data-aos="fade-left">
+                
+                <!-- Stats Row - Responsive Grid -->
+                <div class="grid grid-cols-2 gap-2 md:gap-3">
+                    <div class="group bg-white rounded-lg md:rounded-xl p-2 md:p-3 text-center border-2 border-primary/30 hover:shadow-lg transition-all duration-300">
+                        <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-1 md:mb-2 group-hover:bg-primary transition">
+                            <i class="fa-solid fa-chalkboard-user text-primary group-hover:text-white text-[10px] md:text-sm"></i>
+                        </div>
+                        <h4 class="font-black text-base md:text-lg text-primary">12</h4>
+                        <p class="text-gray-500 text-[8px] md:text-[10px] font-semibold" data-i18n="statSmartClassrooms">Smart Classrooms</p>
+                    </div>
+                    <div class="group bg-white rounded-lg md:rounded-xl p-2 md:p-3 text-center border-2 border-primary/30 hover:shadow-lg transition-all duration-300">
+                        <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-1 md:mb-2 group-hover:bg-secondary transition">
+                            <i class="fa-solid fa-flask text-secondary-dark group-hover:text-black text-[10px] md:text-sm"></i>
+                        </div>
+                        <h4 class="font-black text-base md:text-lg text-primary">6</h4>
+                        <p class="text-gray-500 text-[8px] md:text-[10px] font-semibold" data-i18n="statScienceLabs">Science Labs</p>
+                    </div>
+                    <div class="group bg-white rounded-lg md:rounded-xl p-2 md:p-3 text-center border-2 border-primary/30 hover:shadow-lg transition-all duration-300">
+                        <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-1 md:mb-2 group-hover:bg-primary transition">
+                            <i class="fa-solid fa-futbol text-primary group-hover:text-white text-[10px] md:text-sm"></i>
+                        </div>
+                        <h4 class="font-black text-base md:text-lg text-primary">4</h4>
+                        <p class="text-gray-500 text-[8px] md:text-[10px] font-semibold" data-i18n="statSportsFacilities">Sports Facilities</p>
+                    </div>
+                    <div class="group bg-white rounded-lg md:rounded-xl p-2 md:p-3 text-center border-2 border-primary/30 hover:shadow-lg transition-all duration-300">
+                        <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-1 md:mb-2 group-hover:bg-secondary transition">
+                            <i class="fa-solid fa-book text-secondary-dark group-hover:text-black text-[10px] md:text-sm"></i>
+                        </div>
+                        <h4 class="font-black text-base md:text-lg text-primary">2</h4>
+                        <p class="text-gray-500 text-[8px] md:text-[10px] font-semibold" data-i18n="statLibraries">Libraries</p>
+                    </div>
+                </div>
+
+                <!-- Parent Reviews Slider - Flex grow to fill space -->
+                <div class="relative bg-white rounded-xl md:rounded-2xl p-4 md:p-5 border border-gray-100 shadow-lg flex-1">
+                    
+                    <!-- Slider Header -->
+                    <div class="flex items-center justify-between mb-3 md:mb-4">
+                        <div class="flex items-center gap-1.5 md:gap-2">
+                            <i class="fa-solid fa-quote-left text-primary text-[10px] md:text-sm"></i>
+                            <span class="text-primary font-bold text-[10px] md:text-xs uppercase tracking-wider" data-i18n="reviewsTitle">Parent Reviews</span>
+                        </div>
+                        <div class="flex gap-1.5 md:gap-2">
+                            <button id="reviewPrevBtn" class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fa-solid fa-chevron-left text-[8px] md:text-xs"></i>
+                            </button>
+                            <button id="reviewNextBtn" class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fa-solid fa-chevron-right text-[8px] md:text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Slider Track -->
+                    <div id="reviewSlider" class="overflow-hidden">
+                        <div class="flex transition-transform duration-500 ease-out">
+                            
+                            <!-- Review 1 -->
+                            <div class="w-full flex-shrink-0 px-1">
+                                <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                                        <i class="fa-solid fa-user text-primary text-xs md:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-xs md:text-sm">Sarah Anderson</h4>
+                                        <div class="flex gap-0.5 mt-0.5">
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-[10px] md:text-xs leading-relaxed italic" data-i18n="review1">"The virtual tour gave us a real feel of the campus. Absolutely amazing experience!"</p>
+                            </div>
+                            
+                            <!-- Review 2 -->
+                            <div class="w-full flex-shrink-0 px-1">
+                                <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-secondary/20 flex items-center justify-center">
+                                        <i class="fa-solid fa-user text-secondary-dark text-xs md:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-xs md:text-sm">Michael Johnson</h4>
+                                        <div class="flex gap-0.5 mt-0.5">
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-regular fa-star text-gray-300 text-[6px] md:text-[8px]"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-[10px] md:text-xs leading-relaxed italic" data-i18n="review2">"Excellent facilities and dedicated teachers. The 360° tour helped us make the right decision."</p>
+                            </div>
+                            
+                            <!-- Review 3 -->
+                            <div class="w-full flex-shrink-0 px-1">
+                                <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                                        <i class="fa-solid fa-user text-primary text-xs md:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-xs md:text-sm">Emily Thompson</h4>
+                                        <div class="flex gap-0.5 mt-0.5">
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-[10px] md:text-xs leading-relaxed italic" data-i18n="review3">"The sports facilities and science labs are world-class. Best decision we made for our son."</p>
+                            </div>
+                            
+                            <!-- Review 4 -->
+                            <div class="w-full flex-shrink-0 px-1">
+                                <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-secondary/20 flex items-center justify-center">
+                                        <i class="fa-solid fa-user text-secondary-dark text-xs md:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-xs md:text-sm">David Wilson</h4>
+                                        <div class="flex gap-0.5 mt-0.5">
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-solid fa-star text-secondary text-[6px] md:text-[8px]"></i>
+                                            <i class="fa-regular fa-star text-gray-300 text-[6px] md:text-[8px]"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-[10px] md:text-xs leading-relaxed italic" data-i18n="review4">"Amazing school environment! The interactive tour showed us everything we needed to see."</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination Dots -->
+                    <div class="flex justify-center gap-1 md:gap-1.5 mt-3 md:mt-4">
+                        <div class="review-dot w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gray-300 cursor-pointer transition-all"></div>
+                        <div class="review-dot w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gray-300 cursor-pointer transition-all"></div>
+                        <div class="review-dot w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gray-300 cursor-pointer transition-all"></div>
+                        <div class="review-dot w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gray-300 cursor-pointer transition-all"></div>
+                    </div>
+                    
+                </div>
+                
+                <!-- CTA Button -->
+                <button class="group bg-primary hover:from-secondary hover:to-secondary-dark text-white hover:text-black py-2.5 md:py-3 rounded-xl font-bold text-xs md:text-sm transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 w-full" data-i18n="startTourBtn">
+                    <span>Start Virtual Tour</span>
+                    <i class="fa-solid fa-vr-cardboard group-hover:translate-x-1 transition-transform text-[10px] md:text-xs"></i>
+                </button>
+                
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+    
+    @keyframes float-delayed {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+    
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .animate-float-delayed {
+        animation: float-delayed 7s ease-in-out infinite 2s;
+    }
+    
+    .animate-spin-slow {
+        animation: spin 4s linear infinite;
+    }
+    
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    .review-dot.active {
+        width: 16px;
+        background: #3fa394;
+    }
+    
+    @media (max-width: 640px) {
+        .review-dot.active {
+            width: 12px;
+        }
+    }
+</style>
+
+<script>
+    // Review Slider Logic
+    const reviewTrack = document.getElementById('reviewSlider');
+    const reviewContainer = reviewTrack?.querySelector('.flex');
+    const reviewPrevBtn = document.getElementById('reviewPrevBtn');
+    const reviewNextBtn = document.getElementById('reviewNextBtn');
+    const reviewDots = document.querySelectorAll('.review-dot');
+    
+    let currentIndex = 0;
+    const totalReviews = 4;
+    
+    function updateReviewSlider() {
+        if (reviewContainer) {
+            reviewContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        reviewDots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    if (reviewPrevBtn) {
+        reviewPrevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalReviews) % totalReviews;
+            updateReviewSlider();
+        });
+    }
+    
+    if (reviewNextBtn) {
+        reviewNextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalReviews;
+            updateReviewSlider();
+        });
+    }
+    
+    reviewDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateReviewSlider();
+        });
+    });
+    
+    let autoSlideInterval = setInterval(() => {
+        if (reviewNextBtn) {
+            currentIndex = (currentIndex + 1) % totalReviews;
+            updateReviewSlider();
+        }
+    }, 5000);
+    
+    const sliderContainer = document.querySelector('.bg-white.rounded-xl.md\\:rounded-2xl');
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        sliderContainer.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(() => {
+                if (reviewNextBtn) {
+                    currentIndex = (currentIndex + 1) % totalReviews;
+                    updateReviewSlider();
+                }
+            }, 5000);
+        });
+    }
+    
+    updateReviewSlider();
+</script>
     <!-- CTA Section -->
     <section class="py-10 md:py-20 px-1 sm:px-6 lg:px-8 max-w-[1600px] mx-auto w-full">
         <div
@@ -642,7 +1162,6 @@
                 studentLife: "Student Life",
                 news: "News & Events",
                 gallery: "Gallery",
-                gallerySubtitle: "Capturing beautiful moments and achievements of our students.",
                 contact: "Contact Us",
                 contactBtn: "Contact",
                 admissionBtn: "Admission",
@@ -656,7 +1175,54 @@
                 contactInfo: "Contact Info",
                 footerAbout: "Empowering students with knowledge, character, and skills to excel in an ever-changing global world.",
                 footerAddress: "Ibri, Ad Dhahirah Governorate, Sultanate of Oman",
-                copyright: "© 2024 Ibri Private School. All rights reserved."
+                copyright: "© 2024 Ibri Private School. All rights reserved.",
+                // Gallery Hero
+                galleryBadge: "School Gallery",
+                heroTitle1: "Capturing",
+                heroTitle2: "Beautiful",
+                heroTitle3: "School Moments",
+                heroDesc: "Explore memorable events, student achievements, celebrations, sports activities, and the vibrant campus life of Ibri Private School.",
+                exploreGalleryBtn: "Explore Gallery",
+                viewEventsBtn: "View Events",
+                photosStat: "Photos",
+                eventsStat: "Events",
+                activitiesStat: "Activities",
+                floatingTitle: "Annual Sports Day",
+                floatingSubtitle: "School Memories",
+                // Gallery Showcase
+                galleryTag: "Moments From",
+                galleryTitle: "GALLERY",
+                galleryDesc: "Explore the unforgettable moments, celebrations, and achievements captured through our lens.",
+                event1Title: "Annual Science Fair 2025",
+                event1Date: "March 25, 2025",
+                event1Desc: "Over 200 students showcased innovative projects in robotics, AI, and environmental science. Winners selected for the National Science Competition.",
+                event2Title: "Cultural Day Festival 2025",
+                event2Date: "April 12, 2025",
+                event2Desc: "Students from 15+ countries showcased their traditions through music, dance, food, and traditional attire. A celebration of diversity and unity.",
+                event3Title: "Inter-School Sports Championship",
+                event3Date: "May 5, 2025",
+                event3Desc: "Our school team won 12 gold medals in football, basketball, and athletics. Record-breaking participation from 25 schools across the region.",
+                event4Title: "Graduation Ceremony 2025",
+                event4Date: "June 10, 2025",
+                event4Desc: "Celebrating the achievements of 120 graduating students. A memorable evening with parents, teachers, and distinguished guests.",
+                // Virtual Tour
+                virtualBadge: "Virtual Experience",
+                virtualTitle1: "Take a",
+                virtualTitle2: "360° Tour",
+                virtualDesc: "Explore our campus virtually — from smart classrooms to sports facilities",
+                videoDuration: "3:45 MIN",
+                videoTitle: "Interactive Campus Tour",
+                videoSubtitle: "Discover every corner of our campus",
+                statSmartClassrooms: "Smart Classrooms",
+                statScienceLabs: "Science Labs",
+                statSportsFacilities: "Sports Facilities",
+                statLibraries: "Libraries",
+                reviewsTitle: "Parent Reviews",
+                review1: "The virtual tour gave us a real feel of the campus. Absolutely amazing experience!",
+                review2: "Excellent facilities and dedicated teachers. The 360° tour helped us make the right decision.",
+                review3: "The sports facilities and science labs are world-class. Best decision we made for our son.",
+                review4: "Amazing school environment! The interactive tour showed us everything we needed to see.",
+                startTourBtn: "Start Virtual Tour"
             },
             ar: {
                 schoolNameMain: "مدرسة عبري الخاصة",
@@ -669,7 +1235,6 @@
                 studentLife: "الحياة الطلابية",
                 news: "الأخبار والفعاليات",
                 gallery: "معرض الصور",
-                gallerySubtitle: "نلتقط أجمل اللحظات وإنجازات طلابنا.",
                 contact: "اتصل بنا",
                 contactBtn: "تواصل معنا",
                 admissionBtn: "سجل الآن",
@@ -683,7 +1248,54 @@
                 contactInfo: "معلومات التواصل",
                 footerAbout: "تمكين الطلاب بالمعرفة والشخصية والمهارات للتميز في عالم عالمي دائم التغير.",
                 footerAddress: "عبري، محافظة الظاهرة، سلطنة عمان",
-                copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة."
+                copyright: "© 2024 مدرسة عبري الخاصة. جميع الحقوق محفوظة.",
+                // Gallery Hero
+                galleryBadge: "معرض المدرسة",
+                heroTitle1: "نلتقط",
+                heroTitle2: "أجمل",
+                heroTitle3: "لحظات المدرسة",
+                heroDesc: "استكشف الفعاليات التي لا تنسى، إنجازات الطلاب، الاحتفالات، الأنشطة الرياضية، والحياة الجامعية النابضة بالحياة في مدرسة عبري الخاصة.",
+                exploreGalleryBtn: "استكشف المعرض",
+                viewEventsBtn: "عرض الفعاليات",
+                photosStat: "صور",
+                eventsStat: "فعاليات",
+                activitiesStat: "أنشطة",
+                floatingTitle: "اليوم الرياضي السنوي",
+                floatingSubtitle: "ذكريات المدرسة",
+                // Gallery Showcase
+                galleryTag: "لحظات من",
+                galleryTitle: "معرض",
+                galleryDesc: "استكشف اللحظات التي لا تنسى والاحتفالات والإنجازات التي تم التقاطها من خلال عدستنا.",
+                event1Title: "معرض العلوم السنوي 2025",
+                event1Date: "25 مارس 2025",
+                event1Desc: "أكثر من 200 طالب عرضوا مشاريع مبتكرة في الروبوتات والذكاء الاصطناعي والعلوم البيئية. تم اختيار الفائزين للمسابقة الوطنية للعلوم.",
+                event2Title: "مهرجان اليوم الثقافي 2025",
+                event2Date: "12 أبريل 2025",
+                event2Desc: "عرض طلاب من أكثر من 15 دولة تقاليدهم من خلال الموسيقى والرقص والطعام والأزياء التقليدية. احتفال بالتنوع والوحدة.",
+                event3Title: "بطولة الرياضة بين المدارس",
+                event3Date: "5 مايو 2025",
+                event3Desc: "فاز فريق مدرستنا بـ 12 ميدالية ذهبية في كرة القدم وكرة السلة وألعاب القوى. مشاركة قياسية من 25 مدرسة across المنطقة.",
+                event4Title: "حفل التخرج 2025",
+                event4Date: "10 يونيو 2025",
+                event4Desc: "الاحتفال بإنجازات 120 طالباً متخرجاً. أمسية لا تنسى مع أولياء الأمور والمعلمين والضيوف الكرام.",
+                // Virtual Tour
+                virtualBadge: "تجربة افتراضية",
+                virtualTitle1: "خذ",
+                virtualTitle2: "جولة 360°",
+                virtualDesc: "استكشف حرمنا الجامعي افتراضياً — من الفصول الذكية إلى المرافق الرياضية",
+                videoDuration: "3:45 دقيقة",
+                videoTitle: "جولة تفاعلية في الحرم الجامعي",
+                videoSubtitle: "اكتشف كل ركن من أركان حرمنا الجامعي",
+                statSmartClassrooms: "فصول ذكية",
+                statScienceLabs: "مختبرات علوم",
+                statSportsFacilities: "مرافق رياضية",
+                statLibraries: "مكتبات",
+                reviewsTitle: "آراء أولياء الأمور",
+                review1: "الجولة الافتراضية أعطتنا شعوراً حقيقياً بالحرم الجامعي. تجربة مذهلة حقاً!",
+                review2: "مرافق ممتازة ومعلمون مخلصون. ساعدتنا الجولة 360° في اتخاذ القرار الصحيح.",
+                review3: "المرافق الرياضية ومختبرات العلوم عالمية المستوى. أفضل قرار اتخذناه من أجل ابننا.",
+                review4: "بيئة مدرسية رائعة! أظهرت لنا الجولة التفاعلية كل ما احتجنا لرؤيته.",
+                startTourBtn: "ابدأ الجولة الافتراضية"
             }
         };
 
@@ -694,20 +1306,44 @@
             if (lang === 'ar') {
                 htmlTag.setAttribute('dir', 'rtl');
                 htmlTag.setAttribute('lang', 'ar');
-                document.getElementById('lang-ar').classList.replace('text-black/40', 'text-primary');
-                document.getElementById('lang-en').classList.replace('text-primary', 'text-black/40');
+                const langAr = document.getElementById('lang-ar');
+                const langEn = document.getElementById('lang-en');
+                if (langAr && langEn) {
+                    langAr.classList.replace('text-black/40', 'text-primary');
+                    langEn.classList.replace('text-primary', 'text-black/40');
+                }
+                const mobLangAr = document.getElementById('mob-lang-ar');
+                const mobLangEn = document.getElementById('mob-lang-en');
+                if (mobLangAr && mobLangEn) {
+                    mobLangAr.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangAr.classList.remove('text-black/60');
+                    mobLangEn.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangEn.classList.add('text-black/60');
+                }
                 if (btnIcon) btnIcon.style.transform = 'scaleX(-1)';
             } else {
                 htmlTag.setAttribute('dir', 'ltr');
                 htmlTag.setAttribute('lang', 'en');
-                document.getElementById('lang-en').classList.replace('text-black/40', 'text-primary');
-                document.getElementById('lang-ar').classList.replace('text-primary', 'text-black/40');
+                const langEn = document.getElementById('lang-en');
+                const langAr = document.getElementById('lang-ar');
+                if (langEn && langAr) {
+                    langEn.classList.replace('text-black/40', 'text-primary');
+                    langAr.classList.replace('text-primary', 'text-black/40');
+                }
+                const mobLangEn = document.getElementById('mob-lang-en');
+                const mobLangAr = document.getElementById('mob-lang-ar');
+                if (mobLangEn && mobLangAr) {
+                    mobLangEn.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangEn.classList.remove('text-black/60');
+                    mobLangAr.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    mobLangAr.classList.add('text-black/60');
+                }
                 if (btnIcon) btnIcon.style.transform = 'scaleX(1)';
             }
 
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
+                if (translations[lang] && translations[lang][key]) {
                     el.textContent = translations[lang][key];
                 }
             });
